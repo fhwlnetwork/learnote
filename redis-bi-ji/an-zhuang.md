@@ -1,6 +1,8 @@
-# 1、目录规划
+# 安装
 
-```shell
+## 1、目录规划
+
+```text
 ### redis 下载目录
 
 /data/soft/
@@ -16,20 +18,19 @@
 ### redis 运维脚本
 
 /root/scripts/redis_shell.sh
-
 ```
 
-# 2、安装命令
+## 2、安装命令
 
-## 2.1、 安装准备
+### 2.1、 安装准备
 
-```shell
+```text
 ###编辑hosts文件
 [root@db01 ~]#vim /etc/hosts
 [root@db01 ~]#tail -3 /etc/hosts
-10.0.0.51	db01
-10.0.0.52	db02
-10.0.0.53	db03
+10.0.0.51    db01
+10.0.0.52    db02
+10.0.0.53    db03
 [root@db01 ~]#创建目录
 [root@db01 ~]#mkdir -p /data/soft
 [root@db01 ~]#mkdir -p /opt/redis_cluster/redis_6379
@@ -42,11 +43,11 @@ root@db01 ~]#下载文件
 [root@db01 /data/soft]#tar zxvf redis-3.2.12.tar.gz -C /opt/redis_cluster/
 ```
 
-<img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/imgredis_file.png" alt="结构"  />
+![&#x7ED3;&#x6784;](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/imgredis_file.png)
 
-## 2.2、 安装程序
+### 2.2、 安装程序
 
-``` shell
+```text
 [root@db01 /opt/redis_cluster]#ln -s /opt/redis_cluster/redis-3.2.12/ /opt/redis_cluster/redis
 [root@db01 /opt/redis_cluster]#ll
 total 0
@@ -57,9 +58,9 @@ drwxr-xr-x 5 root root  41 Apr 20 13:20 redis_6379
 [root@db01 /opt/redis_cluster/redis]#make && make install
 ```
 
-## 2.3、编辑配置文件
+### 2.3、编辑配置文件
 
-``` shell 
+```text
 [root@db01 /opt/redis_cluster/redis_6379/conf]#vim /opt/redis_cluster/redis_6379/conf
  ### 以守护模式启动
 daemonize yes
@@ -76,14 +77,13 @@ databases 16
 dbfilename redis_6379.rdb
 ### 本地数据库的目录
 dir /data/redis_cluster/redis_6379
-
 ```
 
-## 2.3 借助官方工具生成启动配置文件
+### 2.3 借助官方工具生成启动配置文件
 
 进入utils，执行install文件，生成
 
-```shell
+```text
 [root@db01 /opt/redis_cluster/redis_6379/conf]#cd 
 [root@db01 ~]#cd /opt/redis_cluster/redis/utils/
 [root@db01 /opt/redis_cluster/redis/utils]#./install_server.sh 
@@ -113,22 +113,20 @@ Successfully added to chkconfig!
 Successfully added to runlevels 345!
 Starting Redis server...
 Installation successful!
-
 ```
 
-# 3、启动/关闭服务
+## 3、启动/关闭服务
 
-``` shell
+```text
 ###启动服务
 [root@db01 ~]# redis-server /opt/redis_cluster/redis_6379/conf/redis_6379.conf 
 ###关闭服务
 [root@db01 ~]# redis-cli -h db01 shutdown
-
 ```
 
-# 4、验证服务
+## 4、验证服务
 
-``` shell
+```text
 [root@db01 /opt/redis_cluster/redis/utils]#ps -ef |grep redis
 root       5106      1  0 14:49 ?        00:00:03 redis-server 10.0.0.51:6379
 root       5299   1582  0 16:03 pts/0    00:00:00 grep --color=auto redis
@@ -137,13 +135,12 @@ root       5299   1582  0 16:03 pts/0    00:00:00 grep --color=auto redis
 OK
 127.0.0.1:6379> get name
 "wjh"
-127.0.0.1:6379> 
-
+127.0.0.1:6379>
 ```
 
-# 5、配置密码验证
+## 5、配置密码验证
 
-``` shell
+```text
 # 2) No password is configured.
 # If the master is password protected (using the "requirepass" configuration
 # masterauth <master-password>
@@ -151,12 +148,11 @@ OK
 # 150k passwords per second against a good box. This means that you should
 # use a very strong password otherwise it will be very easy to break.
 requirepass foobared
-
 ```
 
 ![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/imgimage-20210420161125245.png)
 
-# 6、 配置持久化
+## 6、 配置持久化
 
 ```kotlin
 AOF 持久化(append-only log file)
@@ -169,10 +165,9 @@ redis 持久化方式有哪些？有什么区别？
 rdb：基于快照的持久化，速度更快，一般用作备份，主从复制也是依赖于rdb持久化功能
 aof：以追加的方式记录redis操作日志的文件。可以最大程度的保证redis数据安全，类似于mysql的binlog
 Aof 和rdb同时存在时，优先读取aof
-
 ```
 
-``` shell 
+```text
 ### rdb配置持久化
 #说明：从下往上分别表示，60s内写入10000次自动保存
 #300s 写入10次自动保存
@@ -190,7 +185,5 @@ appendfsync always
 appendfsync everysec
 #写入工作交给操作系统,由操作系统判断缓冲区大小,统一写入到aof.
 appendfsync no
-
-
 ```
 
