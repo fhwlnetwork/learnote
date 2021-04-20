@@ -3,3 +3,4 @@ node_modules
 _book
 package.json
 .DS_Store
+redis-bi-ji
