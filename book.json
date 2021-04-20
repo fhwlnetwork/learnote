@@ -1,0 +1,153 @@
+{
+  "title": "吴建华的学习笔记",
+  "description": "吴建华的学习笔记",
+  "author": "wjh",
+  "output.name": "site",
+  "language": "zh-hans",
+  "gitbook": "3.2.3",
+  "root": ".",
+  "structure": {
+    "readme": "README.md"
+  },
+  "links": {
+    "sidebar": {
+      "博客": "http://www.wjhlog.com"
+    }
+  },
+  "plugins": [
+    "donate",
+    "edit-link",
+    "changyan",
+    "github",
+    "github-buttons",
+    "prism",
+    "include-codeblock",
+    "sharing",
+    "tbfed-pagefooter",
+    "simple-page-toc",
+    "3-ba",
+    "anchor-navigation-ex",
+    "sectionx",
+    "terminal",
+    "versions",
+    "rss"
+  ],
+
+  "pluginsConfig": {
+    
+    "theme-default": {
+      "showLevel": true
+    },
+    "changyan": {
+      "appid": "cytkBSEup",
+      "conf": ""
+    },
+    "prism": {
+      "css": [
+        "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+      ]
+    },
+    "github": {
+      "url": "https://github.com/fhwlnetwork/learnote_redis"
+    },
+    "github-buttons": {
+      "repo": "fhwlnetwork/learnote_redis",
+      "types": [
+        "star"
+      ],
+      "size": "small"
+    },
+    "include-codeblock": {
+      "template": "ace",
+      "unindent": true,
+      "edit": true
+    },
+    "sharing": {
+      "douban": false,
+      "facebook": false,
+      "hatenaBookmark": false,
+      "instapaper": false,
+      "line": false,
+      "linkedin": false,
+      "messenger": false,
+      "pocket": false,
+      "qq": true,
+      "qzone": true,
+      "stumbleupon": false,
+      "twitter": false,
+      "viber": false,
+      "vk": false,
+      "weibo": true,
+      "whatsapp": false,
+      "all": [
+        "facebook", "google", "twitter",
+        "instapaper", "linkedin",
+        "pocket", "stumbleupon"
+      ]
+    },
+    "tbfed-pagefooter": {
+      "copyright": "Copyright © www.wjhlog.com 2021",
+      "modify_label": "修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "3-ba": {
+      "token": "a8620f6cad15d24a9fa7554e3496225f"
+    },
+    "donate": {
+      "wechat": "https://www.wjhlog.com/static/images/images/wx.jpg",
+      "alipay": "https://www.wjhlog.com/static/images/images/wx.jpg",
+      "title": "",
+      "button": "赏",
+      "alipayText": "支付宝打赏",
+      "wechatText": "微信打赏"
+    },
+    "simple-page-toc": {
+      "maxDepth": 3,
+      "skipFirstH1": true
+    },
+    "edit-link": {
+      "base": "https://github.com/fhwlnetwork/learnote_redis/edit/main",
+      "label": "编辑此页"
+    },
+    "sitemap-general": {
+      "prefix": "http://note.wjhlog.com"
+    },
+    "anchor-navigation-ex": {
+      "isRewritePageTitle": false,
+      "tocLevel1Icon": "fa fa-hand-o-right",
+      "tocLevel2Icon": "fa fa-hand-o-right",
+      "tocLevel3Icon": "fa fa-hand-o-right"
+    },
+    "sectionx": {
+      "tag": "b"
+    },
+    
+    "terminal": {
+      "copyButtons": true,
+      "fade": false,
+      "style": "flat"
+    },
+
+    "versions": {
+      "options": [
+        {
+          "value": "http://note.wjhlog.com",
+          "text": "v1.0.0"
+        }
+      ]
+    },
+
+    "rss": {
+      "title": "吴建华的学习笔记",
+      "description": "吴建华的学习笔记",
+      "author": "wjh",
+      "feed_url": "http://doc.feehi.com/rss",
+      "site_url": "http://note.feehhi.com/",
+      "managingEditor": "job@feehi.com",
+      "webMaster": "job@feehi.com",
+      "categories": [
+        "gitbook"
+      ]
+    }
+  }
+}
