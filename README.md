@@ -1,5 +1,7 @@
 # 先写个目录吧
 
+这是码农转运维的心塞路
+
 * linux笔记
   * [linux基础命令](linux/commond.md)
 * redis笔记
@@ -12,3 +14,5 @@
   * [安装](docker/install.md)
 * ES笔记
   * [安装](es/install.md)
+  * [交互](es/head插件交互.md)
+

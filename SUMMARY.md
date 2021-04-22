@@ -11,6 +11,7 @@
     * [工具管理](redis/工具管理.md)
 * docker笔记
     * [安装](docker/install.md)
-
 * ES笔记
-	* [安装](es/install.md)
+    * [安装](es/install.md)
+    * [交互](es/head插件交互.md)
+
