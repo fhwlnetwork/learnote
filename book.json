@@ -131,6 +131,7 @@
     "versions": {
       "options": [
         {
+          "outou.name":"wjh",
           "value": "http://note.wjhlog.com",
           "text": "v1.0.0"
         }
