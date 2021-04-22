@@ -12,3 +12,5 @@
 * docker笔记
     * [安装](docker/install.md)
 
+* ES笔记
+	* [安装](es/install.md)
