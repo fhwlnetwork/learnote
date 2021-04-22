@@ -27,4 +27,3 @@ http.cors.enabled: true
 http.cors.allow-origin: "*"
 
 ```
-
