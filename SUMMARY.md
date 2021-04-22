@@ -7,6 +7,7 @@
     * [安装](redis/安装.md)
     * [主从配置_哨兵配置](redis/主从配置_哨兵.md)
     * [redis集群配置](redis/集群.md)
+    * [redis集群扩容收缩](redis/集群扩容收缩.md)
 * docker笔记
     * [安装](docker/install.md)
 
