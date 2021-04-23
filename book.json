@@ -15,7 +15,11 @@
     }
   },
   "plugins": [
-    "chapter-fold",
+    "theme-fexa-black",
+    "copy-code-button",
+    "cuav-chapters",
+    "heading-anchors",
+    "lightbox",
     "donate",
     "edit-link",
     "changyan",
@@ -33,6 +37,36 @@
     "versions",
     "rss"
   ],
+  "variables": {
+    "themeFexa":{
+      "showHome": false, 
+      "showNavigator": false, 
+      "nav":[
+        {
+            "url":"http://...",
+            "target":"_blank",
+            "name": "解决方案"
+        },
+        {
+            "url":"http://...",
+            "target":"_blank",
+            "name": "产品中心"
+        },
+        {
+            "url":"http://...",
+            "target":"_blank",
+            "name": "开发者文档"
+        },
+        {
+            "url":"http://...",
+            "target":"_blank",
+            "name": "管理控制台",
+            "border": "nav-border",
+            "type": "console" 
+        }
+    ]
+    }
+  },
 
   "pluginsConfig": {
     
@@ -61,7 +95,7 @@
     "include-codeblock": {
       "template": "ace",
       "unindent": true,
-      "edit": true
+      "edit": false
     },
     "sharing": {
       "douban": false,
@@ -152,4 +186,5 @@
       ]
     }
   }
+ 
 }

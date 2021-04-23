@@ -15,4 +15,5 @@
 * ES笔记
   * [安装](es/install.md)
   * [交互](es/head插件交互.md)
+  * [操作语言](es/dml.md)
 
