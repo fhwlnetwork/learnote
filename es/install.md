@@ -98,3 +98,12 @@ systemctl restart elasticsearch
 
 ```
 
+``` SHELL
+可能遇到的错误
+initial heap size [16777216] not equal to maximum heap size [536870912]; this can cause resize pauses and prevents mlockall from locking the entire heap
+说明此时处于生产模式
+修改elasticsearch.yml
+discvery.type： single-node
+
+```
+

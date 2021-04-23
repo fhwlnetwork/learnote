@@ -15,6 +15,7 @@
     }
   },
   "plugins": [
+    "chapter-fold",
     "donate",
     "edit-link",
     "changyan",
@@ -36,10 +37,10 @@
   "pluginsConfig": {
     
     "theme-default": {
-      "showLevel": true
+      "showLevel": false
     },
     "changyan": {
-      "appid": "cytkBSEup",
+      "appid": "cyvq3Dzep",
       "conf": ""
     },
     "prism": {
@@ -48,10 +49,10 @@
       ]
     },
     "github": {
-      "url": "https://github.com/fhwlnetwork/learnote_redis"
+      "url": "https://github.com/fhwlnetwork/learnote"
     },
     "github-buttons": {
-      "repo": "fhwlnetwork/learnote_redis",
+      "repo": "fhwlnetwork/learnote",
       "types": [
         "star"
       ],
@@ -142,8 +143,8 @@
       "title": "吴建华的学习笔记",
       "description": "吴建华的学习笔记",
       "author": "wjh",
-      "feed_url": "http://doc.feehi.com/rss",
-      "site_url": "http://note.feehhi.com/",
+      "feed_url": "http://note.wjhlog.com/rss",
+      "site_url": "http://note.wjhlog.com/",
       "managingEditor": "job@feehi.com",
       "webMaster": "job@feehi.com",
       "categories": [
