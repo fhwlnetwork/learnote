@@ -30,7 +30,7 @@
     "prism@^2.1.0",
     "prism-themes@^0.0.2",
     "advanced-emoji@^0.2.1",
-    "anchor-navigation-ex",
+
     "include-codeblock@^3.0.2",
     "ace@^0.3.2",
     "emphasize@^1.1.0",
@@ -61,7 +61,7 @@
   ],
 
   "pluginsConfig": {
-    
+   
     "changyan": {
       "appid": "cyvq3Dzep",
       "conf": ""
