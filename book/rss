@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 25 Apr 2021 07:33:12 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 25 Apr 2021 07:38:51 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -79,6 +79,13 @@
             <description><![CDATA[状态说明]]></description>
             <link>http://note.wjhlog.com/es/dml.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/es/dml.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[集群部署安装配置]]></title>
+            <description><![CDATA[重复以上内容]]></description>
+            <link>http://note.wjhlog.com/es/集群.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/es/集群.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
     </channel>
