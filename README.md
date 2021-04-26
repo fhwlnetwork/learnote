@@ -23,4 +23,5 @@
     * [安装](elk/安装.md)
     * [nginxjson日志采集](elk/nginx_log_json.md)
     * [nginix正常日志和错误日志](elk/nginx_success_error_log.md)
+    * [tomcat日志收集](elk/tomcat_log_cat.md)
 
