@@ -69,4 +69,8 @@ setup.template.enabled: false
 EOF
 
 ```
-
+## 说明
+```text
+特别说明:如果之前已产生日志数据，需将旧日志信息移除或移动到其他目录
+        删除添加的好的management
+```
