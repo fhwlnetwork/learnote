@@ -108,5 +108,4 @@ EOF
 
 ## 添加mangement 
 ![第一步](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426235817.png)
-![第二步](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426235817.png)
-![第三步](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426235940.png)
+![第二步](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426235940.png)
