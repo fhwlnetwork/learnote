@@ -4,6 +4,8 @@
 
 * linux笔记
   * [linux基础命令](linux/commond.md)
+* Nginx笔记
+* Tomact笔记
 * redis笔记
   * [安装](redis/安装.md)
   * [主从配置_哨兵配置](redis/主从配置_哨兵.md)
@@ -17,6 +19,8 @@
   * [交互](es/head插件交互.md)
   * [操作语言](es/dml.md)
   * [集群配置](es/集群.md)
-* Nginx笔记
-* Tomact笔记
+* ELK笔记
+    * [安装](elk/安装.md)
+    * [nginxjson日志采集](elk/nginx_log_json.md)
+    * [nginix正常日志和错误日志](elk/nging_success_error_log.md)
 
