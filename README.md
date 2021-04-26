@@ -22,5 +22,5 @@
 * ELK笔记
     * [安装](elk/安装.md)
     * [nginxjson日志采集](elk/nginx_log_json.md)
-    * [nginix正常日志和错误日志](elk/nging_success_error_log.md)
+    * [nginix正常日志和错误日志](elk/nginx_success_error_log.md)
 

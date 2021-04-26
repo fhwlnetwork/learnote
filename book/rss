@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 25 Apr 2021 07:38:51 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 26 Apr 2021 08:34:19 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -86,6 +86,26 @@
             <description><![CDATA[重复以上内容]]></description>
             <link>http://note.wjhlog.com/es/集群.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/es/集群.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装]]></title>
+            <description><![CDATA[参考es笔记es安装配置]]></description>
+            <link>http://note.wjhlog.com/elk/安装.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/安装.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[nginxjson日志采集]]></title>
+            <description><![CDATA[ngingx_json_Log]]></description>
+            <link>http://note.wjhlog.com/elk/nginx_log_json.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/nginx_log_json.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[ELk 收集Nginx的正常日志和错误日志]]></title>
+            <link>http://note.wjhlog.com/elk/nginx_success_error_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/nginx_success_error_log.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
     </channel>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>安装 · 吴建华的学习笔记</title>
+        <title>nginxjson日志采集 · 吴建华的学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -138,8 +138,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="head插件交互.html" />
+    <link rel="next" href="nginx_success_error_log.html" />
     
+    
+    <link rel="prev" href="安装.html" />
     
 
     
@@ -423,9 +425,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.7.1" data-path="install.html">
+        <li class="chapter " data-level="1.7.1" data-path="../es/install.html">
             
-                <a href="install.html">
+                <a href="../es/install.html">
             
                     
                     安装
@@ -436,9 +438,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.2" data-path="head插件交互.html">
+        <li class="chapter " data-level="1.7.2" data-path="../es/head插件交互.html">
             
-                <a href="head插件交互.html">
+                <a href="../es/head插件交互.html">
             
                     
                     交互
@@ -449,9 +451,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.3" data-path="dml.html">
+        <li class="chapter " data-level="1.7.3" data-path="../es/dml.html">
             
-                <a href="dml.html">
+                <a href="../es/dml.html">
             
                     
                     操作语言
@@ -462,9 +464,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7.4" data-path="集群.html">
+        <li class="chapter " data-level="1.7.4" data-path="../es/集群.html">
             
-                <a href="集群.html">
+                <a href="../es/集群.html">
             
                     
                     集群配置
@@ -494,9 +496,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../elk/安装.html">
+        <li class="chapter " data-level="1.8.1" data-path="安装.html">
             
-                <a href="../elk/安装.html">
+                <a href="安装.html">
             
                     
                     安装
@@ -507,9 +509,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" data-path="../elk/nginx_log_json.html">
+        <li class="chapter active" data-level="1.8.2" data-path="nginx_log_json.html">
             
-                <a href="../elk/nginx_log_json.html">
+                <a href="nginx_log_json.html">
             
                     
                     nginxjson日志采集
@@ -520,9 +522,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="../elk/nginx_success_error_log.html">
+        <li class="chapter " data-level="1.8.3" data-path="nginx_success_error_log.html">
             
-                <a href="../elk/nginx_success_error_log.html">
+                <a href="nginx_success_error_log.html">
             
                     
                     nginix正常日志和错误日志
@@ -576,7 +578,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >安装</a>
+        <a href=".." >nginxjson日志采集</a>
     </h1>
 </div>
 
@@ -591,103 +593,108 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="elasticsearch&#x5B89;&#x88C5;&#x90E8;&#x7F72;-rpm&#x5B89;&#x88C5;">Elasticsearch&#x5B89;&#x88C5;&#x90E8;&#x7F72;-rpm&#x5B89;&#x88C5;</h1>
-<pre class="language-"><code class="lang-shell">### &#x5B89;&#x88C5;java
-[root@db01 ~]# yum install -y java-1.8.0-openjdk.x86_64
-[root@db01 ~]# mkdir  -p /data/es_soft/
-[root@db01 ~]# cd /data/es_soft/
-[root@db01 /data/es_soft]# rpm -ivh elasticsearch-6.6.0.rpm
-[root@db01 /data/es_soft]# systemctl daemon-reload
-[root@db01 /data/es_soft]# systemctl enable elasticsearch.service
-Created symlink from /etc/systemd/system/multi-user.target.wants/elasticsearch.service to /usr/lib/systemd/system/elasticsearch.service.
-[root@db01 /data/es_soft]# systemctl start elasticsearch.service
-[root@db01 /data/es_soft]# systemctl status elasticsearch.service
-&#x25CF; elasticsearch.service - Elasticsearch
-   Loaded: loaded (/usr/lib/systemd/system/elasticsearch.service; enabled; vendor preset: disabled)
-   Active: active (running) since Thu 2021-04-22 21:38:35 CST; 10s ago
-     Docs: http://www.elastic.co
- Main PID: 6738 (java)
-   CGroup: /system.slice/elasticsearch.service
-           &#x2514;&#x2500;6738 /bin/java -Xms1g -Xmx1g -XX:+UseConcMarkSweepGC...
+						<h1 id="nginxjson&#x65E5;&#x5FD7;&#x91C7;&#x96C6;">nginxjson&#x65E5;&#x5FD7;&#x91C7;&#x96C6;</h1>
+<pre class="language-"><code>## &#x5B89;&#x88C5;nginx
+</code></pre><pre class="language-"><code class="lang-shell">[root@db01 /data/soft]#yum -y install nginx
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.aliyun.com
+ * extras: mirrors.aliyun.com
+ * updates: mirrors.aliyun.com
+# &#x542F;&#x52A8;&#x670D;&#x52A1;
+[root@db01 /data/soft]#systemctl restart nginx
 
-Apr 22 21:38:35 db01 systemd[1]: Started Elasticsearch.
-Apr 22 21:38:35 db01 systemd[1]: Starting Elasticsearch...
-Apr 22 21:38:36 db01 elasticsearch[6738]: OpenJDK 64-Bit Server V...
-Hint: Some lines were ellipsized, use -l to show in full.
+# &#x5B89;&#x88C5;&#x538B;&#x6D4B;&#x5DE5;&#x5177;
+[root@db01 /data/soft]#yum -y install httpd-tools
 </code></pre>
-<pre class="language-"><code class="lang-shell">#&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x8BF4;&#x660E;
-rpm -qc elasticsearch        #&#x67E5;&#x770B;elasticsearch&#x7684;&#x6240;&#x6709;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
-
-/etc/elasticsearch/elasticsearch.yml    #&#x914D;&#x7F6E;&#x6587;&#x4EF6;
-/etc/elasticsearch/jvm.options.            #jvm&#x865A;&#x62DF;&#x673A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
-/etc/init.d/elasticsearch          #init&#x542F;&#x52A8;&#x6587;&#x4EF6;
-/etc/sysconfig/elasticsearch        #&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
-/usr/lib/sysctl.d/elasticsearch.conf    #sysctl&#x53D8;&#x91CF;&#x6587;&#x4EF6;&#xFF0C;&#x4FEE;&#x6539;&#x6700;&#x5927;&#x63CF;&#x8FF0;&#x7B26;
-/usr/lib/systemd/system/elasticsearch.service  #systemd&#x542F;&#x52A8;&#x6587;&#x4EF6;
-/var/lib/elasticsearch        # &#x6570;&#x636E;&#x76EE;&#x5F55;
-/var/log/elasticsearch        #&#x65E5;&#x5FD7;&#x76EE;&#x5F55;
-/var/run/elasticsearch        #pid&#x76EE;&#x5F55;
+<h2 id="&#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x6570;&#x636E;">&#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x6570;&#x636E;</h2>
+<pre class="language-"><code class="lang-shell">[root@db01 /data/soft]#ab -n 100 -c 100 http://10.0.0.51/
+[root@db01 /data/soft]#tail -f /var/log/nginx/access.log 
+10.0.0.51 - - [26/Apr/2021:14:08:59 +0800] &quot;GET / HTTP/1.0&quot; 200 4833 &quot;-&quot; &quot;ApacheBench/2.3&quot; &quot;-&quot;
+10.0.0.51 - - [26/Apr/2021:14:08:59 +0800] &quot;GET / HTTP/1.0&quot; 200 4833 &quot;-&quot; &quot;ApacheBench/2.3&quot; &quot;-&quot;
+10.0.0.51 - - [26/Apr/2021:14:08:59 +0800] &quot;GET / HTTP/1.0&quot; 200 4833 &quot;-&quot; &quot;ApacheBench/2.3&quot; &quot;-&quot;
+10.0.0.51 - - [26/Apr/2021:14:08:59 +0800] &quot;GET / HTTP/1.0&quot; 200 4833 &quot;-&quot; &quot;ApacheBench/2.3&quot; &quot;-&quot;
 </code></pre>
-<pre class="language-"><code class="lang-shell">#&#x4FEE;&#x6539;&#x914D;&#x7F6E;
-[root@db01 /data/es_soft]# vim /etc/elasticsearch/elasticsearch.yml
-network.host: 10.0.0.51
-#
-# Set a custom port for HTTP:
-#
-http.port: 9200
-
-&#x4FEE;&#x6539;&#x5B8C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540E;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x91CD;&#x542F;&#x4E00;&#x4E0B;
-[root@db01 /data/es_soft]# grep &quot;^[a-Z]&quot; /etc/elasticsearch/elasticsearch.yml
-node.name: node-1
-path.data: /data/elasticsearch
-path.logs: /var/log/elasticsearch
-network.host: 10.0.0.51
-http.port: 9200
-bootstrap.memory_lock: true
+<h2 id="&#x5B89;&#x88C5;filebeat">&#x5B89;&#x88C5;filebeat</h2>
+<pre class="language-"><code class="lang-shell">[root@db01 /data/soft]# rpm -ivh filebeat-6.6.0-x86_64.rpm 
+warning: filebeat-6.6.0-x86_64.rpm: Header V4 RSA/SHA512 Signature, key ID d88e42b4: NOKEY
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:filebeat-6.6.0-1                 ################################# [100%]
 
 
-#JVM &#x914D;&#x7F6E;
-# &#x4E0D;&#x8981;&#x8D85;&#x8FC7;32g
-# &#x6700;&#x5927;&#x6700;&#x5C0F;&#x5185;&#x5B58;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E00;&#x6837;
-#&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x9501;&#x5B9A;&#x5185;&#x5B58;
-#&#x81F3;&#x5C11;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x672C;&#x8EAB;&#x7A7A;&#x4F59;50%&#x7684;&#x5185;&#x5B58;
-[root@db01 /etc/elasticsearch]# vim jvm.options 
-
--Xms512m
--Xmx512m
-
-
-# &#x521B;&#x5EFA;&#x76EE;&#x5F55;
-[root@db01 /data/es_soft]# mkdir -p /data/elasticsearch
-[root@db01 /data/es_soft]# chown -R elasticsearch:elasticsearch /data/elasticsearch/
-[root@db01 /data/es_soft]# systemctl restart elasticsearch
-[root@db01 /data/es_soft]# systemctl status elasticsearch
-
-&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x4F1A;&#x542F;&#x52A8;&#x5931;&#x8D25;&#xFF0C;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x73B0;&#x662F;&#x9501;&#x5B9A;&#x5185;&#x5B58;&#x5931;&#x8D25;
-&#x5B98;&#x65B9;&#x89E3;&#x51B3;&#x65B9;&#x6848;
-https://www.elastic.co/guide/en/elasticsearch/reference/6.6/setup-configuration-memory.html
-https://www.elastic.co/guide/en/elasticsearch/reference/6.6/setting-system-settings.html#sysconfig
-
-
-### &#x4FEE;&#x6539;&#x542F;&#x52A8;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6216;&#x521B;&#x5EFA;&#x65B0;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
-&#x65B9;&#x6CD5;1: systemctl edit elasticsearch
-&#x65B9;&#x6CD5;2: vim /usr/lib/systemd/system/elasticsearch.service 
-### &#x589E;&#x52A0;&#x5982;&#x4E0B;&#x53C2;&#x6570;
-[Service]
-LimitMEMLOCK=infinity
-
-### &#x91CD;&#x65B0;&#x542F;&#x52A8;
-systemctl daemon-reload
-systemctl restart elasticsearch
+## &#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+[root@db01 /data/soft]#cp /etc/filebeat/filebeat.yml /tmp/
+[root@db01 /data/soft]#cat &gt; /etc/filebeat/filebeat.yml&lt;&lt;EOF
+filebeat.inputs:
+- type: log
+  enabled: true 
+  paths:
+    - /var/log/nginx/access.log
+  json.keys_under_root: true
+  json.overwrite_keys: true
+setup.kibana:
+  host: &quot;10.0.0.51:5601&quot;
+#&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x8F93;&#x51FA;&#x683C;&#x5F0F; 
+output.elasticsearch:
+  hosts: [&quot;10.0.0.51:9200&quot;]
+  index: &quot;nginx-%{[beat.version]}-%{+yyyy.MM}&quot;
+#&#x91CD;&#x65B0;&#x547D;&#x540D;&#x6A21;&#x677F;&#x540D;&#x79F0;&#x4E3A;ngingx
+setup.template.name: &quot;nginx&quot;
+#&#x5339;&#x914D;&#x683C;&#x5F0F;&#xFF0C;&#x4EE5;nginx-&#x5F00;&#x5934;&#x7684;&#x6A21;&#x677F;&#x90FD;&#x4F7F;&#x7528;nginx&#x7684;&#x6A21;&#x677F;
+setup.template.pattern: &quot;nginx-*&quot;
+#&#x4E0D;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x81EA;&#x81EA;&#x5E26;&#x7684;&#x6A21;&#x677F;
+setup.template.enabled: false
+setup.template.overwrite: true
+EOF
 </code></pre>
-<pre class="language-"><code class="lang-SHELL">&#x53EF;&#x80FD;&#x9047;&#x5230;&#x7684;&#x9519;&#x8BEF;
-initial heap size [16777216] not equal to maximum heap size [536870912]; this can cause resize pauses and prevents mlockall from locking the entire heap
-&#x8BF4;&#x660E;&#x6B64;&#x65F6;&#x5904;&#x4E8E;&#x751F;&#x4EA7;&#x6A21;&#x5F0F;
-&#x4FEE;&#x6539;elasticsearch.yml
-discvery.type&#xFF1A; single-node
+<h2 id="&#x914D;&#x7F6E;nginx-&#x65E5;&#x5FD7;&#x683C;&#x5F0F;">&#x914D;&#x7F6E;nginx &#x65E5;&#x5FD7;&#x683C;&#x5F0F;</h2>
+<pre class="language-"><code class="lang-shell">
+#&#x5728;nging.conf&#x6587;&#x4EF6; http&#x4E2D;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;
+http {
+    log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;
+                      &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;
+                      &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;
+    log_format json  &apos;{ &quot;time_local&quot;: &quot;$time_local&quot;, &apos;
+                          &apos;&quot;remote_addr&quot;: &quot;$remote_addr&quot;, &apos;
+                          &apos;&quot;referer&quot;: &quot;$http_referer&quot;, &apos;
+                          &apos;&quot;request&quot;: &quot;$request&quot;, &apos;
+                          &apos;&quot;status&quot;: $status, &apos;
+                          &apos;&quot;bytes&quot;: $body_bytes_sent, &apos;
+                          &apos;&quot;agent&quot;: &quot;$http_user_agent&quot;, &apos;
+                          &apos;&quot;x_forwarded&quot;: &quot;$http_x_forwarded_for&quot;, &apos;
+                          &apos;&quot;up_addr&quot;: &quot;$upstream_addr&quot;,&apos;
+                          &apos;&quot;up_host&quot;: &quot;$upstream_http_host&quot;,&apos;
+                          &apos;&quot;upstream_time&quot;: &quot;$upstream_response_time&quot;,&apos;
+                          &apos;&quot;request_time&quot;: &quot;$request_time&quot;&apos;
+    &apos;}&apos;;
+}
+
+# &#x9A8C;&#x8BC1;ngingx&#x914D;&#x7F6E;
+[root@db01 /data/soft]#nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+# &#x91CD;&#x542F;ngingx &#x670D;&#x52A1;
+[root@db01 /data/soft]#systemctl restart nginx
+# &#x6E05;&#x7A7A;&#x6570;&#x636E;&#x65E5;&#x5FD7;
+
+[root@db01 /data/soft]#&gt; /var/log/nginx/access.log 
+#&#x91CD;&#x65B0;&#x751F;&#x6210;&#x6570;&#x636E;&#x65E5;&#x5FD7;
+[root@db01 /data/soft]#ab -n 100 -c 100 http://10.0.0.51/
+
+# &#x9A8C;&#x8BC1;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x6570;&#x636E;&#x683C;&#x5F0F;
+[root@db01 /data/soft]#tail -1 /var/log/nginx/access.log 
+{ &quot;time_local&quot;: &quot;26/Apr/2021:14:30:52 +0800&quot;, &quot;remote_addr&quot;: &quot;10.0.0.51&quot;, &quot;referer&quot;: &quot;-&quot;, &quot;request&quot;: &quot;GET / HTTP/1.0&quot;, &quot;status&quot;: 200, &quot;bytes&quot;: 4833, &quot;agent&quot;: &quot;ApacheBench/2.3&quot;, &quot;x_forwarded&quot;: &quot;-&quot;, &quot;up_addr&quot;: &quot;-&quot;,&quot;up_host&quot;: &quot;-&quot;,&quot;upstream_time&quot;: &quot;-&quot;,&quot;request_time&quot;: &quot;0.000&quot;}
 </code></pre>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426143500.png" data-lightbox="55af669c-21a9-4348-8d89-9da470248baf" data-title="ngingx_json_Log" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426143500.png" alt="ngingx_json_Log"></a></p>
+<h2 id="&#x6DFB;&#x52A0;kibana&#x76D1;&#x63A7;&#x9879;&#x76EE;">&#x6DFB;&#x52A0;kibana&#x76D1;&#x63A7;&#x9879;&#x76EE;</h2>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426154159.png" data-lightbox="b58e80c4-fb14-4ff4-b3a1-34ef866c8ac6" data-title="&#x7B2C;&#x4E00;&#x6B65;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426154159.png" alt="&#x7B2C;&#x4E00;&#x6B65;"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426154446.png" data-lightbox="808305f1-7f14-4e3d-a9c4-90136d8e6aa4" data-title="&#x7B2C;&#x4E8C;&#x6B65;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426154446.png" alt="&#x7B2C;&#x4E8C;&#x6B65;"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426154646.png" data-lightbox="213f67fc-cb5a-4e8d-ae34-5d80ddedfbc4" data-title="&#x7B2C;&#x4E09;&#x6B65;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426154646.png" alt="&#x7B2C;&#x4E09;&#x6B65;"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426155856.png" data-lightbox="cb6e2bda-4d8e-4fe5-b4e8-78219b7de7dc" data-title="&#x67E5;&#x770B;&#x76D1;&#x63A7;&#x5185;&#x5BB9;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426155856.png" alt="&#x67E5;&#x770B;&#x76D1;&#x63A7;&#x5185;&#x5BB9;"></a> </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; zhangjikai.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2021-04-23 14:18:14
+2021-04-26 16:10:13
 </span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -715,8 +722,12 @@ discvery.type&#xFF1A; single-node
 
 		
 		
+		<a href="安装.html" class="navigation navigation-prev " aria-label="Previous page: 安装">
+			<i class="fa fa-angle-left"></i>
+		</a>
 		
-		<a href="head插件交互.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 交互">
+		
+		<a href="nginx_success_error_log.html" class="navigation navigation-next " aria-label="Next page: nginix正常日志和错误日志">
 			<i class="fa fa-angle-right"></i>
 		</a>
 		
@@ -726,7 +737,7 @@ discvery.type&#xFF1A; single-node
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"安装","level":"1.7.1","depth":2,"next":{"title":"交互","level":"1.7.2","depth":2,"path":"es/head插件交互.md","ref":"es/head插件交互.md","articles":[]},"previous":{"title":"ES笔记","level":"1.7","depth":1,"ref":"","articles":[{"title":"安装","level":"1.7.1","depth":2,"path":"es/install.md","ref":"es/install.md","articles":[]},{"title":"交互","level":"1.7.2","depth":2,"path":"es/head插件交互.md","ref":"es/head插件交互.md","articles":[]},{"title":"操作语言","level":"1.7.3","depth":2,"path":"es/dml.md","ref":"es/dml.md","articles":[]},{"title":"集群配置","level":"1.7.4","depth":2,"path":"es/集群.md","ref":"es/集群.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © zhangjikai.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://www.wjhlog.com/static/images/images/wx.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://www.wjhlog.com/static/images/images/wx.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://gitbook.zhangjikai.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"zhangjikai","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"es/install.md","mtime":"2021-04-23T06:18:14.458Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-26T08:34:08.001Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"nginxjson日志采集","level":"1.8.2","depth":2,"next":{"title":"nginix正常日志和错误日志","level":"1.8.3","depth":2,"path":"elk/nginx_success_error_log.md","ref":"elk/nginx_success_error_log.md","articles":[]},"previous":{"title":"安装","level":"1.8.1","depth":2,"path":"elk/安装.md","ref":"elk/安装.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © zhangjikai.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://www.wjhlog.com/static/images/images/wx.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://www.wjhlog.com/static/images/images/wx.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://gitbook.zhangjikai.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"zhangjikai","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"elk/nginx_log_json.md","mtime":"2021-04-26T08:10:13.671Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-26T08:34:08.001Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>
