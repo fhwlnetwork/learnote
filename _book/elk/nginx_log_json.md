@@ -13,8 +13,39 @@ Loading mirror speeds from cached hostfile
 # 安装压测工具
 [root@db01 /data/soft]#yum -y install httpd-tools
 ```
-## 创建测试数据
+## 配置nginx 日志格式
 ``` shell
+
+#在nging.conf文件 http中添加以下内容
+http {
+   
+    log_format json  '{ "time_local": "$time_local", '
+                          '"remote_addr": "$remote_addr", '
+                          '"referer": "$http_referer", '
+                          '"request": "$request", '
+                          '"status": $status, '
+                          '"bytes": $body_bytes_sent, '
+                          '"agent": "$http_user_agent", '
+                          '"x_forwarded": "$http_x_forwarded_for", '
+                          '"up_addr": "$upstream_addr",'
+                          '"up_host": "$upstream_http_host",'
+                          '"upstream_time": "$upstream_response_time",'
+                          '"request_time": "$request_time"'
+    '}';
+}
+
+# 验证ngingx配置
+[root@db01 /data/soft]#nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+# 重启ngingx 服务
+[root@db01 /data/soft]#systemctl restart nginx
+# 清空数据日志
+
+[root@db01 /data/soft]#> /var/log/nginx/access.log 
+## 创建测试数据
+
 [root@db01 /data/soft]#ab -n 100 -c 100 http://10.0.0.51/
 [root@db01 /data/soft]#tail -f /var/log/nginx/access.log 
 10.0.0.51 - - [26/Apr/2021:14:08:59 +0800] "GET / HTTP/1.0" 200 4833 "-" "ApacheBench/2.3" "-"
@@ -22,7 +53,15 @@ Loading mirror speeds from cached hostfile
 10.0.0.51 - - [26/Apr/2021:14:08:59 +0800] "GET / HTTP/1.0" 200 4833 "-" "ApacheBench/2.3" "-"
 10.0.0.51 - - [26/Apr/2021:14:08:59 +0800] "GET / HTTP/1.0" 200 4833 "-" "ApacheBench/2.3" "-"
 
+
+# 验证查看日志数据格式
+[root@db01 /data/soft]#tail -1 /var/log/nginx/access.log 
+{ "time_local": "26/Apr/2021:14:30:52 +0800", "remote_addr": "10.0.0.51", "referer": "-", "request": "GET / HTTP/1.0", "status": 200, "bytes": 4833, "agent": "ApacheBench/2.3", "x_forwarded": "-", "up_addr": "-","up_host": "-","upstream_time": "-","request_time": "0.000"}
+
 ```
+![ngingx_json_Log](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426143500.png)
+
+
 
 ## 安装filebeat
 ``` shell 
@@ -57,49 +96,10 @@ setup.template.pattern: "nginx-*"
 setup.template.enabled: false
 setup.template.overwrite: true
 EOF
+
+# 启动服务
+[root@db01 /data/soft]# systemctl start filebeat.service
 ```
-## 配置nginx 日志格式
-``` shell
-
-#在nging.conf文件 http中添加以下内容
-http {
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
-    log_format json  '{ "time_local": "$time_local", '
-                          '"remote_addr": "$remote_addr", '
-                          '"referer": "$http_referer", '
-                          '"request": "$request", '
-                          '"status": $status, '
-                          '"bytes": $body_bytes_sent, '
-                          '"agent": "$http_user_agent", '
-                          '"x_forwarded": "$http_x_forwarded_for", '
-                          '"up_addr": "$upstream_addr",'
-                          '"up_host": "$upstream_http_host",'
-                          '"upstream_time": "$upstream_response_time",'
-                          '"request_time": "$request_time"'
-    '}';
-}
-
-# 验证ngingx配置
-[root@db01 /data/soft]#nginx -t
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful
-
-# 重启ngingx 服务
-[root@db01 /data/soft]#systemctl restart nginx
-# 清空数据日志
-
-[root@db01 /data/soft]#> /var/log/nginx/access.log 
-#重新生成数据日志
-[root@db01 /data/soft]#ab -n 100 -c 100 http://10.0.0.51/
-
-# 验证查看日志数据格式
-[root@db01 /data/soft]#tail -1 /var/log/nginx/access.log 
-{ "time_local": "26/Apr/2021:14:30:52 +0800", "remote_addr": "10.0.0.51", "referer": "-", "request": "GET / HTTP/1.0", "status": 200, "bytes": 4833, "agent": "ApacheBench/2.3", "x_forwarded": "-", "up_addr": "-","up_host": "-","upstream_time": "-","request_time": "0.000"}
-
-```
-![ngingx_json_Log](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210426143500.png)
 
 
 ## 添加kibana监控项目
