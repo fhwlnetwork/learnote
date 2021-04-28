@@ -15,6 +15,7 @@
     }
   },
   "plugins": [
+    "sitemap-general",
     "theme-fexa",
     "expandable-chapters",
     "changyan",
@@ -30,7 +31,6 @@
     "prism@^2.1.0",
     "prism-themes@^0.0.2",
     "advanced-emoji@^0.2.1",
-
     "include-codeblock@^3.0.2",
     "ace@^0.3.2",
     "emphasize@^1.1.0",
@@ -41,8 +41,7 @@
     "expandable-chapters-small@^0.1.7",
     "sectionx@^3.1.0",
     "donate@^1.0.2",
-    "local-video@^1.0.1",
-   
+    "local-video@^1.0.1", 
     "favicon@^0.0.2",
     "3-ba@^0.9.0",
     "terminal@^0.3.2",
@@ -142,7 +141,7 @@
       "skipFirstH1": true
     },
     "sitemap-general": {
-      "prefix": "https://www.wjhlog.com"
+      "prefix": "https://log.wjhlog.com"
     },
   
     "sectionx": {
