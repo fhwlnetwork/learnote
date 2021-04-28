@@ -1,7 +1,7 @@
 {
   "title": "吴建华的学习笔记",
   "description": "记录一个开发转运维的心塞路",
-  "author": "zhangjikai",
+  "author": "hades",
   "output.name": "site",
   "language": "zh-hans",
   "gitbook": "3.2.3",
@@ -122,7 +122,7 @@
     },
     
     "tbfed-pagefooter": {
-      "copyright": "Copyright © zhangjikai.com 2021",
+      "copyright": "Copyright © wjhlog.com 2021",
       "modify_label": "该文件修订时间：",
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     },
@@ -142,7 +142,7 @@
       "skipFirstH1": true
     },
     "sitemap-general": {
-      "prefix": "http://gitbook.zhangjikai.com"
+      "prefix": "https://www.wjhlog.com"
     },
   
     "sectionx": {
