@@ -25,4 +25,5 @@
     * [nginix正常日志和错误日志](elk/nginx_success_error_log.md)
     * [tomcat日志收集](elk/tomcat_log_cat.md)
     * [java多行日志收集](elk/java_log.md)
+    * [收集docker日志](elk/docker_log.md)
 
