@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 29 Apr 2021 15:23:25 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 Apr 2021 06:05:20 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -134,6 +134,13 @@
             <description><![CDATA[图示]]></description>
             <link>http://note.wjhlog.com/elk/filebeat_modules_get_ngingx_simple_log.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/elk/filebeat_modules_get_ngingx_simple_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[kibana画图]]></title>
+            <description><![CDATA[第一步]]></description>
+            <link>http://note.wjhlog.com/elk/kibana_draw_dashboard.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/kibana_draw_dashboard.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
     </channel>

@@ -27,4 +27,4 @@
     * [java多行日志收集](elk/java_log.md)
     * [收集docker日志](elk/docker_log.md)
     * [filebet收集ngingx日志](elk/filebeat_modules_get_ngingx_simple_log.md)
-
+    * [kibana画图](elk/kibana_draw_dashboard.md)
