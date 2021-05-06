@@ -43,7 +43,7 @@ filebeat.inputs:
 - type: log
   enable: true
   paths:
-    - /var/log/nging/error.log
+    - /var/log/nginx/error.log
   tags: ["error"]
 
 setup.kibana:

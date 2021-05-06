@@ -27,7 +27,13 @@
     * [java多行日志收集](elk/java_log.md)
     * [收集docker日志](elk/docker_log.md)
     * [filebet收集ngingx日志](elk/filebeat_modules_get_ngingx_simple_log.md)
+<<<<<<< HEAD
     * [redis作为缓存收集日志](elk/redis_cat_log.md)
     * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
     
 
+=======
+    * [kibana画图](elk/kibana_draw_dashboard.md)
+    * [redis作为缓存收集日志](elk/redis_cat_log.md)
+    * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
+>>>>>>> 9edf50c9d547af04b479e091770b14a7afc882f5
