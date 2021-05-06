@@ -26,4 +26,5 @@
     * [java多行日志收集](elk/java_log.md)
     * [收集docker日志](elk/docker_log.md)
     * [fibet收集ngingx日志](elk/filebeat_modules_get_ngingx_simple_log.md)
- 
+    * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
+

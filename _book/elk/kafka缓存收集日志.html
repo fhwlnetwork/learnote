@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>fibet收集ngingx日志 · 吴建华的学习笔记</title>
+        <title>kafka缓存收集日志 · 吴建华的学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -138,10 +138,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="kafka缓存收集日志.html" />
     
-    
-    <link rel="prev" href="docker_log.html" />
+    <link rel="prev" href="filebeat_modules_get_ngingx_simple_log.html" />
     
 
     
@@ -574,7 +572,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.7" data-path="filebeat_modules_get_ngingx_simple_log.html">
+        <li class="chapter " data-level="1.8.7" data-path="filebeat_modules_get_ngingx_simple_log.html">
             
                 <a href="filebeat_modules_get_ngingx_simple_log.html">
             
@@ -587,7 +585,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.8" data-path="kafka缓存收集日志.html">
+        <li class="chapter active" data-level="1.8.8" data-path="kafka缓存收集日志.html">
             
                 <a href="kafka缓存收集日志.html">
             
@@ -643,7 +641,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >fibet收集ngingx日志</a>
+        <a href=".." >kafka缓存收集日志</a>
     </h1>
 </div>
 
@@ -658,132 +656,177 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="filebeat&#x6A21;&#x5757;&#x6536;&#x96C6;ngingx&#x666E;&#x901A;&#x65E5;&#x5FD7;">filebeat&#x6A21;&#x5757;&#x6536;&#x96C6;ngingx&#x666E;&#x901A;&#x65E5;&#x5FD7;</h1>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429220514.png" data-lightbox="929d7e6e-d6a3-426b-9d38-064fab62dc75" data-title="&#x56FE;&#x793A;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429220514.png" alt="&#x56FE;&#x793A;"></a></p>
-<h2 id="&#x7B2C;&#x4E00;&#x6B65;">&#x7B2C;&#x4E00;&#x6B65;</h2>
-<pre class="language-"><code class="lang-shell">#&#x67E5;&#x770B;filebeat&#x6587;&#x4EF6;
-[root@db01 /data/soft]# rpm -qc filebeat 
-/etc/filebeat/filebeat.yml
-/etc/filebeat/modules.d/apache2.yml.disabled
-/etc/filebeat/modules.d/auditd.yml.disabled
-/etc/filebeat/modules.d/elasticsearch.yml.disabled
-/etc/filebeat/modules.d/haproxy.yml.disabled
-/etc/filebeat/modules.d/icinga.yml.disabled
-/etc/filebeat/modules.d/iis.yml.disabled
-/etc/filebeat/modules.d/kafka.yml.disabled
-/etc/filebeat/modules.d/kibana.yml.disabled
-/etc/filebeat/modules.d/logstash.yml.disabled
-/etc/filebeat/modules.d/mongodb.yml.disabled
-/etc/filebeat/modules.d/mysql.yml.disabled
-/etc/filebeat/modules.d/nginx.yml.disabled
-/etc/filebeat/modules.d/osquery.yml.disabled
-/etc/filebeat/modules.d/postgresql.yml.disabled
-/etc/filebeat/modules.d/redis.yml.disabled
-/etc/filebeat/modules.d/suricata.yml.disabled
-/etc/filebeat/modules.d/system.yml.disabled
-/etc/filebeat/modules.d/traefik.yml.disabled
-
-
-#&#x67E5;&#x8BE2;&#x6A21;&#x677F;
-filebeat modules list
-#&#x6FC0;&#x6D3B;&#x6A21;&#x5757;
-filebeat moudles enable nginx
-#&#x914D;&#x7F6E;nginx.yml&#x6587;&#x4EF6;&#x914D;&#x7F6E;
-[root@db01 /data/soft]# vim /etc/filebeat/modules.d/nginx.yml
-- module: nginx
-  # Access logs
-  access:
-    enabled: true
-    # Set custom paths for the log files. If left empty,
-    # Filebeat will choose the paths depending on your OS.
-    var.paths: [&quot;/var/log/nginx/access.log&quot;]
-  # Error logs
-  error:
-    enabled: true
-    # Set custom paths for the log files. If left empty,
-    # Filebeat will choose the paths depending on your OS.
-    #var.paths:
-    var.paths: [&quot;/var/log/nginx/error.log&quot;]
-
-#&#x914D;&#x7F6E;filebeat modules
-#============================= Filebeat modules ===============================
-#
-filebeat.config.modules:
-#  # Glob pattern for configuration loading
-    path: ${path.config}/modules.d/*.yml
-    reload.enabled: false
-    reload.period: 10s
-
-output.elasticsearch:
-  hosts: [&quot;10.0.0.51:9200&quot;]
-~     
-~
+						<h1 id="kafka&#x548C;zookeeper&#x5B89;&#x88C5;">kafka&#x548C;zookeeper&#x5B89;&#x88C5;</h1>
+<h2 id="zookeeper&#x5B89;&#x88C5;">zookeeper&#x5B89;&#x88C5;</h2>
+<h3 id="&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h3>
+<pre class="language-"><code class="lang-shell"># &#x89E3;&#x538B;&#x6587;&#x4EF6;
+[root@db01 /data/soft]#  tar zxf zookeeper-3.4.11.tar.gz -C /opt/
+# &#x521B;&#x5EFA;&#x8F6F;&#x8FDE;&#x63A5;
+[root@db01 /data/soft]#  ln -s /opt/zookeeper-3.4.11/ /opt/zookeeper
+# &#x5B89;&#x88C5;java &#x73AF;&#x5883;
+[root@db01 ~]# yum install -y java-1.8.0-openjdk.x86_64
 </code></pre>
-<h2 id="&#x7B2C;&#x4E8C;&#x6B65;">&#x7B2C;&#x4E8C;&#x6B65;</h2>
-<pre class="language-"><code class="lang-shell">#&#x91CD;&#x542F;&#x670D;&#x52A1;
-[root@db01 /data/soft]# systemctl restart filebeat.service
-
-#&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x62A5;&#x9519;
-2021-04-29T21:49:12.254+0800    ERROR    fileset/factory.go:142    Error loading pipeline: Error loading pipeline for fileset nginx/access: This module requires the following Elasticsearch plugins: ingest-user-agent, ingest-geoip. You can install them by running the following commands on all the Elasticsearch nodes:
-    sudo bin/elasticsearch-plugin install ingest-user-agent
-    sudo bin/elasticsearch-plugin install ingest-geoip
-#&#x5B89;&#x88C5;&#x63D2;&#x4EF6;
-[root@db01 /data/soft]# /usr/share/elasticsearch/bin/elasticsearch-plugin install ingest-user-agent
--&gt; Downloading ingest-user-agent from elastic
-[=================================================] 100%   
--&gt; Installed ingest-user-agent
-
-[root@db01 /data/soft]# /usr/share/elasticsearch/bin/elasticsearch-plugin install ingest-geoip
--&gt; Downloading ingest-geoip from elastic
-[=================================================] 100%   
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@     WARNING: plugin requires additional permissions     @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-* java.lang.RuntimePermission accessDeclaredMembers
-* java.lang.reflect.ReflectPermission suppressAccessChecks
-See http://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html
-for descriptions of what these permissions allow and the associated risks.
-
-Continue with installation? [y/N]y
--&gt; Installed ingest-geoip
-
-
-
-#&#x67E5;&#x770B;elasticsearch-plugin&#x547D;&#x4EE4;&#x76EE;&#x5F55;
-[root@db01 /data/soft]# rpm -ql elasticsearch |grep elasticsearch-plugin
-/usr/share/elasticsearch/bin/elasticsearch-plugin
-/usr/share/elasticsearch/lib/tools/plugin-cli/elasticsearch-plugin-cli-6.6.0.jar
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/zookeeper20210505224538.png" data-lightbox="0b26f3ec-8e7e-4f50-8c89-2a0d5b5f93a4" data-title="&#x7ED3;&#x6784;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/zookeeper20210505224538.png" alt="&#x7ED3;&#x6784;"></a></p>
+<h3 id="&#x5B89;&#x88C5;&#x914D;&#x7F6E;zookeeper">&#x5B89;&#x88C5;&#x914D;&#x7F6E;zookeeper</h3>
+<pre class="language-"><code class="lang-shell">[root@db01 /data/soft]# mkdir -p /data/zookeeper
+[root@db01 /data/soft]# cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg
+[root@db01 /data/soft]# vim /opt/zookeeper/conf/zoo.cfg
+[root@db01 /data/soft]# cat &gt;/opt/zookeeper/conf/zoo.cfg&lt;&lt;EOF
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/data/zookeeper
+clientPort=2181
+server.1=10.0.0.51:2888:3888
+server.2=10.0.0.52:2888:3888
+server.3=10.0.0.53:2888:3888
+EOF
+#&#x914D;&#x7F6E;mid
+[root@db01 /opt]# cat /data/zookeeper/mid
+1
 </code></pre>
-<h2 id="&#x7B2C;&#x4E09;&#x6B65;">&#x7B2C;&#x4E09;&#x6B65;</h2>
-<pre class="language-"><code class="lang-shell">## &#x914D;&#x7F6E;etc/filebeat/filebeat.yml
-[root@db01 /var/log/nginx]# cat &gt;/etc/filebeat/filebeat.yml &lt;&lt;EOF
-filebeat.config.modules:
-  path: ${path.config}/modules.d/*.yml
-  reload.enabled: true 
-  reload.period: 10s
+<h3 id="&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6B65;&#x9AA4;&#x548C;&#x8282;&#x70B9;1&#x4E00;&#x6837;&#x53EA;&#x662F;&#x6700;&#x540E;myid&#x4E0D;&#x4E00;&#x6837;&#x800C;&#x5DF2;">&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6B65;&#x9AA4;&#x548C;&#x8282;&#x70B9;1&#x4E00;&#x6837;,&#x53EA;&#x662F;&#x6700;&#x540E;myid&#x4E0D;&#x4E00;&#x6837;&#x800C;&#x5DF2;</h3>
+<pre class="language-"><code class="lang-shell">[root@db01 /opt]# rsync -avz zookeeper* db02:/opt/
+[root@db02 /opt]# cat /data/zookeeper/mid
+2
+[root@db01 /opt]# rsync -avz zookeeper* db03:/opt/
+[root@db03 /opt]# cat /data/zookeeper/mid
+3
+</code></pre>
+<h3 id="&#x542F;&#x52A8;&#x670D;&#x52A1;&#x67E5;&#x770B;&#x72B6;&#x6001;">&#x542F;&#x52A8;&#x670D;&#x52A1;&amp;&#x67E5;&#x770B;&#x72B6;&#x6001;</h3>
+<pre class="language-"><code class="lang-shell">#&#x542F;&#x52A8;
+[root@db01 /opt]# /opt/zookeeper/bin/zkServer.sh start
+#&#x67E5;&#x770B;&#x72B6;&#x6001;
+ [root@db01 /opt]# /opt/zookeeper/bin/zkServer.sh status
+</code></pre>
+<h2 id="kafka&#x5B89;&#x88C5;">kafka&#x5B89;&#x88C5;</h2>
+<h3 id="&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h3>
+<pre class="language-"><code class="lang-shell">[root@db01 /opt]# tar -xvzf /data/soft/kafka_2.11-1.0.0.tgz -C /opt
+[root@db01 /opt]# ln -s /opt/kafka_2.11-1.0.0/ /opt/kafka
+</code></pre>
+<h3 id="&#x5B89;&#x88C5;&#x914D;&#x7F6E;">&#x5B89;&#x88C5;&#x914D;&#x7F6E;</h3>
+<pre class="language-"><code class="lang-shell">[root@db01 /opt/kafka]# vim /opt/kafka/config/server.properties
+21 broker.id=1                                                                              
+31 listeners=PLAINTEXT://10.0.0.51:9092           
+60 log.dirs=/opt/kafka/logs                                     
+103 log.retention.hours=24                                                                   
+123 zookeeper.connect=10.0.0.51:2181,10.0.0.52:2181,10.0.0.53:2181
+</code></pre>
+<h3 id="&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6B65;&#x9AA4;&#x548C;&#x8282;&#x70B9;1&#x4E00;&#x6837;&#x53EA;&#x662F;&#x6700;listeners&#x4E0D;&#x4E00;&#x6837;&#x800C;&#x5DF2;">&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6B65;&#x9AA4;&#x548C;&#x8282;&#x70B9;1&#x4E00;&#x6837;,&#x53EA;&#x662F;&#x6700;listeners&#x4E0D;&#x4E00;&#x6837;&#x800C;&#x5DF2;</h3>
+<pre class="language-"><code class="lang-shell">[root@db01 /opt]# rsync -avz zookeeper* db02:/opt/
+[root@db02 /opt]# sed -i &apos;s#broker.id=1#broker.id=2#g&apos; /opt/kafka/config/server.properties
+[root@db02 /opt]# sed -i &apos;s#10.0.0.51:9092#10.0.0.52:9092#g&apos; /opt/kafka/config/server.properties
+[root@db01 /opt]# rsync -avz zookeeper* db03:/opt/
+[root@db03 /opt]# sed -i &apos;s#broker.id=1#broker.id=3#g&apos; /opt/kafka/config/server.properties
+[root@db03 /opt]# sed -i &apos;s#10.0.0.51:9092#10.0.0.53:9092#g&apos; /opt/kafka/config/server.properties
+</code></pre>
+<h3 id="&#x8282;&#x70B9;1&#x53EF;&#x4EE5;&#x5148;&#x524D;&#x53F0;&#x542F;&#x52A8;&#x65B9;&#x4FBF;&#x67E5;&#x770B;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;">&#x8282;&#x70B9;1,&#x53EF;&#x4EE5;&#x5148;&#x524D;&#x53F0;&#x542F;&#x52A8;,&#x65B9;&#x4FBF;&#x67E5;&#x770B;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;</h3>
+<pre class="language-"><code class="lang-shell">[root@db01 /opt]# /opt/kafka/bin/kafka-server-start.sh  /opt/kafka/config/server.properties
+[2021-05-06 17:06:33,642] INFO Result of znode creation is: OK (kafka.utils.ZKCheckedEphemeral)
+[2021-05-06 17:06:33,644] INFO Registered broker 2 at path /brokers/ids/2 with addresses: EndPoint(10.0.0.52,9092,ListenerName(PLAINTEXT),PLAINTEXT) (kafka.utils.ZkUtils)
+[2021-05-06 17:06:33,655] INFO Kafka version : 1.0.0 (org.apache.kafka.common.utils.AppInfoParser)
+[2021-05-06 17:06:33,655] INFO Kafka commitId : aaa7af6d4a11b29d (org.apache.kafka.common.utils.AppInfoParser)
+[2021-05-06 17:06:33,658] INFO [KafkaServer id=2] started (kafka.server.KafkaServer)
+# &#x540E;&#x53F0;&#x542F;&#x52A8;
+[root@db01 /opt]## /opt/kafka/bin/kafka-server-start.sh -daemon /opt/kafka/config/server.properties
+[root@db01 /opt]# tail -f /opt/kafka/logs/server.log
+=========================
+[2021-05-06 17:06:33,658] INFO [KafkaServer id=1] started (kafka.server.KafkaServer)
+</code></pre>
+<h3 id="&#x9A8C;&#x8BC1;&#x6D4B;&#x8BD5;">&#x9A8C;&#x8BC1;&#x6D4B;&#x8BD5;</h3>
+<pre class="language-"><code class="lang-shell">#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;topic
+[root@db01 /opt]# /opt/kafka/bin/kafka-topics.sh --create  --zookeeper 10.0.0.51:2181,10.0.0.52:2181,10.0.0.53:2181 --partitions 3 --replication-factor 3 --topic kafkatest
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+Created topic &quot;kafkatest&quot;.
+# &#x83B7;&#x53D6;topic
+[root@db02 /opt/kafka]# /opt/kafka/bin/kafka-topics.sh  --list --zookeeper 10.0.0.51:2181,10.0.0.52:2181,10.0.0.53:2181
 
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+kafkatest
+</code></pre>
+<h4 id="kafka&#x6D4B;&#x8BD5;&#x547D;&#x4EE4;&#x53D1;&#x9001;&#x6D88;&#x606F;">kafka&#x6D4B;&#x8BD5;&#x547D;&#x4EE4;&#x53D1;&#x9001;&#x6D88;&#x606F;</h4>
+<pre class="language-"><code class="lang-shell">
+#&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;messagetest&#x7684;topic
+ [root@db02 /opt/kafka]# /opt/kafka/bin/kafka-topics.sh --create --zookeeper 10.0.0.51:2181,10.0.0.52:2181,10.0.0.53:2181 --partitions 3 --replication-factor 3 --topic  messagetest
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+Created topic &quot;messagetest&quot;.
+#&#x53D1;&#x9001;&#x6D88;&#x606F;:&#x6CE8;&#x610F;,&#x7AEF;&#x53E3;&#x662F; kafka&#x7684;9092,&#x800C;&#x4E0D;&#x662F;zookeeper&#x7684;2181
+ [root@db02 /opt/kafka]# /opt/kafka/bin/kafka-console-producer.sh --broker-list 10.0.0.51:9092,10.0.0.52:9092,10.0.0.53:9092 --topic  messagetestOpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+&gt;
+&gt;biubiu
+# &#x5176;&#x4ED6;kafka&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x6D88;&#x606F;
+[root@db01 /opt]# /opt/kafka/bin/kafka-console-consumer.sh --zookeeper 10.0.0.51:2181,10.0.0.52:2181,10.0.0.53:2181 --topic messagetest --from-beginning
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+Using the ConsoleConsumer with old consumer is deprecated and will be removed in a future major release. Consider using the new consumer by passing [bootstrap-server] instead of [zookeeper].
+hello
+biubiu
+</code></pre>
+<h2 id="kafka&#x6536;&#x96C6;&#x65E5;&#x5FD7;&#x914D;&#x7F6E;">kafka&#x6536;&#x96C6;&#x65E5;&#x5FD7;&#x914D;&#x7F6E;</h2>
+<h3 id="&#x4FEE;&#x6539;filebeat&#x914D;&#x7F6E;">&#x4FEE;&#x6539;filebeat&#x914D;&#x7F6E;</h3>
+<pre class="language-"><code class="lang-shell">[root@kafka-175 conf.d]# cat &gt;/etc/filebeat/filebeat.yml&lt;&lt;EOF
+filebeat.inputs:
+- type: log
+  enabled: true 
+  paths:
+    - /var/log/nginx/access.log
+  json.keys_under_root: true
+  json.overwrite_keys: true
+  tags: [&quot;access&quot;]
+- type: log
+  enabled: true 
+  paths:
+    - /var/log/nginx/error.log
+  tags: [&quot;error&quot;]
 setup.kibana:
   host: &quot;10.0.0.51:5601&quot;
-
-output.elasticsearch:
-  hosts: [&quot;10.0.0.51:9200&quot;]
-  indices:
-  - index: &quot;nginx-access-%{[beat.version]}-%{+yyyy.MM}&quot;
-    when.contains:
-      fileset.name: &quot;access&quot;
-
-  - index: &quot;nginx-error-%{[beat.version]}-%{+yyyy.MM}&quot;
-    when.contains:
-      fileset.name: &quot;error&quot;
-
-setup.template.name: &quot;nginx&quot;
-setup.template.pattern: &quot;nginx-*&quot;
-setup.template.enabled: false
-setup.template.overwrite: true
+output.kafka:
+  hosts: [&quot;10.0.0.51:9092&quot;,&quot;10.0.0.52:9092&quot;,&quot;10.0.0.53:9092&quot;]
+  topic: elklog
 EOF
 </code></pre>
+<h3 id="&#x4FEE;&#x6539;-logstash&#x914D;&#x7F6E;">&#x4FEE;&#x6539; logstash&#x914D;&#x7F6E;</h3>
+<pre class="language-"><code class="lang-shell">cat &gt;/etc/logstash/conf.d/kafka.conf&lt;&lt;EOF
+input{
+  kafka{
+    bootstrap_servers=&gt;&quot;10.0.0.51:9092&quot;
+    topics=&gt;[&quot;elklog&quot;]
+    group_id=&gt;&quot;logstash&quot;
+    codec =&gt; &quot;json&quot;
+  }
+}
+filter {
+  mutate {
+    convert =&gt; [&quot;upstream_time&quot;, &quot;float&quot;]                                                                                                                        
+    convert =&gt; [&quot;request_time&quot;, &quot;float&quot;]
+  }
+}
+output {
+    if &quot;access&quot; in [tags] {
+      elasticsearch {
+        hosts =&gt; &quot;http://localhost:9200&quot;
+        manage_template =&gt; false
+        index =&gt; &quot;nginx_access-%{+yyyy.MM.dd}&quot;
+      }
+    }
+    if &quot;error&quot; in [tags] {
+      elasticsearch {
+        hosts =&gt; &quot;http://localhost:9200&quot;
+        manage_template =&gt; false
+        index =&gt; &quot;nginx_error-%{+yyyy.MM.dd}&quot;
+      }
+    }
+}
+EOF
+</code></pre>
+<h3 id="&#x91CD;&#x542F;&#x670D;&#x52A1;">&#x91CD;&#x542F;&#x670D;&#x52A1;</h3>
+<pre class="language-"><code class="lang-shell">#&#x542F;&#x52A8;filebeat
+[root@db01 ~]# systemctl restart filebeat
+#&#x542F;&#x52A8;logstash
+#&#x542F;&#x52A8;&#x670D;&#x52A1;
+[root@db01 /data/soft]#/usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/redis.conf
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wjhlog.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2021-05-06 18:12:06
+2021-05-06 18:47:44
 </span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -811,14 +854,10 @@ EOF
 
 		
 		
-		<a href="docker_log.html" class="navigation navigation-prev " aria-label="Previous page: 收集docker日志">
+		<a href="filebeat_modules_get_ngingx_simple_log.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: fibet收集ngingx日志">
 			<i class="fa fa-angle-left"></i>
 		</a>
 		
-		
-		<a href="kafka缓存收集日志.html" class="navigation navigation-next " aria-label="Next page: kafka缓存收集日志">
-			<i class="fa fa-angle-right"></i>
-		</a>
 		
 		
 		
@@ -826,7 +865,7 @@ EOF
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"fibet收集ngingx日志","level":"1.8.7","depth":2,"next":{"title":"kafka缓存收集日志","level":"1.8.8","depth":2,"path":"elk/kafka缓存收集日志.md","ref":"elk/kafka缓存收集日志.md","articles":[]},"previous":{"title":"收集docker日志","level":"1.8.6","depth":2,"path":"elk/docker_log.md","ref":"elk/docker_log.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"elk/filebeat_modules_get_ngingx_simple_log.md","mtime":"2021-05-06T10:12:06.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-06T10:49:27.613Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"kafka缓存收集日志","level":"1.8.8","depth":2,"previous":{"title":"fibet收集ngingx日志","level":"1.8.7","depth":2,"path":"elk/filebeat_modules_get_ngingx_simple_log.md","ref":"elk/filebeat_modules_get_ngingx_simple_log.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"elk/kafka缓存收集日志.md","mtime":"2021-05-06T10:47:44.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-06T10:49:27.613Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>
