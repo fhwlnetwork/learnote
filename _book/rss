@@ -4,7 +4,11 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
+<<<<<<< HEAD
         <lastBuildDate>Wed, 05 May 2021 08:46:34 GMT</lastBuildDate>
+=======
+        <lastBuildDate>Thu, 06 May 2021 10:50:09 GMT</lastBuildDate>
+>>>>>>> a225a9866f4f734de7fd65fc46f05998a9c32549
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -137,6 +141,7 @@
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
+<<<<<<< HEAD
             <title><![CDATA[kibana画图]]></title>
             <description><![CDATA[第一步]]></description>
             <link>http://note.wjhlog.com/elk/kibana_draw_dashboard.html</link>
@@ -148,6 +153,12 @@
             <description><![CDATA[结构]]></description>
             <link>http://note.wjhlog.com/elk/redis_cat_log.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/elk/redis_cat_log.html</guid>
+=======
+            <title><![CDATA[kafka和zookeeper安装]]></title>
+            <description><![CDATA[结构]]></description>
+            <link>http://note.wjhlog.com/elk/kafka缓存收集日志.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/kafka缓存收集日志.html</guid>
+>>>>>>> a225a9866f4f734de7fd65fc46f05998a9c32549
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
     </channel>

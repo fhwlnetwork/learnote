@@ -94,6 +94,7 @@ output {
 }
 EOF
 
+
 #启动服务
 [root@db01 /data/soft]#/usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/redis.conf 
 

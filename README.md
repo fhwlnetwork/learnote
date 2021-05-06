@@ -29,3 +29,4 @@
     * [filebet收集ngingx日志](elk/filebeat_modules_get_ngingx_simple_log.md)
     * [kibana画图](elk/kibana_draw_dashboard.md)
     * [redis作为缓存收集日志](elk/redis_cat_log.md)
+    * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
