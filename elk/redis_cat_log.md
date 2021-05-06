@@ -105,6 +105,43 @@ EOF
 ### filebeat收集日志写入到一个key中
 
 ```shell 
+[root@db01 /data/soft]# cat >/etc/logstash/conf.d/redis.conf<<EOF
+input {
+  redis {
+    host => "127.0.0.1"
+    port => "6379"
+    db => "0"
+    key => "filebeat"
+    data_type => "list"
+  }
+}
+
+filter {
+  mutate {
+    convert => ["upstream_time", "float"]
+    convert => ["request_time", "float"]
+  }
+}
+
+output {
+    stdout {}
+    if "access" in [tags] {
+      elasticsearch {
+        hosts => "http://localhost:9200"
+        manage_template => false
+        index => "nginx_access-%{+yyyy.MM.dd}"
+      }
+    }
+    if "error" in [tags] {
+      elasticsearch {
+        hosts => "http://localhost:9200"
+        manage_template => false
+        index => "nginx_error-%{+yyyy.MM.dd}"
+      }
+    }
+}
+EOF
+
 [root@db01 /data/soft]#cat > /etc/filebeat/filebeat.yml <<EOF
 filebeat.inputs:
 - type: log
