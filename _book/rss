@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 06 May 2021 11:12:28 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 06 May 2021 14:09:41 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -155,6 +155,13 @@
             <description><![CDATA[结构]]></description>
             <link>http://note.wjhlog.com/elk/kafka缓存收集日志.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/elk/kafka缓存收集日志.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[图谱架构图]]></description>
+            <link>http://note.wjhlog.com/elk/nginx_keepalived_redis.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/nginx_keepalived_redis.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
     </channel>

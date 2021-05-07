@@ -3,6 +3,7 @@
 * [简介](README.md)
 * linux笔记
     * [linux基础命令](linux/commond.md)
+    * [linux系统优化](linux/majorzation.md)
 * Nginx笔记
 * Tomact笔记
 * redis笔记
@@ -29,4 +30,4 @@
     * [kibana画图](elk/kibana_draw_dashboard.md)
     * [redis作为缓存收集日志](elk/redis_cat_log.md)
     * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
-
+    * [使用nginx+keepalived代理多台redis](elk/nginx_keepalived_redis.md)
