@@ -5,6 +5,7 @@
 * linux笔记
   
   * [linux基础命令](linux/commond.md)
+  * [linux时间](linux/time_synchronism.md)
   * [linux系统优化](linux/majorzation.md)
 * Nginx笔记
 * Tomact笔记
@@ -15,7 +16,6 @@
   * [redis集群扩容收缩](redis/集群扩容收缩.md)
   * [工具管理](redis/工具管理.md)
 * k8_docker笔记
-  
   * [安装](k8_docker/install.md)
 * ES笔记
   * [安装](es/install.md)
@@ -24,28 +24,16 @@
   * [集群配置](es/集群.md)
 * ELK笔记
     * [安装](elk/安装.md)
-    
     * [nginxjson日志采集](elk/nginx_log_json.md)
-    
     * [nginix正常日志和错误日志](elk/nginx_success_error_log.md)
-    
     * [tomcat日志收集](elk/tomcat_log_cat.md)
-    
-    * [java多行日志收集](elk/java_log.md)
-    
+    * [java多行日志收集](elk/java_log.md)  
     * [收集docker日志](elk/docker_log.md)
-    
     * [filebet收集ngingx日志](elk/filebeat_modules_get_ngingx_simple_log.md)
-    
     * [redis作为缓存收集日志](elk/redis_cat_log.md)
-    
     * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
-    
     * [kibana画图](elk/kibana_draw_dashboard.md)
-    
     * [redis作为缓存收集日志](elk/redis_cat_log.md)
-    
     * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
-    
     * [使用nginx+keepalived代理多台redis](elk/nginx_keepalived_redis.md)
 
