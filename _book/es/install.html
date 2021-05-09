@@ -288,12 +288,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../Disk partition.md">
+        <li class="chapter " data-level="1.2.4" data-path="../linux/Disk_partition.html">
             
-                <span>
+                <a href="../linux/Disk_partition.html">
             
                     
-                    磁盘分区
+                    linux磁盘分区
             
                 </a>
             
@@ -735,91 +735,91 @@
 					<section class="normal markdown-section">
 						
 						<h1 id="elasticsearch&#x5B89;&#x88C5;&#x90E8;&#x7F72;-rpm&#x5B89;&#x88C5;">Elasticsearch&#x5B89;&#x88C5;&#x90E8;&#x7F72;-rpm&#x5B89;&#x88C5;</h1>
-<pre class="language-"><code class="lang-shell">### &#x5B89;&#x88C5;java
-[root@db01 ~]# yum install -y java-1.8.0-openjdk.x86_64
-[root@db01 ~]# mkdir  -p /data/es_soft/
-[root@db01 ~]# cd /data/es_soft/
-[root@db01 /data/es_soft]# rpm -ivh elasticsearch-6.6.0.rpm
-[root@db01 /data/es_soft]# systemctl daemon-reload
-[root@db01 /data/es_soft]# systemctl enable elasticsearch.service
+<pre class="language-"><code class="lang-shell"><span class="token comment">### &#x5B89;&#x88C5;java</span>
+<span class="token punctuation">[</span>root@db01 ~<span class="token punctuation">]</span><span class="token comment"># yum install -y java-1.8.0-openjdk.x86_64</span>
+<span class="token punctuation">[</span>root@db01 ~<span class="token punctuation">]</span><span class="token comment"># mkdir  -p /data/es_soft/</span>
+<span class="token punctuation">[</span>root@db01 ~<span class="token punctuation">]</span><span class="token comment"># cd /data/es_soft/</span>
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># rpm -ivh elasticsearch-6.6.0.rpm</span>
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># systemctl daemon-reload</span>
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># systemctl enable elasticsearch.service</span>
 Created symlink from /etc/systemd/system/multi-user.target.wants/elasticsearch.service to /usr/lib/systemd/system/elasticsearch.service.
-[root@db01 /data/es_soft]# systemctl start elasticsearch.service
-[root@db01 /data/es_soft]# systemctl status elasticsearch.service
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># systemctl start elasticsearch.service</span>
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># systemctl status elasticsearch.service</span>
 &#x25CF; elasticsearch.service - Elasticsearch
-   Loaded: loaded (/usr/lib/systemd/system/elasticsearch.service; enabled; vendor preset: disabled)
-   Active: active (running) since Thu 2021-04-22 21:38:35 CST; 10s ago
+   Loaded: loaded <span class="token punctuation">(</span>/usr/lib/systemd/system/elasticsearch.service<span class="token punctuation">;</span> enabled<span class="token punctuation">;</span> vendor preset: disabled<span class="token punctuation">)</span>
+   Active: active <span class="token punctuation">(</span>running<span class="token punctuation">)</span> since Thu <span class="token number">2021</span>-04-22 <span class="token number">21</span>:38:35 CST<span class="token punctuation">;</span> 10s ago
      Docs: http://www.elastic.co
- Main PID: 6738 (java)
+ Main PID: <span class="token number">6738</span> <span class="token punctuation">(</span>java<span class="token punctuation">)</span>
    CGroup: /system.slice/elasticsearch.service
-           &#x2514;&#x2500;6738 /bin/java -Xms1g -Xmx1g -XX:+UseConcMarkSweepGC...
+           &#x2514;&#x2500;6738 /bin/java -Xms1g -Xmx1g -XX:+UseConcMarkSweepGC<span class="token punctuation">..</span>.
 
-Apr 22 21:38:35 db01 systemd[1]: Started Elasticsearch.
-Apr 22 21:38:35 db01 systemd[1]: Starting Elasticsearch...
-Apr 22 21:38:36 db01 elasticsearch[6738]: OpenJDK 64-Bit Server V...
-Hint: Some lines were ellipsized, use -l to show in full.
+Apr <span class="token number">22</span> <span class="token number">21</span>:38:35 db01 systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Started Elasticsearch.
+Apr <span class="token number">22</span> <span class="token number">21</span>:38:35 db01 systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Starting Elasticsearch<span class="token punctuation">..</span>.
+Apr <span class="token number">22</span> <span class="token number">21</span>:38:36 db01 elasticsearch<span class="token punctuation">[</span><span class="token number">6738</span><span class="token punctuation">]</span>: OpenJDK <span class="token number">64</span>-Bit Server V<span class="token punctuation">..</span>.
+Hint: Some lines were ellipsized, use -l to show <span class="token keyword">in</span> full.
 </code></pre>
-<pre class="language-"><code class="lang-shell">#&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x8BF4;&#x660E;
-rpm -qc elasticsearch        #&#x67E5;&#x770B;elasticsearch&#x7684;&#x6240;&#x6709;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x8BF4;&#x660E;</span>
+<span class="token function">rpm</span> -qc elasticsearch        <span class="token comment">#&#x67E5;&#x770B;elasticsearch&#x7684;&#x6240;&#x6709;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
 
-/etc/elasticsearch/elasticsearch.yml    #&#x914D;&#x7F6E;&#x6587;&#x4EF6;
-/etc/elasticsearch/jvm.options.            #jvm&#x865A;&#x62DF;&#x673A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
-/etc/init.d/elasticsearch          #init&#x542F;&#x52A8;&#x6587;&#x4EF6;
-/etc/sysconfig/elasticsearch        #&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
-/usr/lib/sysctl.d/elasticsearch.conf    #sysctl&#x53D8;&#x91CF;&#x6587;&#x4EF6;&#xFF0C;&#x4FEE;&#x6539;&#x6700;&#x5927;&#x63CF;&#x8FF0;&#x7B26;
-/usr/lib/systemd/system/elasticsearch.service  #systemd&#x542F;&#x52A8;&#x6587;&#x4EF6;
-/var/lib/elasticsearch        # &#x6570;&#x636E;&#x76EE;&#x5F55;
-/var/log/elasticsearch        #&#x65E5;&#x5FD7;&#x76EE;&#x5F55;
-/var/run/elasticsearch        #pid&#x76EE;&#x5F55;
+/etc/elasticsearch/elasticsearch.yml    <span class="token comment">#&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+/etc/elasticsearch/jvm.options.            <span class="token comment">#jvm&#x865A;&#x62DF;&#x673A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+/etc/init.d/elasticsearch          <span class="token comment">#init&#x542F;&#x52A8;&#x6587;&#x4EF6;</span>
+/etc/sysconfig/elasticsearch        <span class="token comment">#&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+/usr/lib/sysctl.d/elasticsearch.conf    <span class="token comment">#sysctl&#x53D8;&#x91CF;&#x6587;&#x4EF6;&#xFF0C;&#x4FEE;&#x6539;&#x6700;&#x5927;&#x63CF;&#x8FF0;&#x7B26;</span>
+/usr/lib/systemd/system/elasticsearch.service  <span class="token comment">#systemd&#x542F;&#x52A8;&#x6587;&#x4EF6;</span>
+/var/lib/elasticsearch        <span class="token comment"># &#x6570;&#x636E;&#x76EE;&#x5F55;</span>
+/var/log/elasticsearch        <span class="token comment">#&#x65E5;&#x5FD7;&#x76EE;&#x5F55;</span>
+/var/run/elasticsearch        <span class="token comment">#pid&#x76EE;&#x5F55;</span>
 </code></pre>
-<pre class="language-"><code class="lang-shell">#&#x4FEE;&#x6539;&#x914D;&#x7F6E;
-[root@db01 /data/es_soft]# vim /etc/elasticsearch/elasticsearch.yml
-network.host: 10.0.0.51
-#
-# Set a custom port for HTTP:
-#
-http.port: 9200
+<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x4FEE;&#x6539;&#x914D;&#x7F6E;</span>
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># vim /etc/elasticsearch/elasticsearch.yml</span>
+network.host: <span class="token number">10.0</span>.0.51
+<span class="token comment">#</span>
+<span class="token comment"># Set a custom port for HTTP:</span>
+<span class="token comment">#</span>
+http.port: <span class="token number">9200</span>
 
 &#x4FEE;&#x6539;&#x5B8C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540E;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x91CD;&#x542F;&#x4E00;&#x4E0B;
-[root@db01 /data/es_soft]# grep &quot;^[a-Z]&quot; /etc/elasticsearch/elasticsearch.yml
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># grep &quot;^[a-Z]&quot; /etc/elasticsearch/elasticsearch.yml</span>
 node.name: node-1
 path.data: /data/elasticsearch
 path.logs: /var/log/elasticsearch
-network.host: 10.0.0.51
-http.port: 9200
-bootstrap.memory_lock: true
+network.host: <span class="token number">10.0</span>.0.51
+http.port: <span class="token number">9200</span>
+bootstrap.memory_lock: <span class="token boolean">true</span>
 
 
-#JVM &#x914D;&#x7F6E;
-# &#x4E0D;&#x8981;&#x8D85;&#x8FC7;32g
-# &#x6700;&#x5927;&#x6700;&#x5C0F;&#x5185;&#x5B58;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E00;&#x6837;
-#&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x9501;&#x5B9A;&#x5185;&#x5B58;
-#&#x81F3;&#x5C11;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x672C;&#x8EAB;&#x7A7A;&#x4F59;50%&#x7684;&#x5185;&#x5B58;
-[root@db01 /etc/elasticsearch]# vim jvm.options 
+<span class="token comment">#JVM &#x914D;&#x7F6E;</span>
+<span class="token comment"># &#x4E0D;&#x8981;&#x8D85;&#x8FC7;32g</span>
+<span class="token comment"># &#x6700;&#x5927;&#x6700;&#x5C0F;&#x5185;&#x5B58;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E00;&#x6837;</span>
+<span class="token comment">#&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E;&#x9501;&#x5B9A;&#x5185;&#x5B58;</span>
+<span class="token comment">#&#x81F3;&#x5C11;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x672C;&#x8EAB;&#x7A7A;&#x4F59;50%&#x7684;&#x5185;&#x5B58;</span>
+<span class="token punctuation">[</span>root@db01 /etc/elasticsearch<span class="token punctuation">]</span><span class="token comment"># vim jvm.options </span>
 
 -Xms512m
 -Xmx512m
 
 
-# &#x521B;&#x5EFA;&#x76EE;&#x5F55;
-[root@db01 /data/es_soft]# mkdir -p /data/elasticsearch
-[root@db01 /data/es_soft]# chown -R elasticsearch:elasticsearch /data/elasticsearch/
-[root@db01 /data/es_soft]# systemctl restart elasticsearch
-[root@db01 /data/es_soft]# systemctl status elasticsearch
+<span class="token comment"># &#x521B;&#x5EFA;&#x76EE;&#x5F55;</span>
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># mkdir -p /data/elasticsearch</span>
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># chown -R elasticsearch:elasticsearch /data/elasticsearch/</span>
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># systemctl restart elasticsearch</span>
+<span class="token punctuation">[</span>root@db01 /data/es_soft<span class="token punctuation">]</span><span class="token comment"># systemctl status elasticsearch</span>
 
 &#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x4F1A;&#x542F;&#x52A8;&#x5931;&#x8D25;&#xFF0C;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x73B0;&#x662F;&#x9501;&#x5B9A;&#x5185;&#x5B58;&#x5931;&#x8D25;
 &#x5B98;&#x65B9;&#x89E3;&#x51B3;&#x65B9;&#x6848;
 https://www.elastic.co/guide/en/elasticsearch/reference/6.6/setup-configuration-memory.html
-https://www.elastic.co/guide/en/elasticsearch/reference/6.6/setting-system-settings.html#sysconfig
+https://www.elastic.co/guide/en/elasticsearch/reference/6.6/setting-system-settings.html<span class="token comment">#sysconfig</span>
 
 
-### &#x4FEE;&#x6539;&#x542F;&#x52A8;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6216;&#x521B;&#x5EFA;&#x65B0;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+<span class="token comment">### &#x4FEE;&#x6539;&#x542F;&#x52A8;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6216;&#x521B;&#x5EFA;&#x65B0;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
 &#x65B9;&#x6CD5;1: systemctl edit elasticsearch
-&#x65B9;&#x6CD5;2: vim /usr/lib/systemd/system/elasticsearch.service 
-### &#x589E;&#x52A0;&#x5982;&#x4E0B;&#x53C2;&#x6570;
-[Service]
-LimitMEMLOCK=infinity
+&#x65B9;&#x6CD5;2: <span class="token function">vim</span> /usr/lib/systemd/system/elasticsearch.service 
+<span class="token comment">### &#x589E;&#x52A0;&#x5982;&#x4E0B;&#x53C2;&#x6570;</span>
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">LimitMEMLOCK</span><span class="token operator">=</span>infinity
 
-### &#x91CD;&#x65B0;&#x542F;&#x52A8;
+<span class="token comment">### &#x91CD;&#x65B0;&#x542F;&#x52A8;</span>
 systemctl daemon-reload
 systemctl restart elasticsearch
 </code></pre>
@@ -869,7 +869,7 @@ discvery.type&#xFF1A; single-node
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"安装","level":"1.7.1","depth":2,"next":{"title":"交互","level":"1.7.2","depth":2,"path":"es/head插件交互.md","ref":"es/head插件交互.md","articles":[]},"previous":{"title":"ES笔记","level":"1.7","depth":1,"ref":"","articles":[{"title":"安装","level":"1.7.1","depth":2,"path":"es/install.md","ref":"es/install.md","articles":[]},{"title":"交互","level":"1.7.2","depth":2,"path":"es/head插件交互.md","ref":"es/head插件交互.md","articles":[]},{"title":"操作语言","level":"1.7.3","depth":2,"path":"es/dml.md","ref":"es/dml.md","articles":[]},{"title":"集群配置","level":"1.7.4","depth":2,"path":"es/集群.md","ref":"es/集群.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"es/install.md","mtime":"2021-04-23T13:19:28.995Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:05:27.722Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"安装","level":"1.7.1","depth":2,"next":{"title":"交互","level":"1.7.2","depth":2,"path":"es/head插件交互.md","ref":"es/head插件交互.md","articles":[]},"previous":{"title":"ES笔记","level":"1.7","depth":1,"ref":"","articles":[{"title":"安装","level":"1.7.1","depth":2,"path":"es/install.md","ref":"es/install.md","articles":[]},{"title":"交互","level":"1.7.2","depth":2,"path":"es/head插件交互.md","ref":"es/head插件交互.md","articles":[]},{"title":"操作语言","level":"1.7.3","depth":2,"path":"es/dml.md","ref":"es/dml.md","articles":[]},{"title":"集群配置","level":"1.7.4","depth":2,"path":"es/集群.md","ref":"es/集群.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"es/install.md","mtime":"2021-04-23T13:19:28.995Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:09:44.006Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

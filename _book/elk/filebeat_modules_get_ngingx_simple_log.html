@@ -290,12 +290,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../Disk partition.md">
+        <li class="chapter " data-level="1.2.4" data-path="../linux/Disk_partition.html">
             
-                <span>
+                <a href="../linux/Disk_partition.html">
             
                     
-                    磁盘分区
+                    linux磁盘分区
             
                 </a>
             
@@ -737,10 +737,10 @@
 					<section class="normal markdown-section">
 						
 						<h1 id="filebeat&#x6A21;&#x5757;&#x6536;&#x96C6;ngingx&#x666E;&#x901A;&#x65E5;&#x5FD7;">filebeat&#x6A21;&#x5757;&#x6536;&#x96C6;ngingx&#x666E;&#x901A;&#x65E5;&#x5FD7;</h1>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429220514.png" data-lightbox="3ca00bb1-9547-4f20-8264-2cbe19270459" data-title="&#x56FE;&#x793A;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429220514.png" alt="&#x56FE;&#x793A;"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429220514.png" data-lightbox="a7a1d73b-9bcb-465e-bc07-3b4b3d5f1c17" data-title="&#x56FE;&#x793A;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429220514.png" alt="&#x56FE;&#x793A;"></a></p>
 <h2 id="&#x7B2C;&#x4E00;&#x6B65;">&#x7B2C;&#x4E00;&#x6B65;</h2>
-<pre class="language-"><code class="lang-shell">#&#x67E5;&#x770B;filebeat&#x6587;&#x4EF6;
-[root@db01 /data/soft]# rpm -qc filebeat 
+<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x67E5;&#x770B;filebeat&#x6587;&#x4EF6;</span>
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment"># rpm -qc filebeat </span>
 /etc/filebeat/filebeat.yml
 /etc/filebeat/modules.d/apache2.yml.disabled
 /etc/filebeat/modules.d/auditd.yml.disabled
@@ -762,102 +762,102 @@
 /etc/filebeat/modules.d/traefik.yml.disabled
 
 
-#&#x67E5;&#x8BE2;&#x6A21;&#x677F;
+<span class="token comment">#&#x67E5;&#x8BE2;&#x6A21;&#x677F;</span>
 filebeat modules list
-#&#x6FC0;&#x6D3B;&#x6A21;&#x5757;
-filebeat moudles enable nginx
-#&#x914D;&#x7F6E;nginx.yml&#x6587;&#x4EF6;&#x914D;&#x7F6E;
-[root@db01 /data/soft]# vim /etc/filebeat/modules.d/nginx.yml
+<span class="token comment">#&#x6FC0;&#x6D3B;&#x6A21;&#x5757;</span>
+filebeat moudles <span class="token builtin class-name">enable</span> nginx
+<span class="token comment">#&#x914D;&#x7F6E;nginx.yml&#x6587;&#x4EF6;&#x914D;&#x7F6E;</span>
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment"># vim /etc/filebeat/modules.d/nginx.yml</span>
 - module: nginx
-  # Access logs
+  <span class="token comment"># Access logs</span>
   access:
-    enabled: true
-    # Set custom paths for the log files. If left empty,
-    # Filebeat will choose the paths depending on your OS.
-    var.paths: [&quot;/var/log/nginx/access.log&quot;]
-  # Error logs
+    enabled: <span class="token boolean">true</span>
+    <span class="token comment"># Set custom paths for the log files. If left empty,</span>
+    <span class="token comment"># Filebeat will choose the paths depending on your OS.</span>
+    var.paths: <span class="token punctuation">[</span><span class="token string">&quot;/var/log/nginx/access.log&quot;</span><span class="token punctuation">]</span>
+  <span class="token comment"># Error logs</span>
   error:
-    enabled: true
-    # Set custom paths for the log files. If left empty,
-    # Filebeat will choose the paths depending on your OS.
-    #var.paths:
-    var.paths: [&quot;/var/log/nginx/error.log&quot;]
+    enabled: <span class="token boolean">true</span>
+    <span class="token comment"># Set custom paths for the log files. If left empty,</span>
+    <span class="token comment"># Filebeat will choose the paths depending on your OS.</span>
+    <span class="token comment">#var.paths:</span>
+    var.paths: <span class="token punctuation">[</span><span class="token string">&quot;/var/log/nginx/error.log&quot;</span><span class="token punctuation">]</span>
 
-#&#x914D;&#x7F6E;filebeat modules
-#============================= Filebeat modules ===============================
-#
+<span class="token comment">#&#x914D;&#x7F6E;filebeat modules</span>
+<span class="token comment">#============================= Filebeat modules ===============================</span>
+<span class="token comment">#</span>
 filebeat.config.modules:
-#  # Glob pattern for configuration loading
-    path: ${path.config}/modules.d/*.yml
-    reload.enabled: false
+<span class="token comment">#  # Glob pattern for configuration loading</span>
+    path: <span class="token variable">${path.config}</span>/modules.d/*.yml
+    reload.enabled: <span class="token boolean">false</span>
     reload.period: 10s
 
 output.elasticsearch:
-  hosts: [&quot;10.0.0.51:9200&quot;]
+  hosts: <span class="token punctuation">[</span><span class="token string">&quot;10.0.0.51:9200&quot;</span><span class="token punctuation">]</span>
 ~     
 ~
 </code></pre>
 <h2 id="&#x7B2C;&#x4E8C;&#x6B65;">&#x7B2C;&#x4E8C;&#x6B65;</h2>
-<pre class="language-"><code class="lang-shell">#&#x91CD;&#x542F;&#x670D;&#x52A1;
-[root@db01 /data/soft]# systemctl restart filebeat.service
+<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x91CD;&#x542F;&#x670D;&#x52A1;</span>
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment"># systemctl restart filebeat.service</span>
 
-#&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x62A5;&#x9519;
-2021-04-29T21:49:12.254+0800    ERROR    fileset/factory.go:142    Error loading pipeline: Error loading pipeline for fileset nginx/access: This module requires the following Elasticsearch plugins: ingest-user-agent, ingest-geoip. You can install them by running the following commands on all the Elasticsearch nodes:
-    sudo bin/elasticsearch-plugin install ingest-user-agent
-    sudo bin/elasticsearch-plugin install ingest-geoip
-#&#x5B89;&#x88C5;&#x63D2;&#x4EF6;
-[root@db01 /data/soft]# /usr/share/elasticsearch/bin/elasticsearch-plugin install ingest-user-agent
--&gt; Downloading ingest-user-agent from elastic
-[=================================================] 100%   
--&gt; Installed ingest-user-agent
+<span class="token comment">#&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x62A5;&#x9519;</span>
+<span class="token number">2021</span>-04-29T21:49:12.254+0800    ERROR    fileset/factory.go:142    Error loading pipeline: Error loading pipeline <span class="token keyword">for</span> fileset nginx/access: This module requires the following Elasticsearch plugins: ingest-user-agent, ingest-geoip. You can <span class="token function">install</span> them by running the following commands on all the Elasticsearch nodes:
+    <span class="token function">sudo</span> bin/elasticsearch-plugin <span class="token function">install</span> ingest-user-agent
+    <span class="token function">sudo</span> bin/elasticsearch-plugin <span class="token function">install</span> ingest-geoip
+<span class="token comment">#&#x5B89;&#x88C5;&#x63D2;&#x4EF6;</span>
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment"># /usr/share/elasticsearch/bin/elasticsearch-plugin install ingest-user-agent</span>
+-<span class="token operator">&gt;</span> Downloading ingest-user-agent from elastic
+<span class="token punctuation">[</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token punctuation">]</span> <span class="token number">100</span>%   
+-<span class="token operator">&gt;</span> Installed ingest-user-agent
 
-[root@db01 /data/soft]# /usr/share/elasticsearch/bin/elasticsearch-plugin install ingest-geoip
--&gt; Downloading ingest-geoip from elastic
-[=================================================] 100%   
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment"># /usr/share/elasticsearch/bin/elasticsearch-plugin install ingest-geoip</span>
+-<span class="token operator">&gt;</span> Downloading ingest-geoip from elastic
+<span class="token punctuation">[</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token punctuation">]</span> <span class="token number">100</span>%   
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @     WARNING: plugin requires additional permissions     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 * java.lang.RuntimePermission accessDeclaredMembers
 * java.lang.reflect.ReflectPermission suppressAccessChecks
 See http://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html
-for descriptions of what these permissions allow and the associated risks.
+<span class="token keyword">for</span> descriptions of what these permissions allow and the associated risks.
 
-Continue with installation? [y/N]y
--&gt; Installed ingest-geoip
+Continue with installation? <span class="token punctuation">[</span>y/N<span class="token punctuation">]</span>y
+-<span class="token operator">&gt;</span> Installed ingest-geoip
 
 
 
-#&#x67E5;&#x770B;elasticsearch-plugin&#x547D;&#x4EE4;&#x76EE;&#x5F55;
-[root@db01 /data/soft]# rpm -ql elasticsearch |grep elasticsearch-plugin
+<span class="token comment">#&#x67E5;&#x770B;elasticsearch-plugin&#x547D;&#x4EE4;&#x76EE;&#x5F55;</span>
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment"># rpm -ql elasticsearch |grep elasticsearch-plugin</span>
 /usr/share/elasticsearch/bin/elasticsearch-plugin
 /usr/share/elasticsearch/lib/tools/plugin-cli/elasticsearch-plugin-cli-6.6.0.jar
 </code></pre>
 <h2 id="&#x7B2C;&#x4E09;&#x6B65;">&#x7B2C;&#x4E09;&#x6B65;</h2>
-<pre class="language-"><code class="lang-shell">## &#x914D;&#x7F6E;etc/filebeat/filebeat.yml
-[root@db01 /var/log/nginx]# cat &gt;/etc/filebeat/filebeat.yml &lt;&lt;EOF
+<pre class="language-"><code class="lang-shell"><span class="token comment">## &#x914D;&#x7F6E;etc/filebeat/filebeat.yml</span>
+<span class="token punctuation">[</span>root@db01 /var/log/nginx<span class="token punctuation">]</span><span class="token comment"># cat &gt;/etc/filebeat/filebeat.yml &lt;&lt;EOF</span>
 filebeat.config.modules:
-  path: ${path.config}/modules.d/*.yml
-  reload.enabled: true 
+  path: <span class="token variable">${path.config}</span>/modules.d/*.yml
+  reload.enabled: <span class="token boolean">true</span> 
   reload.period: 10s
 
 setup.kibana:
-  host: &quot;10.0.0.51:5601&quot;
+  host: <span class="token string">&quot;10.0.0.51:5601&quot;</span>
 
 output.elasticsearch:
-  hosts: [&quot;10.0.0.51:9200&quot;]
+  hosts: <span class="token punctuation">[</span><span class="token string">&quot;10.0.0.51:9200&quot;</span><span class="token punctuation">]</span>
   indices:
-  - index: &quot;nginx-access-%{[beat.version]}-%{+yyyy.MM}&quot;
+  - index: <span class="token string">&quot;nginx-access-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
     when.contains:
-      fileset.name: &quot;access&quot;
+      fileset.name: <span class="token string">&quot;access&quot;</span>
 
-  - index: &quot;nginx-error-%{[beat.version]}-%{+yyyy.MM}&quot;
+  - index: <span class="token string">&quot;nginx-error-%{[beat.version]}-%{+yyyy.MM}&quot;</span>
     when.contains:
-      fileset.name: &quot;error&quot;
+      fileset.name: <span class="token string">&quot;error&quot;</span>
 
-setup.template.name: &quot;nginx&quot;
-setup.template.pattern: &quot;nginx-*&quot;
-setup.template.enabled: false
-setup.template.overwrite: true
+setup.template.name: <span class="token string">&quot;nginx&quot;</span>
+setup.template.pattern: <span class="token string">&quot;nginx-*&quot;</span>
+setup.template.enabled: <span class="token boolean">false</span>
+setup.template.overwrite: <span class="token boolean">true</span>
 EOF
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wjhlog.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
@@ -904,7 +904,7 @@ EOF
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"fibet收集ngingx日志","level":"1.8.7","depth":2,"next":{"title":"kibana画图","level":"1.8.8","depth":2,"path":"elk/kibana_draw_dashboard.md","ref":"elk/kibana_draw_dashboard.md","articles":[]},"previous":{"title":"收集docker日志","level":"1.8.6","depth":2,"path":"elk/docker_log.md","ref":"elk/docker_log.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"elk/filebeat_modules_get_ngingx_simple_log.md","mtime":"2021-05-06T10:12:06.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:05:27.722Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"fibet收集ngingx日志","level":"1.8.7","depth":2,"next":{"title":"kibana画图","level":"1.8.8","depth":2,"path":"elk/kibana_draw_dashboard.md","ref":"elk/kibana_draw_dashboard.md","articles":[]},"previous":{"title":"收集docker日志","level":"1.8.6","depth":2,"path":"elk/docker_log.md","ref":"elk/docker_log.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"elk/filebeat_modules_get_ngingx_simple_log.md","mtime":"2021-05-06T10:12:06.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:09:44.006Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

@@ -4,6 +4,7 @@
 <url> <loc>https://log.wjhlog.com/linux/commond.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/linux/time_synchronism.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/linux/majorzation.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/linux/Disk_partition.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/redis/安装.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/redis/主从配置_哨兵.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/redis/集群.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>

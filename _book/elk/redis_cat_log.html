@@ -290,12 +290,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../Disk partition.md">
+        <li class="chapter " data-level="1.2.4" data-path="../linux/Disk_partition.html">
             
-                <span>
+                <a href="../linux/Disk_partition.html">
             
                     
-                    磁盘分区
+                    linux磁盘分区
             
                 </a>
             
@@ -738,205 +738,205 @@
 						
 						<h1 id="redis&#x4F5C;&#x4E3A;&#x7F13;&#x5B58;&#x6536;&#x96C6;&#x65E5;&#x5FD7;">redis&#x4F5C;&#x4E3A;&#x7F13;&#x5B58;&#x6536;&#x96C6;&#x65E5;&#x5FD7;</h1>
 <h2 id="&#x65B9;&#x5F0F;&#x4E00;">&#x65B9;&#x5F0F;&#x4E00;</h2>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210430150710.png" data-lightbox="0bcd8e2e-3f0b-447d-a8f9-2566f5d768eb" data-title="&#x7ED3;&#x6784;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210430150710.png" alt="&#x7ED3;&#x6784;"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210430150710.png" data-lightbox="ad148299-00c4-4d53-9bc5-a0ae614fc1f3" data-title="&#x7ED3;&#x6784;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210430150710.png" alt="&#x7ED3;&#x6784;"></a></p>
 <h3 id="&#x5B89;&#x88C5;logstash">&#x5B89;&#x88C5;logstash</h3>
-<pre class="language-"><code class="lang-shell">[root@db01 /data/soft]#rpm -ivh logstash-6.6.0.rpm 
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment">#rpm -ivh logstash-6.6.0.rpm </span>
 warning: logstash-6.6.0.rpm: Header V4 RSA/SHA512 Signature, key ID d88e42b4: NOKEY
-Preparing...                          
-################################# [100%]
-Updating / installing...
-   1:logstash-1:6.6.0-1               ################################# [100%]
+Preparing<span class="token punctuation">..</span>.                          
+<span class="token comment">################################# [100%]</span>
+Updating / installing<span class="token punctuation">..</span>.
+   <span class="token number">1</span>:logstash-1:6.6.0-1               <span class="token comment">################################# [100%]</span>
 Using provided startup.options file: /etc/logstash/startup.options
-OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
-Successfully created system startup script for Logstash
+OpenJDK <span class="token number">64</span>-Bit Server VM warning: If the number of processors is expected to increase from one, <span class="token keyword">then</span> you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads<span class="token operator">=</span>N
+Successfully created system startup script <span class="token keyword">for</span> Logstash
 </code></pre>
 <h3 id="&#x914D;&#x7F6E;filebeat&#x5199;&#x5165;&#x5230;&#x4E0D;&#x540C;&#x7684;key&#x4E2D;">&#x914D;&#x7F6E;filebeat&#x5199;&#x5165;&#x5230;&#x4E0D;&#x540C;&#x7684;key&#x4E2D;</h3>
-<pre class="language-"><code class="lang-shell">[root@db01 /data/soft]#cat &gt;/etc/filebeat/filebeat.yml &lt;&lt;EOF
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment">#cat &gt;/etc/filebeat/filebeat.yml &lt;&lt;EOF</span>
 filebeat.inputs:
 - type: log
-  enabled: true
+  enabled: <span class="token boolean">true</span>
   paths:
     - /var/log/nginx/access.log
-  json.keys_undr_root: true
-  json.overwrite_keys: true
-  tags: [&quot;access&quot;]
+  json.keys_undr_root: <span class="token boolean">true</span>
+  json.overwrite_keys: <span class="token boolean">true</span>
+  tags: <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span>
 - type: log
-  enabled: true
+  enabled: <span class="token boolean">true</span>
   paths:
     - /var/log/nginx/error.log
-  tags: [&quot;error&quot;]
+  tags: <span class="token punctuation">[</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">]</span>
 setup.kibana:
-  hosts: 10.0.0.51:5601
+  hosts: <span class="token number">10.0</span>.0.51:5601
 output.redis:
-  hostst: [&quot;localhost&quot;]
+  hostst: <span class="token punctuation">[</span><span class="token string">&quot;localhost&quot;</span><span class="token punctuation">]</span>
   keys: 
-    - key: &quot;nginx_access&quot;
+    - key: <span class="token string">&quot;nginx_access&quot;</span>
       when.contains:
-        tags: &quot;access&quot;
-    - key: &quot;nginx_error&quot;
+        tags: <span class="token string">&quot;access&quot;</span>
+    - key: <span class="token string">&quot;nginx_error&quot;</span>
       when.contains:
-        tags: &quot;error&quot;
+        tags: <span class="token string">&quot;error&quot;</span>
 EOF
 </code></pre>
 <h3 id="616-logstash&#x6839;&#x636E;tag&#x533A;&#x5206;&#x4E00;&#x4E2A;key&#x91CC;&#x7684;&#x4E0D;&#x540C;&#x65E5;&#x5FD7;">6.1.6 logstash&#x6839;&#x636E;tag&#x533A;&#x5206;&#x4E00;&#x4E2A;key&#x91CC;&#x7684;&#x4E0D;&#x540C;&#x65E5;&#x5FD7;</h3>
 <pre class="language-"><code class="lang-shell">
-[root@db01 /data/soft]#cat &gt;/etc/logstash/conf.d/redis.conf&lt;&lt;EOF
-input {
-  redis {
-    host =&gt; &quot;127.0.0.1&quot;
-    port =&gt; &quot;6379&quot;
-    db =&gt; &quot;0&quot;
-    key =&gt; &quot;nginx_access&quot;
-    data_type =&gt; &quot;list&quot;
-  }
-  redis {
-    host =&gt; &quot;127.0.0.1&quot;
-    port =&gt; &quot;6379&quot;
-    db =&gt; &quot;0&quot;
-    key =&gt; &quot;nginx_error&quot;
-    data_type =&gt; &quot;list&quot;
-  }
-}
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment">#cat &gt;/etc/logstash/conf.d/redis.conf&lt;&lt;EOF</span>
+input <span class="token punctuation">{</span>
+  redis <span class="token punctuation">{</span>
+    <span class="token function">host</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;127.0.0.1&quot;</span>
+    port <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;6379&quot;</span>
+    db <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;0&quot;</span>
+    key <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_access&quot;</span>
+    data_type <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;list&quot;</span>
+  <span class="token punctuation">}</span>
+  redis <span class="token punctuation">{</span>
+    <span class="token function">host</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;127.0.0.1&quot;</span>
+    port <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;6379&quot;</span>
+    db <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;0&quot;</span>
+    key <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_error&quot;</span>
+    data_type <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;list&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-filter {
-  mutate {
-    convert =&gt; [&quot;upstream_time&quot;, &quot;float&quot;]
-    convert =&gt; [&quot;request_time&quot;, &quot;float&quot;]
-  }
-}
+filter <span class="token punctuation">{</span>
+  mutate <span class="token punctuation">{</span>
+    convert <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;upstream_time&quot;</span>, <span class="token string">&quot;float&quot;</span><span class="token punctuation">]</span>
+    convert <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;request_time&quot;</span>, <span class="token string">&quot;float&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-output {
-    stdout {}
-    if &quot;access&quot; in [tags] {
-      elasticsearch {
-        hosts =&gt; &quot;http://localhost:9200&quot;
-        manage_template =&gt; false
-        index =&gt; &quot;nginx_access-%{+yyyy.MM.dd}&quot;
-      }
-    }
-    if &quot;error&quot; in [tags] {
-      elasticsearch {
-        hosts =&gt; &quot;http://localhost:9200&quot;
-        manage_template =&gt; false
-        index =&gt; &quot;nginx_error-%{+yyyy.MM.dd}&quot;
-      }
-    }
-}
+output <span class="token punctuation">{</span>
+    stdout <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token string">&quot;access&quot;</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>tags<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+      elasticsearch <span class="token punctuation">{</span>
+        hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;http://localhost:9200&quot;</span>
+        manage_template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
+        index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_access-%{+yyyy.MM.dd}&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token string">&quot;error&quot;</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>tags<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+      elasticsearch <span class="token punctuation">{</span>
+        hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;http://localhost:9200&quot;</span>
+        manage_template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
+        index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_error-%{+yyyy.MM.dd}&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 EOF
 
 
-#&#x542F;&#x52A8;&#x670D;&#x52A1;
-[root@db01 /data/soft]#/usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/redis.conf
+<span class="token comment">#&#x542F;&#x52A8;&#x670D;&#x52A1;</span>
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment">#/usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/redis.conf</span>
 </code></pre>
 <h2 id="&#x65B9;&#x5F0F;&#x4E8C;">&#x65B9;&#x5F0F;&#x4E8C;</h2>
 <h3 id="filebeat&#x6536;&#x96C6;&#x65E5;&#x5FD7;&#x5199;&#x5165;&#x5230;&#x4E00;&#x4E2A;key&#x4E2D;">filebeat&#x6536;&#x96C6;&#x65E5;&#x5FD7;&#x5199;&#x5165;&#x5230;&#x4E00;&#x4E2A;key&#x4E2D;</h3>
-<pre class="language-"><code class="lang-shell">[root@db01 /data/soft]# cat &gt;/etc/logstash/conf.d/redis.conf&lt;&lt;EOF
-input {
-  redis {
-    host =&gt; &quot;127.0.0.1&quot;
-    port =&gt; &quot;6379&quot;
-    db =&gt; &quot;0&quot;
-    key =&gt; &quot;filebeat&quot;
-    data_type =&gt; &quot;list&quot;
-  }
-}
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment"># cat &gt;/etc/logstash/conf.d/redis.conf&lt;&lt;EOF</span>
+input <span class="token punctuation">{</span>
+  redis <span class="token punctuation">{</span>
+    <span class="token function">host</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;127.0.0.1&quot;</span>
+    port <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;6379&quot;</span>
+    db <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;0&quot;</span>
+    key <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;filebeat&quot;</span>
+    data_type <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;list&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-filter {
-  mutate {
-    convert =&gt; [&quot;upstream_time&quot;, &quot;float&quot;]
-    convert =&gt; [&quot;request_time&quot;, &quot;float&quot;]
-  }
-}
+filter <span class="token punctuation">{</span>
+  mutate <span class="token punctuation">{</span>
+    convert <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;upstream_time&quot;</span>, <span class="token string">&quot;float&quot;</span><span class="token punctuation">]</span>
+    convert <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;request_time&quot;</span>, <span class="token string">&quot;float&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-output {
-    stdout {}
-    if &quot;access&quot; in [tags] {
-      elasticsearch {
-        hosts =&gt; &quot;http://localhost:9200&quot;
-        manage_template =&gt; false
-        index =&gt; &quot;nginx_access-%{+yyyy.MM.dd}&quot;
-      }
-    }
-    if &quot;error&quot; in [tags] {
-      elasticsearch {
-        hosts =&gt; &quot;http://localhost:9200&quot;
-        manage_template =&gt; false
-        index =&gt; &quot;nginx_error-%{+yyyy.MM.dd}&quot;
-      }
-    }
-}
+output <span class="token punctuation">{</span>
+    stdout <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token string">&quot;access&quot;</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>tags<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+      elasticsearch <span class="token punctuation">{</span>
+        hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;http://localhost:9200&quot;</span>
+        manage_template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
+        index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_access-%{+yyyy.MM.dd}&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token string">&quot;error&quot;</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>tags<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+      elasticsearch <span class="token punctuation">{</span>
+        hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;http://localhost:9200&quot;</span>
+        manage_template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
+        index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_error-%{+yyyy.MM.dd}&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 EOF
 
-[root@db01 /data/soft]#cat &gt; /etc/filebeat/filebeat.yml &lt;&lt;EOF
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment">#cat &gt; /etc/filebeat/filebeat.yml &lt;&lt;EOF</span>
 filebeat.inputs:
 - type: log
-  enabled: true
+  enabled: <span class="token boolean">true</span>
   paths:
     - /var/log/nginx/access.log
-  json.keys_undr_root: true
-  json.overwrite_keys: true
-  tags: [&quot;access&quot;]
+  json.keys_undr_root: <span class="token boolean">true</span>
+  json.overwrite_keys: <span class="token boolean">true</span>
+  tags: <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span>
 - type: log
-  enabled: true
+  enabled: <span class="token boolean">true</span>
   paths:
     - /var/log/nginx/error.log
-  tags: [&quot;error&quot;]
+  tags: <span class="token punctuation">[</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">]</span>
 setup.kibana:
-  hosts: 10.0.0.51:5601
+  hosts: <span class="token number">10.0</span>.0.51:5601
 output.redis:
-  hosts: [&quot;localhost&quot;]
-  key: &quot;filebeat&quot;
+  hosts: <span class="token punctuation">[</span><span class="token string">&quot;localhost&quot;</span><span class="token punctuation">]</span>
+  key: <span class="token string">&quot;filebeat&quot;</span>
 EOF
 </code></pre>
 <h3 id="logstash&#x6839;&#x636E;tag&#x533A;&#x5206;&#x4E00;&#x4E2A;key&#x91CC;&#x7684;&#x4E0D;&#x540C;&#x65E5;&#x5FD7;">logstash&#x6839;&#x636E;tag&#x533A;&#x5206;&#x4E00;&#x4E2A;key&#x91CC;&#x7684;&#x4E0D;&#x540C;&#x65E5;&#x5FD7;</h3>
-<pre class="language-"><code class="lang-shell">[root@db01 /data/soft]#cat &gt;/etc/logstash/conf.d/redis.conf &lt;&lt;EOF
-input {
-  redis {
-    host =&gt; &quot;127.0.0.1&quot;
-    port =&gt; &quot;6379&quot;
-    db =&gt; &quot;0&quot;
-    key =&gt; &quot;nginx_access&quot;
-    data_type =&gt; &quot;list&quot;
-  }
-  redis {
-    host =&gt; &quot;127.0.0.1&quot;
-    port =&gt; &quot;6379&quot;
-    db =&gt; &quot;0&quot;
-    key =&gt; &quot;nginx_error&quot;
-    data_type =&gt; &quot;list&quot;
-  }
-}
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment">#cat &gt;/etc/logstash/conf.d/redis.conf &lt;&lt;EOF</span>
+input <span class="token punctuation">{</span>
+  redis <span class="token punctuation">{</span>
+    <span class="token function">host</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;127.0.0.1&quot;</span>
+    port <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;6379&quot;</span>
+    db <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;0&quot;</span>
+    key <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_access&quot;</span>
+    data_type <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;list&quot;</span>
+  <span class="token punctuation">}</span>
+  redis <span class="token punctuation">{</span>
+    <span class="token function">host</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;127.0.0.1&quot;</span>
+    port <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;6379&quot;</span>
+    db <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;0&quot;</span>
+    key <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_error&quot;</span>
+    data_type <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;list&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-filter {
-  mutate {
-    convert =&gt; [&quot;upstream_time&quot;, &quot;float&quot;]
-    convert =&gt; [&quot;request_time&quot;, &quot;float&quot;]
-  }
-}
+filter <span class="token punctuation">{</span>
+  mutate <span class="token punctuation">{</span>
+    convert <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;upstream_time&quot;</span>, <span class="token string">&quot;float&quot;</span><span class="token punctuation">]</span>
+    convert <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;request_time&quot;</span>, <span class="token string">&quot;float&quot;</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-output {
-    stdout {}
-    if &quot;access&quot; in [tags] {
-      elasticsearch {
-        hosts =&gt; &quot;http://localhost:9200&quot;
-        manage_template =&gt; false
-        index =&gt; &quot;nginx_access-%{+yyyy.MM.dd}&quot;
-      }
-    }
-    if &quot;error&quot; in [tags] {
-      elasticsearch {
-        hosts =&gt; &quot;http://localhost:9200&quot;
-        manage_template =&gt; false
-        index =&gt; &quot;nginx_error-%{+yyyy.MM.dd}&quot;
-      }
-    }
-}
+output <span class="token punctuation">{</span>
+    stdout <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token string">&quot;access&quot;</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>tags<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+      elasticsearch <span class="token punctuation">{</span>
+        hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;http://localhost:9200&quot;</span>
+        manage_template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
+        index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_access-%{+yyyy.MM.dd}&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token string">&quot;error&quot;</span> <span class="token keyword">in</span> <span class="token punctuation">[</span>tags<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+      elasticsearch <span class="token punctuation">{</span>
+        hosts <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;http://localhost:9200&quot;</span>
+        manage_template <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
+        index <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;nginx_error-%{+yyyy.MM.dd}&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 EOF
 </code></pre>
 <h3 id="&#x91CD;&#x542F;&#x670D;&#x52A1;">&#x91CD;&#x542F;&#x670D;&#x52A1;</h3>
-<pre class="language-"><code class="lang-shell">[root@db01 /data/soft]#systemctl restart filebeat.service 
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment">#systemctl restart filebeat.service </span>
 
-[root@db01 /data/soft]#/usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/redis.conf
+<span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment">#/usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/redis.conf</span>
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wjhlog.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
 2021-05-06 21:53:21
@@ -982,7 +982,7 @@ EOF
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"redis作为缓存收集日志","level":"1.8.9","depth":2,"next":{"title":"kafka缓存收集日志","level":"1.8.10","depth":2,"path":"elk/kafka缓存收集日志.md","ref":"elk/kafka缓存收集日志.md","articles":[]},"previous":{"title":"kibana画图","level":"1.8.8","depth":2,"path":"elk/kibana_draw_dashboard.md","ref":"elk/kibana_draw_dashboard.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"elk/redis_cat_log.md","mtime":"2021-05-06T13:53:21.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:05:27.722Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"redis作为缓存收集日志","level":"1.8.9","depth":2,"next":{"title":"kafka缓存收集日志","level":"1.8.10","depth":2,"path":"elk/kafka缓存收集日志.md","ref":"elk/kafka缓存收集日志.md","articles":[]},"previous":{"title":"kibana画图","level":"1.8.8","depth":2,"path":"elk/kibana_draw_dashboard.md","ref":"elk/kibana_draw_dashboard.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"elk/redis_cat_log.md","mtime":"2021-05-06T13:53:21.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:09:44.006Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

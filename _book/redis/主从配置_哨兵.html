@@ -290,12 +290,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../Disk partition.md">
+        <li class="chapter " data-level="1.2.4" data-path="../linux/Disk_partition.html">
             
-                <span>
+                <a href="../linux/Disk_partition.html">
             
                     
-                    磁盘分区
+                    linux磁盘分区
             
                 </a>
             
@@ -753,48 +753,48 @@
 </code></pre>
 <h2 id="&#x73AF;&#x5883;&#x51C6;&#x5907;">&#x73AF;&#x5883;&#x51C6;&#x5907;</h2>
 <p>&#x5B89;&#x88C5;&#x53C2;&#x8003;&#xFF1A;<a href="&#x5B89;&#x88C5;.html">redis&#x5B89;&#x88C5;</a></p>
-<pre class="language-"><code class="lang-shell">##&#x6253;&#x5305;redis &#x6587;&#x4EF6;
-[root@db01 /opt]# tar zcvf db01_redis.tar.gz /opt/redis_cluster/
-#&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x5230;&#x7B2C;&#x4E8C;&#x53F0;redis&#x670D;&#x52A1;&#x5668;&#x4E2D;
-[root@db01 /opt]#scp db01_redis.tar.gz db02:/opt
-#&#x6267;&#x884C;&#x5B89;&#x88C5;&#x6587;&#x4EF6;
-[root@db02 /opt]# mkdir -p /opt/redis_cluster/
-[root@db02 /opt]# tar zxvf db01_redis.tar.gz -C /opt/redis_cluster/
+<pre class="language-"><code class="lang-shell"><span class="token comment">##&#x6253;&#x5305;redis &#x6587;&#x4EF6;</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># tar zcvf db01_redis.tar.gz /opt/redis_cluster/</span>
+<span class="token comment">#&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x5230;&#x7B2C;&#x4E8C;&#x53F0;redis&#x670D;&#x52A1;&#x5668;&#x4E2D;</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment">#scp db01_redis.tar.gz db02:/opt</span>
+<span class="token comment">#&#x6267;&#x884C;&#x5B89;&#x88C5;&#x6587;&#x4EF6;</span>
+<span class="token punctuation">[</span>root@db02 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /opt/redis_cluster/</span>
+<span class="token punctuation">[</span>root@db02 /opt<span class="token punctuation">]</span><span class="token comment"># tar zxvf db01_redis.tar.gz -C /opt/redis_cluster/</span>
 
-[root@db02 /opt/redis_cluster/redis]#make install
-cd src &amp;&amp; make install
-make[1]: Entering directory `/opt/redis_cluster/redis-3.2.12/src&apos;
-Hint: It&apos;s a good idea to run &apos;make test&apos; ;)
-    INSTALL install
-    INSTALL install
-    INSTALL install
-    INSTALL install
-    INSTALL install
-make[1]: Leaving directory `/opt/redis_cluster/redis-3.2.12/src&apos;
+<span class="token punctuation">[</span>root@db02 /opt/redis_cluster/redis<span class="token punctuation">]</span><span class="token comment">#make install</span>
+<span class="token builtin class-name">cd</span> src <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+make<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Entering directory <span class="token variable"><span class="token variable">`</span>/opt/redis_cluster/redis-3.2.12/src<span class="token string">&apos;
+Hint: It&apos;</span>s a good idea to run <span class="token string">&apos;make test&apos;</span> <span class="token punctuation">;</span><span class="token punctuation">)</span>
+    INSTALL <span class="token function">install</span>
+    INSTALL <span class="token function">install</span>
+    INSTALL <span class="token function">install</span>
+    INSTALL <span class="token function">install</span>
+    INSTALL <span class="token function">install</span>
+make<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Leaving directory <span class="token variable">`</span></span>/opt/redis_cluster/redis-3.2.12/src<span class="token string">&apos;
 #&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x76EE;&#x5F55;
 [root@db02 /opt/redis_cluster/redis]#mkdir -p /data/redis_cluster/redis_6379/
-[root@db02 /opt/redis_cluster/redis]# sed -i &apos;s#51#52#&apos; /opt/redis_cluster/redis_6379/conf/redis_6379.conf
+[root@db02 /opt/redis_cluster/redis]# sed -i &apos;</span>s<span class="token comment">#51#52#&apos; /opt/redis_cluster/redis_6379/conf/redis_6379.conf</span>
 </code></pre>
 <p>&#x4E3B;&#x4ECE;&#x914D;&#x7F6E;</p>
-<pre class="language-"><code class="lang-shell">[root@db02 /opt/redis_cluster]#redis-cli -h db02
-db02:6379&gt; SLAVEOF db01 6379
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db02 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#redis-cli -h db02</span>
+db02:637<span class="token operator"><span class="token file-descriptor important">9</span>&gt;</span> SLAVEOF db01 <span class="token number">6379</span>
 OK
-db02:6379&gt; keys *
-1) &quot;nam2&quot;
-2) &quot;name&quot;
-3) &quot;name1&quot;
-db02:6379&gt;
+db02:637<span class="token operator"><span class="token file-descriptor important">9</span>&gt;</span> keys *
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">&quot;nam2&quot;</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">&quot;name&quot;</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">&quot;name1&quot;</span>
+db02:637<span class="token operator"><span class="token file-descriptor important">9</span>&gt;</span>
 </code></pre>
 <p>&#x54E8;&#x5175;&#x914D;&#x7F6E;</p>
 <pre class="language-"><code class="lang-reStructuredText">&#x81EA; &#x52A8; &#x6545; &#x969C; &#x8FC1; &#x79FB; (Automaticfailover &#xFF1A;  &#x5F53; &#x4E00; &#x4E2A; &#x571F; &#x670D; &#x52A1; &#x5668; &#x4E0D; &#x80FD; &#x6B63; &#x5E38; &#x5DE5; &#x4F5C; &#x65F6; &#xFF0C; Sentinel &#x4F1A; &#x5EFE; &#x59CB; &#x4E00; &#x94A6; &#x81EA; &#x52A8; &#x6545; &#x969C; &#x8FC1; &#x79FB; &#x64CD; &#x4F5C; &#xFF0C; &#x5B83; &#x4F1A; &#x5C06; &#x5931; &#x6548; &#x738B; &#x52A1; &#x5668; &#x7684; &#x5176; &#x4E2D; &#x4E00; &#x4E2A; &#x4ECE;  &#x52A1; &#x5668; &#x5347; &#x7EA7; &#x4E3A; &#x65B0; &#x7684; &#x4E3B; &#x52A1; &#x5668; &#xFF0C; # &#x8BA9; &#x5931; &#x6548; &#x4E3B; &#x670D; &#x52A1; &#x7684; &#x5176; &#x4ED6; &#x4ECE; &#x670D; &#x52A1; &#x5668; &#x6539; &#x4E3A; &#x590D; &#x5236; &#x65B0; &#x7684; &#x4E3B; &#x670D; &#x52A1; &#x5668; &#xFF1B; &#x5F53; &#x5BA2; &#x6237; &#x7AEF; &#x8BD5; &#x56FE; &#x83B2; &#x63A5; &#x5931;  &#x6548; &#x7684; &#x4E3B; &#x52A1; &#x5668; &#x65F6; &#xFF0C; &#x96C6; &#x7FA4; &#x4E5F; &#x4F1A; &#x5411; &#x5BA2; &#x6237; &#x7AEF; &#x8FD4; &#x56DE; &#x65B0; &#x4E3B; &#x670D; &#x52A1; &#x5668; &#x7684; &#x5730; &#x5740; &#xFF0C; &#x4F7F; &#x5F97; &#x96C6; &#x7FA4; &#x53EF; &#x4EE5; &#x4F7F; &#x7528; &#x65B0; &#x4E3B; &#x670D; &#x52A1; &#x5668; &#x4EE3; &#x66FF; &#x5931; &#x7256; &#x52A1; &#x5668;
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/imgimage-20210421175359754.png" data-lightbox="a5127719-8cc1-42bc-b4de-42b93fdb0dd7" data-title="image-20210421175359754" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/imgimage-20210421175359754.png" alt="image-20210421175359754"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/imgimage-20210421175359754.png" data-lightbox="4f116a98-c0b4-4185-8625-938ff97f3c6c" data-title="image-20210421175359754" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/imgimage-20210421175359754.png" alt="image-20210421175359754"></a></p>
 <p>db01&#x64CD;&#x4F5C;</p>
-<pre class="language-"><code class="lang-shell">[root@db01 /opt]# mkdir -p /opt/redis_cluster/redis_26379
-[root@db01 /opt]# mkdir -p /opt/redis_cluster/redis_26379/{conf,pid,log}
-[root@db01 /opt]# mkdir -p /data/redis_cluster/redis_26379
-[root@db01 /opt/redis_cluster]#
-cat &gt; /opt/redis_cluster/redis_26379/conf/redis_26379.conf &lt;&lt; EOF
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /opt/redis_cluster/redis_26379</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /opt/redis_cluster/redis_26379/{conf,pid,log}</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /data/redis_cluster/redis_26379</span>
+<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> /opt/redis_cluster/redis_26379/conf/redis_26379.conf <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
 ### &#x4EE5;&#x5B88;&#x62A4;&#x6A21;&#x5F0F;&#x542F;&#x52A8;
 daemonize yes
 bind 10.0.0.51
@@ -805,7 +805,7 @@ sentinel monitor mymaster 10.0.0.51 6379 2
 sentinel down-after-milliseconds mymaster 3000
 sentinel parallel-syncs mymaster 1
 sentinel failover-timeout mymaster 18000
-EOF
+EOF</span>
 </code></pre>
 <pre class="language-"><code class="lang-text">&#x914D;&#x7F6E;&#x89E3;&#x91CA;&#x8BF4;&#x660E;&#xFF1A;
 #mymaster &#x4E3B;&#x8282;&#x70B9;&#x522B;&#x540D; &#x4E3B;&#x8282;&#x70B9;ip&#x548C;&#x7AEF;&#x53E3;&#xFF0C;&#x5224;&#x65AD;&#x4E3B;&#x8282;&#x70B9;&#x5931;&#x8D25;&#xFF0C;&#x4E24;&#x4E2A;sentinel&#x8282;&#x70B9;&#x540C;&#x610F;
@@ -818,35 +818,35 @@ sentinel paraller-syncs mymaster 1
 sentinel failover-timeout mymaster 18000
 </code></pre>
 <p>:db02&#xFF0C;db03&#x64CD;&#x4F5C;</p>
-<pre class="language-"><code class="lang-shell">#&#x5728;bd01&#x7684;&#x673A;&#x5668;&#x4E0A;&#x6267;&#x884C;,&#x8BB0;&#x5F97;&#x4FEE;&#x6539;ip
-[root@db01 /opt/redis_cluster]# rsync -ayz /opt/redis_cluster/redis_26379 db02:/opt/redis_cluster
-[root@db01 /opt/redis_cluster]# rsync -ayz /opt/redis_cluster/redis_26379 db03:/opt/redis_cluster
+<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x5728;bd01&#x7684;&#x673A;&#x5668;&#x4E0A;&#x6267;&#x884C;,&#x8BB0;&#x5F97;&#x4FEE;&#x6539;ip</span>
+<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment"># rsync -ayz /opt/redis_cluster/redis_26379 db02:/opt/redis_cluster</span>
+<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment"># rsync -ayz /opt/redis_cluster/redis_26379 db03:/opt/redis_cluster</span>
 
-#&#x5728;db02 db03&#x4E0A;&#x64CD;&#x4F5C;
-#&#x914D;&#x7F6E;&#x4E3B;&#x4ECE;&#x5173;&#x7CFB;
-[root@db02 /opt/redis_cluster]# 
-sed -i &apos;s#51#52#g&apos; /opt/redis_cluster/redis_26379/conf/redis_26379.conf
-[root@db03 /opt/redis_cluster]# 
-sed -i &apos;s#51#53#g&apos; /opt/redis_cluster/redis_26379/conf/redis_26379.conf
-[root@db02 /opt]# redis-server /opt/redis_cluster/redis_6379/conf/redis_6379.conf 
-[root@db02 /opt]# redis-cli slaveof 10.0.0.51 6379
+<span class="token comment">#&#x5728;db02 db03&#x4E0A;&#x64CD;&#x4F5C;</span>
+<span class="token comment">#&#x914D;&#x7F6E;&#x4E3B;&#x4ECE;&#x5173;&#x7CFB;</span>
+<span class="token punctuation">[</span>root@db02 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment"># </span>
+<span class="token function">sed</span> -i <span class="token string">&apos;s#51#52#g&apos;</span> /opt/redis_cluster/redis_26379/conf/redis_26379.conf
+<span class="token punctuation">[</span>root@db03 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment"># </span>
+<span class="token function">sed</span> -i <span class="token string">&apos;s#51#53#g&apos;</span> /opt/redis_cluster/redis_26379/conf/redis_26379.conf
+<span class="token punctuation">[</span>root@db02 /opt<span class="token punctuation">]</span><span class="token comment"># redis-server /opt/redis_cluster/redis_6379/conf/redis_6379.conf </span>
+<span class="token punctuation">[</span>root@db02 /opt<span class="token punctuation">]</span><span class="token comment"># redis-cli slaveof 10.0.0.51 6379</span>
 </code></pre>
 <p>&#x5728;&#x4E09;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x6267;&#x884C;</p>
-<pre class="language-"><code class="lang-shell">:[root@db01 /opt]# mkdir -p /data/redis_cluster/redis_26379
-[root@db01 /opt]# redis-sentinel /opt/redis_cluster/redis_26379/conf/redis_26379.conf
+<pre class="language-"><code class="lang-shell">:<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /data/redis_cluster/redis_26379</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># redis-sentinel /opt/redis_cluster/redis_26379/conf/redis_26379.conf</span>
 </code></pre>
 <pre class="language-"><code class="lang-text">&#x5F53; &#x6240; &#x6709; &#x8282; &#x70B9; &#x542F; &#x52A8; &#x540E; &#xFF0C; &#x914D; &#x7F6E; &#x6587; &#x50FB; &#x7684; &#x5185; &#x5BB9; &#x53D1; &#x751F; &#x4E86; &#x53D8; &#x5316; &#xFF0C; &#xFF0C; &#x4F53; &#x73B0; &#x5728; &#x4E09; &#x4E2A; &#x65B9; &#x9762; &#xFF0E; 
 1)Sentine1 &#x8282; &#x70B9; &#x81EA; &#x52A8; &#x53D1; &#x73B0; &#x4E86; &#x4EE5; &#x8282; &#x70B9; &#xFF0C; &#x5176; &#x5168; ntin &#x8A02; &#x8282; &#x70B9; &#x201C; 
 2 &#xFF09; &#x53BB; &#x6389; &#x4E86; &#x754E; &#x8BA4; &#x914D; &#x7F6E; &#xFF0C; &#x4F8B; &#x5982; parallel-syres failover-timeout*&quot; 
 &#x5F15; &#x6DFB; &#x52A0; &#x4E86; &#x914D; &#x7F6E; &#x7EAA; &#x5143; &#x76F8; &#x5173; &#x53C2;
 </code></pre>
-<pre class="language-"><code class="lang-shell">[root@db01 /opt]# tail -6 /opt/redis_cluster/redis_26379/conf/redis_26379.conf 
-sentinel leader-epoch mymaster 0
-sentinel known-slave mymaster 10.0.0.53 6379
-sentinel known-slave mymaster 10.0.0.52 6379
-sentinel known-sentinel mymaster 10.0.0.52 26379 c10ca8742bc1d585d428920cd75c7a7449ab11c4
-sentinel known-sentinel mymaster 10.0.0.53 26379 443e313d655ea6a0db011bf143a1ebe1f97ab045
-sentinel current-epoch 0
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># tail -6 /opt/redis_cluster/redis_26379/conf/redis_26379.conf </span>
+sentinel leader-epoch mymaster <span class="token number">0</span>
+sentinel known-slave mymaster <span class="token number">10.0</span>.0.53 <span class="token number">6379</span>
+sentinel known-slave mymaster <span class="token number">10.0</span>.0.52 <span class="token number">6379</span>
+sentinel known-sentinel mymaster <span class="token number">10.0</span>.0.52 <span class="token number">26379</span> c10ca8742bc1d585d428920cd75c7a7449ab11c4
+sentinel known-sentinel mymaster <span class="token number">10.0</span>.0.53 <span class="token number">26379</span> 443e313d655ea6a0db011bf143a1ebe1f97ab045
+sentinel current-epoch <span class="token number">0</span>
 </code></pre>
 <pre class="language-"><code class="lang-text">
 &#x505C; &#x6389; &#x5176; &#x4E2D; 1 &#x4E2A; &#x8282; &#x70B9; &#xFF0C; &#x7136; &#x540E; &#x89C2; &#x5BDF; &#x5176; &#x4ED6; &#x8282; &#x70B9; &#x7684; &#x65E5; &#x5FD7; &#x53D8; &#x5316; 
@@ -900,7 +900,7 @@ redis serntinel &#x5B58;&#x5728;&#x591A;&#x62CD;&#x4E2A;&#x4ECE;&#x8282;&#x70B9;
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"主从配置_哨兵配置","level":"1.5.2","depth":2,"next":{"title":"redis集群配置","level":"1.5.3","depth":2,"path":"redis/集群.md","ref":"redis/集群.md","articles":[]},"previous":{"title":"安装","level":"1.5.1","depth":2,"path":"redis/安装.md","ref":"redis/安装.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"redis/主从配置_哨兵.md","mtime":"2021-04-29T13:26:37.414Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:05:27.722Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"主从配置_哨兵配置","level":"1.5.2","depth":2,"next":{"title":"redis集群配置","level":"1.5.3","depth":2,"path":"redis/集群.md","ref":"redis/集群.md","articles":[]},"previous":{"title":"安装","level":"1.5.1","depth":2,"path":"redis/安装.md","ref":"redis/安装.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"redis/主从配置_哨兵.md","mtime":"2021-04-29T13:26:37.414Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:09:44.006Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

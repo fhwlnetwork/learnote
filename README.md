@@ -7,7 +7,7 @@
   * [linux基础命令](linux/commond.md)
   * [linux时间](linux/time_synchronism.md)
   * [linux系统优化](linux/majorzation.md)
-  * [磁盘分区](Disk partition.md)
+  * [linux磁盘分区](linux/Disk_partition.md)
 * Nginx笔记
 * Tomact笔记
 * redis笔记

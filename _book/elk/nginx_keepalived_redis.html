@@ -288,12 +288,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../Disk partition.md">
+        <li class="chapter " data-level="1.2.4" data-path="../linux/Disk_partition.html">
             
-                <span>
+                <a href="../linux/Disk_partition.html">
             
                     
-                    磁盘分区
+                    linux磁盘分区
             
                 </a>
             
@@ -743,98 +743,98 @@
 4.logstash&#x53EF;&#x4EE5;&#x542F;&#x52A8;&#x591A;&#x4E2A;&#x8282;&#x70B9;&#x6765;&#x52A0;&#x901F;&#x8BFB;&#x53D6;redis&#x7684;&#x6570;&#x636E;
 5.&#x540E;&#x7AEF;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x591A;&#x53F0;es&#x96C6;&#x7FA4;&#x6765;&#x505A;&#x652F;&#x6491;
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/keepalived_nginx_redis20210506203308.png" data-lightbox="1c18f50d-8d64-415a-a75e-fa239d1ee367" data-title="&#x56FE;&#x8C31;&#x67B6;&#x6784;&#x56FE;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/keepalived_nginx_redis20210506203308.png" alt="&#x56FE;&#x8C31;&#x67B6;&#x6784;&#x56FE;"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/keepalived_nginx_redis20210506203308.png" data-lightbox="3710ae13-63cf-462d-8564-b668da5625ab" data-title="&#x56FE;&#x8C31;&#x67B6;&#x6784;&#x56FE;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/keepalived_nginx_redis20210506203308.png" alt="&#x56FE;&#x8C31;&#x67B6;&#x6784;&#x56FE;"></a></p>
 <h2 id="redis&#x5B89;&#x88C5;&#x914D;&#x7F6E;&#xFF1A;redis&#x5B89;&#x88C5;">redis&#x5B89;&#x88C5;&#x914D;&#x7F6E;&#xFF1A;<a href="../redis/&#x5B89;&#x88C5;.html">redis&#x5B89;&#x88C5;</a></h2>
 <h2 id="keepalived&#x5B89;&#x88C5;&#x914D;&#x7F6E;">keepalived&#x5B89;&#x88C5;&#x914D;&#x7F6E;</h2>
-<pre class="language-"><code class="lang-shell">#db01 db02&#x4E0A;&#x5206;&#x522B;&#x5B89;&#x88C5;
-[root@db02 /opt/kafka]# yum -y install keepalived
-#&#x914D;&#x7F6E;&#x4E3B;
-[root@db01 ~]# cat &gt;/etc/keepalived/keepalived.conf&lt;&lt;EOF
-! Configuration File for keepalived
-global_defs {
+<pre class="language-"><code class="lang-shell"><span class="token comment">#db01 db02&#x4E0A;&#x5206;&#x522B;&#x5B89;&#x88C5;</span>
+<span class="token punctuation">[</span>root@db02 /opt/kafka<span class="token punctuation">]</span><span class="token comment"># yum -y install keepalived</span>
+<span class="token comment">#&#x914D;&#x7F6E;&#x4E3B;</span>
+<span class="token punctuation">[</span>root@db01 ~<span class="token punctuation">]</span><span class="token comment"># cat &gt;/etc/keepalived/keepalived.conf&lt;&lt;EOF</span>
+<span class="token operator">!</span> Configuration File <span class="token keyword">for</span> keepalived
+global_defs <span class="token punctuation">{</span>
     router_id db01
-}
-vrrp_instance VI_1 {
+<span class="token punctuation">}</span>
+vrrp_instance VI_1 <span class="token punctuation">{</span>
     state MASTER
         interface eth0
-        virtual_router_id 50
-        priority 150
-        advert_int 1
-        authentication {
+        virtual_router_id <span class="token number">50</span>
+        priority <span class="token number">150</span>
+        advert_int <span class="token number">1</span>
+        authentication <span class="token punctuation">{</span>
             auth_type PASS
-            auth_pass 1111
-        }
-        virtual_ipaddress {
-            10.0.0.3
-        }
-}
+            auth_pass <span class="token number">1111</span>
+        <span class="token punctuation">}</span>
+        virtual_ipaddress <span class="token punctuation">{</span>
+            <span class="token number">10.0</span>.0.3
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 EOF 
-#&#x914D;&#x7F6E;&#x4ECE;
-[root@db02 /opt/kafka]# cat &gt; /etc/keepalived/keepalived.conf&lt;&lt;EOF 
-! Configuration File for keepalived
-global_defs {
+<span class="token comment">#&#x914D;&#x7F6E;&#x4ECE;</span>
+<span class="token punctuation">[</span>root@db02 /opt/kafka<span class="token punctuation">]</span><span class="token comment"># cat &gt; /etc/keepalived/keepalived.conf&lt;&lt;EOF </span>
+<span class="token operator">!</span> Configuration File <span class="token keyword">for</span> keepalived
+global_defs <span class="token punctuation">{</span>
     router_id db02
-}
-vrrp_instance VI_1 {
+<span class="token punctuation">}</span>
+vrrp_instance VI_1 <span class="token punctuation">{</span>
     state BACKUP
         interface eth0
-        virtual_router_id 50
-        priority 100
-        advert_int 1
-        authentication {
+        virtual_router_id <span class="token number">50</span>
+        priority <span class="token number">100</span>
+        advert_int <span class="token number">1</span>
+        authentication <span class="token punctuation">{</span>
         auth_type PASS
-        auth_pass 1111
-        }
-    virtual_ipaddress {
-        10.0.0.3
-    }
-}
+        auth_pass <span class="token number">1111</span>
+        <span class="token punctuation">}</span>
+    virtual_ipaddress <span class="token punctuation">{</span>
+        <span class="token number">10.0</span>.0.3
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 EOF
 
-#&#x542F;&#x52A8;&#x670D;&#x52A1;
-[root@db01 ~]# systemctl start keepalived
-[root@db02 ~]# systemctl start keepalived
+<span class="token comment">#&#x542F;&#x52A8;&#x670D;&#x52A1;</span>
+<span class="token punctuation">[</span>root@db01 ~<span class="token punctuation">]</span><span class="token comment"># systemctl start keepalived</span>
+<span class="token punctuation">[</span>root@db02 ~<span class="token punctuation">]</span><span class="token comment"># systemctl start keepalived</span>
 </code></pre>
 <h2 id="nginx&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x914D;&#x7F6E;">nginx&#x53CD;&#x5411;&#x4EE3;&#x7406;&#x914D;&#x7F6E;</h2>
-<pre class="language-"><code class="lang-shell">#&#x5728;  /etc/nginx/nginx.conf &#x6700;&#x540E;&#x6DFB;&#x52A0;&#x4E0D;&#x80FD;&#x52A0;&#x5230;conf.d&#x91CC;&#x9762;&#x6DFB;&#x52A0;&#x5B50;&#x914D;&#x7F6E;
-stream {
-  upstream redis {
-      server 10.0.0.52:6379 max_fails=2 fail_timeout=10s;
-      server 10.0.0.53:6379 max_fails=2 fail_timeout=10s backup;
-  }
+<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x5728;  /etc/nginx/nginx.conf &#x6700;&#x540E;&#x6DFB;&#x52A0;&#x4E0D;&#x80FD;&#x52A0;&#x5230;conf.d&#x91CC;&#x9762;&#x6DFB;&#x52A0;&#x5B50;&#x914D;&#x7F6E;</span>
+stream <span class="token punctuation">{</span>
+  upstream redis <span class="token punctuation">{</span>
+      server <span class="token number">10.0</span>.0.52:6379 <span class="token assign-left variable">max_fails</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">fail_timeout</span><span class="token operator">=</span>10s<span class="token punctuation">;</span>
+      server <span class="token number">10.0</span>.0.53:6379 <span class="token assign-left variable">max_fails</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">fail_timeout</span><span class="token operator">=</span>10s backup<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  server {
-          listen 6379;
-          proxy_connect_timeout 1s;
-          proxy_timeout 3s;
-          proxy_pass redis; 
-  }
-}
+  server <span class="token punctuation">{</span>
+          listen <span class="token number">6379</span><span class="token punctuation">;</span>
+          proxy_connect_timeout 1s<span class="token punctuation">;</span>
+          proxy_timeout 3s<span class="token punctuation">;</span>
+          proxy_pass redis<span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="filbeat-&#x914D;&#x7F6E;">filbeat &#x914D;&#x7F6E;</h3>
-<pre class="language-"><code class="lang-shell">[root@db01 /data/soft]#cat &gt; /etc/filebeat/filebeat.yml &lt;&lt;EOF
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /data/soft<span class="token punctuation">]</span><span class="token comment">#cat &gt; /etc/filebeat/filebeat.yml &lt;&lt;EOF</span>
 filebeat.inputs:
 - type: log
-  enabled: true
+  enabled: <span class="token boolean">true</span>
   paths:
     - /var/log/nginx/access.log
-  json.keys_undr_root: true
-  json.overwrite_keys: true
-  tags: [&quot;access&quot;]
+  json.keys_undr_root: <span class="token boolean">true</span>
+  json.overwrite_keys: <span class="token boolean">true</span>
+  tags: <span class="token punctuation">[</span><span class="token string">&quot;access&quot;</span><span class="token punctuation">]</span>
 - type: log
-  enabled: true
+  enabled: <span class="token boolean">true</span>
   paths:
     - /var/log/nginx/error.log
-  tags: [&quot;error&quot;]
+  tags: <span class="token punctuation">[</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">]</span>
 setup.kibana:
-  hosts: 10.0.0.51:5601
+  hosts: <span class="token number">10.0</span>.0.51:5601
 output.redis:
-  hosts: [&quot;10.0.0.3&quot;]
-  key: &quot;filebeat&quot;
+  hosts: <span class="token punctuation">[</span><span class="token string">&quot;10.0.0.3&quot;</span><span class="token punctuation">]</span>
+  key: <span class="token string">&quot;filebeat&quot;</span>
 EOF
 </code></pre>
 <h3 id="logstach-&#x914D;&#x7F6E;">logstach &#x914D;&#x7F6E;</h3>
-<pre class="language-"><code class="lang-shell">cat &gt;/etc/logstash/conf.d/redis.conf&lt;&lt;EOF
+<pre class="language-"><code class="lang-shell"><span class="token function">cat</span> <span class="token operator">&gt;</span>/etc/logstash/conf.d/redis.conf<span class="token operator">&lt;&lt;</span><span class="token string">EOF
 input {
   redis {
     host =&gt; &quot;10.0.0.3&quot;
@@ -869,12 +869,12 @@ output {
       }
     }
 }
-EOF
+EOF</span>
 </code></pre>
 <h3 id="&#x91CD;&#x542F;&#x670D;&#x52A1;">&#x91CD;&#x542F;&#x670D;&#x52A1;</h3>
-<pre class="language-"><code class="lang-shell">[root@db01 ~]# systemctl restart filebeat
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 ~<span class="token punctuation">]</span><span class="token comment"># systemctl restart filebeat</span>
 
-[root@db01]# /usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/redis.conf
+<span class="token punctuation">[</span>root@db01<span class="token punctuation">]</span><span class="token comment"># /usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/redis.conf</span>
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wjhlog.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
 2021-05-06 22:07:50
@@ -916,7 +916,7 @@ EOF
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"使用nginx+keepalived代理多台redis","level":"1.8.11","depth":2,"previous":{"title":"kafka缓存收集日志","level":"1.8.10","depth":2,"path":"elk/kafka缓存收集日志.md","ref":"elk/kafka缓存收集日志.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"elk/nginx_keepalived_redis.md","mtime":"2021-05-06T14:07:50.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:05:27.722Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"使用nginx+keepalived代理多台redis","level":"1.8.11","depth":2,"previous":{"title":"kafka缓存收集日志","level":"1.8.10","depth":2,"path":"elk/kafka缓存收集日志.md","ref":"elk/kafka缓存收集日志.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"elk/nginx_keepalived_redis.md","mtime":"2021-05-06T14:07:50.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T15:09:44.006Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>
