@@ -35,3 +35,7 @@
     * [使用nginx+keepalived代理多台redis](elk/nginx_keepalived_redis.md)
 * 监控服务zabbix
   * [安装](zabbix/install.md)
+  * [创建监控](zabbix/create_monitor.md)
+  * [zabbix自定义监控](zabbix/custom__monitor.md)
+  * [微信报警配置](zabbix/wx.md)
+  * [邮件报警配置](zabbix/email.md)

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>redis集群扩容收缩 · 吴建华的学习笔记</title>
+        <title>zabbix自定义监控 · 吴建华的学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -138,10 +138,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="工具管理.html" />
+    <link rel="next" href="wx.html" />
     
     
-    <link rel="prev" href="集群.html" />
+    <link rel="prev" href="create_monitor.html" />
     
 
     
@@ -348,9 +348,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="安装.html">
+        <li class="chapter " data-level="1.5.1" data-path="../redis/安装.html">
             
-                <a href="安装.html">
+                <a href="../redis/安装.html">
             
                     
                     安装
@@ -361,9 +361,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="主从配置_哨兵.html">
+        <li class="chapter " data-level="1.5.2" data-path="../redis/主从配置_哨兵.html">
             
-                <a href="主从配置_哨兵.html">
+                <a href="../redis/主从配置_哨兵.html">
             
                     
                     主从配置_哨兵配置
@@ -374,9 +374,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="集群.html">
+        <li class="chapter " data-level="1.5.3" data-path="../redis/集群.html">
             
-                <a href="集群.html">
+                <a href="../redis/集群.html">
             
                     
                     redis集群配置
@@ -387,9 +387,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.4" data-path="集群扩容收缩.html">
+        <li class="chapter " data-level="1.5.4" data-path="../redis/集群扩容收缩.html">
             
-                <a href="集群扩容收缩.html">
+                <a href="../redis/集群扩容收缩.html">
             
                     
                     redis集群扩容收缩
@@ -400,9 +400,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="工具管理.html">
+        <li class="chapter " data-level="1.5.5" data-path="../redis/工具管理.html">
             
-                <a href="工具管理.html">
+                <a href="../redis/工具管理.html">
             
                     
                     工具管理
@@ -697,9 +697,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../zabbix/install.html">
+        <li class="chapter " data-level="1.9.1" data-path="install.html">
             
-                <a href="../zabbix/install.html">
+                <a href="install.html">
             
                     
                     安装
@@ -710,9 +710,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="../zabbix/create_monitor.html">
+        <li class="chapter " data-level="1.9.2" data-path="create_monitor.html">
             
-                <a href="../zabbix/create_monitor.html">
+                <a href="create_monitor.html">
             
                     
                     创建监控
@@ -723,9 +723,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="../zabbix/custom__monitor.html">
+        <li class="chapter active" data-level="1.9.3" data-path="custom__monitor.html">
             
-                <a href="../zabbix/custom__monitor.html">
+                <a href="custom__monitor.html">
             
                     
                     zabbix自定义监控
@@ -736,9 +736,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.4" data-path="../zabbix/wx.html">
+        <li class="chapter " data-level="1.9.4" data-path="wx.html">
             
-                <a href="../zabbix/wx.html">
+                <a href="wx.html">
             
                     
                     微信报警配置
@@ -749,9 +749,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.5" data-path="../zabbix/email.html">
+        <li class="chapter " data-level="1.9.5" data-path="email.html">
             
-                <a href="../zabbix/email.html">
+                <a href="email.html">
             
                     
                     邮件报警配置
@@ -805,7 +805,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >redis集群扩容收缩</a>
+        <a href=".." >zabbix自定义监控</a>
     </h1>
 </div>
 
@@ -820,68 +820,64 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="redis&#x96C6;&#x7FA4;&#x6269;&#x5BB9;&#x6536;&#x7F29;">redis&#x96C6;&#x7FA4;&#x6269;&#x5BB9;&#x6536;&#x7F29;</h1>
-<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x73AF;&#x5883;&#x51C6;&#x5907;&#xFF08;&#x4E0D;&#x4EE3;&#x8868;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF09;</span>
-<span class="token punctuation">[</span>root@db01 /data/redis_cluster<span class="token punctuation">]</span><span class="token comment">#mkdir -p /opt/redis_cluster/redis_{6390,6391}/{conf,log,pid}</span>
-<span class="token punctuation">[</span>root@db01 /data/redis_cluster<span class="token punctuation">]</span><span class="token comment">#mkdir -p /data/redis_cluster/redis_{6390,6391}</span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#cd /opt/redis_cluster/</span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#cp redis_6380/conf/redis_6380.conf redis_6390/conf/redis_6390.conf</span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#sed -i &apos;s#6380#6390#&apos; redis_6390/conf/redis_6390.conf</span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#cp redis_6380/conf/redis_6380.conf redis_6391/conf/redis_6391.conf</span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#sed -i &apos;s#6380#6391#&apos; redis_6391/conf/redis_6391.conf</span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#redis-server /opt/redis_cluster/redis_6390/conf/redis_6390.conf </span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#redis-server /opt/redis_cluster/redis_6391/conf/redis_6391.conf</span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#ps -ef |grep redis</span>
-root       <span class="token number">7448</span>      <span class="token number">1</span>  <span class="token number">0</span> <span class="token number">13</span>:34 ?        00:00:03 redis-server <span class="token number">10.0</span>.0.51:6379
-root       <span class="token number">7452</span>      <span class="token number">1</span>  <span class="token number">0</span> <span class="token number">13</span>:34 ?        00:00:05 redis-server <span class="token number">10.0</span>.0.51:6380 <span class="token punctuation">[</span>cluster<span class="token punctuation">]</span>
-root       <span class="token number">7456</span>      <span class="token number">1</span>  <span class="token number">0</span> <span class="token number">13</span>:34 ?        00:00:05 redis-server <span class="token number">10.0</span>.0.51:6381 <span class="token punctuation">[</span>cluster<span class="token punctuation">]</span>
-root       <span class="token number">7591</span>      <span class="token number">1</span>  <span class="token number">0</span> <span class="token number">14</span>:52 ?        00:00:00 redis-server <span class="token number">10.0</span>.0.51:6390 <span class="token punctuation">[</span>cluster<span class="token punctuation">]</span>
-root       <span class="token number">7610</span>      <span class="token number">1</span>  <span class="token number">0</span> <span class="token number">14</span>:54 ?        00:00:00 redis-server <span class="token number">10.0</span>.0.51:6391 <span class="token punctuation">[</span>cluster<span class="token punctuation">]</span>
-root       <span class="token number">7614</span>   <span class="token number">6772</span>  <span class="token number">0</span> <span class="token number">14</span>:54 pts/1    00:00:00 <span class="token function">grep</span> --color<span class="token operator">=</span>auto redis
+						<h1 id="zabbix&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;">zabbix&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;</h1>
+<pre class="language-"><code class="lang-text">&#x76D1;&#x63A7;&#x9879;: &#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;&#x6536;&#x96C6;&#x4E3B;&#x673A;&#x7684;&#x4FE1;&#x606F;
+&#x5E94;&#x7528;&#x96C6;: &#x5C06;&#x591A;&#x4E2A;&#x7C7B;&#x4F3C;&#x7684;&#x76D1;&#x63A7;&#x9879;&#x8FDB;&#x884C;&#x6574;&#x5408; &#x4FBF;&#x4E8E;&#x67E5;&#x770B;&#x68C0;&#x67E5;
+&#x6A21;&#x677F;:   &#x5C06;&#x591A;&#x4E2A;&#x76D1;&#x63A7;&#x9879; &#x89E6;&#x53D1;&#x5668; &#x56FE;&#x5F62;&#x90FD;&#x914D;&#x7F6E;&#x5728;&#x6A21;&#x677F;&#x4E2D;, &#x65B9;&#x4FBF;&#x591A;&#x4E2A;&#x76D1;&#x63A7;&#x7684;&#x4E3B;&#x673A;&#x8FDB;&#x884C;&#x8C03;&#x7528;
+&#x52A8;&#x4F5C;:    &#x6307;&#x5B9A;&#x5C06;&#x62A5;&#x8B66;&#x4FE1;&#x606F;&#x53D1;&#x9001;&#x7ED9;&#x8C01;OK/&#x5B9A;&#x4E49;&#x62A5;&#x8B66;&#x7684;&#x4FE1;&#x606F;ok/&#x5B9A;&#x4E49;&#x62A5;&#x8B66;&#x7684;&#x7C7B;&#x578B;OK(&#x90AE;&#x4EF6; &#x5FAE;&#x4FE1; &#x77ED;&#x4FE1;&#x7535;&#x8BDD;)
+        PS: &#x5B8F;&#x4FE1;&#x606F;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;: 
+        https://www.zabbix.com/documentation/4.0/zh/manual/appendix/macros/supported_by_location
+&#x89E6;&#x53D1;&#x5668;: &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x62A5;&#x8B66;&#x63D0;&#x793A;(&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;),&#x9ED8;&#x8BA4;&#x9875;&#x9762;&#x63D0;&#x793A;&#x62A5;&#x8B66;
+&#x56FE;&#x5F62;:   &#x5C06;&#x591A;&#x4E2A;&#x56FE;&#x6574;&#x5408;&#x6210;&#x4E00;&#x5F20;,&#x4FBF;&#x4E8E;&#x5206;&#x6790;&#x6570;&#x636E;
+&#x62A5;&#x8B66;&#x5A92;&#x4ECB;: &#x5B9A;&#x4E49;&#x62A5;&#x8B66;&#x7684;&#x65B9;&#x5F0F;
 </code></pre>
-<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x6DFB;&#x52A0;&#x8282;&#x70B9;</span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#redis-cli -c -h db01 -p 6380 cluster meet 10.0.0.51 6390</span>
-OK
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#redis-cli -c -h db01 -p 6380 cluster meet 10.0.0.51 6391</span>
-OK
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#redis-cli -c -h db01 -p 6380 cluster nodes</span>
-e7521bd87addccddee3e2865b73cc167001f8b2a <span class="token number">10.0</span>.0.53:6380 master - <span class="token number">0</span> <span class="token number">1619074660264</span> <span class="token number">0</span> connected <span class="token number">10923</span>-16383
-7d00cc303ab6afb6329516a1202981d9f8621b10 <span class="token number">10.0</span>.0.53:6381 master - <span class="token number">0</span> <span class="token number">1619074659256</span> <span class="token number">5</span> connected
-7c5b8059ab43d9ed2605f1dcdb0f9e011ff80ac3 <span class="token number">10.0</span>.0.52:6381 master - <span class="token number">0</span> <span class="token number">1619074656238</span> <span class="token number">4</span> connected
-b4a1187f61f0b969d7006a3658d366f48cda940f <span class="token number">10.0</span>.0.51:6381 master - <span class="token number">0</span> <span class="token number">1619074659760</span> <span class="token number">3</span> connected
-83952a1caaad66e7013abd90f6c5c67ae7052e8a <span class="token number">10.0</span>.0.51:6380 myself,master - <span class="token number">0</span> <span class="token number">0</span> <span class="token number">1</span> connected <span class="token number">0</span>-5461
-5497e750fe050e840c31b8a539bc5f058de8c1ad <span class="token number">10.0</span>.0.51:6391 master - <span class="token number">0</span> <span class="token number">1619074661268</span> <span class="token number">7</span> connected
-03b5563c88738ffd5ae2506b5d3647c171f1bf2d <span class="token number">10.0</span>.0.51:6390 master - <span class="token number">0</span> <span class="token number">1619074658249</span> <span class="token number">6</span> connected
-a65062498803bf7f8881f92fb3ef5865bf065103 <span class="token number">10.0</span>.0.52:6380 master - <span class="token number">0</span> <span class="token number">1619074662273</span> <span class="token number">2</span> connected <span class="token number">5462</span>-10922
+<h2 id="&#x9700;&#x6C42;-&#x76D1;&#x63A7;nginx&#x670D;&#x52A1;&#x662F;&#x5426;&#x542F;&#x52A8;">&#x9700;&#x6C42;: &#x76D1;&#x63A7;nginx&#x670D;&#x52A1;&#x662F;&#x5426;&#x542F;&#x52A8;</h2>
+<h3 id="1-&#x5728;zabbix-agent&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7F16;&#x5199;">1) &#x5728;zabbix-agent&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7F16;&#x5199;</h3>
+<h4 id="&#x7B2C;&#x4E00;&#x6B65;-&#x7F16;&#x5199;&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;&#x547D;&#x4EE4;">&#x7B2C;&#x4E00;&#x6B65;: &#x7F16;&#x5199;&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;&#x547D;&#x4EE4;</h4>
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@web01 zabbix_agentd.d<span class="token punctuation">]</span><span class="token comment"># ps -ef|grep -c [n]ginx</span>
 </code></pre>
-<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x4F7F;&#x7528;&#x5DE5;&#x5177;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x8282;&#x70B9;</span>
-<span class="token comment">#&#x4F7F;&#x7528;&#x524D;&#x66F4;&#x65B0;&#x4E00;&#x4E0B;rub&#x7248;&#x672C;</span>
-<span class="token number">1</span><span class="token punctuation">\</span>&#x5B89;&#x88C5;RVM<span class="token punctuation">(</span>ruby version manager<span class="token punctuation">)</span>
-&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF1A;
-gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF1A;curl -sSL https://get.rvm.io <span class="token operator">|</span> <span class="token function">bash</span> -s stable
-&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF1A;
-<span class="token builtin class-name">source</span> /etc/profile.d/rvm.sh
-rvm list known
-&#x5B89;&#x88C5;ruby
-&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF1A;rvm <span class="token function">install</span> <span class="token number">2.4</span>.9
-&#x5B89;&#x88C5;redis&#x96C6;&#x7FA4;&#x63A5;&#x53E3;
-&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF1A;gem <span class="token function">install</span> redis
-./redis-trib.rb  add-node <span class="token number">1</span> <span class="token number">10.0</span>.0.51:6390 <span class="token number">10.0</span>.0.51:6380
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster/redis/src<span class="token punctuation">]</span><span class="token comment">#./redis-trib.rb reshard 10.0.0.51:6380</span>
-<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> Performing Cluster Check <span class="token punctuation">(</span>using node <span class="token number">10.0</span>.0.51:6380<span class="token punctuation">)</span>
-What is the receiving node ID? 03b5563c88738ffd5ae2506b5d3647c171f1bf2d
-Please enter all the <span class="token builtin class-name">source</span> node IDs.
-  Type <span class="token string">&apos;all&apos;</span> to use all the nodes as <span class="token builtin class-name">source</span> nodes <span class="token keyword">for</span> the <span class="token builtin class-name">hash</span> slots.
-  Type <span class="token string">&apos;done&apos;</span> once you entered all the <span class="token builtin class-name">source</span> nodes IDs.
-Source node <span class="token comment">#1:all</span>
-Do you want to proceed with the proposed reshard plan <span class="token punctuation">(</span>yes/no<span class="token punctuation">)</span>? <span class="token function">yes</span>
+<h4 id="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x7F16;&#x5199;zabbix-agent&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x7F16;&#x5199;zabbix-agent&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<pre class="language-"><code class="lang-sh"><span class="token comment">#&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;: &#x76F4;&#x63A5;&#x4FEE;&#x6539;zabbix-agent&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53C2;&#x6570;</span>
+    <span class="token assign-left variable">UserParameter</span><span class="token operator">=</span>
+<span class="token comment"># &#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;: &#x5728;zabbix_agentd.d/&#x76EE;&#x5F55;&#x4E2D;&#x7F16;&#x5199;&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;&#x6587;&#x4EF6;</span>
+<span class="token comment">#    UserParameter=&#x952E;(&#x53D8;&#x91CF;&#x540D;),&#x503C;(&#x53D8;&#x91CF;&#x4FE1;&#x606F;)</span>
+<span class="token comment">#    UserParameter=web_state,ps -ef|grep -c [n]ginx</span>
+<span class="token punctuation">[</span>root@web01 zabbix_agentd.d<span class="token punctuation">]</span><span class="token comment"># cat web_server.conf </span>
+<span class="token assign-left variable">UserParameter</span><span class="token operator">=</span>web_state,ps -ef<span class="token operator">|</span><span class="token function">grep</span> -c <span class="token punctuation">[</span>n<span class="token punctuation">]</span>ginx
 </code></pre>
-<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x6536;&#x7F29;</span>
-<span class="token punctuation">[</span>root@db01 /opt/redis_cluster/redis/src<span class="token punctuation">]</span><span class="token comment">#./redis-trib.rb del-node 10.0.0.51:6390   &#x8282;&#x70B9;id</span>
+<h4 id="&#x7B2C;&#x4E09;&#x6B65;-&#x91CD;&#x542F;zabbix-agent&#x670D;&#x52A1;">&#x7B2C;&#x4E09;&#x6B65;: &#x91CD;&#x542F;zabbix-agent&#x670D;&#x52A1;</h4>
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@web01 zabbix_agentd.d<span class="token punctuation">]</span><span class="token comment"># systemctl restart zabbix-agent.service </span>
+<span class="token punctuation">[</span>root@web01 zabbix_agentd.d<span class="token punctuation">]</span><span class="token comment"># systemctl status zabbix-agent.service</span>
 </code></pre>
+<h3 id="2-&#x5728;zabbix-server&#x547D;&#x4EE4;&#x884C;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;">2) &#x5728;zabbix-server&#x547D;&#x4EE4;&#x884C;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</h3>
+<h4 id="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;-&#x68C0;&#x6D4B;&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;&#x4FE1;&#x606F;&#x662F;&#x5426;&#x6B63;&#x786E;">&#x7B2C;&#x4E00;&#x6B65;&#xFF1A; &#x68C0;&#x6D4B;&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;&#x4FE1;&#x606F;&#x662F;&#x5426;&#x6B63;&#x786E;</h4>
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@zabbix ~<span class="token punctuation">]</span><span class="token comment"># yum -y install zabbix-get</span>
+<span class="token punctuation">[</span>root@zabbix ~<span class="token punctuation">]</span><span class="token comment"># zabbix_get -s 10.0.0.7 -k &apos;web_state&apos;</span>
+<span class="token number">3</span>
+</code></pre>
+<h3 id="3&#x5728;zabbix-server&#x7F51;&#x7AD9;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x914D;&#x7F6E;">3)&#x5728;zabbix-server&#x7F51;&#x7AD9;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x914D;&#x7F6E;</h3>
+<h4 id="&#x7B2C;&#x4E00;&#x4E2A;&#x5386;&#x7A0B;-&#x8FDB;&#x5165;&#x5230;&#x521B;&#x5EFA;&#x76D1;&#x63A7;&#x9879;&#x9875;&#x9762;">&#x7B2C;&#x4E00;&#x4E2A;&#x5386;&#x7A0B;: &#x8FDB;&#x5165;&#x5230;&#x521B;&#x5EFA;&#x76D1;&#x63A7;&#x9879;&#x9875;&#x9762;:</h4>
+<pre class="language-"><code class="lang-text">&#x914D;&#x7F6E;---&#x4E3B;&#x673A;---&#x9009;&#x62E9;&#x76F8;&#x5E94;&#x4E3B;&#x673A;&#x7684;&#x76D1;&#x63A7;&#x9879;
+</code></pre>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510172909.png" data-lightbox="1f05d1c4-3375-47d5-85b4-3f662d3d043c" data-title="" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510172909.png" alt=""></a>
+<a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510172944.png" data-lightbox="4eb88842-9b2e-434a-be5c-e79e2301f6cd" data-title="" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510172944.png" alt=""></a></p>
+<h4 id="&#x7B2C;&#x4E8C;&#x4E2A;&#x5386;&#x7A0B;-&#x76D1;&#x63A7;&#x9879;&#x9875;&#x9762;&#x5982;&#x4F55;&#x914D;&#x7F6E;">&#x7B2C;&#x4E8C;&#x4E2A;&#x5386;&#x7A0B;: &#x76D1;&#x63A7;&#x9879;&#x9875;&#x9762;&#x5982;&#x4F55;&#x914D;&#x7F6E;:</h4>
+<pre class="language-"><code class="lang-text">&#x540D;&#x79F0; &#x952E;&#x503C; &#x66F4;&#x65B0;&#x95F4;&#x9694;&#x65F6;&#x95F4; &#x5E94;&#x7528;&#x96C6;
+</code></pre>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510173508.png" data-lightbox="53a6be83-2620-4b98-8fab-ccfcc769e962" data-title="" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510173508.png" alt=""></a></p>
+<h4 id="&#x7B2C;&#x4E09;&#x4E2A;&#x5386;&#x7A0B;-&#x68C0;&#x67E5;&#x662F;&#x5426;&#x6536;&#x96C6;&#x5230;&#x76D1;&#x63A7;&#x4FE1;&#x606F;">&#x7B2C;&#x4E09;&#x4E2A;&#x5386;&#x7A0B;: &#x68C0;&#x67E5;&#x662F;&#x5426;&#x6536;&#x96C6;&#x5230;&#x76D1;&#x63A7;&#x4FE1;&#x606F;</h4>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510173658.png" data-lightbox="1bbafa48-1503-4502-a3e3-0634b9048297" data-title="" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510173658.png" alt=""></a></p>
+<h2 id="&#x9700;&#x6C42;2&#x590D;&#x6742;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x670D;&#x52A1;&#x72B6;&#x6001;">&#x9700;&#x6C42;2:&#x590D;&#x6742;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x76D1;&#x63A7;&#x914D;&#x7F6E;(&#x591A;&#x4E2A;&#x670D;&#x52A1;&#x72B6;&#x6001;)</h2>
+<pre class="language-"><code class="lang-sh"><span class="token comment"># &#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+<span class="token punctuation">[</span>root@web01 zabbix_agentd.d<span class="token punctuation">]</span><span class="token comment"># vim server_state.conf</span>
+<span class="token assign-left variable">UserParameter</span><span class="token operator">=</span>server_state<span class="token punctuation">[</span>*<span class="token punctuation">]</span>,netstat -lntup<span class="token operator">|</span><span class="token function">grep</span> -c <span class="token variable">$1</span>
+<span class="token comment"># &#x91CD;&#x542F;&#x670D;&#x52A1;</span>
+<span class="token punctuation">[</span>root@web01 zabbix_agentd.d<span class="token punctuation">]</span><span class="token comment"># systemctl restart zabbix-agent.service </span>
+<span class="token punctuation">[</span>root@web01 zabbix_agentd.d<span class="token punctuation">]</span><span class="token comment">#</span>
+</code></pre>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510174712.png" data-lightbox="e0a76d77-4cae-4e1a-b18b-99e04777f392" data-title="" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210510174712.png" alt=""></a> </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wjhlog.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2021-04-22 15:47:21
+2021-05-10 17:47:29
 </span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -909,12 +905,12 @@ Do you want to proceed with the proposed reshard plan <span class="token punctua
 
 		
 		
-		<a href="集群.html" class="navigation navigation-prev " aria-label="Previous page: redis集群配置">
+		<a href="create_monitor.html" class="navigation navigation-prev " aria-label="Previous page: 创建监控">
 			<i class="fa fa-angle-left"></i>
 		</a>
 		
 		
-		<a href="工具管理.html" class="navigation navigation-next " aria-label="Next page: 工具管理">
+		<a href="wx.html" class="navigation navigation-next " aria-label="Next page: 微信报警配置">
 			<i class="fa fa-angle-right"></i>
 		</a>
 		
@@ -924,7 +920,7 @@ Do you want to proceed with the proposed reshard plan <span class="token punctua
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"redis集群扩容收缩","level":"1.5.4","depth":2,"next":{"title":"工具管理","level":"1.5.5","depth":2,"path":"redis/工具管理.md","ref":"redis/工具管理.md","articles":[]},"previous":{"title":"redis集群配置","level":"1.5.3","depth":2,"path":"redis/集群.md","ref":"redis/集群.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"redis/集群扩容收缩.md","mtime":"2021-04-22T07:47:21.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-10T09:47:38.892Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"zabbix自定义监控","level":"1.9.3","depth":2,"next":{"title":"微信报警配置","level":"1.9.4","depth":2,"path":"zabbix/wx.md","ref":"zabbix/wx.md","articles":[]},"previous":{"title":"创建监控","level":"1.9.2","depth":2,"path":"zabbix/create_monitor.md","ref":"zabbix/create_monitor.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"zabbix/custom__monitor.md","mtime":"2021-05-10T09:47:29.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-10T09:47:38.892Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 10 May 2021 07:49:40 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 10 May 2021 09:47:48 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -189,6 +189,32 @@
             <description><![CDATA[##第一步 ：下载安装zabbix yum 源文件]]></description>
             <link>http://note.wjhlog.com/zabbix/install.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/zabbix/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[创建监控]]></title>
+            <link>http://note.wjhlog.com/zabbix/create_monitor.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/create_monitor.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[zabbix自定义监控]]></title>
+            <description><![CDATA[
+]]></description>
+            <link>http://note.wjhlog.com/zabbix/custom__monitor.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/custom__monitor.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[微信报警配置]]></title>
+            <link>http://note.wjhlog.com/zabbix/wx.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/wx.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[邮件报警配置]]></title>
+            <link>http://note.wjhlog.com/zabbix/email.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/email.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
     </channel>
