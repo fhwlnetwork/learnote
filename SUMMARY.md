@@ -33,3 +33,5 @@
     * [redis作为缓存收集日志](elk/redis_cat_log.md)
     * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
     * [使用nginx+keepalived代理多台redis](elk/nginx_keepalived_redis.md)
+* 监控服务zabbix
+  * [安装](zabbix/install.md)
