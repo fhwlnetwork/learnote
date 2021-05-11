@@ -81,7 +81,7 @@ echo "-----------------下载安装zabbix yum 源文件--------------------"
 
 rpm -ivh https://mirrors.tuna.tsinghua.edu.cn/zabbix/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 rpm -qa|grep zabbix
-if [ $? -eq 0]
+if [ $? -eq 0 ]
 then
 	echo "-----------------下载安装zabbix服务端相关软件-----------------"
 	#zabbix服务程序软件: zabbix-server-mysql

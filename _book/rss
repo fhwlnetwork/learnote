@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 10 May 2021 09:47:48 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 11 May 2021 14:57:57 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -38,7 +38,6 @@
         </item>
         <item>
             <title><![CDATA[磁盘分区]]></title>
-            <description><![CDATA[[TOC]]]></description>
             <link>http://note.wjhlog.com/linux/Disk_partition.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/linux/Disk_partition.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
