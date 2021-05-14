@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 11 May 2021 14:57:57 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 May 2021 06:08:42 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -40,6 +40,12 @@
             <title><![CDATA[磁盘分区]]></title>
             <link>http://note.wjhlog.com/linux/Disk_partition.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/linux/Disk_partition.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装]]></title>
+            <link>http://note.wjhlog.com/nginx/install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/install.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
@@ -206,6 +212,8 @@
         </item>
         <item>
             <title><![CDATA[微信报警配置]]></title>
+            <description><![CDATA[
+]]></description>
             <link>http://note.wjhlog.com/zabbix/wx.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/zabbix/wx.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
