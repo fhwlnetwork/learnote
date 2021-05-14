@@ -8,6 +8,7 @@
     * [linux磁盘分区](linux/Disk_partition.md)
 * Nginx笔记
     * [安装](nginx/install.md)
+    * [虚拟主机](nginx/virtual_host.md)
 * Tomact笔记
 * redis笔记
     * [安装](redis/安装.md)
