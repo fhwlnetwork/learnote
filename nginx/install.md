@@ -103,3 +103,54 @@ EOF
 [root@wjh ~]# systemctl start nginx
 [root@wjh ~]# systemctl enable nginx
 ```
+
+
+
+
+## 配置文件说明
+```text
+第一个部分: 配置文件主区域配置
+	user  www;               	 --- 定义worker进程管理的用户
+	补充: nginx的进程
+	master process:  主进程		---管理服务是否能够正常运行   boss
+	worker process:  工作进程	---处理用户的访问请求         员工  
+    worker_processes  2;        ---定义有几个worker进程  == CPU核数 / 核数的2倍
+    error_log  /var/log/nginx/error.log warn;   --- 定义错误日志路径信息
+    pid        /var/run/nginx.pid;              --- 定义pid文件路径信息
+	
+	第二个部分: 配置文件事件区域
+    events {                    
+        worker_connections  1024;   --- 一个worker进程可以同时接收1024访问请求
+    }
+	
+	第三个部分: 配置http区域
+    http {
+        include       /etc/nginx/mime.types;      --- 加载一个配置文件
+        default_type  application/octet-stream;   --- 指定默认识别文件类型
+        log_format  oldboy  '$remote_addr - $remote_user [$time_local] "$request" '
+                            '$status $body_bytes_sent "$http_referer" '
+                            '"$http_user_agent" "$http_x_forwarded_for"';
+		                  --- 定义日志的格式		
+        access_log  /var/log/nginx/access.log  oldboy;
+		                  --- 指定日志路径          
+        keepalive_timeout  65;   --- 超时时间
+        #gzip  on;
+        include /etc/nginx/conf.d/*.conf;        --- 加载一个配置文件
+    }
+
+
+	/etc/nginx/nginx.d/default  --- 扩展配置(虚拟主机配置文件)
+	第四个部分: server区域信息(配置一个网站 www/bbs/blog -- 一个虚拟主机)
+	server {
+        listen       8080;                --- 指定监听的端口
+        server_name  www.oldboy.com;      --- 指定网站域名                     
+        root   /usr/share/nginx/html;     --- 定义站点目录的位置
+        index  index.html index.htm;      --- 定义首页文件
+        error_page   500 502 503 504  /50x.html;   --- 优雅显示页面信息
+        location = /50x.html {
+            root   /usr/share/nginx/html;
+        }
+    }
+
+
+```
