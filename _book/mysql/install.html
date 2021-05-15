@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>交互 · 吴建华的学习笔记</title>
+        <title>安装 · 吴建华的学习笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -138,10 +138,6 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="dml.html" />
-    
-    
-    <link rel="prev" href="install.html" />
     
 
     
@@ -380,9 +376,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../mysql/install.html">
+        <li class="chapter active" data-level="1.5.1" data-path="install.html">
             
-                <a href="../mysql/install.html">
+                <a href="install.html">
             
                     
                     安装
@@ -528,9 +524,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="install.html">
+        <li class="chapter " data-level="1.8.1" data-path="../es/install.html">
             
-                <a href="install.html">
+                <a href="../es/install.html">
             
                     
                     安装
@@ -541,9 +537,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8.2" data-path="head插件交互.html">
+        <li class="chapter " data-level="1.8.2" data-path="../es/head插件交互.html">
             
-                <a href="head插件交互.html">
+                <a href="../es/head插件交互.html">
             
                     
                     交互
@@ -554,9 +550,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="dml.html">
+        <li class="chapter " data-level="1.8.3" data-path="../es/dml.html">
             
-                <a href="dml.html">
+                <a href="../es/dml.html">
             
                     
                     操作语言
@@ -567,9 +563,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.4" data-path="集群.html">
+        <li class="chapter " data-level="1.8.4" data-path="../es/集群.html">
             
-                <a href="集群.html">
+                <a href="../es/集群.html">
             
                     
                     集群配置
@@ -869,7 +865,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >交互</a>
+        <a href=".." >安装</a>
     </h1>
 </div>
 
@@ -884,34 +880,104 @@
     
 					<section class="normal markdown-section">
 						
-						<h1 id="&#x4EA4;&#x4E92;">&#x4EA4;&#x4E92;</h1>
-<pre class="language-"><code class="lang-reStructuredText">Head&#x63D2;&#x4EF6;&#x5728;5.0&#x4EE5;&#x540E;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;&#x53D1;&#x751F;&#x4E86;&#x6539;&#x53D8;&#xFF0C;&#x9700;&#x8981;nodejs&#x73AF;&#x5883;&#x652F;&#x6301;&#xFF0C;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x522B;&#x4EBA;&#x5C01;&#x88C5;&#x597D;&#x7684;docker&#x955C;&#x50CF;
-&#x63D2;&#x4EF6;&#x5B98;&#x65B9;&#x5730;&#x5740;
-https://github.com/mobz/elasticsearch-head
+						<h1 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h1>
+<h2 id="1&#x3001;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">1&#x3001;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h2>
+<pre class="language-"><code class="lang-SH"># &#x521B;&#x5EFA;&#x4FDD;&#x5B58;&#x5B89;&#x88C5;&#x5305;&#x7684;&#x6587;&#x4EF6;&#x5939;
+[root@wjh ~]# mkdir -p /server/tools
+# &#x4E0A;&#x4F20;&#x8F6F;&#x4EF6;&#x6570;&#x636E;&#x5305;
 
-&#x4F7F;&#x7528;docker&#x90E8;&#x7F72;elasticsearch-head
-docker pull alivv/elasticsearch-head
-docker run --name es-head -p 9100:9100 -dit elivv/elasticsearch-head
+# &#x521B;&#x5EFA;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x5E93;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x7684;&#x76EE;&#x5F55;
+[root@wjh ~]# mkdir -p /application
 
-&#x4F7F;&#x7528;nodejs&#x7F16;&#x8BD1;&#x5B89;&#x88C5;elasticsearch-head
-yum install nodejs npm openssl screen -y
-node -v
-npm  -v
-npm install -g cnpm --registry=https://registry.npm.taobao.org
-cd /opt/
-git clone git://github.com/mobz/elasticsearch-head.git
-cd elasticsearch-head/
-cnpm install
-screen -S es-head
-cnpm run start
-Ctrl+A+D
+# &#x89E3;&#x538B;&#x6587;&#x4EF6;
+[root@wjh ~]# tar -xf mysql-5.7.26-linux-glibc2.12-x86_64.tar.gz -C /appliacation/
+</code></pre>
+<h2 id="2&#x3001;&#x5378;&#x8F7D;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;mariadb">2&#x3001;&#x5378;&#x8F7D;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;mariadb</h2>
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@wjh ~<span class="token punctuation">]</span><span class="token comment"># yum -y remove mariadb</span>
+</code></pre>
+<h2 id="3&#x3001;&#x521B;&#x5EFA;&#x7528;&#x6237;">3&#x3001;&#x521B;&#x5EFA;&#x7528;&#x6237;</h2>
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@wjh ~<span class="token punctuation">]</span><span class="token comment"># useradd -s /sbin/nologin mysql</span>
+</code></pre>
+<h2 id="4&#x3001;&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;">4&#x3001;&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2>
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@db01 ~<span class="token punctuation">]</span><span class="token comment"># vim /etc/profile</span>
+<span class="token comment">#&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/application/mysql/bin:<span class="token environment constant">$PATH</span>
+<span class="token comment"># &#x914D;&#x7F6E;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x52A0;&#x8F7D;&#x6587;&#x4EF6; </span>
+<span class="token punctuation">[</span>root@db01 ~<span class="token punctuation">]</span><span class="token comment"># source /etc/profile</span>
+<span class="token comment"># &#x9A8C;&#x8BC1;&#x914D;&#x7F6E;&#x662F;&#x5426;&#x751F;&#x6548;</span>
+<span class="token punctuation">[</span>root@wjh application<span class="token punctuation">]</span><span class="token comment"># mysql -V</span>
+mysql  Ver <span class="token number">14.14</span> Distrib <span class="token number">5.7</span>.26, <span class="token keyword">for</span> linux-glibc2.12 <span class="token punctuation">(</span>x86_64<span class="token punctuation">)</span> using  EditLine wrapper
+</code></pre>
+<h2 id="5&#x3001;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;">5&#x3001;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;</h2>
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@wjh application<span class="token punctuation">]</span><span class="token comment"># mkdir /data/mysql/data -p</span>
+<span class="token punctuation">[</span>root@wjh application<span class="token punctuation">]</span><span class="token comment"># chown -R mysql.mysql /data </span>
+<span class="token punctuation">[</span>root@wjh application<span class="token punctuation">]</span><span class="token comment"># </span>
+<span class="token comment">#&#x6267;&#x884C;&#x521D;&#x59CB;&#x5316;&#x547D;&#x4EE4;</span>
+mysqld --initialize --user<span class="token operator">=</span>mysql --basedir<span class="token operator">=</span>/application/mysql --datadir<span class="token operator">=</span>/data/mysql/data
 
-&#x4FEE;&#x6539;ES&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x652F;&#x6301;&#x8DE8;&#x57DF;
-http.cors.enabled: true 
-http.cors.allow-origin: &quot;*&quot;
+--initialize &#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
+<span class="token number">1</span>&#x3001;&#x5BF9;&#x4E8E;&#x5BC6;&#x7801;&#x590D;&#x6742;&#x5EA6;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#xFF1A;12&#x4F4D;&#xFF0C;4&#x79CD;
+<span class="token number">2</span> &#x3001;&#x5BC6;&#x7801;&#x8FC7;&#x671F;&#x65F6;&#x95F4; <span class="token number">180</span>
+root@wjh application<span class="token punctuation">]</span><span class="token comment"># mysqld --initialize-insecure  --user=mysql --basedir=/application/mysql --datadir=/data/mysql/data</span>
+</code></pre>
+<h3 id="51-&#x62A5;&#x9519;&#x89E3;&#x51B3;">5.1 &#x62A5;&#x9519;&#x89E3;&#x51B3;</h3>
+<p>&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF1A;
+<a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210514165107.png" data-lightbox="d4e58706-bd8e-4b33-960c-2c5b2f1d5285" data-title="&#x9519;&#x8BEF;&#x4FE1;&#x606F;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210514165107.png" alt="&#x9519;&#x8BEF;&#x4FE1;&#x606F;"></a></p>
+<pre class="language-"><code class="lang-sh"><span class="token comment">##&#x89E3;&#x51B3;&#x65B9;&#x5F0F;&#xFF1A;</span>
+<span class="token punctuation">[</span>root@wjh application<span class="token punctuation">]</span><span class="token comment"># rm -rf /data/mysql/*</span>
+</code></pre>
+<h2 id="6&#x3001;&#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">6&#x3001;&#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h2>
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@wjh application<span class="token punctuation">]</span><span class="token comment">#  cat &gt;/etc/my.cnf &lt;&lt;EOF</span>
+<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token assign-left variable">user</span><span class="token operator">=</span>mysql
+<span class="token assign-left variable">basedir</span><span class="token operator">=</span>/application/mysql
+<span class="token assign-left variable">datadir</span><span class="token operator">=</span>/data/mysql/data
+<span class="token assign-left variable">socket</span><span class="token operator">=</span>/tmp/mysql.sock
+<span class="token assign-left variable">server_id</span><span class="token operator">=</span><span class="token number">6</span>
+<span class="token assign-left variable">port</span><span class="token operator">=</span><span class="token number">3306</span>
+<span class="token punctuation">[</span>mysql<span class="token punctuation">]</span>
+<span class="token assign-left variable">socket</span><span class="token operator">=</span>/tmp/mysql.sock
+EOF
+<span class="token comment"># &#x914D;&#x7F6E; systemdqidong </span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/systemd/system/mysqld.service <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+[Unit]
+Description=MySQL Server
+Documentation=man:mysqld(8)
+Documentation=http://dev.mysql.com/doc/refman/en/using-systemd.html
+After=network.target
+After=syslog.target
+[Install]
+WantedBy=multi-user.target
+[Service]
+User=mysql
+Group=mysql
+ExecStart=/application/mysql/bin/mysqld --defaults-file=/etc/my.cnf
+LimitNOFILE = 5000
+EOF</span>
+</code></pre>
+<h2 id="&#x542F;&#x52A8;&#x670D;&#x52A1;">&#x542F;&#x52A8;&#x670D;&#x52A1;</h2>
+<pre class="language-"><code class="lang-sh">
+<span class="token punctuation">[</span>root@wjh application<span class="token punctuation">]</span><span class="token comment"># systemctl start mysqld</span>
+<span class="token punctuation">[</span>root@wjh application<span class="token punctuation">]</span><span class="token comment"># systemctl status mysqld</span>
+</code></pre>
+<h1 id="&#x8C03;&#x9519;&#x65B9;&#x6CD5;">&#x8C03;&#x9519;&#x65B9;&#x6CD5;</h1>
+<h2 id="&#x5982;&#x4F55;&#x5206;&#x6790;&#x5904;&#x7406;mysql&#x6570;&#x636E;&#x5E93;&#x65E0;&#x6CD5;&#x542F;&#x52A8;">&#x5982;&#x4F55;&#x5206;&#x6790;&#x5904;&#x7406;MySQL&#x6570;&#x636E;&#x5E93;&#x65E0;&#x6CD5;&#x542F;&#x52A8;</h2>
+<h3 id="without-updating-pid-&#x7C7B;&#x4F3C;&#x9519;&#x8BEF;">without updating PID &#x7C7B;&#x4F3C;&#x9519;&#x8BEF;</h3>
+<pre class="language-"><code class="lang-sh"><span class="token comment"># &#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;</span>
+<span class="token comment"># &#x67E5;&#x770B;&#x3001;etc/my.cnf &#x4E2D;datadir&#x914D;&#x7F6E;&#x7684;&#x8DEF;&#x5F84;</span>
+<span class="token punctuation">[</span>root@wjh application<span class="token punctuation">]</span><span class="token comment"># cat /data/mysql/data/wjh.err </span>
+
+<span class="token comment"># &#x53EF;&#x80FD;&#x60C5;&#x51B5;&#xFF1A;</span>
+<span class="token comment">#    /etc/my.cnf &#x8DEF;&#x5F84;&#x4E0D;&#x5BF9;&#x7B49;</span>
+<span class="token comment">#    /tmp/mysql.sock&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x8FC7; &#x6216; &#x5220;&#x9664;&#x8FC7; </span>
+<span class="token comment">#    &#x6570;&#x636E;&#x76EE;&#x5F55;&#x6743;&#x9650;&#x4E0D;&#x662F;mysql</span>
+<span class="token comment">#    &#x53C2;&#x6570;&#x6539;&#x9519;&#x4E86;</span>
+</code></pre>
+<h3 id="2&#x3001;&#x5C06;&#x65E5;&#x5FD7;&#x76F4;&#x63A5;&#x663E;&#x793A;&#x5230;&#x5C4F;&#x5E55;">2&#x3001;&#x5C06;&#x65E5;&#x5FD7;&#x76F4;&#x63A5;&#x663E;&#x793A;&#x5230;&#x5C4F;&#x5E55;</h3>
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@wjh ~<span class="token punctuation">]</span><span class="token comment"># /application/mysql/bin/mysqld --defaults-file=/etc/my.cnf</span>
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wjhlog.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2021-04-22 23:36:25
+2021-05-15 12:44:06
 </span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -939,14 +1005,6 @@ http.cors.allow-origin: &quot;*&quot;
 
 		
 		
-		<a href="install.html" class="navigation navigation-prev " aria-label="Previous page: 安装">
-			<i class="fa fa-angle-left"></i>
-		</a>
-		
-		
-		<a href="dml.html" class="navigation navigation-next " aria-label="Next page: 操作语言">
-			<i class="fa fa-angle-right"></i>
-		</a>
 		
 		
 		
@@ -954,7 +1012,7 @@ http.cors.allow-origin: &quot;*&quot;
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"交互","level":"1.8.2","depth":2,"next":{"title":"操作语言","level":"1.8.3","depth":2,"path":"es/dml.md","ref":"es/dml.md","articles":[]},"previous":{"title":"安装","level":"1.8.1","depth":2,"path":"es/install.md","ref":"es/install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"es/head插件交互.md","mtime":"2021-04-22T15:36:25.457Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-15T08:58:36.083Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"安装","level":"1.5.1","depth":2,"next":{"title":"redis笔记","level":"1.6","depth":1,"ref":"","articles":[{"title":"安装","level":"1.6.1","depth":2,"path":"redis/安装.md","ref":"redis/安装.md","articles":[]},{"title":"主从配置_哨兵配置","level":"1.6.2","depth":2,"path":"redis/主从配置_哨兵.md","ref":"redis/主从配置_哨兵.md","articles":[]},{"title":"redis集群配置","level":"1.6.3","depth":2,"path":"redis/集群.md","ref":"redis/集群.md","articles":[]},{"title":"redis集群扩容收缩","level":"1.6.4","depth":2,"path":"redis/集群扩容收缩.md","ref":"redis/集群扩容收缩.md","articles":[]},{"title":"工具管理","level":"1.6.5","depth":2,"path":"redis/工具管理.md","ref":"redis/工具管理.md","articles":[]}]},"previous":{"title":"mysql笔记","level":"1.5","depth":1,"ref":"","articles":[{"title":"安装","level":"1.5.1","depth":2,"path":"mysql/install.md","ref":"mysql/install.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"mysql/install.md","mtime":"2021-05-15T04:44:06.974Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-15T08:58:36.083Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

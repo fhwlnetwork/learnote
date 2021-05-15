@@ -10,6 +10,8 @@
     * [安装](nginx/install.md)
     * [虚拟主机](nginx/virtual_host.md)
 * Tomact笔记
+* mysql笔记
+    * [安装](mysql/install.md)
 * redis笔记
     * [安装](redis/安装.md)
     * [主从配置_哨兵配置](redis/主从配置_哨兵.md)
