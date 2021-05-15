@@ -19,9 +19,9 @@ M   --- mysql服务部署 (yum会很慢 编译安装会报错) mariadb
 	作用:
 	存储用户的字符串数据信息
 ```
-## nginx安装：[nginx安装](nginx/install.md)
+## nginx安装：[nginx安装](../nginx/install.md)
 
-## mysql安装配置：[mysql安装](mysql/install.md)
+## mysql安装配置：[mysql安装](../mysql/install.md)
 
 ## php安装配置
 ```sh
