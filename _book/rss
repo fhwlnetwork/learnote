@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 15 May 2021 08:59:09 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 15 May 2021 09:23:01 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -52,6 +52,13 @@
             <title><![CDATA[虚拟主机]]></title>
             <link>http://note.wjhlog.com/nginx/virtual_host.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/nginx/virtual_host.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[lnmp配置]]></title>
+            <description><![CDATA[###【配置PHP】]]></description>
+            <link>http://note.wjhlog.com/nginx/lnmp.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/lnmp.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>

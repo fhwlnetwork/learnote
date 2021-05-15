@@ -9,6 +9,7 @@
 * Nginx笔记
     * [安装](nginx/install.md)
     * [虚拟主机](nginx/virtual_host.md)
+    * [lnmp](nginx/lnmp.md)
 * Tomact笔记
 * mysql笔记
     * [安装](mysql/install.md)
