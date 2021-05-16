@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 16 May 2021 14:12:23 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 16 May 2021 14:18:45 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -71,6 +71,13 @@
             <title><![CDATA[负载均衡]]></title>
             <link>http://note.wjhlog.com/nginx/load_balanced.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/nginx/load_balanced.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[keepalieved配置nginx高可用冗余]]></title>
+            <description><![CDATA[架构]]></description>
+            <link>http://note.wjhlog.com/nginx/keepalived_nginx.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/keepalived_nginx.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>

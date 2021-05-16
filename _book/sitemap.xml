@@ -10,6 +10,7 @@
 <url> <loc>https://log.wjhlog.com/nginx/virtual_host.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/nginx/lnmp.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/nginx/load_balanced.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/nginx/keepalived_nginx.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/mysql/install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/redis/安装.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/redis/主从配置_哨兵.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
