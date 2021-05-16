@@ -122,3 +122,109 @@ upstream wjhtest {
        
 ```
 
+## 负载均衡企业实践应用
+### 需求一，根据用户访问的uri信息进行负载均衡
+
+#### 1、环境配置
+```sh
+# 10.0.0.8:80 上进行环境部署:
+[root@web02 ~]# mkdir /html/www/upload
+[root@web02 ~]# echo  "upload-web集群_10.0.0.8" >/html/www/upload/wjhtest.html
+# 10.0.0.7上进行环境部署:
+	[root@wjhtest01 html]# mkdir /html/www/static
+    [root@wjhtest01 html]# echo static-web集群_10.0.0.7 >/html/www/static/wjhtest.html
+# 10.0.0.9:80上进行环境部署:
+    echo  "default-web集群_10.0.0.9" >/html/www/wjhtest.html
+```
+
+#### 2、编写负载均衡配置文件
+```sh
+upstream upload {
+    server 10.0.0.8:80;
+}
+upstream static {
+    server 10.0.0.7:80;
+}
+upstream default {
+    server 10.0.0.9:80;
+}
+        
+server {
+    listen       80;
+    server_name  www.wjhtest.com;
+    location / {
+      proxy_pass http://default;
+      proxy_set_header Host $host;
+      proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_next_upstream error timeout http_404 http_502 http_403;
+    }
+    location /upload {
+       proxy_pass http://upload;
+       proxy_set_header Host $host;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_next_upstream error timeout http_404 http_502 http_403;
+    }
+    location /static {
+        proxy_pass http://static;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_next_upstream error timeout http_404 http_502 http_403;
+    }
+}	
+
+```
+```text
+总结: 实现网站集群动静分离
+	01. 提高网站服务安全性
+	02. 管理操作工作简化
+	03. 可以换分不同人员管理不同集群服务器
+	
+```
+
+### 需求二，根据用户访问的终端信息显示不同页面
+#### 第一步: 准备架构环境
+```sh
+	iphone   www.wjhtest.com  --- iphone_access 10.0.0.7:80  mobile移动端集群
+	谷歌     www.wjhtest.com  --- google_access 10.0.0.8:80  web端集群
+	IE 360   www.wjhtest.com  --- default_access 10.0.0.9:80 default端集群
+	
+	web01:
+	echo "iphone_access 10.0.0.7" >/html/www/wjhtest.html
+	web02:
+	echo "google_access 10.0.0.8" >/html/www/wjhtest.html
+	web03:
+	echo "default_access 10.0.0.9" >/html/www/wjhtest.html
+```
+#### 第二步：编写负载均衡配置文件
+```sh
+
+[root@lb01 conf.d]# cat lb.conf
+upstream web {
+    server 10.0.0.8:80;
+}
+upstream mobile {
+    server 10.0.0.7:80;
+}
+upstream default {
+    server 10.0.0.9:80;
+}
+    
+ 
+server {
+    listen       80;
+    server_name  www.wjhtest.com;
+    location / {
+        if ($http_user_agent ~* iphone) {
+            proxy_pass http://mobile;
+        }
+        if ($http_user_agent ~* Chrome) {
+            proxy_pass  http://web;
+        }
+        proxy_pass http://default;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_next_upstream error timeout http_404 http_502 http_403;
+    }
+}
+    	
+```
