@@ -10,6 +10,7 @@
     * [安装](nginx/install.md)
     * [虚拟主机](nginx/virtual_host.md)
     * [lnmp](nginx/lnmp.md)
+    * [负载均衡](nginx/load_balanced.md)
 * Tomact笔记
 * mysql笔记
     * [安装](mysql/install.md)
@@ -39,8 +40,9 @@
     * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
     * [使用nginx+keepalived代理多台redis](elk/nginx_keepalived_redis.md)
 * 监控服务zabbix
-  * [安装](zabbix/install.md)
-  * [创建监控](zabbix/create_monitor.md)
-  * [zabbix自定义监控](zabbix/custom__monitor.md)
-  * [微信报警配置](zabbix/wx.md)
-  * [邮件报警配置](zabbix/email.md)
+    * [安装](zabbix/install.md)
+    * [创建监控](zabbix/create_monitor.md)
+    * [zabbix自定义监控](zabbix/custom__monitor.md)
+    * [微信报警配置](zabbix/wx.md)
+    * [邮件报警配置](zabbix/email.md)
+
