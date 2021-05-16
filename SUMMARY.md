@@ -2,6 +2,7 @@
 
 * [简介](README.md)
 * linux笔记
+    * [LVS负载均衡](linux/lvs.md)
     * [linux基础命令](linux/commond.md)
     * [linux时间](linux/time_synchronism.md)
     * [linux系统优化](linux/majorzation.md)
@@ -11,6 +12,7 @@
     * [虚拟主机](nginx/virtual_host.md)
     * [lnmp](nginx/lnmp.md)
     * [负载均衡](nginx/load_balanced.md)
+    * [keepalieved配置nginx高可用冗余](nginx/keepalived_nginx)
 * Tomact笔记
 * mysql笔记
     * [安装](mysql/install.md)
