@@ -13,6 +13,7 @@
     * [lnmp](nginx/lnmp.md)
     * [负载均衡](nginx/load_balanced.md)
     * [keepalieved配置nginx高可用冗余](nginx/keepalived_nginx.md)
+    * [rsync备份服务](nginx/rsync.md)
 * Tomact笔记
 * mysql笔记
     * [安装](mysql/install.md)
