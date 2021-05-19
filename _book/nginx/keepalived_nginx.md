@@ -136,3 +136,24 @@ fi
 EOF
 
 ```
+
+## nginx配置
+```sh
+  upstream wjhtest {
+       server 10.0.0.7:80;
+       server 10.0.0.8:80;
+       server 10.0.0.9:80;
+    }
+    server {
+        listen       10.0.0.3:80;
+        server_name  www.wjhtest.com;
+        location / {
+           proxy_pass http://wjhtest;
+           proxy_set_header Host $host;
+           proxy_set_header X-Forwarded-For $remote_addr;
+           proxy_next_upstream error timeout http_404 http_502 http_403;
+        }
+    }
+    
+
+```
