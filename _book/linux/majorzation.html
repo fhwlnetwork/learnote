@@ -400,6 +400,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.6" data-path="../nginx/rsync.html">
+            
+                <a href="../nginx/rsync.html">
+            
+                    
+                    rsync备份服务
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -438,6 +451,32 @@
             
                     
                     安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../mysql/Multiple_Examples_install.html">
+            
+                <a href="../mysql/Multiple_Examples_install.html">
+            
+                    
+                    一台主机搭建多实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../mysql/MySQL_Replication.html">
+            
+                <a href="../mysql/MySQL_Replication.html">
+            
+                    
+                    主从配置
             
                 </a>
             
@@ -952,7 +991,7 @@ Linux web01 3.10.0-862.el7.x86_64 #1 SMP Fri Apr 20 16:44:24 UTC 2018 x86_64 x86
 #Q&#xFF1A;&#x4E00;&#x8D77;&#x4F60;&#x7528;&#x7684;LINUX&#x7CFB;&#x7EDF;&#x662F;&#x4EC0;&#x4E48;&#x73AF;&#x5883;&#x7684;&#xFF1F;
 #a:    centos7 &#x5177;&#x4F53;&#x578B;&#x53F7;7.5 &#x5185;&#x6838;3.10 64&#x4F4D;
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/QQ%E5%9B%BE%E7%89%8720210507103918.png" data-lightbox="ee284ca8-b880-495c-a849-491f611986f4" data-title="uname" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/QQ%E5%9B%BE%E7%89%8720210507103918.png" alt="uname"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/QQ%E5%9B%BE%E7%89%8720210507103918.png" data-lightbox="751714e0-ed49-42f0-9d00-d00aeb1d6753" data-title="uname" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/QQ%E5%9B%BE%E7%89%8720210507103918.png" alt="uname"></a></p>
 <h2 id="2&#x3001;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4F18;&#x5316;---&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x4F18;&#x5316;">2&#x3001;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4F18;&#x5316;---&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x4F18;&#x5316;</h2>
 <pre class="language-"><code class="lang-shell">#&#x4F18;&#x5316;&#x65B9;&#x6CD5;: &#x4FEE;&#x6539;PS1&#x73AF;&#x5883;&#x53D8;&#x91CF;
 #&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;: 
@@ -962,7 +1001,7 @@ Linux web01 3.10.0-862.el7.x86_64 #1 SMP Fri Apr 20 16:44:24 UTC 2018 x86_64 x86
 # \h    --- &#x663E;&#x793A;&#x7CFB;&#x7EDF;&#x4E3B;&#x673A;&#x540D;&#x79F0;
 # \W    --- &#x663E;&#x793A;&#x5F53;&#x524D;&#x6240;&#x5728;&#x76EE;&#x5F55;&#x4FE1;&#x606F;(&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x7684;&#x6700;&#x540E;&#x7ED3;&#x5C3E;&#x4FE1;&#x606F;)
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210507104624.png" data-lightbox="52cfb583-e01b-416c-9e45-d371cc1accc0" data-title="&#x53C2;&#x6570;&#x8BF4;&#x660E;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210507104624.png" alt="&#x53C2;&#x6570;&#x8BF4;&#x660E;"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210507104624.png" data-lightbox="3bbb9cdb-5b35-44fa-ac4c-c543221c8ec5" data-title="&#x53C2;&#x6570;&#x8BF4;&#x660E;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210507104624.png" alt="&#x53C2;&#x6570;&#x8BF4;&#x660E;"></a></p>
 <h3 id="&#x4FEE;&#x6539;&#x4F18;&#x5316;&#x65B9;&#x6CD5;">&#x4FEE;&#x6539;&#x4F18;&#x5316;&#x65B9;&#x6CD5;:</h3>
 <h4 id="01-&#x4FEE;&#x6539;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x7684;&#x5185;&#x5BB9;">01. &#x4FEE;&#x6539;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x7684;&#x5185;&#x5BB9;:</h4>
 <pre class="language-"><code class="lang-shell"> #  ------&#x663E;&#x793A;&#x5168;&#x8DEF;&#x5F84; 
@@ -992,7 +1031,7 @@ vi /etc/profile
     export PS1=&apos;\[\e[37;1m\][\u@\h \W]\$ \[\e[0m\]&apos;  -- &#x767D;&#x8272;
 </code></pre>
 <h4 id="&#x5B9E;&#x73B0;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x662F;&#x5F69;&#x8272;&#x7684;">&#x5B9E;&#x73B0;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#x662F;&#x5F69;&#x8272;&#x7684;</h4>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210507110800.png" data-lightbox="2e7f7268-7aa5-41f3-8334-7babd12af5dc" data-title="" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210507110800.png" alt=""></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210507110800.png" data-lightbox="e8a78bb1-3807-4d4f-b1cf-eed7c0bc59d2" data-title="" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210507110800.png" alt=""></a></p>
 <pre class="language-"><code class="lang-shell">#&#x5B9E;&#x73B0;&#x4EE5;&#x4E0A;&#x6548;&#x679C;&#x65B9;&#x6CD5;,&#x5728;/etc/profile&#x5E95;&#x884C;&#x8F93;&#x5165;:
 [root@web01 /etc/sysconfig]# vim /etc/profile
 export PS1=&apos;[\[\e[31;1m\]\u@\[\e[32;1m\]\h\[\e[36;1m\] \w\[\e[33;1m\]]\$ &apos;
@@ -1052,7 +1091,7 @@ rpm -ql &#x8F6F;&#x4EF6;&#x540D;&#x79F0;    ----        -l&#x8868;&#x793A;&#x521
     systemctl is-active firewalld   --- &#x68C0;&#x67E5;&#x670D;&#x52A1;&#x662F;&#x5426;&#x6B63;&#x5E38;&#x8FD0;&#x884C;
      systemctl is-enabled firewalld  --- &#x68C0;&#x67E5;&#x786E;&#x8BA4;&#x670D;&#x52A1;&#x662F;&#x5426;&#x5F00;&#x673A;&#x8FD0;&#x884C;
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210509144705.png" data-lightbox="89bdaef6-3290-4c5c-b510-b2576e6b8ef3" data-title="&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210509144705.png" alt="&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210509144705.png" data-lightbox="c667f84f-3e7c-4299-b52c-5202dda64af3" data-title="&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210509144705.png" alt="&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;"></a></p>
 <h2 id="4&#x3001;&#x5173;&#x95ED;selinux&#x670D;&#x52A1;&#x7A0B;&#x5E8F;">4&#x3001;&#x5173;&#x95ED;selinux&#x670D;&#x52A1;&#x7A0B;&#x5E8F;</h2>
 <pre class="language-"><code class="lang-text">1.&#x4EC0;&#x4E48;&#x662F;selinux&#xFF1A;
 selinux(security enhanced linux)&#x5B89;&#x5168;&#x589E;&#x5F3A;&#x578B;linux&#x7CFB;&#x7EDF;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;linux&#x5185;&#x6838;&#x6A21;&#x5757;&#xFF0C;&#x4E5F;&#x662F;linux&#x7684;&#x4E00;&#x4E2A;&#x5B89;&#x5168;&#x5B50;&#x7CFB;&#x7EDF;&#x3002;
@@ -1178,7 +1217,7 @@ source /etc/sysconfig/i18n
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"linux系统优化","level":"1.2.4","depth":2,"next":{"title":"linux磁盘分区","level":"1.2.5","depth":2,"path":"linux/Disk_partition.md","ref":"linux/Disk_partition.md","articles":[]},"previous":{"title":"linux时间","level":"1.2.3","depth":2,"path":"linux/time_synchronism.md","ref":"linux/time_synchronism.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"linux/majorzation.md","mtime":"2021-05-10T00:41:54.123Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-19T09:08:39.763Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"linux系统优化","level":"1.2.4","depth":2,"next":{"title":"linux磁盘分区","level":"1.2.5","depth":2,"path":"linux/Disk_partition.md","ref":"linux/Disk_partition.md","articles":[]},"previous":{"title":"linux时间","level":"1.2.3","depth":2,"path":"linux/time_synchronism.md","ref":"linux/time_synchronism.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"linux/majorzation.md","mtime":"2021-05-10T00:41:54.123Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-20T08:32:06.815Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

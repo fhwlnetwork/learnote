@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 19 May 2021 09:09:01 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 May 2021 08:32:29 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -81,11 +81,29 @@
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
+            <title><![CDATA[1. 什么是rsync服务]]></title>
+            <link>http://note.wjhlog.com/nginx/rsync.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/rsync.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
             <title><![CDATA[安装]]></title>
             <description><![CDATA[错误信息：
 错误信息]]></description>
             <link>http://note.wjhlog.com/mysql/install.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/mysql/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[一台主机搭建多实例]]></title>
+            <link>http://note.wjhlog.com/mysql/Multiple_Examples_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/Multiple_Examples_install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[主从配置]]></title>
+            <link>http://note.wjhlog.com/mysql/MySQL_Replication.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/MySQL_Replication.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>

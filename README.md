@@ -11,6 +11,9 @@
 * Nginx笔记
     * [安装](nginx/install.md)
 * Tomact笔记
+* mysql笔记
+  * [安装](mysql/install.md)
+  * [主从配置](mysql/MySQL_Replication.md)
 * redis笔记
   * [安装](redis/安装.md)
   * [主从配置_哨兵配置](redis/主从配置_哨兵.md)
