@@ -252,8 +252,8 @@ Auto_Position: 0
     2. reset slave all;
     3. change master to 
     4. start slave
-````
-### (2)请求Binlog
+```
+###  (2)请求Binlog
 ```text
 原因：binlog 没开
       binlog 损坏,不存在
@@ -331,4 +331,58 @@ atlas
 mycat
 ProxySQL 
 MaxScale
+```
+## 6、主从延时监控及原因 
+### 6.1 主库方面原因
+```text
+(1) binlog写入不及时
+sync_binlog=1   ------每次事务提交都写入日志到磁盘中
+(2) 默认情况下dump_t 是串行传输binlog（安装事务的顺序执行）
+在并发事务量大时或者大事务,由于dump_t 是串型工作的,导致传送日志较慢
+如何解决问题?
+必须GTID,使用Group commit方式.可以支持DUMP_T并行
+(3) 主库极其繁忙
+慢语句，锁等待，从库个数，网络延时
+```
+### 6.2 从库方面原因
+```text
+(1) 传统复制(Classic)中 *****
+如果主库并发事务量很大,或者出现大事务
+由于从库是单SQL线程,导致,不管传的日志有多少,只能一次执行一个事务.
+5.6 版本,有了GTID,可以实现多SQL线程,但是只能基于不同库的事务进行并发回放.(database) 
+5.7 版本中,有了增强的GTID,增加了seq_no,增加了新型的并发SQL线程模式(logical_clock),MTS技术
+(2) 主从硬件差异太大
+(3) 主从的参数配置
+(4) 从库和主库的索引不一致
+(5) 版本有差异
+
+```
+### 6.3 主从延时的监控
+```text
+show slave  status\G
+Seconds_Behind_Master: 0
+
+主库方面原因的监控
+
+主库:
+mysql> show master status ;
+File: mysql-bin.000001
+Position: 1373
+
+从库
+Master_Log_File: mysql-bin.000001
+Read_Master_Log_Pos: 1373
+
+从库方面原因监控:
+
+拿了多少:
+Master_Log_File: mysql-bin.000001
+Read_Master_Log_Pos: 691688
+执行了多少:
+Relay_Log_File: db01-relay-bin.000004
+Relay_Log_Pos: 690635
+Exec_Master_Log_Pos: 691000
+Relay_Log_Space: 690635
+
+ps：用 show slave status查看，然后对比Exec_Master_Log_Pos与Read_Master_Log_Pos的差距
 ```
