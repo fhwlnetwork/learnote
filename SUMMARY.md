@@ -17,6 +17,7 @@
 * Tomact笔记
 * mysql笔记
     * [安装](mysql/install.md)
+    * [数据库操作](mysql/sql.md)
     * [一台主机搭建多实例](mysql/Multiple_Examples_install.md)
     * [主从配置](mysql/MySQL_Replication.md)
 * redis笔记
