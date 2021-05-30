@@ -126,3 +126,16 @@ select district ,group_count(name) from city where countrycode='chn' group by di
 mysql> select concat(district,":" , group_concat(name)) from city where countrycode='chn' group by district;
 
 ```
+### 1.5 SELECT 配合 ORDER BY 子句
+```sql
+---例子: 1. 统计所有国家的总人口数量, 将总人口数大于5000w的过滤出来, 并且按照从大到小顺序排列
+select counrtycode sum(population) from city  having sum(population)>50000000 order by sum(population) DESC;
+
+```
+### 1.6、SELECT 配合 LIMIT 子句
+```sql
+--- 例子: 1. 统计所有国家的总人口数量, 将总人口数大于5000w的过滤出来, 并且按照从大到小顺序排列,只显示前三名
+----LIMIT M,N :跳过M行,显示一共N行 
+----LIMIT Y OFFSET X: 跳过X行,显示一共Y行
+select countrycode,sum(population) from city group by countrycode having sum(population)>50000000 order by sum(population) desc limit 3 offset 3;
+```
