@@ -135,7 +135,7 @@ ALTER TABLE stu ADD is_del TINYINT DEFAULT 0 ;
 UPDATE stu SET is_del=1 WHERE id=7;
 SELECT * FROM stu WHERE is_del=0;
 ```
-#### DQL  数据查询语言
+
 
 
 
