@@ -117,3 +117,28 @@ EOF
 [root@wjh ~]# /application/mysql/bin/mysqld --defaults-file=/etc/my.cnf
 
 ```
+# 密码管理
+## 管理密码设定
+```sh
+~]# mysqladmin -uroot -p password wjh123
+```
+## 管理员忘记密码重设
+```sh
+# --skip-grant-tables  #跳过授权表
+# --skip-networking    #跳过远程登录
+# 第一步：关闭数据库
+~] # /etc/init.d/mysqld stop
+# 第二步：启动数据库到维护模式
+~] # mysql_sate --skip-grant-tables --skip-networking &
+# 第三步：登陆并修改服务器
+
+mysql> alter user root@'localhost' identified by '123456';
+##可能遇到的报错
+ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement
+#执行一下操作
+mysql> flush privileges;
+mysql> alter user root@'localhost' identified by '123456';
+# 第四步：关闭服务器重新启动
+~]# /etc/init.d/mysqld restart
+
+```
