@@ -1,4 +1,4 @@
-# 数据查询
+# 数据查询---select语句的应用
 ```sql
 mysql> desc city;
 +-------------+----------+------+-----+---------+----------------+
@@ -13,8 +13,8 @@ mysql> desc city;
 5 rows in set (0.07 sec)
 
 ```
-## 1、select语句的应用
-### 1.1 select单独使用的情况
+
+## 1 select单独使用的情况
 ```sql
 
 mysql> select @@basedir;
@@ -65,29 +65,29 @@ mysql> select now();
 
 ```
 
-### 1.2 SELECT 配合 FROM 子句使用
+## 2 SELECT 配合 FROM 子句使用
 ```sql
 --- -- select 列,列,列 from 表
 --- 例子:
---- 1. 查询表中所有的信息(生产中几乎是没有这种需求的)
+---  查询表中所有的信息(生产中几乎是没有这种需求的)
 select * from city;
 ---2. 查询表中 name和population的值
 select name,population from city;
 ```
-### 1.3 SELECT 配合 WHERE 子句使用
+## 3 SELECT 配合 WHERE 子句使用
 ```sql
 -- select 列,列,列 from 表 where 过滤条件
 -- where等值条件查询 *****
 ---例子:
----- 1. 查询中国所有的城市名和人口数
+----  查询中国所有的城市名和人口数
 select name population from city where countrycode='chn';
 -- where 配合比较判断查询(> < >= <=) ***** 
 ---例子: 
-------1. 世界上小于100人的城市名和人口数
+------ 世界上小于100人的城市名和人口数
 select name population from city where population <100;
 -- where 配合 逻辑连接符(and or) 
 --例子:
----1. 查询中国人口数量大于1000w的城市名和人口
+--- 查询中国人口数量大于1000w的城市名和人口
 select name population from city where countrycode='chn' and population> 1000000;
 ---2. 查询中国或美国的城市名和人口数
 select name population from city where coutrycode='chn' or countrycode='usa';
@@ -95,17 +95,17 @@ select name population from city where coutrycode='chn' or countrycode='usa';
 select name population from city where population between 5000000 and 6000000;
 -- where 配合 like 子句 模糊查询 *****
 --例子:
--- 1. 查询一下contrycode中带有CH开头,城市信息
+--  查询一下contrycode中带有CH开头,城市信息
 select * from city where countrycode='ch%';
 --- 注意:不要出现类似于 %CH%,前后都有百分号的语句,因为不走索引,性能极差 如果业务中有大量需求,我们用"ES"来替代
 
 -- where 配合 in 语句 
 --例子: 
----   1. 查询中国或美国的城市信息. 
+---    查询中国或美国的城市信息. 
 select * from city where countrycode in ('chn','usa')
 
 ```
-### 1.4 GROUP BY
+## 4 GROUP BY
 ```sql
 --- 将某列种有共同条件的数据行，分成一组，然后在进行聚合函数操作
 ---- 例子
@@ -126,16 +126,43 @@ select district ,group_count(name) from city where countrycode='chn' group by di
 mysql> select concat(district,":" , group_concat(name)) from city where countrycode='chn' group by district;
 
 ```
-### 1.5 SELECT 配合 ORDER BY 子句
+## 5 SELECT 配合 ORDER BY 子句
 ```sql
----例子: 1. 统计所有国家的总人口数量, 将总人口数大于5000w的过滤出来, 并且按照从大到小顺序排列
+---例子:  统计所有国家的总人口数量, 将总人口数大于5000w的过滤出来, 并且按照从大到小顺序排列
 select counrtycode sum(population) from city  having sum(population)>50000000 order by sum(population) DESC;
 
 ```
-### 1.6、SELECT 配合 LIMIT 子句
+## 6 SELECT 配合 LIMIT 子句
 ```sql
---- 例子: 1. 统计所有国家的总人口数量, 将总人口数大于5000w的过滤出来, 并且按照从大到小顺序排列,只显示前三名
+--- 例子:  统计所有国家的总人口数量, 将总人口数大于5000w的过滤出来, 并且按照从大到小顺序排列,只显示前三名
 ----LIMIT M,N :跳过M行,显示一共N行 
 ----LIMIT Y OFFSET X: 跳过X行,显示一共Y行
 select countrycode,sum(population) from city group by countrycode having sum(population)>50000000 order by sum(population) desc limit 3 offset 3;
+```
+## 7 union 和 union all
+```sql
+--- 作用: 多个结果集合并查询的功能
+--- 需求: 查询中或者美国的城市信息
+SELECT * FROM city WHERE countrycode='CHN' OR countrycode='USA';
+
+改写为: 
+SELECT * FROM city WHERE countrycode='CHN' 
+UNION ALL 
+SELECT * FROM city WHERE countrycode='USA';
+
+---面试题: union 和 union all 的区别 ? 
+union all   不做去重复
+union       会做去重操作
+```
+## 8 多表查询
+```sql
+----例子: 查询世界上小于100人的城市,所在的国家名,国土面积,城市名,人口数
+mysql> select city.countrycode,city.name,city.population,country.SurfaceArea from city  join country on city.countrycode=country.code where city.population<100;
++-------------+-----------+------------+-------------+
+| countrycode | name      | population | SurfaceArea |
++-------------+-----------+------------+-------------+
+| PCN         | Adamstown |         42 | 49.00       |
++-------------+-----------+------------+-------------+
+1 row in set (0.06 sec)
+
 ```
