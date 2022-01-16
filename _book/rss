@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 24 May 2021 06:13:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 16 Jan 2022 04:07:38 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -24,7 +24,7 @@
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[linux基础命令]]></title>
+            <title><![CDATA[系统管理的基础知识]]></title>
             <link>http://note.wjhlog.com/linux/commond.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/linux/commond.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
@@ -101,6 +101,18 @@
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
+            <title><![CDATA[数据查询---select语句的应用]]></title>
+            <link>http://note.wjhlog.com/mysql/dql.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/dql.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[数据库索引]]></title>
+            <link>http://note.wjhlog.com/mysql/index_key.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/index_key.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
             <title><![CDATA[一台主机搭建多实例]]></title>
             <link>http://note.wjhlog.com/mysql/Multiple_Examples_install.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/mysql/Multiple_Examples_install.html</guid>
@@ -143,12 +155,6 @@
             <title><![CDATA[No title]]></title>
             <link>http://note.wjhlog.com/redis/工具管理.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/redis/工具管理.html</guid>
-            <dc:creator><![CDATA[wjh]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[安装]]></title>
-            <link>http://note.wjhlog.com/k8_docker/install.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/k8_docker/install.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>

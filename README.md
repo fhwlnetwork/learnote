@@ -21,7 +21,7 @@
   * [redis集群扩容收缩](redis/集群扩容收缩.md)
   * [工具管理](redis/工具管理.md)
 * k8_docker笔记
-  * [安装](k8_docker/install.md)
+  * [安装](cloud_learn/install.md)
 * ES笔记
   * [安装](es/install.md)
   * [交互](es/head插件交互.md)

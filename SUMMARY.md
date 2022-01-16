@@ -5,6 +5,8 @@
     * [LVS负载均衡](linux/lvs.md)
     * [linux基础命令](linux/commond.md)
     * [linux时间](linux/time_synchronism.md)
+    * [系统管理命令说明](linux/commond.md)
+    * [系统目录结构](linux/fictory.md)
     * [linux系统优化](linux/majorzation.md)
     * [linux磁盘分区](linux/Disk_partition.md)
 * Nginx笔记
@@ -29,7 +31,7 @@
     * [redis集群扩容收缩](redis/集群扩容收缩.md)
     * [工具管理](redis/工具管理.md)
 * k8_docker笔记
-    * [安装](k8_docker/install.md)
+    * [安装](clound_learn/install.md)
 * ES笔记
     * [安装](es/install.md)
     * [交互](es/head插件交互.md)

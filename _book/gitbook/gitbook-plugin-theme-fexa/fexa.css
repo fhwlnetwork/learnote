@@ -119,9 +119,9 @@ body {
 .header-inner .logo {
   float: left;
   height: 50px;
-  width: 58px;
-  background: url('https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/logo.png');
-  background-size:58px 50px;
+  width: 120px;
+  background: url('./logo.png');
+  background-size: 120px 50px;
   background-repeat: no-repeat;
 }
 
