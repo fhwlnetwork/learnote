@@ -31,7 +31,8 @@
     * [redis集群扩容收缩](redis/集群扩容收缩.md)
     * [工具管理](redis/工具管理.md)
 * k8_docker笔记
-    * [安装](clound_learn/install.md)
+    * [go环境安装](clound_learn/go_install.md)
+    * [乌班图安装docker](clound_learn/docker_install.md)
 * ES笔记
     * [安装](es/install.md)
     * [交互](es/head插件交互.md)
