@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[吴建华的学习笔记]]></title>
+        <description><![CDATA[吴建华的学习笔记]]></description>
+        <link>http://note.wjhlog.com/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Wed, 02 Feb 2022 02:11:55 GMT</lastBuildDate>
+        <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[wjh]]></author>
+        <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
+        <webMaster><![CDATA[849109312@qq.com]]></webMaster>
+        <category><![CDATA[gitbook]]></category>
+        <item>
+            <title><![CDATA[先写个目录吧]]></title>
+            <description><![CDATA[这是码农转运维的心塞路]]></description>
+            <link>http://note.wjhlog.com/</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[LVS负载均衡]]></title>
+            <link>http://note.wjhlog.com/linux/lvs.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/lvs.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[系统管理的基础知识]]></title>
+            <link>http://note.wjhlog.com/linux/commond.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/commond.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[时间管理]]></title>
+            <link>http://note.wjhlog.com/linux/time_synchronism.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/time_synchronism.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[系统优化]]></title>
+            <description><![CDATA[uname]]></description>
+            <link>http://note.wjhlog.com/linux/majorzation.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/majorzation.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[磁盘分区]]></title>
+            <link>http://note.wjhlog.com/linux/Disk_partition.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/Disk_partition.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装]]></title>
+            <link>http://note.wjhlog.com/nginx/install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[虚拟主机]]></title>
+            <link>http://note.wjhlog.com/nginx/virtual_host.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/virtual_host.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[lnmp配置]]></title>
+            <description><![CDATA[###【配置PHP】]]></description>
+            <link>http://note.wjhlog.com/nginx/lnmp.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/lnmp.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[负载均衡]]></title>
+            <link>http://note.wjhlog.com/nginx/load_balanced.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/load_balanced.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[keepalieved配置nginx高可用冗余]]></title>
+            <description><![CDATA[架构]]></description>
+            <link>http://note.wjhlog.com/nginx/keepalived_nginx.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/keepalived_nginx.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1. 什么是rsync服务]]></title>
+            <link>http://note.wjhlog.com/nginx/rsync.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/rsync.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装]]></title>
+            <description><![CDATA[错误信息：
+错误信息]]></description>
+            <link>http://note.wjhlog.com/mysql/install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[数据库操作]]></title>
+            <link>http://note.wjhlog.com/mysql/sql.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/sql.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[数据查询---select语句的应用]]></title>
+            <link>http://note.wjhlog.com/mysql/dql.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/dql.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[数据库索引]]></title>
+            <link>http://note.wjhlog.com/mysql/index_key.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/index_key.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[一台主机搭建多实例]]></title>
+            <link>http://note.wjhlog.com/mysql/Multiple_Examples_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/Multiple_Examples_install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[主从配置]]></title>
+            <link>http://note.wjhlog.com/mysql/MySQL_Replication.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/MySQL_Replication.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1、目录规划]]></title>
+            <description><![CDATA[进入utils，执行install文件，生成]]></description>
+            <link>http://note.wjhlog.com/redis/安装.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/安装.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[安装参考：redis安装]]></description>
+            <link>http://note.wjhlog.com/redis/主从配置_哨兵.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/主从配置_哨兵.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[redis集群配置——配置三主三从]]></title>
+            <description><![CDATA[image-20210421233813182]]></description>
+            <link>http://note.wjhlog.com/redis/集群.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/集群.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[redis集群扩容收缩]]></title>
+            <link>http://note.wjhlog.com/redis/集群扩容收缩.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/集群扩容收缩.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <link>http://note.wjhlog.com/redis/工具管理.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/工具管理.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Elasticsearch安装部署-rpm安装]]></title>
+            <link>http://note.wjhlog.com/es/install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/es/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[交互]]></title>
+            <link>http://note.wjhlog.com/es/head插件交互.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/es/head插件交互.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[增删改查]]></title>
+            <description><![CDATA[状态说明]]></description>
+            <link>http://note.wjhlog.com/es/dml.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/es/dml.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[集群部署安装配置]]></title>
+            <description><![CDATA[重复以上内容]]></description>
+            <link>http://note.wjhlog.com/es/集群.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/es/集群.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装]]></title>
+            <description><![CDATA[参考es笔记es安装配置]]></description>
+            <link>http://note.wjhlog.com/elk/安装.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/安装.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[nginxjson日志采集]]></title>
+            <description><![CDATA[ngingx_json_Log]]></description>
+            <link>http://note.wjhlog.com/elk/nginx_log_json.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/nginx_log_json.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[ELk 收集Nginx的正常日志和错误日志]]></title>
+            <link>http://note.wjhlog.com/elk/nginx_success_error_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/nginx_success_error_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[tomcat日志收集]]></title>
+            <description><![CDATA[查看页面]]></description>
+            <link>http://note.wjhlog.com/elk/tomcat_log_cat.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/tomcat_log_cat.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[java多行日志收集]]></title>
+            <description><![CDATA[日志结果
+日志结果2]]></description>
+            <link>http://note.wjhlog.com/elk/java_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/java_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[收集docker日志]]></title>
+            <link>http://note.wjhlog.com/elk/docker_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/docker_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[filebeat模块收集ngingx普通日志]]></title>
+            <description><![CDATA[图示]]></description>
+            <link>http://note.wjhlog.com/elk/filebeat_modules_get_ngingx_simple_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/filebeat_modules_get_ngingx_simple_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[kibana画图]]></title>
+            <description><![CDATA[第一步]]></description>
+            <link>http://note.wjhlog.com/elk/kibana_draw_dashboard.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/kibana_draw_dashboard.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[redis作为缓存收集日志]]></title>
+            <description><![CDATA[结构]]></description>
+            <link>http://note.wjhlog.com/elk/redis_cat_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/redis_cat_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[kafka和zookeeper安装]]></title>
+            <description><![CDATA[结构]]></description>
+            <link>http://note.wjhlog.com/elk/kafka缓存收集日志.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/kafka缓存收集日志.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[图谱架构图]]></description>
+            <link>http://note.wjhlog.com/elk/nginx_keepalived_redis.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/nginx_keepalived_redis.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装----在线安装]]></title>
+            <description><![CDATA[##第一步 ：下载安装zabbix yum 源文件]]></description>
+            <link>http://note.wjhlog.com/zabbix/install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[创建监控]]></title>
+            <link>http://note.wjhlog.com/zabbix/create_monitor.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/create_monitor.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[zabbix自定义监控]]></title>
+            <description><![CDATA[
+]]></description>
+            <link>http://note.wjhlog.com/zabbix/custom__monitor.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/custom__monitor.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[微信报警配置]]></title>
+            <description><![CDATA[
+]]></description>
+            <link>http://note.wjhlog.com/zabbix/wx.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/wx.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[邮件报警配置]]></title>
+            <link>http://note.wjhlog.com/zabbix/email.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/email.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+    </channel>
+</rss>
