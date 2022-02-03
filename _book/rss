@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 03 Feb 2022 13:43:09 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 03 Feb 2022 16:12:59 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -165,26 +165,64 @@
         </item>
         <item>
             <title><![CDATA[go环境安装]]></title>
-            <link>http://note.wjhlog.com/clound_learn/go_install.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/clound_learn/go_install.html</guid>
+            <description><![CDATA[go env查看环境]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/go_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/go_install.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[docker简介]]></title>
-            <link>http://note.wjhlog.com/clound_learn/docker_introduce.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/clound_learn/docker_introduce.html</guid>
+            <description><![CDATA[1、docker是基于容器技术的轻量级虚拟化解决方案
+2、docker是容器引擎，把linux的cgroup、namespace等容器底层技术进行封装抽象为用户提供了创建和管理容器的便捷界面（包括命令行和api)
+Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是通过对应用组件的封装、分发、部署、运行等生命周期的管理，使用户的APP（可以是一个WEB应用或数据库应用等等）及其运行环境能够做到 “一次镜像，处处运行”。]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_introduce.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_introduce.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[乌班图安装docker]]></title>
-            <link>http://note.wjhlog.com/clound_learn/docker_install_on_ubuntu.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/clound_learn/docker_install_on_ubuntu.html</guid>
+            <title><![CDATA[乌图班图安装docker]]></title>
+            <description><![CDATA[Docker 的旧版本被称为 docker，docker.io 或 docker-engine 。如果已安装，请卸载它们：]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_install_on_ubuntu.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_on_ubuntu.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[centos安装docker]]></title>
-            <link>http://note.wjhlog.com/clound_learn/docker_install_on_centos.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/clound_learn/docker_install_on_centos.html</guid>
+            <description><![CDATA[目前，CentOS 仅发行版本中的内核支持 Docker。Docker 运行在CentOS 7 (64-bit)上，]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_install_on_centos.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_on_centos.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[阿里云镜像加速]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/aliyun_images_speed_up.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/aliyun_images_speed_up.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[基础命令]]></title>
+            <description><![CDATA[启动docker： systemctl start docker
+停止docker： systemctl stop docker
+重启docker： systemctl restart docker
+查看docker状态： systemctl status docker
+开机启动： systemctl enable docker
+查看docker概要信息： docker info
+查看docker总体帮助文档： docker --help
+查看docker命令帮助文档： docker 具体命令 --help]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_commond_images.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_commond_images.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[容器命令]]></title>
+            <description><![CDATA[| 参数                          | 说明                                 |
+| :---------------------------- | :----------------------------------- |
+| -p hostPort:containerPort     | 端口映射    -p      8080:80          |
+| -p hostPort:containerPort     | 配置监听地址   -p 10.0.0.100:8000:80 |
+| -p hostPort:containerPort:udp | 指定协议 -p 8080:80:tcp              |
+| -p 81:80  -p 443:443          | 指定多个                             |]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_commond_containers.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_commond_containers.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>

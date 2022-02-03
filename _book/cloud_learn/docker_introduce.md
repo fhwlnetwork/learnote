@@ -135,3 +135,17 @@ Docker 是一个 C/S 模式的架构，后端是一个松耦合架构，众多�
 >
 > 6、Libcontainer 是一项独立的容器管理包，Network driver以及Exec driver 都是通过Libcontainer 来实现具体对容器进行操作。
 
+![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202032205119.png)
+
+## 7、docker为什么比虚拟机快
+
+(1)docker有着比虚拟机更少的抽象层
+
+  由于docker不需要Hypervisor(虚拟机)实现硬件资源虚拟化,运行在docker容器上的程序直接使用的都是实际物理机的硬件资源。因此在CPU、内存利用率上docker将会在效率上有明显优势。
+
+(2)docker利用的是宿主机的内核,而不需要加载操作系统OS内核
+
+  当新建一个容器时,docker不需要和虚拟机一样重新加载一个操作系统内核。进而避免引寻、加载操作系统内核返回等比较费时费资源的过程,当新建一个虚拟机时,虚拟机软件需要加载OS,返回新建过程是分钟级别的。而docker由于直接利用宿主机的操作系统,则省略了返回过程,因此新建一个docker容器只需要几秒钟。
+
+![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202032225391.png)![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202032227588.png)
+
