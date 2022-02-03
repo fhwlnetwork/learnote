@@ -22,7 +22,9 @@
   * [工具管理](redis/工具管理.md)
 * k8_docker笔记
   * [go环境安装](clound_learn/go_install.md)
-  * [乌班图安装docker](clound_learn/docker_install.md)
+  * [docker简介](clound_learn/docker_introduce.md)
+  * [乌班图安装docker](clound_learn/docker_install_on_ubuntu.md)
+  * [centos安装docker](clound_learn/docker_install_on_centos.md)
 * ES笔记
   * [安装](es/install.md)
   * [交互](es/head插件交互.md)
