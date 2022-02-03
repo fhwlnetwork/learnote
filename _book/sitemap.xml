@@ -4,6 +4,7 @@
 <url> <loc>https://log.wjhlog.com/linux/lvs.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/linux/commond.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/linux/time_synchronism.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/linux/fictory.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/linux/majorzation.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/linux/Disk_partition.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/nginx/install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -23,6 +24,10 @@
 <url> <loc>https://log.wjhlog.com/redis/集群.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/redis/集群扩容收缩.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/redis/工具管理.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/clound_learn/go_install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/clound_learn/docker_introduce.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/clound_learn/docker_install_on_ubuntu.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/clound_learn/docker_install_on_centos.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/es/install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/es/head插件交互.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/es/dml.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>

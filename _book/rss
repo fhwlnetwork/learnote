@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 02 Feb 2022 02:11:55 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 03 Feb 2022 05:23:38 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -33,6 +33,12 @@
             <title><![CDATA[时间管理]]></title>
             <link>http://note.wjhlog.com/linux/time_synchronism.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/linux/time_synchronism.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[系统目录结构]]></title>
+            <link>http://note.wjhlog.com/linux/fictory.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/fictory.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
@@ -155,6 +161,30 @@
             <title><![CDATA[No title]]></title>
             <link>http://note.wjhlog.com/redis/工具管理.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/redis/工具管理.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[go环境安装]]></title>
+            <link>http://note.wjhlog.com/clound_learn/go_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/clound_learn/go_install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[docker简介]]></title>
+            <link>http://note.wjhlog.com/clound_learn/docker_introduce.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/clound_learn/docker_introduce.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[乌班图安装docker]]></title>
+            <link>http://note.wjhlog.com/clound_learn/docker_install_on_ubuntu.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/clound_learn/docker_install_on_ubuntu.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[centos安装docker]]></title>
+            <link>http://note.wjhlog.com/clound_learn/docker_install_on_centos.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/clound_learn/docker_install_on_centos.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
