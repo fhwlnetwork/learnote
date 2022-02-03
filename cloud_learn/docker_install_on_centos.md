@@ -59,17 +59,23 @@
 >
 > 由于是海外资源，加载资源时容易404，推荐使用国内源，本文档使用阿里源
 
+![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202032147896.png)
+
 ## 6、更新yum软件包索引
 
 ```sh
 # yum makecache fast
 ```
 
+![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202032147919.png)
+
 ## 7、安装Docker ce
 
 ```sh
 # yum -y install docker-ce docker-ce-cli containerd.io
 ```
+
+![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202032147941.png)
 
 ## 8、启动docker
 
@@ -83,7 +89,9 @@
 # docker version
 ```
 
-## 9、卸载
+![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202032147964.png)
+
+## 、9、卸载
 
 ```sh
 # systemctl stop docker
@@ -106,3 +114,4 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
+![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202032147985.png)

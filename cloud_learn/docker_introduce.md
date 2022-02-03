@@ -135,3 +135,4 @@ Docker 是一个 C/S 模式的架构，后端是一个松耦合架构，众多�
 >
 > 6、Libcontainer 是一项独立的容器管理包，Network driver以及Exec driver 都是通过Libcontainer 来实现具体对容器进行操作。
 
+![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202032205119.png)
