@@ -38,6 +38,10 @@
     * [阿里云镜像加速](cloud_learn/aliyun_images_speed_up.md)
     * [镜像命令](cloud_learn/docker_commond_images.md)
     * [容器命令](cloud_learn/docker_commond_containers.md)
+    * [docker镜像](cloud_learn/docker_images.md)
+    * [推送镜像到阿里云](cloud_learn/docker_push_aliyun.md)
+    * [推送镜像到本地](cloud_learn/docker_push_local.md)
+    * [Docker容器数据卷](cloud_learn/docker_valumes.md)
 * ES笔记
     * [安装](es/install.md)
     * [交互](es/head插件交互.md)

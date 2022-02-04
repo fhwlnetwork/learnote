@@ -25,6 +25,10 @@
   * [docker简介](cloud_learn/docker_introduce.md)
   * [乌班图安装docker](cloud_learn/docker_install_on_ubuntu.md)
   * [centos安装docker](cloud_learn/docker_install_on_centos.md)
+  * [阿里云镜像加速](cloud_learn/aliyun_images_speed_up.md)
+  * [镜像命令](cloud_learn/docker_commond_images.md)
+  * [容器命令](cloud_learn/docker_commond_containers.md)
+  * [docker镜像](cloud_learn/docker_images.md)
 * ES笔记
   * [安装](es/install.md)
   * [交互](es/head插件交互.md)
