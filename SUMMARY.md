@@ -42,6 +42,10 @@
     * [推送镜像到阿里云](cloud_learn/docker_push_aliyun.md)
     * [推送镜像到本地](cloud_learn/docker_push_local.md)
     * [Docker容器数据卷](cloud_learn/docker_valumes.md)
+    * [安装tomact](cloud_learn/docker_install_tomact.md)
+    * [安装mysql](cloud_learn/docker_install_mysql.md)
+    * [安装redis](cloud_learn/docker_install_redis.md)
+    * [安装nginx](cloud_learn/docker_install_nginx.md)
 * k8_docker笔记
     * [go环境安装](cloud_learn/go_install.md)
 * ES笔记
