@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 04 Feb 2022 12:39:53 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 04 Feb 2022 14:27:21 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -244,6 +244,24 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
             <description><![CDATA[卷就是目录或文件，存在于一个或多个容器中，由docker挂载到容器，但不属于联合文件系统，因此能够绕过Union File System提供一些用于持续存储或共享数据的特性：]]></description>
             <link>http://note.wjhlog.com/cloud_learn/docker_valumes.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_valumes.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装tomact]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker_install_tomact.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_tomact.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装mysql]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker_install_mysql.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_mysql.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装redis]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker_install_redis.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_redis.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
