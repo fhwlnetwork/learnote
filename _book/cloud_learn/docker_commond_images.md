@@ -19,7 +19,7 @@
 # docker images [options]
 ```
 
-
+![](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20220204100006.png)
 
 >**各个选项说明**:
 >
@@ -47,12 +47,16 @@
 >
 >
 
+![image-20220204100219941](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220204100219941.png)
+
 ###  某个XXX镜像名字
 
 ```sh
 # docker search [OPTIONS] 镜像名字
 ```
 
+> ![image-20220204100355734](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220204100355734.png)
+>
 > 各项参数说明：
 >
 > name:镜像名称
@@ -69,7 +73,7 @@
 ># docker search --limit 5 redis
 >```
 >
->
+>![image-20220204100440204](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220204100440204.png)
 
 
 
@@ -85,6 +89,8 @@ docker pull 镜像名字
 #  docker pull ubuntu
 ```
 
+![image-20220204100617821](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220204100617821.png)
+
 ###  查看镜像/容器/数据卷所占的空间
 
 ```sh
@@ -99,12 +105,19 @@ docker pull 镜像名字
 >
 >build cache:构建缓存 
 
-
+![image-20220204100659436](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220204100659436.png)
 
 ### docker rmi 某个XXX镜像名字ID
 ####  删除单个
 docker rmi -f 镜像ID
+
+![image-20220204100801318](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220204100801318.png)
+
 #### 删除多个
 docker rmi -f 镜像名1:TAG 镜像名2:TAG
 #### 删除全部
 docker rmi -f $(docker images -qa)
+
+> <a style="color:red;">危险操作，没事别瞎执行</a>
+
+![image-20220204120110566](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220204120110566.png)

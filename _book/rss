@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 03 Feb 2022 16:23:08 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 04 Feb 2022 11:33:38 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -164,13 +164,6 @@
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[go环境安装]]></title>
-            <description><![CDATA[go env查看环境]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/go_install.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/go_install.html</guid>
-            <dc:creator><![CDATA[wjh]]></dc:creator>
-        </item>
-        <item>
             <title><![CDATA[docker简介]]></title>
             <description><![CDATA[1、docker是基于容器技术的轻量级虚拟化解决方案
 2、docker是容器引擎，把linux的cgroup、namespace等容器底层技术进行封装抽象为用户提供了创建和管理容器的便捷界面（包括命令行和api)
@@ -223,6 +216,40 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
 | -p 81:80  -p 443:443          | 指定多个                             |]]></description>
             <link>http://note.wjhlog.com/cloud_learn/docker_commond_containers.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_commond_containers.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[docker镜像]]></title>
+            <description><![CDATA[​		是一种轻量级、可执行的独立软件包，它包含运行某个软件所需的所有内容，我们把应用程序和配置依赖打包好形成一个可交付的运行环境(包括代码、运行时需要的库、环境变量和配置文件等)，这个打包好的运行环境就是image镜像文件。]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_images.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_images.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[推送镜像到阿里云]]></title>
+            <description><![CDATA[image-20220204170207963]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_push_aliyun.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_push_aliyun.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[推送镜像到本地]]></title>
+            <description><![CDATA[image-20220204180753957]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_push_local.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_push_local.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Docker容器数据卷]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker_valumes.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_valumes.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[go环境安装]]></title>
+            <description><![CDATA[go env查看环境]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/go_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/go_install.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
