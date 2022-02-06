@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 04 Feb 2022 14:27:21 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 06 Feb 2022 12:44:11 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -262,6 +262,12 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
             <title><![CDATA[安装redis]]></title>
             <link>http://note.wjhlog.com/cloud_learn/docker_install_redis.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_redis.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[数据库主从]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/database_main_from.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/database_main_from.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>

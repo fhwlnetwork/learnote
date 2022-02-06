@@ -45,6 +45,7 @@
     * [安装tomact](cloud_learn/docker_install_tomact.md)
     * [安装mysql](cloud_learn/docker_install_mysql.md)
     * [安装redis](cloud_learn/docker_install_redis.md)
+    * [数据库主从](cloud_learn/database_main_from.md)
 * k8_docker笔记
     * [go环境安装](cloud_learn/go_install.md)
 * ES笔记
