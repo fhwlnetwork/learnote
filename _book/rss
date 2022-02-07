@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 07 Feb 2022 09:42:54 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Feb 2022 12:31:03 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -295,6 +295,20 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
             <description><![CDATA[docker不启动，默认网络情况下网卡为 ens33/eth0 lo virbro]]></description>
             <link>http://note.wjhlog.com/cloud_learn/docker_network.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_network.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[容器编排]]></title>
+            <description><![CDATA[Compose 是 Docker 公司推出的一个工具软件，可以管理多个 Docker 容器组成一个应用。你需要定义一个 YAML 格式的配置文件docker-compose.yml，写好多个容器之间的调用关系。然后，只要一个命令，就能同时启动/关闭这些容器]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_compose.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_compose.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Docker轻量级可视化工具Portainer]]></title>
+            <description><![CDATA[Portainer 是一款轻量级的应用，它提供了图形化界面，用于方便地管理Docker环境，包括单机环境和集群环境。]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_portainer.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_portainer.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>

@@ -51,6 +51,8 @@
         * [安装redis集群](cloud_learn/redis_cluster.md)
         * [DockerFile解析](cloud_learn/dockerfile.md)
         * [Docker网络](cloud_learn/docker_network.md)
+        * [容器编排](cloud_learn/docker_compose.md)
+        * [Docker轻量级可视化工具Portainer](cloud_learn/docker_portainer.md)
 * k8_docker笔记
     * [go环境安装](cloud_learn/go_install.md)
 * ES笔记
