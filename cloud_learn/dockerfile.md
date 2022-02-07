@@ -184,8 +184,8 @@ RUN yum -y isntall net-tools
 RUN yum -y install glibc.i686
 RUN mkdir /usr/local/java
 
-# ADD is relative path jar,input jdk-8u171-linux-x64.tar.gz to container,package need with dockerfile file on the same path
-ADD jdk-8u171-linux-x64.tar.gz /usr/local/java/
+# ADD is relative path jar,input jdk-8u181-linux-x64.tar.gz to container,package need with dockerfile file on the same path
+ADD jdk-8u181-linux-x64.tar.gz /usr/local/java/
 
 #set java environment path
 ENV JAVA_HOME /usr/local/java/jdk1.8.0_171
@@ -210,6 +210,8 @@ docker build -t centosjava8:1.5 .
 ```
 
 > 注意，上面TAG后面有个空格，有个点
+
+![image-20220207162213243](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/202202071622320.png)
 
 ### 3、运行
 

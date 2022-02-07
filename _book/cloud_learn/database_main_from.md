@@ -123,11 +123,17 @@ change master to master_host='10.0.0.200',master_user='slave',master_password='1
 >主从复制命令参数说明
 >
 >master_host：主数据库的IP地址；
+>
 >master_port：主数据库的运行端口；
+>
 >master_user：在主数据库创建的用于同步数据的用户账号；
+>
 >master_password：在主数据库创建的用于同步数据的用户密码；
+>
 >master_log_file：指定从数据库要复制数据的日志文件，通过查看主数据的状态，获取File参数；
+>
 >master_log_pos：指定从数据库从哪个位置开始复制数据，通过查看主数据的状态，获取Position参数；
+>
 >master_connect_retry：连接失败重试的时间间隔，单位为秒。
 
 ## 12、在从数据库中查看主从同步状态

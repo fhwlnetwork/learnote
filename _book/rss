@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 07 Feb 2022 07:15:07 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Feb 2022 09:42:54 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -288,6 +288,13 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
             <description><![CDATA[Dockerfile是用来构建Docker镜像的文本文件，是由一条条构建镜像所需的指令和参数构成的脚本。]]></description>
             <link>http://note.wjhlog.com/cloud_learn/dockerfile.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/dockerfile.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Docker网络]]></title>
+            <description><![CDATA[docker不启动，默认网络情况下网卡为 ens33/eth0 lo virbro]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker_network.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_network.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
