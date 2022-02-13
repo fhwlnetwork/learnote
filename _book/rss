@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 07 Feb 2022 12:31:03 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 13 Feb 2022 10:30:27 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -168,28 +168,28 @@
             <description><![CDATA[1、docker是基于容器技术的轻量级虚拟化解决方案
 2、docker是容器引擎，把linux的cgroup、namespace等容器底层技术进行封装抽象为用户提供了创建和管理容器的便捷界面（包括命令行和api)
 Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是通过对应用组件的封装、分发、部署、运行等生命周期的管理，使用户的APP（可以是一个WEB应用或数据库应用等等）及其运行环境能够做到 “一次镜像，处处运行”。]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_introduce.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_introduce.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_introduce.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_introduce.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[乌图班图安装docker]]></title>
             <description><![CDATA[Docker 的旧版本被称为 docker，docker.io 或 docker-engine 。如果已安装，请卸载它们：]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_install_on_ubuntu.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_on_ubuntu.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_on_ubuntu.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_on_ubuntu.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[centos安装docker]]></title>
             <description><![CDATA[目前，CentOS 仅发行版本中的内核支持 Docker。Docker 运行在CentOS 7 (64-bit)上，]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_install_on_centos.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_on_centos.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_on_centos.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_on_centos.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[阿里云镜像加速]]></title>
-            <link>http://note.wjhlog.com/cloud_learn/aliyun_images_speed_up.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/aliyun_images_speed_up.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/aliyun_images_speed_up.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/aliyun_images_speed_up.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
@@ -202,8 +202,8 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
 查看docker概要信息： docker info
 查看docker总体帮助文档： docker --help
 查看docker命令帮助文档： docker 具体命令 --help]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_commond_images.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_commond_images.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_commond_images.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_commond_images.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
@@ -214,108 +214,115 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
 | -p hostPort:containerPort     | 配置监听地址   -p 10.0.0.100:8000:80 |
 | -p hostPort:containerPort:udp | 指定协议 -p 8080:80:tcp              |
 | -p 81:80  -p 443:443          | 指定多个                             |]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_commond_containers.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_commond_containers.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_commond_containers.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_commond_containers.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[docker镜像]]></title>
             <description><![CDATA[​		是一种轻量级、可执行的独立软件包，它包含运行某个软件所需的所有内容，我们把应用程序和配置依赖打包好形成一个可交付的运行环境(包括代码、运行时需要的库、环境变量和配置文件等)，这个打包好的运行环境就是image镜像文件。]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_images.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_images.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_images.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_images.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[推送镜像到阿里云]]></title>
             <description><![CDATA[image-20220204170207963]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_push_aliyun.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_push_aliyun.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_push_aliyun.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_push_aliyun.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[推送镜像到本地]]></title>
             <description><![CDATA[image-20220204180753957]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_push_local.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_push_local.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_push_local.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_push_local.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[Docker容器数据卷]]></title>
             <description><![CDATA[卷就是目录或文件，存在于一个或多个容器中，由docker挂载到容器，但不属于联合文件系统，因此能够绕过Union File System提供一些用于持续存储或共享数据的特性：]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_valumes.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_valumes.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_valumes.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_valumes.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[安装tomact]]></title>
-            <link>http://note.wjhlog.com/cloud_learn/docker_install_tomact.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_tomact.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_tomact.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_tomact.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[安装mysql]]></title>
-            <link>http://note.wjhlog.com/cloud_learn/docker_install_mysql.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_mysql.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_mysql.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_mysql.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[安装redis]]></title>
-            <link>http://note.wjhlog.com/cloud_learn/docker_install_redis.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_install_redis.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_redis.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_redis.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[数据库主从]]></title>
-            <link>http://note.wjhlog.com/cloud_learn/database_main_from.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/database_main_from.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/database_main_from.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/database_main_from.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[redis集群面试]]></title>
             <description><![CDATA[​																	]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/redis_cluster_question.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/redis_cluster_question.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/redis_cluster_question.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/redis_cluster_question.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[redis集群]]></title>
-            <link>http://note.wjhlog.com/cloud_learn/redis_cluster.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/redis_cluster.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/redis_cluster.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/redis_cluster.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[DockerFile解析]]></title>
             <description><![CDATA[Dockerfile是用来构建Docker镜像的文本文件，是由一条条构建镜像所需的指令和参数构成的脚本。]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/dockerfile.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/dockerfile.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/dockerfile.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/dockerfile.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[Docker网络]]></title>
             <description><![CDATA[docker不启动，默认网络情况下网卡为 ens33/eth0 lo virbro]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_network.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_network.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_network.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_network.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[容器编排]]></title>
             <description><![CDATA[Compose 是 Docker 公司推出的一个工具软件，可以管理多个 Docker 容器组成一个应用。你需要定义一个 YAML 格式的配置文件docker-compose.yml，写好多个容器之间的调用关系。然后，只要一个命令，就能同时启动/关闭这些容器]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_compose.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_compose.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_compose.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_compose.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
-            <title><![CDATA[Docker轻量级可视化工具Portainer]]></title>
-            <description><![CDATA[Portainer 是一款轻量级的应用，它提供了图形化界面，用于方便地管理Docker环境，包括单机环境和集群环境。]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/docker_portainer.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker_portainer.html</guid>
+            <title><![CDATA[Docker容器监控之CAdvisor+InfluxDB+Granfana]]></title>
+            <description><![CDATA[CAdvisor监控收集+InfluxDB存储数据+Granfana展示图表]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_cig.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_cig.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
             <title><![CDATA[go环境安装]]></title>
             <description><![CDATA[go env查看环境]]></description>
-            <link>http://note.wjhlog.com/cloud_learn/go_install.html</link>
-            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/go_install.html</guid>
+            <link>http://note.wjhlog.com/cloud_learn/docker/go_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/go_install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装K8S]]></title>
+            <description><![CDATA[image-20220213135001649]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/k8s/k8s_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/k8s/k8s_install.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
