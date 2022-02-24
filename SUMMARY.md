@@ -57,6 +57,7 @@
 * k8_docker笔记
     * [go环境安装](cloud_learn/docker/go_install.md)
     * [安装K8S](cloud_learn/k8s/k8s_install.md)
+    * [**Kubernetes核心实战**](cloud_learn/k8s/k8s_commond.md)
 * ES笔记
     * [安装](es/install.md)
     * [交互](es/head插件交互.md)
