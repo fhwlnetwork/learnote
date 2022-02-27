@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[吴建华的学习笔记]]></title>
+        <description><![CDATA[吴建华的学习笔记]]></description>
+        <link>http://note.wjhlog.com/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sun, 27 Feb 2022 11:39:53 GMT</lastBuildDate>
+        <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[wjh]]></author>
+        <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
+        <webMaster><![CDATA[849109312@qq.com]]></webMaster>
+        <category><![CDATA[gitbook]]></category>
+        <item>
+            <title><![CDATA[先写个目录吧]]></title>
+            <description><![CDATA[这是码农转运维的心塞路]]></description>
+            <link>http://note.wjhlog.com/</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[LVS负载均衡]]></title>
+            <link>http://note.wjhlog.com/linux/lvs.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/lvs.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[系统管理的基础知识]]></title>
+            <link>http://note.wjhlog.com/linux/commond.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/commond.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[时间管理]]></title>
+            <link>http://note.wjhlog.com/linux/time_synchronism.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/time_synchronism.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[系统目录结构]]></title>
+            <link>http://note.wjhlog.com/linux/fictory.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/fictory.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[系统优化]]></title>
+            <description><![CDATA[uname]]></description>
+            <link>http://note.wjhlog.com/linux/majorzation.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/majorzation.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[磁盘分区]]></title>
+            <link>http://note.wjhlog.com/linux/Disk_partition.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/Disk_partition.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装]]></title>
+            <link>http://note.wjhlog.com/nginx/install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[虚拟主机]]></title>
+            <link>http://note.wjhlog.com/nginx/virtual_host.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/virtual_host.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[lnmp配置]]></title>
+            <description><![CDATA[###【配置PHP】]]></description>
+            <link>http://note.wjhlog.com/nginx/lnmp.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/lnmp.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[负载均衡]]></title>
+            <link>http://note.wjhlog.com/nginx/load_balanced.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/load_balanced.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[keepalieved配置nginx高可用冗余]]></title>
+            <description><![CDATA[架构]]></description>
+            <link>http://note.wjhlog.com/nginx/keepalived_nginx.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/keepalived_nginx.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1. 什么是rsync服务]]></title>
+            <link>http://note.wjhlog.com/nginx/rsync.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/nginx/rsync.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装]]></title>
+            <description><![CDATA[错误信息：
+错误信息]]></description>
+            <link>http://note.wjhlog.com/mysql/install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[数据库操作]]></title>
+            <link>http://note.wjhlog.com/mysql/sql.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/sql.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[数据查询---select语句的应用]]></title>
+            <link>http://note.wjhlog.com/mysql/dql.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/dql.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[数据库索引]]></title>
+            <link>http://note.wjhlog.com/mysql/index_key.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/index_key.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[一台主机搭建多实例]]></title>
+            <link>http://note.wjhlog.com/mysql/Multiple_Examples_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/Multiple_Examples_install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[主从配置]]></title>
+            <link>http://note.wjhlog.com/mysql/MySQL_Replication.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/mysql/MySQL_Replication.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[1、目录规划]]></title>
+            <description><![CDATA[进入utils，执行install文件，生成]]></description>
+            <link>http://note.wjhlog.com/redis/安装.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/安装.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[安装参考：redis安装]]></description>
+            <link>http://note.wjhlog.com/redis/主从配置_哨兵.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/主从配置_哨兵.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[redis集群配置——配置三主三从]]></title>
+            <description><![CDATA[image-20210421233813182]]></description>
+            <link>http://note.wjhlog.com/redis/集群.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/集群.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[redis集群扩容收缩]]></title>
+            <link>http://note.wjhlog.com/redis/集群扩容收缩.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/集群扩容收缩.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <link>http://note.wjhlog.com/redis/工具管理.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/redis/工具管理.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[docker简介]]></title>
+            <description><![CDATA[1、docker是基于容器技术的轻量级虚拟化解决方案
+2、docker是容器引擎，把linux的cgroup、namespace等容器底层技术进行封装抽象为用户提供了创建和管理容器的便捷界面（包括命令行和api)
+Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是通过对应用组件的封装、分发、部署、运行等生命周期的管理，使用户的APP（可以是一个WEB应用或数据库应用等等）及其运行环境能够做到 “一次镜像，处处运行”。]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_introduce.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_introduce.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[乌图班图安装docker]]></title>
+            <description><![CDATA[Docker 的旧版本被称为 docker，docker.io 或 docker-engine 。如果已安装，请卸载它们：]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_on_ubuntu.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_on_ubuntu.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[centos安装docker]]></title>
+            <description><![CDATA[目前，CentOS 仅发行版本中的内核支持 Docker。Docker 运行在CentOS 7 (64-bit)上，]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_on_centos.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_on_centos.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[阿里云镜像加速]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker/aliyun_images_speed_up.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/aliyun_images_speed_up.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[基础命令]]></title>
+            <description><![CDATA[启动docker： systemctl start docker
+停止docker： systemctl stop docker
+重启docker： systemctl restart docker
+查看docker状态： systemctl status docker
+开机启动： systemctl enable docker
+查看docker概要信息： docker info
+查看docker总体帮助文档： docker --help
+查看docker命令帮助文档： docker 具体命令 --help]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_commond_images.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_commond_images.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[容器命令]]></title>
+            <description><![CDATA[| 参数                          | 说明                                 |
+| :---------------------------- | :----------------------------------- |
+| -p hostPort:containerPort     | 端口映射    -p      8080:80          |
+| -p hostPort:containerPort     | 配置监听地址   -p 10.0.0.100:8000:80 |
+| -p hostPort:containerPort:udp | 指定协议 -p 8080:80:tcp              |
+| -p 81:80  -p 443:443          | 指定多个                             |]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_commond_containers.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_commond_containers.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[docker镜像]]></title>
+            <description><![CDATA[​		是一种轻量级、可执行的独立软件包，它包含运行某个软件所需的所有内容，我们把应用程序和配置依赖打包好形成一个可交付的运行环境(包括代码、运行时需要的库、环境变量和配置文件等)，这个打包好的运行环境就是image镜像文件。]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_images.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_images.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[推送镜像到阿里云]]></title>
+            <description><![CDATA[image-20220204170207963]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_push_aliyun.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_push_aliyun.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[推送镜像到本地]]></title>
+            <description><![CDATA[image-20220204180753957]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_push_local.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_push_local.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Docker容器数据卷]]></title>
+            <description><![CDATA[卷就是目录或文件，存在于一个或多个容器中，由docker挂载到容器，但不属于联合文件系统，因此能够绕过Union File System提供一些用于持续存储或共享数据的特性：]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_valumes.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_valumes.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装tomact]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_tomact.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_tomact.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装mysql]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_mysql.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_mysql.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装redis]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_install_redis.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_install_redis.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[数据库主从]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker/database_main_from.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/database_main_from.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[redis集群面试]]></title>
+            <description><![CDATA[​																	]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/redis_cluster_question.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/redis_cluster_question.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[redis集群]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/docker/redis_cluster.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/redis_cluster.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[DockerFile解析]]></title>
+            <description><![CDATA[Dockerfile是用来构建Docker镜像的文本文件，是由一条条构建镜像所需的指令和参数构成的脚本。]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/dockerfile.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/dockerfile.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Docker网络]]></title>
+            <description><![CDATA[docker不启动，默认网络情况下网卡为 ens33/eth0 lo virbro]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_network.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_network.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[容器编排]]></title>
+            <description><![CDATA[Compose 是 Docker 公司推出的一个工具软件，可以管理多个 Docker 容器组成一个应用。你需要定义一个 YAML 格式的配置文件docker-compose.yml，写好多个容器之间的调用关系。然后，只要一个命令，就能同时启动/关闭这些容器]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_compose.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_compose.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Docker容器监控之CAdvisor+InfluxDB+Granfana]]></title>
+            <description><![CDATA[CAdvisor监控收集+InfluxDB存储数据+Granfana展示图表]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/docker_cig.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/docker_cig.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[go环境安装]]></title>
+            <description><![CDATA[go env查看环境]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/docker/go_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/docker/go_install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装K8S]]></title>
+            <description><![CDATA[image-20220213135001649]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/k8s/k8s_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/k8s/k8s_install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Kubernetes核心实战]]></title>
+            <description><![CDATA[image-20220220135915401]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/k8s/k8s_commond.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/k8s/k8s_commond.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Elasticsearch安装部署-rpm安装]]></title>
+            <link>http://note.wjhlog.com/es/install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/es/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[交互]]></title>
+            <link>http://note.wjhlog.com/es/head插件交互.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/es/head插件交互.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[增删改查]]></title>
+            <description><![CDATA[状态说明]]></description>
+            <link>http://note.wjhlog.com/es/dml.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/es/dml.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[集群部署安装配置]]></title>
+            <description><![CDATA[重复以上内容]]></description>
+            <link>http://note.wjhlog.com/es/集群.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/es/集群.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装]]></title>
+            <description><![CDATA[参考es笔记es安装配置]]></description>
+            <link>http://note.wjhlog.com/elk/安装.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/安装.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[nginxjson日志采集]]></title>
+            <description><![CDATA[ngingx_json_Log]]></description>
+            <link>http://note.wjhlog.com/elk/nginx_log_json.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/nginx_log_json.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[ELk 收集Nginx的正常日志和错误日志]]></title>
+            <link>http://note.wjhlog.com/elk/nginx_success_error_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/nginx_success_error_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[tomcat日志收集]]></title>
+            <description><![CDATA[查看页面]]></description>
+            <link>http://note.wjhlog.com/elk/tomcat_log_cat.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/tomcat_log_cat.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[java多行日志收集]]></title>
+            <description><![CDATA[日志结果
+日志结果2]]></description>
+            <link>http://note.wjhlog.com/elk/java_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/java_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[收集docker日志]]></title>
+            <link>http://note.wjhlog.com/elk/docker_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/docker_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[filebeat模块收集ngingx普通日志]]></title>
+            <description><![CDATA[图示]]></description>
+            <link>http://note.wjhlog.com/elk/filebeat_modules_get_ngingx_simple_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/filebeat_modules_get_ngingx_simple_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[kibana画图]]></title>
+            <description><![CDATA[第一步]]></description>
+            <link>http://note.wjhlog.com/elk/kibana_draw_dashboard.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/kibana_draw_dashboard.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[redis作为缓存收集日志]]></title>
+            <description><![CDATA[结构]]></description>
+            <link>http://note.wjhlog.com/elk/redis_cat_log.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/redis_cat_log.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[kafka和zookeeper安装]]></title>
+            <description><![CDATA[结构]]></description>
+            <link>http://note.wjhlog.com/elk/kafka缓存收集日志.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/kafka缓存收集日志.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[图谱架构图]]></description>
+            <link>http://note.wjhlog.com/elk/nginx_keepalived_redis.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/elk/nginx_keepalived_redis.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[安装----在线安装]]></title>
+            <description><![CDATA[##第一步 ：下载安装zabbix yum 源文件]]></description>
+            <link>http://note.wjhlog.com/zabbix/install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/install.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[创建监控]]></title>
+            <link>http://note.wjhlog.com/zabbix/create_monitor.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/create_monitor.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[zabbix自定义监控]]></title>
+            <description><![CDATA[
+]]></description>
+            <link>http://note.wjhlog.com/zabbix/custom__monitor.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/custom__monitor.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[微信报警配置]]></title>
+            <description><![CDATA[
+]]></description>
+            <link>http://note.wjhlog.com/zabbix/wx.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/wx.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[邮件报警配置]]></title>
+            <link>http://note.wjhlog.com/zabbix/email.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/zabbix/email.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+    </channel>
+</rss>
