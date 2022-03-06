@@ -47,6 +47,7 @@
 <url> <loc>https://log.wjhlog.com/cloud_learn/docker/go_install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/cloud_learn/k8s/k8s_install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/cloud_learn/k8s/k8s_commond.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/cloud_learn/k8s/kubesphere_install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/es/install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/es/head插件交互.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/es/dml.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
