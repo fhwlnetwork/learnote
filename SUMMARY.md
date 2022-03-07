@@ -9,6 +9,7 @@
     * [系统目录结构](linux/fictory.md)
     * [linux系统优化](linux/majorzation.md)
     * [linux磁盘分区](linux/Disk_partition.md)
+    * [磁盘空间未完全分配场景文件系统扩容处理](linux/Disk_partition_free.md)
 * Nginx笔记
     * [安装](nginx/install.md)
     * [虚拟主机](nginx/virtual_host.md)
@@ -45,19 +46,18 @@
         * [安装tomact](cloud_learn/docker/docker_install_tomact.md)
         * [安装mysql](cloud_learn/docker/docker_install_mysql.md)
         * [安装redis](cloud_learn/docker/docker_install_redis.md)
-    * docker高级篇 
+    * docker高级篇
         * [数据库主从](cloud_learn/docker/database_main_from.md)
         * [redis集群面试](cloud_learn/docker/redis_cluster_question.md)
         * [安装redis集群](cloud_learn/docker/redis_cluster.md)
         * [DockerFile解析](cloud_learn/docker/dockerfile.md)
         * [Docker网络](cloud_learn/docker/docker_network.md)
         * [容器编排](cloud_learn/docker/docker_compose.md)
-        * 
-          [Docker容器监控之CAdvisor+InfluxDB+Granfana](cloud_learn/docker/docker_cig.md)
+        * [Docker容器监控之CAdvisor+InfluxDB+Granfana](cloud_learn/docker/docker_cig.md)
 * k8_docker笔记
     * [go环境安装](cloud_learn/docker/go_install.md)
     * [安装K8S](cloud_learn/k8s/k8s_install.md)
-    * [**Kubernetes核心实战**](cloud_learn/k8s/k8s_commond.md)
+    * [Kubernetes核心实战](cloud_learn/k8s/k8s_commond.md)
     * [kubesphere安装](cloud_learn/k8s/kubesphere_install.md)
 * ES笔记
     * [安装](es/install.md)

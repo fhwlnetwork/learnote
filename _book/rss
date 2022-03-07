@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 06 Mar 2022 13:48:36 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Mar 2022 14:59:32 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -52,6 +52,13 @@
             <title><![CDATA[磁盘分区]]></title>
             <link>http://note.wjhlog.com/linux/Disk_partition.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/linux/Disk_partition.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[磁盘空间未完全分配场景文件系统扩容处理]]></title>
+            <description><![CDATA[系统安装好后，磁盘空间不足，虚拟机动态扩容磁盘空间，默认情况sda1-sda2为主分区,使用lsblk 查看当前情况。]]></description>
+            <link>http://note.wjhlog.com/linux/Disk_partition_free.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/Disk_partition_free.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>

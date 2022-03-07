@@ -342,6 +342,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.8" data-path="../../linux/Disk_partition_free.html">
+            
+                <a href="../../linux/Disk_partition_free.html">
+            
+                    
+                    磁盘空间未完全分配场景文件系统扩容处理
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1409,19 +1422,19 @@ kubectl create ns hello
 <span class="token comment">#&#x5220;&#x9664;&#x540D;&#x79F0;&#x7A7A;&#x95F4;</span>
 kubectl delete ns hello
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220135915401.png" data-lightbox="09d2369d-973e-4395-91f7-c24bb88e86c0" data-title="image-20220220135915401" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220135915401.png" alt="image-20220220135915401"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220135915401.png" data-lightbox="46fb3945-e41b-45ba-8261-1abf05f19ff8" data-title="image-20220220135915401" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220135915401.png" alt="image-20220220135915401"></a></p>
 <h3 id="yaml&#x6587;&#x4EF6;&#x5F62;&#x5F0F;&#x521B;&#x5EFA;">yaml&#x6587;&#x4EF6;&#x5F62;&#x5F0F;&#x521B;&#x5EFA;</h3>
 <pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Namespace
 <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
   <span class="token key atrule">name</span><span class="token punctuation">:</span> hello
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220140159098.png" data-lightbox="364b5e1b-c04c-4d17-a5e8-56ce807d453e" data-title="image-20220220140159098" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220140159098.png" alt="image-20220220140159098"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220140159098.png" data-lightbox="df3b8cec-4b4c-4a26-8715-fc6c85a150b6" data-title="image-20220220140159098" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220140159098.png" alt="image-20220220140159098"></a></p>
 <h2 id="2&#x3001;pod">2&#x3001;Pod</h2>
 <blockquote>
 <p>&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x4E00;&#x7EC4;&#x5BB9;&#x5668;&#xFF0C;pod&#x662F;Kubernetes&#x4E2D;&#x5E94;&#x7528;&#x6700;&#x5C0F;&#x7684;&#x5355;&#x4F4D;</p>
 </blockquote>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image.png" data-lightbox="330d0479-6ce5-49ee-b84c-3ccaa1c33aee" data-title="image" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image.png" alt="image"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image.png" data-lightbox="87c7ac58-17f0-43b5-aa95-c649f9401836" data-title="image" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image.png" alt="image"></a></p>
 <h3 id="&#x521B;&#x5EFA;&#x67E5;&#x8BE2;pod">&#x521B;&#x5EFA;/&#x67E5;&#x8BE2;pod</h3>
 <pre class="language-"><code class="lang-SH">#&#x683C;&#x5F0F; kubectk run pod&#x540D;&#x79F0;     --image=&#x955C;&#x50CF;&#x540D;&#x79F0;
 kubectl run mynginx --image=nginx
@@ -1430,7 +1443,7 @@ kubectl get pod
 # &#x5220;&#x9664;
 kubectl delete pod Pod&#x540D;&#x5B57;
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141308339.png" data-lightbox="e2bd6dcb-0fcc-465f-9aab-6be6d2baf239" data-title="image-20220220141308339" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141308339.png" alt="image-20220220141308339"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141308339.png" data-lightbox="4a11625d-cdaf-4bab-875b-4ecba3594c17" data-title="image-20220220141308339" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141308339.png" alt="image-20220220141308339"></a></p>
 <h3 id="&#x67E5;&#x770B;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x3001;&#x8FD0;&#x884C;&#x65E5;&#x5FD7;">&#x67E5;&#x770B;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x3001;&#x8FD0;&#x884C;&#x65E5;&#x5FD7;</h3>
 <pre class="language-"><code class="lang-SH">
 # &#x63CF;&#x8FF0;
@@ -1443,8 +1456,8 @@ kubectl logs Pod&#x540D;&#x5B57;
 <table>
 <thead>
 <tr>
-<th><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141202182.png" data-lightbox="f1d8f747-6b3b-43d2-8c8b-125f0b69909f" data-title="" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141202182.png" alt=""></a></th>
-<th><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141517491.png" data-lightbox="5562ddee-7d2b-4fce-9854-09ec32c62837" data-title="undefined" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141517491.png" alt="undefined"></a></th>
+<th><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141202182.png" data-lightbox="40da4bd9-ce95-4192-8fe9-2494ede6f5a6" data-title="" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141202182.png" alt=""></a></th>
+<th><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141517491.png" data-lightbox="f5a23bbc-ed66-4332-be2a-0950efe6f50d" data-title="undefined" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220141517491.png" alt="undefined"></a></th>
 </tr>
 </thead>
 <tbody>
@@ -1462,7 +1475,7 @@ kubectl get pod -owide
 <blockquote>
 <p>&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x4EE5;&#x53CA;&#x4EFB;&#x610F;&#x7684;&#x5E94;&#x7528;&#x90FD;&#x80FD;&#x901A;&#x8FC7;Pod&#x5206;&#x914D;&#x7684;ip&#x6765;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;Pod</p>
 </blockquote>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220142239845.png" data-lightbox="a95437c9-4856-4908-a3f3-c2cf60974a74" data-title="image-20220220142239845" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220142239845.png" alt="image-20220220142239845"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220142239845.png" data-lightbox="22877dfc-5595-4d04-be9f-40381af46fd6" data-title="image-20220220142239845" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220142239845.png" alt="image-20220220142239845"></a></p>
 <h3 id="yaml&#x521B;&#x5EFA;pod">yaml&#x521B;&#x5EFA;pod</h3>
 <pre class="language-"><code class="lang-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
 <span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod
@@ -1478,7 +1491,7 @@ kubectl get pod -owide
   <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> tomcat<span class="token punctuation">:</span>8.5.68
     <span class="token key atrule">name</span><span class="token punctuation">:</span> tomcat
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220142824879.png" data-lightbox="f105cf37-978a-4f30-8174-52337429506e" data-title="image-20220220142824879" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220142824879.png" alt="image-20220220142824879"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220142824879.png" data-lightbox="0b0bcff7-1262-459e-b286-d00ef394a7d5" data-title="image-20220220142824879" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220142824879.png" alt="image-20220220142824879"></a></p>
 <h2 id="3&#x3001;deployment">3&#x3001;Deployment</h2>
 <blockquote>
 <p>&#x63A7;&#x5236;Pod&#xFF0C;&#x4F7F;Pod&#x62E5;&#x6709;&#x591A;&#x526F;&#x672C;&#xFF0C;&#x81EA;&#x6108;&#xFF0C;&#x6269;&#x7F29;&#x5BB9;&#x7B49;&#x80FD;&#x529B;</p>
@@ -1491,7 +1504,7 @@ kubectl create deployment mytomcat --image<span class="token operator">=</span>t
 <blockquote>
 <p>deploment&#x521B;&#x5EFA;&#x7684;pod&#x5177;&#x6709;&#x81EA;&#x6108;&#x80FD;&#x529B;&#xFF0C;&#x505C;&#x673A;&#xFF0C;&#x5220;&#x9664;pod&#x6216;&#x5BB9;&#x5668;&#x5D29;&#x6E83;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x62C9;&#x8D77;</p>
 </blockquote>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220143850434.png" data-lightbox="35505514-2010-46dc-b9f9-67f4f20aab41" data-title="image-20220220143850434" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220143850434.png" alt="image-20220220143850434"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220143850434.png" data-lightbox="071fc436-36f2-4f1d-ab7e-13f47ab4d65d" data-title="image-20220220143850434" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220143850434.png" alt="image-20220220143850434"></a></p>
 <h4 id="1-&#x591A;&#x526F;&#x672C;">1) &#x591A;&#x526F;&#x672C;</h4>
 <pre class="language-"><code class="lang-sh">kubectl create deployment my-dep --image<span class="token operator">=</span>nginx --replicas<span class="token operator">=</span><span class="token number">3</span>
 </code></pre>
@@ -1515,20 +1528,20 @@ spec:
       - image: nginx
         name: nginx
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144348785.png" data-lightbox="1d9c1a1a-6cac-42ea-9382-7a8bff8f33ad" data-title="image-20220220144348785" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144348785.png" alt="image-20220220144348785"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144348785.png" data-lightbox="d2c44df5-932d-4e15-abb1-c2847272c2f4" data-title="image-20220220144348785" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144348785.png" alt="image-20220220144348785"></a></p>
 <h4 id="2-&#x6269;&#x7F29;&#x5BB9;">2) &#x6269;&#x7F29;&#x5BB9;</h4>
 <pre class="language-"><code class="lang-SH">kubectl scale --replicas=5 deployment/my-dep
 #&#x65B9;&#x5F0F;2&#xFF1A;&#x4FEE;&#x6539; replicas&#x503C;&#xFF0C;&#x589E;&#x52A0;&#x4E3A;&#x6269;&#x5BB9;&#xFF0C;&#x51CF;&#x5C0F;&#x4E3A;&#x7F29;&#x5BB9;
 kubectl edit deployment my-dep
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144517728.png" data-lightbox="7f1d371e-a32e-4a9a-a106-6fb723c03399" data-title="image-20220220144517728" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144517728.png" alt="image-20220220144517728"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144517728.png" data-lightbox="d6ae1339-4118-4f4b-ba94-4cd8840dc869" data-title="image-20220220144517728" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144517728.png" alt="image-20220220144517728"></a></p>
 <h4 id="3&#xFF09;&#x6EDA;&#x52A8;&#x66F4;&#x65B0;">3&#xFF09;&#x6EDA;&#x52A8;&#x66F4;&#x65B0;</h4>
 <pre class="language-"><code class="lang-SH">kubectl set image deployment/my-dep nginx=nginx:1.16.1 --record
 kubectl rollout status deployment/my-dep
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144956831.png" data-lightbox="8ac27772-31e6-45b2-b495-a7c664c253c7" data-title="image-20220220144956831" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144956831.png" alt="image-20220220144956831"></a></p>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145053344.png" data-lightbox="4513ac78-6037-4eb7-802f-ff34b5acba82" data-title="image-20220220145053344" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145053344.png" alt="image-20220220145053344"></a></p>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145141901.png" data-lightbox="ccc978de-c808-4639-9a16-447d193e2f2a" data-title="image-20220220145141901" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145141901.png" alt="image-20220220145141901"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144956831.png" data-lightbox="b6681226-098b-4a06-9f21-41d686b7b05f" data-title="image-20220220144956831" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220144956831.png" alt="image-20220220144956831"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145053344.png" data-lightbox="0c90fe8c-33bf-45e6-83d3-2141d087af1c" data-title="image-20220220145053344" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145053344.png" alt="image-20220220145053344"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145141901.png" data-lightbox="816e9f90-3bbc-4f5d-824b-81bd33ab4a37" data-title="image-20220220145141901" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145141901.png" alt="image-20220220145141901"></a></p>
 <h4 id="4&#xFF09;&#x7248;&#x672C;&#x56DE;&#x9000;">4&#xFF09;&#x7248;&#x672C;&#x56DE;&#x9000;</h4>
 <pre class="language-"><code class="lang-SH">#&#x5386;&#x53F2;&#x8BB0;&#x5F55;
 kubectl rollout history deployment/my-dep
@@ -1539,7 +1552,7 @@ kubectl rollout undo deployment/my-dep
 #&#x56DE;&#x6EDA;(&#x56DE;&#x5230;&#x6307;&#x5B9A;&#x7248;&#x672C;)
 kubectl rollout undo deployment/my-dep --to-revision=2
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145445326.png" data-lightbox="aa4b3675-0cfe-42f9-a9b4-1da10a070b10" data-title="image-20220220145445326" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145445326.png" alt="image-20220220145445326"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145445326.png" data-lightbox="7640090c-c3fc-4578-b133-278cce7bb15b" data-title="image-20220220145445326" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220145445326.png" alt="image-20220220145445326"></a></p>
 <blockquote>
 <p>&#x66F4;&#x591A;&#xFF1A;</p>
 <p>&#x9664;&#x4E86;Deployment&#xFF0C;k8s&#x8FD8;&#x6709; <code>StatefulSet</code> &#x3001;<code>DaemonSet</code> &#x3001;<code>Job</code>  &#x7B49; &#x7C7B;&#x578B;&#x8D44;&#x6E90;&#x3002;&#x6211;&#x4EEC;&#x90FD;&#x79F0;&#x4E3A; <code>&#x5DE5;&#x4F5C;&#x8D1F;&#x8F7D;</code>&#x3002;</p>
@@ -1558,7 +1571,7 @@ kubectl get pod -l app=my-dep
 ## &#x67E5;&#x8BE2;&#x66B4;&#x9732;&#x7ED3;&#x679C;
 kubectl get service
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220153454289.png" data-lightbox="1afe299f-1e36-40ba-9356-95301c09aeda" data-title="image-20220220153454289" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220153454289.png" alt="image-20220220153454289"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220153454289.png" data-lightbox="4353d498-998f-4207-8d1b-43062ea44016" data-title="image-20220220153454289" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220153454289.png" alt="image-20220220153454289"></a></p>
 <h3 id="1&#x3001;clusterip">1&#x3001;ClusterIP</h3>
 <pre class="language-"><code class="lang-SH"># &#x7B49;&#x540C;&#x4E8E;&#x6CA1;&#x6709;--type&#x7684;
 kubectl expose deployment my-dep --port=8000 --target-port=80 --type=ClusterIP
@@ -1600,7 +1613,7 @@ spec:
     app: my-dep
   type: NodePort
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220163638066.png" data-lightbox="f50098ef-f0a9-4a97-9f7d-361c9d527159" data-title="image-20220220163638066" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220163638066.png" alt="image-20220220163638066"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220163638066.png" data-lightbox="1324ca89-7249-4fac-a242-7f990add81b1" data-title="image-20220220163638066" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220163638066.png" alt="image-20220220163638066"></a></p>
 <h2 id="5&#x3001;ingress">5&#x3001;Ingress</h2>
 <h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
 <pre class="language-"><code class="lang-sh"><span class="token function">wget</span> https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.47.0/deploy/static/provider/baremetal/deploy.yaml
@@ -1615,7 +1628,7 @@ kubectl get pod,svc -n ingress-nginx
 
 <span class="token comment"># &#x6700;&#x540E;&#x522B;&#x5FD8;&#x8BB0;&#x628A;svc&#x66B4;&#x9732;&#x7684;&#x7AEF;&#x53E3;&#x8981;&#x653E;&#x884C;</span>
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220164651819.png" data-lightbox="8234aa32-54aa-4810-ae94-e942d9b770a2" data-title="image-20220220164651819" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220164651819.png" alt="image-20220220164651819"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220164651819.png" data-lightbox="2911bff3-ec15-450e-9848-06a6ae90c039" data-title="image-20220220164651819" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220164651819.png" alt="image-20220220164651819"></a></p>
 <pre class="language-"><code class="lang-YAML">apiVersion: v1
 kind: Namespace
 metadata:
@@ -2274,7 +2287,7 @@ spec:
 <p>&#x5C31;&#x662F;nginx&#x505A;&#x7684;</p>
 <p><a href="https://10.0.0.100:31417/" target="_blank">https://10.0.0.100:31417/</a></p>
 <p><a href="http://10.0.0.100:31334/" target="_blank">http://10.0.0.100:31334/</a></p>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220202206299.png" data-lightbox="664bf2fe-1dc6-4ec7-9eca-3325d1f11954" data-title="image-20220220202206299" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220202206299.png" alt="image-20220220202206299"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220202206299.png" data-lightbox="4de264a1-3628-40e6-94c8-01b5153ce972" data-title="image-20220220202206299" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220202206299.png" alt="image-20220220202206299"></a></p>
 <h4 id="&#x6D4B;&#x8BD5;&#x73AF;&#x5883;">&#x6D4B;&#x8BD5;&#x73AF;&#x5883;</h4>
 <p>&#x5E94;&#x7528;yaml&#xFF0C;&#x4E00;&#x952E;&#x914D;&#x7F6E;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;</p>
 <pre class="language-"><code class="lang-YAML">apiVersion: apps/v1
@@ -2405,7 +2418,7 @@ spec:
             port:
               number: 8000
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220213811222.png" data-lightbox="8f3a489b-ee13-431e-b030-09fbc16ddfe6" data-title="image-20220220213811222" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220213811222.png" alt="image-20220220213811222"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220213811222.png" data-lightbox="4e7a555e-4560-4006-a0f7-f0afe5094b13" data-title="image-20220220213811222" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220213811222.png" alt="image-20220220213811222"></a></p>
 <h5 id="3&#x3001;&#x6D41;&#x91CF;&#x9650;&#x5236;">3&#x3001;&#x6D41;&#x91CF;&#x9650;&#x5236;</h5>
 <pre class="language-"><code class="lang-SH">apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -2427,14 +2440,14 @@ spec:
             port:
               number: 8000
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220214110945.png" data-lightbox="0c268bca-6561-4c1e-badd-e1fb0c62d459" data-title="image-20220220214110945" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220214110945.png" alt="image-20220220214110945"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220214110945.png" data-lightbox="5ec922bf-31fc-4139-8119-547f81bb8049" data-title="image-20220220214110945" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220214110945.png" alt="image-20220220214110945"></a></p>
 <h2 id="6&#x3001;&#x5B58;&#x50A8;&#x62BD;&#x8C61;">6&#x3001;&#x5B58;&#x50A8;&#x62BD;&#x8C61;</h2>
 <h3 id="&#x73AF;&#x5883;&#x51C6;&#x5907;">&#x73AF;&#x5883;&#x51C6;&#x5907;</h3>
 <h4 id="1&#x3001;&#x5B89;&#x88C5;nfs-utils">1&#x3001;&#x5B89;&#x88C5;nfs-utils</h4>
 <pre class="language-"><code class="lang-sh"><span class="token comment">#&#x6240;&#x6709;&#x673A;&#x5668;&#x5B89;&#x88C5;</span>
 yum <span class="token function">install</span> -y nfs-utils
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220214731515.png" data-lightbox="c8284971-803d-4371-a78b-be7f5f6630eb" data-title="image-20220220214731515" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220214731515.png" alt="image-20220220214731515"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220214731515.png" data-lightbox="96eccff7-6eeb-45da-b78a-96c2a5f32d6c" data-title="image-20220220214731515" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220220214731515.png" alt="image-20220220214731515"></a></p>
 <h4 id="2&#x3001;&#x4E3B;&#x8282;&#x70B9;&#x521B;&#x5EFA;&#x76EE;&#x5F55;">2&#x3001;&#x4E3B;&#x8282;&#x70B9;&#x521B;&#x5EFA;&#x76EE;&#x5F55;</h4>
 <pre class="language-"><code class="lang-SH">#nfs&#x4E3B;&#x8282;&#x70B9;
 echo &quot;/nfs/data/ *(insecure,rw,sync,no_root_squash)&quot; &gt; /etc/exports
@@ -2725,7 +2738,7 @@ kubectl create secret docker-registry regcred \
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"Kubernetes核心实战","level":"1.8.3","depth":2,"next":{"title":"kubesphere安装","level":"1.8.4","depth":2,"path":"cloud_learn/k8s/kubesphere_install.md","ref":"cloud_learn/k8s/kubesphere_install.md","articles":[]},"previous":{"title":"安装K8S","level":"1.8.2","depth":2,"path":"cloud_learn/k8s/k8s_install.md","ref":"cloud_learn/k8s/k8s_install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"cloud_learn/k8s/k8s_commond.md","mtime":"2022-02-24T15:07:30.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-06T13:47:39.832Z"},"basePath":"../..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"Kubernetes核心实战","level":"1.8.3","depth":2,"next":{"title":"kubesphere安装","level":"1.8.4","depth":2,"path":"cloud_learn/k8s/kubesphere_install.md","ref":"cloud_learn/k8s/kubesphere_install.md","articles":[]},"previous":{"title":"安装K8S","level":"1.8.2","depth":2,"path":"cloud_learn/k8s/k8s_install.md","ref":"cloud_learn/k8s/k8s_install.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"cloud_learn/k8s/k8s_commond.md","mtime":"2022-02-24T15:07:30.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-07T14:58:32.382Z"},"basePath":"../..","book":{"language":""}});
 		});
 	</script>
 </div>
