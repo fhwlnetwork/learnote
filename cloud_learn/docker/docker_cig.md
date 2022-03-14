@@ -84,11 +84,11 @@ docker-compose up
 
 ### 浏览cAdvisor收集服务，http://ip:8080/
 
-![image-20220208105214788](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220208105214788.png)
+![image-20220208105214788](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220208105214788.png)
 
 ### 浏览influxdb存储服务，http://ip:8083/
 
-![image-20220208105853184](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220208105853184.png)
+![image-20220208105853184](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220208105853184.png)
 
 ### 浏览grafana展现服务，http://ip:3000
 

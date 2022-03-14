@@ -148,14 +148,14 @@ Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
 You can now join any number of control-plane nodes by copying certificate authorities
 and service account keys on each node and then running the following as root:
 
-  kubeadm join k8s-master:6443 --token 24qoxf.nhkjv248ihu3zh4c \
-    --discovery-token-ca-cert-hash sha256:0b5cd2a4311042e68670e6a2138edf930c56228fc9978b17f6df6db9b1372855 \
+  kubeadm join k8s-master:6443 --token 0ns2n4.crdjrcdlt7hyfu3s \
+    --discovery-token-ca-cert-hash sha256:d680191c7404c926f5a7b3478524a8a3c2c9a69370b7fff1c8fb8e4f76d85118 \
     --control-plane 
 
 Then you can join any number of worker nodes by running the following on each as root:
 
-kubeadm join k8s-master:6443 --token 24qoxf.nhkjv248ihu3zh4c \
-    --discovery-token-ca-cert-hash sha256:0b5cd2a4311042e68670e6a2138edf930c56228fc9978b17f6df6db9b1372855 
+kubeadm join k8s-master:6443 --token 0ns2n4.crdjrcdlt7hyfu3s \
+    --discovery-token-ca-cert-hash sha256:d680191c7404c926f5a7b3478524a8a3c2c9a69370b7fff1c8fb8e4f76d85118
 
 ```
 
