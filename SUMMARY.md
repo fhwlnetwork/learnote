@@ -65,6 +65,8 @@
       * [kubesphere安装redis](cloud_learn/kubesphare/kubesphere_set_redis.md)
       * [kubesphere应用商店安装组件](cloud_learn/kubesphare/kubesphere_set_store.md)
       * [kubesphere手动上云](cloud_learn/kubesphare/kubesphere_ruoyi.md)
+      * [devops部署](cloud_learn/devops/set_kenins.md)
+    * devops-持续更新中
 * ES笔记
     * [安装](es/install.md)
     * [交互](es/head插件交互.md)
