@@ -1,0 +1,2357 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>devops部署 · 吴建华的学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hades">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-fexa/fexa.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../kubesphare/kubesphere_ruoyi.html" />
+    
+
+    
+    <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    <link href="http://note.wjhlog.com/rss" title="吴建华的学习笔记" rel="alternate" type="application/rss+xml" />
+
+    
+        <link rel="shortcut icon" href='../../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+	<div class="header-inner">
+		<!-- LOGO -->
+		<div class="logo"></div>
+		<span class="title"></span>
+
+		<!-- Search -->
+		
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+
+		<!-- Nav -->
+		<ul class="header-nav">
+			
+		</ul>
+	</div>
+
+	<div class="book-summary">
+		<div class="book-summary-title">文档目录</div>
+		
+		
+		<nav role="navigation">
+			
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.wjhlog.com" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    linux笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../linux/lvs.html">
+            
+                <a href="../../linux/lvs.html">
+            
+                    
+                    LVS负载均衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../linux/commond.html">
+            
+                <a href="../../linux/commond.html">
+            
+                    
+                    linux基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../linux/time_synchronism.html">
+            
+                <a href="../../linux/time_synchronism.html">
+            
+                    
+                    linux时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../linux/commond.html">
+            
+                <a href="../../linux/commond.html">
+            
+                    
+                    系统管理命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../linux/fictory.html">
+            
+                <a href="../../linux/fictory.html">
+            
+                    
+                    系统目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../linux/majorzation.html">
+            
+                <a href="../../linux/majorzation.html">
+            
+                    
+                    linux系统优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../linux/Disk_partition.html">
+            
+                <a href="../../linux/Disk_partition.html">
+            
+                    
+                    linux磁盘分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../linux/Disk_partition_free.html">
+            
+                <a href="../../linux/Disk_partition_free.html">
+            
+                    
+                    磁盘空间未完全分配场景文件系统扩容处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Nginx笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../nginx/install.html">
+            
+                <a href="../../nginx/install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../nginx/virtual_host.html">
+            
+                <a href="../../nginx/virtual_host.html">
+            
+                    
+                    虚拟主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../nginx/lnmp.html">
+            
+                <a href="../../nginx/lnmp.html">
+            
+                    
+                    lnmp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../nginx/load_balanced.html">
+            
+                <a href="../../nginx/load_balanced.html">
+            
+                    
+                    负载均衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../nginx/keepalived_nginx.html">
+            
+                <a href="../../nginx/keepalived_nginx.html">
+            
+                    
+                    keepalieved配置nginx高可用冗余
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../nginx/rsync.html">
+            
+                <a href="../../nginx/rsync.html">
+            
+                    
+                    rsync备份服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Tomact笔记
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    mysql笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../mysql/install.html">
+            
+                <a href="../../mysql/install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../mysql/sql.html">
+            
+                <a href="../../mysql/sql.html">
+            
+                    
+                    数据库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../mysql/dql.html">
+            
+                <a href="../../mysql/dql.html">
+            
+                    
+                    数据查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../mysql/index_key.html">
+            
+                <a href="../../mysql/index_key.html">
+            
+                    
+                    数据库索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../mysql/Multiple_Examples_install.html">
+            
+                <a href="../../mysql/Multiple_Examples_install.html">
+            
+                    
+                    一台主机搭建多实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../mysql/MySQL_Replication.html">
+            
+                <a href="../../mysql/MySQL_Replication.html">
+            
+                    
+                    主从配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    redis笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../redis/安装.html">
+            
+                <a href="../../redis/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../redis/主从配置_哨兵.html">
+            
+                <a href="../../redis/主从配置_哨兵.html">
+            
+                    
+                    主从配置_哨兵配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../redis/集群.html">
+            
+                <a href="../../redis/集群.html">
+            
+                    
+                    redis集群配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../redis/集群扩容收缩.html">
+            
+                <a href="../../redis/集群扩容收缩.html">
+            
+                    
+                    redis集群扩容收缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../redis/工具管理.html">
+            
+                <a href="../../redis/工具管理.html">
+            
+                    
+                    工具管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    docker笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" >
+            
+                <span>
+            
+                    
+                    docker基础篇
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../docker/docker_introduce.html">
+            
+                <a href="../docker/docker_introduce.html">
+            
+                    
+                    docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../docker/docker_install_on_ubuntu.html">
+            
+                <a href="../docker/docker_install_on_ubuntu.html">
+            
+                    
+                    乌班图安装docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.3" data-path="../docker/docker_install_on_centos.html">
+            
+                <a href="../docker/docker_install_on_centos.html">
+            
+                    
+                    centos安装docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.4" data-path="../docker/aliyun_images_speed_up.html">
+            
+                <a href="../docker/aliyun_images_speed_up.html">
+            
+                    
+                    阿里云镜像加速
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.5" data-path="../docker/docker_commond_images.html">
+            
+                <a href="../docker/docker_commond_images.html">
+            
+                    
+                    镜像命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.6" data-path="../docker/docker_commond_containers.html">
+            
+                <a href="../docker/docker_commond_containers.html">
+            
+                    
+                    容器命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.7" data-path="../docker/docker_images.html">
+            
+                <a href="../docker/docker_images.html">
+            
+                    
+                    docker镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.8" data-path="../docker/docker_push_aliyun.html">
+            
+                <a href="../docker/docker_push_aliyun.html">
+            
+                    
+                    推送镜像到阿里云
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.9" data-path="../docker/docker_push_local.html">
+            
+                <a href="../docker/docker_push_local.html">
+            
+                    
+                    推送镜像到本地
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.10" data-path="../docker/docker_valumes.html">
+            
+                <a href="../docker/docker_valumes.html">
+            
+                    
+                    Docker容器数据卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.11" data-path="../docker/docker_install_tomact.html">
+            
+                <a href="../docker/docker_install_tomact.html">
+            
+                    
+                    安装tomact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.12" data-path="../docker/docker_install_mysql.html">
+            
+                <a href="../docker/docker_install_mysql.html">
+            
+                    
+                    安装mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.13" data-path="../docker/docker_install_redis.html">
+            
+                <a href="../docker/docker_install_redis.html">
+            
+                    
+                    安装redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" >
+            
+                <span>
+            
+                    
+                    docker高级篇
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../docker/database_main_from.html">
+            
+                <a href="../docker/database_main_from.html">
+            
+                    
+                    数据库主从
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../docker/redis_cluster_question.html">
+            
+                <a href="../docker/redis_cluster_question.html">
+            
+                    
+                    redis集群面试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="../docker/redis_cluster.html">
+            
+                <a href="../docker/redis_cluster.html">
+            
+                    
+                    安装redis集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.4" data-path="../docker/dockerfile.html">
+            
+                <a href="../docker/dockerfile.html">
+            
+                    
+                    DockerFile解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.5" data-path="../docker/docker_network.html">
+            
+                <a href="../docker/docker_network.html">
+            
+                    
+                    Docker网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.6" data-path="../docker/docker_compose.html">
+            
+                <a href="../docker/docker_compose.html">
+            
+                    
+                    容器编排
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.7" data-path="../docker/docker_cig.html">
+            
+                <a href="../docker/docker_cig.html">
+            
+                    
+                    Docker容器监控之CAdvisor+InfluxDB+Granfana
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    k8_docker笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../docker/go_install.html">
+            
+                <a href="../docker/go_install.html">
+            
+                    
+                    go环境安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../k8s/k8s_install.html">
+            
+                <a href="../k8s/k8s_install.html">
+            
+                    
+                    安装K8S
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" >
+            
+                <span>
+            
+                    
+                    Kubernetes核心实战
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../kubesphare/k8s_commond.md">
+            
+                <span>
+            
+                    
+                    Kubernetes核心实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../kubesphare/kubesphere_install.html">
+            
+                <a href="../kubesphare/kubesphere_install.html">
+            
+                    
+                    kubesphere安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../kubesphare/kubesphere_set_mysql.html">
+            
+                <a href="../kubesphare/kubesphere_set_mysql.html">
+            
+                    
+                    kubesphere安装mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="../kubesphare/kubesphere_set_es.html">
+            
+                <a href="../kubesphare/kubesphere_set_es.html">
+            
+                    
+                    kubesphere安装es
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.5" data-path="../kubesphare/kubesphere_set_redis.html">
+            
+                <a href="../kubesphare/kubesphere_set_redis.html">
+            
+                    
+                    kubesphere安装redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.6" data-path="../kubesphare/kubesphere_set_store.md">
+            
+                <span>
+            
+                    
+                    kubesphere应用商店安装组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.7" data-path="../kubesphare/kubesphere_ruoyi.html">
+            
+                <a href="../kubesphare/kubesphere_ruoyi.html">
+            
+                    
+                    kubesphere手动上云
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.3.8" data-path="set_jenkins.html">
+            
+                <a href="set_jenkins.html">
+            
+                    
+                    devops部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" >
+            
+                <span>
+            
+                    
+                    devops-持续更新中
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    ES笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../es/install.html">
+            
+                <a href="../../es/install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../es/head插件交互.html">
+            
+                <a href="../../es/head插件交互.html">
+            
+                    
+                    交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../es/dml.html">
+            
+                <a href="../../es/dml.html">
+            
+                    
+                    操作语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../../es/集群.html">
+            
+                <a href="../../es/集群.html">
+            
+                    
+                    集群配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    ELK笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../../elk/安装.html">
+            
+                <a href="../../elk/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../../elk/nginx_log_json.html">
+            
+                <a href="../../elk/nginx_log_json.html">
+            
+                    
+                    nginxjson日志采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../../elk/nginx_success_error_log.html">
+            
+                <a href="../../elk/nginx_success_error_log.html">
+            
+                    
+                    nginix正常日志和错误日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../../elk/tomcat_log_cat.html">
+            
+                <a href="../../elk/tomcat_log_cat.html">
+            
+                    
+                    tomcat日志收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../../elk/java_log.html">
+            
+                <a href="../../elk/java_log.html">
+            
+                    
+                    java多行日志收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../../elk/docker_log.html">
+            
+                <a href="../../elk/docker_log.html">
+            
+                    
+                    收集docker日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../../elk/filebeat_modules_get_ngingx_simple_log.html">
+            
+                <a href="../../elk/filebeat_modules_get_ngingx_simple_log.html">
+            
+                    
+                    fibet收集ngingx日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../../elk/kibana_draw_dashboard.html">
+            
+                <a href="../../elk/kibana_draw_dashboard.html">
+            
+                    
+                    kibana画图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../../elk/redis_cat_log.html">
+            
+                <a href="../../elk/redis_cat_log.html">
+            
+                    
+                    redis作为缓存收集日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../../elk/kafka缓存收集日志.html">
+            
+                <a href="../../elk/kafka缓存收集日志.html">
+            
+                    
+                    kafka缓存收集日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../../elk/nginx_keepalived_redis.html">
+            
+                <a href="../../elk/nginx_keepalived_redis.html">
+            
+                    
+                    使用nginx+keepalived代理多台redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    监控服务zabbix
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../zabbix/install.html">
+            
+                <a href="../../zabbix/install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../../zabbix/create_monitor.html">
+            
+                <a href="../../zabbix/create_monitor.html">
+            
+                    
+                    创建监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../../zabbix/custom__monitor.html">
+            
+                <a href="../../zabbix/custom__monitor.html">
+            
+                    
+                    zabbix自定义监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../../zabbix/wx.html">
+            
+                <a href="../../zabbix/wx.html">
+            
+                    
+                    微信报警配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../../zabbix/email.html">
+            
+                <a href="../../zabbix/email.html">
+            
+                    
+                    邮件报警配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+		</nav>
+		
+		
+	</div>
+
+	<!-- Content nav -->
+	<div class="book-anchor">
+		<div class="book-anchor-title">在这篇文章中:</div>
+		<div class="book-anchor-body">
+
+		</div>
+	</div>
+
+	<div class="book-body">
+		
+		<div class="body-inner">
+			
+			
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >devops部署</a>
+    </h1>
+</div>
+
+
+
+
+			<div class="page-wrapper" tabindex="-1" role="main">
+				<div class="page-inner">
+					
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+					<section class="normal markdown-section">
+						
+						<h1 id="&#x524D;&#x7F6E;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">&#x524D;&#x7F6E;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h1>
+<h2 id="&#x4E2D;&#x95F4;&#x4EF6;&#x90E8;&#x7F72;">&#x4E2D;&#x95F4;&#x4EF6;&#x90E8;&#x7F72;</h2>
+<h4 id="1&#x3001;&#x90E8;&#x7F72;sentinel">1&#x3001;&#x90E8;&#x7F72;Sentinel</h4>
+<p>a&#x3001;&#x521B;&#x5EFA;&#x4F18;&#x72B6;&#x6001;&#x670D;&#x52A1;</p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210219208.png" data-lightbox="b48c7b87-957a-48ae-91b0-0a54c7c90645" data-title="image-20220327210219208" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210219208.png" alt="image-20220327210219208"></a></p>
+<p>b&#x3001;&#x6307;&#x5B9A;&#x5BB9;&#x5668;&#x955C;&#x50CF;</p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210329816.png" data-lightbox="6fa252a5-2ea9-4d8c-bb1d-21d1d472243d" data-title="image-20220327210329816" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210329816.png" alt="image-20220327210329816"></a></p>
+<p>C&#x3001;&#x9ED8;&#x8BA4;&#x4E0B;&#x4E00;&#x6B65;&#x521B;&#x5EFA;</p>
+<h4 id="2&#x3001;mongodb&#x521B;&#x5EFA;">2&#x3001;MongoDB&#x521B;&#x5EFA;</h4>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210617044.png" data-lightbox="35494979-8d9a-408b-ab17-1ae32fa0746e" data-title="image-20220327210617044" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210617044.png" alt="image-20220327210617044"></a></p>
+<h5 id="&#x9009;&#x62E9;&#x5E94;&#x7528;&#x6A21;&#x677F;&#x8FDB;&#x884C;&#x521B;&#x5EFA;">&#x9009;&#x62E9;&#x5E94;&#x7528;&#x6A21;&#x677F;&#x8FDB;&#x884C;&#x521B;&#x5EFA;</h5>
+<table>
+<thead>
+<tr>
+<th><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210632126.png" data-lightbox="34e471c3-4368-482f-988b-33a1236f2b78" data-title="image-20220327210632126" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210632126.png" alt="image-20220327210632126"></a><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210704351.png" data-lightbox="cb1d58d8-920d-4247-8c3b-b19f7a77bb4f" data-title="image-20220327210632126" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327210704351.png" alt="image-20220327210632126"></a></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h6 id="&#x914D;&#x7F6E;&#x8D26;&#x6237;&#x5BC6;&#x7801;">&#x914D;&#x7F6E;&#x8D26;&#x6237;&#x5BC6;&#x7801;</h6>
+<table>
+<thead>
+<tr>
+<th><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327211232257.png" data-lightbox="22496dc6-c21e-4518-97b4-7e6b4c9fcac6" data-title="image-20220327211232257" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327211232257.png" alt="image-20220327211232257"></a><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327211411571.png" data-lightbox="6681dbc6-20d5-4b98-bf88-37535a12528d" data-title="image-20220327211232257" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327211411571.png" alt="image-20220327211232257"></a></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h6 id="&#x5BC6;&#x94A5;&#x914D;&#x7F6E;">&#x5BC6;&#x94A5;&#x914D;&#x7F6E;</h6>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327205155161.png" data-lightbox="3d616ad0-54bf-4dcb-99d3-66abd1294f1d" data-title="image-20220327205155161" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327205155161.png" alt="image-20220327205155161"></a></p>
+<h6 id="&#x914D;&#x7F6E;&#x6848;&#x4F8B;&#x4E91;&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x4FE1;&#x606F;">&#x914D;&#x7F6E;&#x6848;&#x4F8B;&#x4E91;&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x4FE1;&#x606F;</h6>
+<p>1&#x3001;&#x521B;&#x5EFA;&#x540D;&#x79F0;</p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327205235357.png" data-lightbox="4fc98944-76ea-48b6-99ff-d0e647c5c39a" data-title="image-20220327205235357" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327205235357.png" alt="image-20220327205235357"></a></p>
+<p>2&#x3001;&#x914D;&#x7F6E;&#x6848;&#x4F8B;&#x4E91;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#xFF08;&#x6216;&#x5176;&#x4ED6;&#x4ED3;&#x5E93;&#xFF09;</p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327205505037.png" data-lightbox="6695fc24-48d1-4190-a530-e72fef7edfaa" data-title="image-20220327205505037" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327205505037.png" alt="image-20220327205505037"></a></p>
+<h2 id="&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x4F18;&#x5316;">&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x4F18;&#x5316;</h2>
+<h4 id="&#x914D;&#x7F6E;maven">&#x914D;&#x7F6E;maven</h4>
+<blockquote>
+<ul>
+<li>&#x4F7F;&#x7528;admin&#x767B;&#x9646;ks</li>
+<li>&#x8FDB;&#x5165;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;</li>
+<li>&#x8FDB;&#x5165;&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;</li>
+<li><p>&#x627E;&#x5230;&#x914D;&#x7F6E;</p>
+</li>
+<li><ul>
+<li>ks-devops-agent</li>
+<li>&#x4FEE;&#x6539;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x3002;&#x52A0;&#x5165;maven&#x963F;&#x91CC;&#x4E91;&#x955C;&#x50CF;&#x52A0;&#x901F;&#x5730;&#x5740;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327221348297.png" data-lightbox="f195a782-9744-4040-a3f6-ac3275394295" data-title="image-20220327221348297" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327221348297.png" alt="image-20220327221348297"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327221552455.png" data-lightbox="cc5e5ab7-1d56-4c1f-9c25-806ddbc61048" data-title="image-20220327221552455" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327221552455.png" alt="image-20220327221552455"></a></p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">&gt;</span></span>nexus-aliyun<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrorOf</span><span class="token punctuation">&gt;</span></span>*,!jeecg,!jeecg-snapshots<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirrorOf</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>Nexus aliyun<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>http://maven.aliyun.com/nexus/content/groups/public<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>url</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mirror</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220322213322073.png" data-lightbox="dffbb9b2-d046-4ec5-9882-8496f3823166" data-title="image-20220322213322073" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220322213322073.png" alt="image-20220322213322073"></a></p>
+<h1 id="&#x521B;&#x5EFA;devops&#x5DE5;&#x7A0B;">&#x521B;&#x5EFA;devops&#x5DE5;&#x7A0B;</h1>
+<h2 id="1&#x3001;&#x521B;&#x5EFA;devops">1&#x3001;&#x521B;&#x5EFA;devops</h2>
+<blockquote>
+<p>&#x8FDB;&#x5165;&#x5206;&#x516C;&#x53F8;&#xFF0C;&#x627E;&#x5230;devops&#x5DE5;&#x7A0B;&#xFF0C;&#x70B9;&#x51FB;&#x521B;&#x5EFA;</p>
+</blockquote>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327213430426.png" data-lightbox="fc0287be-a218-44d9-8310-97f444ad03f6" data-title="image-20220327213430426" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327213430426.png" alt="image-20220327213430426"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327213533498.png" data-lightbox="54de83f2-faec-4816-bb7a-f1f9c11f9475" data-title="image-20220327213533498" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327213533498.png" alt="image-20220327213533498"></a></p>
+<h2 id="2&#x3001;&#x521B;&#x5EFA;&#x51ED;&#x8BC1;">2&#x3001;&#x521B;&#x5EFA;&#x51ED;&#x8BC1;</h2>
+<h3 id="1&#x3001;&#x521B;&#x5EFA;git&#x51ED;&#x8BC1;">1&#x3001;&#x521B;&#x5EFA;git&#x51ED;&#x8BC1;</h3>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220021610.png" data-lightbox="208d8a71-1e88-418e-bbf2-46a61baeeb88" data-title="image-20220327220021610" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220021610.png" alt="image-20220327220021610"></a></p>
+<h3 id="2&#x3001;&#x521B;&#x5EFA;&#x6848;&#x4F8B;&#x955C;&#x50CF;&#x767B;&#x5F55;&#x51ED;&#x8BC1;">2&#x3001;&#x521B;&#x5EFA;&#x6848;&#x4F8B;&#x955C;&#x50CF;&#x767B;&#x5F55;&#x51ED;&#x8BC1;</h3>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220200098.png" data-lightbox="6b7a654f-570e-4c54-8ae0-6a76fd1de052" data-title="image-20220327220200098" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220200098.png" alt="image-20220327220200098"></a></p>
+<h2 id="3&#x3001;&#x8FDB;&#x5165;&#x5DE5;&#x7A0B;&#x521B;&#x5EFA;&#x6D41;&#x6C34;&#x7EBF;">3&#x3001;&#x8FDB;&#x5165;&#x5DE5;&#x7A0B;&#x521B;&#x5EFA;&#x6D41;&#x6C34;&#x7EBF;</h2>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214137747.png" data-lightbox="f3ba1808-a4c1-4530-b9e8-7617f4e08e9a" data-title="image-20220327214137747" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214137747.png" alt="image-20220327214137747"></a></p>
+<h3 id="&#x65B9;&#x5F0F;1&#xFF1A;&#x624B;&#x52A8;&#x914D;&#x7F6E;jenkins">&#x65B9;&#x5F0F;1&#xFF1A;&#x624B;&#x52A8;&#x914D;&#x7F6E;Jenkins</h3>
+<h4 id="1&#x3001;&#x914D;&#x7F6E;&#x6D41;&#x6C34;&#x7EBF;&#x540D;&#x79F0;">1&#x3001;&#x914D;&#x7F6E;&#x6D41;&#x6C34;&#x7EBF;&#x540D;&#x79F0;</h4>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214301720.png" data-lightbox="007d6deb-3da6-4024-974b-fe244900faf5" data-title="image-20220327214301720" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214301720.png" alt="image-20220327214301720"></a></p>
+<h4 id="2&#x3001;&#x7F16;&#x8F91;&#x6D41;&#x6C34;&#x7EBF;">2&#x3001;&#x7F16;&#x8F91;&#x6D41;&#x6C34;&#x7EBF;</h4>
+<blockquote>
+<p>&#x9009;&#x62E9;&#x6301;&#x7EED;&#x96C6;&#x6210;&#x6A21;&#x677F;</p>
+</blockquote>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214443889.png" data-lightbox="0804a097-0517-448e-af47-40275cdbd20c" data-title="image-20220327214443889" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214443889.png" alt="image-20220327214443889"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214629468.png" data-lightbox="fa3e3970-d72e-463e-a509-84561a6adba8" data-title="image-20220327214629468" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214629468.png" alt="image-20220327214629468"></a></p>
+<h5 id="1&#x3001;&#x62C9;&#x53D6;&#x4EE3;&#x7801;">1&#x3001;&#x62C9;&#x53D6;&#x4EE3;&#x7801;</h5>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214859690.png" data-lightbox="6e7dc99c-6f1b-44bd-a67e-2cfc3e18c182" data-title="image-20220327214859690" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327214859690.png" alt="image-20220327214859690"></a></p>
+<h6 id="a-&#x6307;&#x5B9A;&#x5BB9;&#x5668;">a) &#x6307;&#x5B9A;&#x5BB9;&#x5668;</h6>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327215151603.png" data-lightbox="0179822d-d6ac-41ad-bad9-66b80d50ed24" data-title="image-20220327215151603" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327215151603.png" alt="image-20220327215151603"></a></p>
+<p>b) &#x6DFB;&#x52A0;&#x5D4C;&#x5957;&#x6B65;&#x9AA4;</p>
+<p>&#x6DFB;&#x52A0;git &#x62C9;&#x53D6;&#x4EE3;&#x7801;</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327215352956.png" data-lightbox="ea6eaf4a-a99a-4602-9fb9-ec6c20133334" data-title="image-20220327215352956" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327215352956.png" alt="image-20220327215352956"></a><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327215529925.png" data-lightbox="72646a72-9473-4201-8c43-6c54fb9bdc20" data-title="image-20220327215529925" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327215529925.png" alt="image-20220327215529925"></a></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x5B8C;&#x6574;jenkins</p>
+<pre class="language-"><code class="lang-sh">stages <span class="token punctuation">{</span>
+    stage<span class="token punctuation">(</span><span class="token string">&apos;&#x62C9;&#x53D6;&#x4EE3;&#x7801;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      agent none
+      steps <span class="token punctuation">{</span>
+        container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          git<span class="token punctuation">(</span>url: <span class="token string">&apos;https://gitee.com/leifengyang/yygh-parent.git&apos;</span>, credentialsId: <span class="token string">&apos;gitee-id&apos;</span>, branch: <span class="token string">&apos;master&apos;</span>, changelog: true, poll: <span class="token boolean">false</span><span class="token punctuation">)</span>
+          <span class="token function">sh</span> <span class="token string">&apos;ls -al&apos;</span>
+        <span class="token punctuation">}</span>
+
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+<h5 id="2&#x3001;&#x9879;&#x76EE;&#x7F16;&#x8BD1;">2&#x3001;&#x9879;&#x76EE;&#x7F16;&#x8BD1;</h5>
+<h6 id="a-&#x6307;&#x5B9A;&#x5BB9;&#x5668;">a) &#x6307;&#x5B9A;&#x5BB9;&#x5668;</h6>
+<h6 id="b&#x6DFB;&#x52A0;&#x5D4C;&#x5957;&#x6B65;&#x9AA4;">b)&#x6DFB;&#x52A0;&#x5D4C;&#x5957;&#x6B65;&#x9AA4;</h6>
+<p>1&#x3001;&#x786E;&#x5B9A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x6DFB;&#x52A0;shell</p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220544541.png" data-lightbox="513257bd-e517-45b0-bd41-0c9d27803898" data-title="image-20220327220544541" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220544541.png" alt="image-20220327220544541"></a></p>
+<p>2&#x3001;&#x7F16;&#x8BD1;&#x4EE3;&#x7801;&#xFF0C;&#x6DFB;&#x52A0;shell</p>
+<pre class="language-"><code class="lang-sh">mvn clean package -Dmaven.test.skip<span class="token operator">=</span>true
+</code></pre>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220639181.png" data-lightbox="4b5b1858-cf92-44e1-8645-887caae9dc88" data-title="image-20220327220639181" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220639181.png" alt="image-20220327220639181"></a></p>
+<p>3&#x3001;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x7F16;&#x8BD1;&#x6210;&#x529F;,&#x6DFB;&#x52A0;shell</p>
+<pre class="language-"><code class="lang-SH">ls hospital-manage/target
+</code></pre>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220812507.png" data-lightbox="bc4db38d-19fd-475f-a862-f2b534472570" data-title="image-20220327220812507" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220327220812507.png" alt="image-20220327220812507"></a></p>
+<blockquote>
+<p>&#x5B8C;&#x6574;jenkins</p>
+<pre class="language-"><code class="lang-sh"> stage<span class="token punctuation">(</span><span class="token string">&apos;&#x9879;&#x76EE;&#x7F16;&#x8BD1;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      agent none
+      steps <span class="token punctuation">{</span>
+        container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">sh</span> <span class="token string">&apos;ls&apos;</span>
+          <span class="token function">sh</span> <span class="token string">&apos;mvn clean package -Dmaven.test.skip=true&apos;</span>
+          <span class="token function">sh</span> <span class="token string">&apos;ls hospital-manage/target&apos;</span>
+        <span class="token punctuation">}</span>
+
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+<h5 id="3&#x3001;&#x6784;&#x5EFA;&#x955C;&#x50CF;">3&#x3001;&#x6784;&#x5EFA;&#x955C;&#x50CF;</h5>
+<h6 id="a-&#x6307;&#x5B9A;&#x5BB9;&#x5668;">a) &#x6307;&#x5B9A;&#x5BB9;&#x5668;</h6>
+<h6 id="b&#x6DFB;&#x52A0;&#x5D4C;&#x5957;&#x6B65;&#x9AA4;">b)&#x6DFB;&#x52A0;&#x5D4C;&#x5957;&#x6B65;&#x9AA4;</h6>
+<p>&#x200B;    1&#x3001;&#x786E;&#x5B9A;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;</p>
+<p>&#x200B;    2&#x3001;&#x6784;&#x5EFA;&#x955C;&#x50CF;</p>
+<pre class="language-"><code class="lang-SH">docker build -t hospital-manage:latest -f hospital-manage/Dockerfile  ./hospital-manage/
+</code></pre>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404142832911.png" data-lightbox="2b8724a4-3d1d-4191-88e5-9e6ef5df2c57" data-title="image-20220404142832911" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404142832911.png" alt="image-20220404142832911"></a></p>
+<blockquote>
+<p>&#x5B8C;&#x6574;jenkins</p>
+<pre class="language-"><code class="lang-sh">stage<span class="token punctuation">(</span><span class="token string">&apos;default-2&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parallel <span class="token punctuation">{</span>
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;hospital-manage&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls hospital-manage/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t hospital-manage:latest -f hospital-manage/Dockerfile  ./hospital-manage/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+
+
+
+    <span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+<h5 id="4&#x3001;&#x63A8;&#x9001;&#x955C;&#x50CF;&#x5230;&#x4ED3;&#x5E93;">4&#x3001;&#x63A8;&#x9001;&#x955C;&#x50CF;&#x5230;&#x4ED3;&#x5E93;</h5>
+<h6 id="a&#x3001;&#x6307;&#x5B9A;&#x5BB9;&#x5668;">a&#x3001;&#x6307;&#x5B9A;&#x5BB9;&#x5668;</h6>
+<h6 id="b&#x3001;&#x6DFB;&#x52A0;&#x51ED;&#x8BC1;">b&#x3001;&#x6DFB;&#x52A0;&#x51ED;&#x8BC1;</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220404143411938.png" data-lightbox="077f226f-a7d7-4437-9509-f99a3a3019f5" data-title="image-20220404143411938" target="_blank"><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220404143411938.png" alt="image-20220404143411938"></a><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404143347876.png" data-lightbox="341c8e56-a8bd-4619-b7b7-08ff32b710cd" data-title="image-20220404143347876" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404143347876.png" alt="image-20220404143347876"></a></td>
+</tr>
+</tbody>
+</table>
+<h6 id="c&#x3001;&#x767B;&#x5F55;&#x79C1;&#x6709;&#x5BB9;&#x5668;&#x5E93;">c&#x3001;&#x767B;&#x5F55;&#x79C1;&#x6709;&#x5BB9;&#x5668;&#x5E93;</h6>
+<pre class="language-"><code class="lang-sh"><span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$DOCKER_PWD_VAR</span>&quot;</span> <span class="token operator">|</span> <span class="token function">docker</span> login <span class="token variable">$REGISTRY</span> -u <span class="token string">&quot;<span class="token variable">$DOCKER_USER_VAR</span>&quot;</span> --password-stdin
+</code></pre>
+<h6 id="d&#x3001;&#x4FEE;&#x6539;&#x955C;&#x50CF;tag">d&#x3001;&#x4FEE;&#x6539;&#x955C;&#x50CF;tag</h6>
+<pre class="language-"><code class="lang-SH">docker tag hospital-manage:latest $REGISTRY/$DOCKERHUB_NAMESPACE/hospital-manage:SNAPSHOT-$BUILD_NUMBER
+</code></pre>
+<h6 id="e&#x3001;&#x63A8;&#x9001;&#x955C;&#x50CF;">e&#x3001;&#x63A8;&#x9001;&#x955C;&#x50CF;</h6>
+<pre class="language-"><code class="lang-SH">docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/hospital-manage:SNAPSHOT-$BUILD_NUMBER&gt;
+</code></pre>
+<blockquote>
+<p>&#x5B8C;&#x6574;jenkins</p>
+<pre class="language-"><code class="lang-sh"> stage<span class="token punctuation">(</span><span class="token string">&apos;default-3&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parallel <span class="token punctuation">{</span>
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;hospital-manage&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag hospital-manage:latest $REGISTRY/$DOCKERHUB_NAMESPACE/hospital-manage:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/hospital-manage:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+<h5 id="5&#x3001;&#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;">5&#x3001;&#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;</h5>
+<p>1&#x3001;&#x6DFB;&#x52A0;&#x4EFB;&#x52A1;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404145159835.png" data-lightbox="1c3931f5-5b0c-49b9-b3fc-028be65aa8e5" data-title="image-20220404145159835" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404145159835.png" alt="image-20220404145159835"></a></td>
+<td><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404145312210.png" data-lightbox="b28c06ec-9b9d-4c30-856c-86c930d761f5" data-title="image-20220404145312210" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404145312210.png" alt="image-20220404145312210"></a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>1&#x3001;&#x6307;&#x5B9A;&#x51ED;&#x8BC1;</p>
+<p>2&#x3001;&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</p>
+<blockquote>
+<p>&#x5B8C;&#x6574;jenkins</p>
+<pre class="language-"><code class="lang-sh">stage<span class="token punctuation">(</span><span class="token string">&apos;default-4&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parallel <span class="token punctuation">{</span>
+        stage<span class="token punctuation">(</span><span class="token string">&apos;hospital-manage - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;hospital-manage/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+</blockquote>
+<h3 id="&#x6D41;&#x6C34;&#x7EBF;jenkins">&#x6D41;&#x6C34;&#x7EBF;jenkins</h3>
+<pre class="language-"><code class="lang-sh">pipeline <span class="token punctuation">{</span>
+  agent <span class="token punctuation">{</span>
+    <span class="token function">node</span> <span class="token punctuation">{</span>
+      label <span class="token string">&apos;maven&apos;</span>
+    <span class="token punctuation">}</span>
+
+  <span class="token punctuation">}</span>
+  stages <span class="token punctuation">{</span>
+    stage<span class="token punctuation">(</span><span class="token string">&apos;&#x62C9;&#x53D6;&#x4EE3;&#x7801;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      agent none
+      steps <span class="token punctuation">{</span>
+        container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          git<span class="token punctuation">(</span>url: <span class="token string">&apos;https://gitee.com/leifengyang/yygh-parent.git&apos;</span>, credentialsId: <span class="token string">&apos;gitee-id&apos;</span>, branch: <span class="token string">&apos;master&apos;</span>, changelog: true, poll: <span class="token boolean">false</span><span class="token punctuation">)</span>
+          <span class="token function">sh</span> <span class="token string">&apos;ls -al&apos;</span>
+        <span class="token punctuation">}</span>
+
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    stage<span class="token punctuation">(</span><span class="token string">&apos;&#x9879;&#x76EE;&#x7F16;&#x8BD1;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      agent none
+      steps <span class="token punctuation">{</span>
+        container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">sh</span> <span class="token string">&apos;ls&apos;</span>
+          <span class="token function">sh</span> <span class="token string">&apos;mvn clean package -Dmaven.test.skip=true&apos;</span>
+          <span class="token function">sh</span> <span class="token string">&apos;ls hospital-manage/target&apos;</span>
+        <span class="token punctuation">}</span>
+
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    stage<span class="token punctuation">(</span><span class="token string">&apos;default-2&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parallel <span class="token punctuation">{</span>
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;hospital-manage&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls hospital-manage/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t hospital-manage:latest -f hospital-manage/Dockerfile  ./hospital-manage/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;server-gateway&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls server-gateway/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t server-gateway:latest -f server-gateway/Dockerfile  ./server-gateway/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;service-cmn&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls service/service-cmn/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t service-cmn:latest -f service/service-cmn/Dockerfile  ./service/service-cmn/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;service-hosp&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls service/service-hosp/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t service-hosp:latest -f service/service-hosp/Dockerfile  ./service/service-hosp/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;service-order&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls service/service-order/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t service-order:latest -f service/service-order/Dockerfile  ./service/service-order/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;service-oss&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls service/service-oss/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t service-oss:latest -f service/service-oss/Dockerfile  ./service/service-oss/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;service-sms&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls service/service-sms/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t service-sms:latest -f service/service-sms/Dockerfile  ./service/service-sms/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;service-statistics&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls service/service-statistics/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t service-statistics:latest -f service/service-statistics/Dockerfile  ./service/service-statistics/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;service-task&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls service/service-task/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t service-task:latest -f service/service-task/Dockerfile  ./service/service-task/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x6784;&#x5EFA;service-user&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">sh</span> <span class="token string">&apos;ls service/service-user/target&apos;</span>
+              <span class="token function">sh</span> <span class="token string">&apos;docker build -t service-user:latest -f service/service-user/Dockerfile  ./service/service-user/&apos;</span>
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    stage<span class="token punctuation">(</span><span class="token string">&apos;default-3&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parallel <span class="token punctuation">{</span>
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;hospital-manage&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag hospital-manage:latest $REGISTRY/$DOCKERHUB_NAMESPACE/hospital-manage:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/hospital-manage:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;server-gateway&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag server-gateway:latest $REGISTRY/$DOCKERHUB_NAMESPACE/server-gateway:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/server-gateway:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;service-cmn&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag service-cmn:latest $REGISTRY/$DOCKERHUB_NAMESPACE/service-cmn:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/service-cmn:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;service-hosp&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag service-hosp:latest $REGISTRY/$DOCKERHUB_NAMESPACE/service-hosp:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/service-hosp:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;service-order&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag service-order:latest $REGISTRY/$DOCKERHUB_NAMESPACE/service-order:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/service-order:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;service-oss&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag service-oss:latest $REGISTRY/$DOCKERHUB_NAMESPACE/service-oss:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/service-oss:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;service-sms&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag service-sms:latest $REGISTRY/$DOCKERHUB_NAMESPACE/service-sms:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/service-sms:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;service-statistics&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag service-statistics:latest $REGISTRY/$DOCKERHUB_NAMESPACE/service-statistics:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/service-statistics:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;service-task&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag service-task:latest $REGISTRY/$DOCKERHUB_NAMESPACE/service-task:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/service-task:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;&#x63A8;&#x9001;service-user&#x955C;&#x50CF;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            container<span class="token punctuation">(</span><span class="token string">&apos;maven&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              withCredentials<span class="token punctuation">(</span><span class="token punctuation">[</span>usernamePassword<span class="token punctuation">(</span>credentialsId <span class="token builtin class-name">:</span> <span class="token string">&apos;aliyun-docker-registry&apos;</span> ,usernameVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_USER_VAR&apos;</span> ,passwordVariable <span class="token builtin class-name">:</span> <span class="token string">&apos;DOCKER_PWD_VAR&apos;</span> ,<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">sh</span> <span class="token string">&apos;echo &quot;$DOCKER_PWD_VAR&quot; | docker login $REGISTRY -u &quot;$DOCKER_USER_VAR&quot; --password-stdin&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker tag service-user:latest $REGISTRY/$DOCKERHUB_NAMESPACE/service-user:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+                <span class="token function">sh</span> <span class="token string">&apos;docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/service-user:SNAPSHOT-$BUILD_NUMBER&apos;</span>
+              <span class="token punctuation">}</span>
+
+            <span class="token punctuation">}</span>
+
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    stage<span class="token punctuation">(</span><span class="token string">&apos;default-4&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parallel <span class="token punctuation">{</span>
+        stage<span class="token punctuation">(</span><span class="token string">&apos;hospital-manage - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;hospital-manage/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;server-gateway - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;server-gateway/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;service-cmn - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;service/service-cmn/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;service-hosp - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;service/service-hosp/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;service-order - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;service/service-order/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;service-oss - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;service/service-oss/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;service-sms - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;service/service-sms/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;service-statistics - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;service/service-statistics/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;service-task - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;service/service-task/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        stage<span class="token punctuation">(</span><span class="token string">&apos;service-user - &#x90E8;&#x7F72;&#x5230;dev&#x73AF;&#x5883;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          agent none
+          steps <span class="token punctuation">{</span>
+            kubernetesDeploy<span class="token punctuation">(</span>configs: <span class="token string">&apos;service/service-user/deploy/**&apos;</span>, enableConfigSubstitution: true, kubeconfigId: <span class="token string">&quot;<span class="token variable">$KUBECONFIG_CREDENTIAL_ID</span>&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    stage<span class="token punctuation">(</span><span class="token string">&apos;&#x53D1;&#x9001;&#x786E;&#x8BA4;&#x90AE;&#x4EF6;&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      agent none
+      steps <span class="token punctuation">{</span>
+        mail<span class="token punctuation">(</span>to: <span class="token string">&apos;849109312@qq.com&apos;</span>, subject: <span class="token string">&apos;&#x6784;&#x5EFA;&#x7ED3;&#x679C;&apos;</span>, body: <span class="token string">&apos;&quot;&#x6784;&#x5EFA;&#x6210;&#x529F;&#x4E86;  $BUILD_NUMBER&quot;&apos;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+  <span class="token punctuation">}</span>
+  environment <span class="token punctuation">{</span>
+    DOCKER_CREDENTIAL_ID <span class="token operator">=</span> <span class="token string">&apos;dockerhub-id&apos;</span>
+    GITHUB_CREDENTIAL_ID <span class="token operator">=</span> <span class="token string">&apos;github-id&apos;</span>
+    KUBECONFIG_CREDENTIAL_ID <span class="token operator">=</span> <span class="token string">&apos;demo-kubeconfig&apos;</span>
+    REGISTRY <span class="token operator">=</span> <span class="token string">&apos;registry.cn-hangzhou.aliyuncs.com&apos;</span>
+    DOCKERHUB_NAMESPACE <span class="token operator">=</span> <span class="token string">&apos;wjh_ruoyi&apos;</span>
+    GITHUB_ACCOUNT <span class="token operator">=</span> <span class="token string">&apos;kubesphere&apos;</span>
+    APP_NAME <span class="token operator">=</span> <span class="token string">&apos;devops-java-sample&apos;</span>
+    ALIYUNHUB_NAMESPACE <span class="token operator">=</span> <span class="token string">&apos;wjh_ruoyi&apos;</span>
+  <span class="token punctuation">}</span>
+  parameters <span class="token punctuation">{</span>
+    string<span class="token punctuation">(</span>name: <span class="token string">&apos;TAG_NAME&apos;</span>, defaultValue: <span class="token string">&apos;&apos;</span>, description: <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x8BFB;&#x53D6;&#x9879;&#x76EE;&#x81EA;&#x5E26;jenkins</p>
+<p>1&#x3001;&#x6307;&#x5B9A;git&#x8DEF;&#x5F84;</p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404150002393.png" data-lightbox="9089b054-ba07-4b9a-b2a7-277ee21def82" data-title="image-20220404150002393" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404150002393.png" alt="image-20220404150002393"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404150031463.png" data-lightbox="ef69e7fe-5a81-4882-a050-f6e10e0bfdac" data-title="image-20220404150031463" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404150031463.png" alt="image-20220404150031463"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404145920719.png" data-lightbox="569cff1a-24f2-40f9-8343-f7a0da91c12c" data-title="image-20220404145920719" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220404145920719.png" alt="image-20220404145920719"></a> </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; wjhlog.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2022-04-04 15:00:33
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+						
+					</section>
+					
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+				</div>
+			</div>
+			
+		</div>
+
+		
+		
+		<a href="../kubesphare/kubesphere_ruoyi.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: kubesphere手动上云">
+			<i class="fa fa-angle-left"></i>
+		</a>
+		
+		
+		
+		
+	</div>
+	<script>
+		var gitbook = gitbook || [];
+		gitbook.push(function() {
+			gitbook.page.hasChanged({"page":{"title":"devops部署","level":"1.8.3.8","depth":3,"next":{"title":"devops-持续更新中","level":"1.8.4","depth":2,"ref":"","articles":[]},"previous":{"title":"kubesphere手动上云","level":"1.8.3.7","depth":3,"path":"cloud_learn/kubesphare/kubesphere_ruoyi.md","ref":"cloud_learn/kubesphare/kubesphere_ruoyi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"cloud_learn/devops/set_jenkins.md","mtime":"2022-04-04T07:00:33.009Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-04T07:12:30.242Z"},"basePath":"../..","book":{"language":""}});
+		});
+	</script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-changyan/changyan.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-musicxml/osmd.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-musicxml/musicxml.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-musicxml/promise.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-fexa/fexa.js"></script>
+        
+    
+
+    <script src="../../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
