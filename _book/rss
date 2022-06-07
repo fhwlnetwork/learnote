@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 14 Mar 2022 01:19:41 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 04 Apr 2022 07:12:56 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -365,6 +365,13 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
             <description><![CDATA[image-20220313230154555]]></description>
             <link>http://note.wjhlog.com/cloud_learn/kubesphare/kubesphere_ruoyi.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/kubesphare/kubesphere_ruoyi.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[前置准备工作]]></title>
+            <description><![CDATA[a、创建优状态服务]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/devops/set_jenkins.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/devops/set_jenkins.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
