@@ -712,7 +712,7 @@ pipeline {
 }
 ```
 
-方式二：读取项目自带jenkins
+### 方式二：读取项目自带jenkins
 
 1、指定git路径
 
