@@ -470,13 +470,20 @@ https://kubernetes.github.io/ingress-nginx/examples/auth/basic/   文档地址
 需要如下修改：
 
 - 修改ingress-nginx-controller镜像为 `registry.cn-hangzhou.aliyuncs.com/lfy_k8s_images/ingress-nginx-controller:v0.46.0`
+
 - 修改Deployment为DaemonSet比较好
+
 - 修改Container使用主机网络，直接在主机上开辟 80,443端口，无需中间解析，速度更快
+
 - Container使用主机网络，对应的dnsPolicy策略也需要改为主机网络的
+
 - 修改Service为ClusterIP，无需NodePort模式了
+
 - 修改DaemonSet的nodeSelector:  `ingress-node=true` 。这样只需要给node节点打上`ingress-node=true` 标签，即可快速的加入/剔除 ingress-controller的数量
 
+  kubectl label node k8s-node01 node-role=ingress
 
+![image-20221211224721704](https://gitee.com/fhwlkj/blog-pic/raw/master/note/202212112247850.png)
 
 修改好的yaml如下。大家直接复制使用
 

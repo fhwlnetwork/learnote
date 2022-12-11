@@ -49,6 +49,9 @@
 <url> <loc>https://log.wjhlog.com/cloud_learn/docker/docker_cig.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/cloud_learn/docker/go_install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/cloud_learn/k8s/k8s_install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/cloud_learn/k8s/k8s_base.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/cloud_learn/k8s/k8s_gainian.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/cloud_learn/k8s/k8s_svc.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/cloud_learn/k8s/k8s_network.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/cloud_learn/kubesphare/k8s_commond.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/cloud_learn/kubesphare/kubesphere_install.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>

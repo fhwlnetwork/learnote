@@ -59,7 +59,10 @@
 * k8_docker笔记
     * [go环境安装](cloud_learn/docker/go_install.md)
     * [安装K8S](cloud_learn/k8s/k8s_install.md)
-    * [Kubernetes网络](cloud_learn/k8s/k8s_network.md)
+    * [01 Kubernetes 基础入门](cloud_learn/k8s/k8s_base.md)
+    * [02 Kubernetes 概念](cloud_learn/k8s/k8s_gainian.md)
+    * [03 Kubernetes 工作负载](cloud_learn/k8s/k8s_svc.md)
+    * [04 Kubernetes网络](cloud_learn/k8s/k8s_network.md)
     * Kubernetes核心实战
       * [Kubernetes核心实战](cloud_learn/kubesphare/k8s_commond.md)
       * [kubesphere安装](cloud_learn/kubesphare/kubesphere_install.md)
