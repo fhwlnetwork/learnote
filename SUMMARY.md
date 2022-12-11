@@ -9,6 +9,8 @@
     * [系统目录结构](linux/fictory.md)
     * [linux系统优化](linux/majorzation.md)
     * [linux磁盘分区](linux/Disk_partition.md)
+    * [RSYNC简介](linux/rsync.md)
+    * [RSYNC安装与使用](linux/rsync_install.md)
     * [磁盘空间未完全分配场景文件系统扩容处理](linux/Disk_partition_free.md)
 * Nginx笔记
     * [安装](nginx/install.md)
@@ -57,6 +59,7 @@
 * k8_docker笔记
     * [go环境安装](cloud_learn/docker/go_install.md)
     * [安装K8S](cloud_learn/k8s/k8s_install.md)
+    * [Kubernetes网络](cloud_learn/k8s/k8s_network.md)
     * Kubernetes核心实战
       * [Kubernetes核心实战](cloud_learn/kubesphare/k8s_commond.md)
       * [kubesphere安装](cloud_learn/kubesphare/kubesphere_install.md)
