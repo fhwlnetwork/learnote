@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 04 Apr 2022 07:12:56 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 11 Dec 2022 15:38:17 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -52,6 +52,19 @@
             <title><![CDATA[磁盘分区]]></title>
             <link>http://note.wjhlog.com/linux/Disk_partition.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/linux/Disk_partition.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[什么是rsync服务]]></title>
+            <description><![CDATA[​    Rsync是一款开源的、快速的、多功能的、可实现全量及增量的本地或远程数据同步备份的优秀工具]]></description>
+            <link>http://note.wjhlog.com/linux/rsync.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/rsync.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[RSYNC安装与使用]]></title>
+            <link>http://note.wjhlog.com/linux/rsync_install.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/linux/rsync_install.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
@@ -333,6 +346,40 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
+            <title><![CDATA[一、Kubernetes简介]]></title>
+            <description><![CDATA[部署演进]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/k8s/k8s_base.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/k8s/k8s_base.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[一、基础概念理解]]></title>
+            <description><![CDATA[https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/kubernetes-objects/]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/k8s/k8s_gainian.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/k8s/k8s_gainian.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[总：Workloads]]></title>
+            <description><![CDATA[1619667328103]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/k8s/k8s_svc.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/k8s/k8s_svc.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[一、Kubernetes网络]]></title>
+            <description><![CDATA[Kubernetes 网络解决四方面的问题：]]></description>
+            <link>http://note.wjhlog.com/cloud_learn/k8s/k8s_network.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/k8s/k8s_network.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[Kubernetes核心实战]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/kubesphare/k8s_commond.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/kubesphare/k8s_commond.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
             <title><![CDATA[kubesphere安装]]></title>
             <description><![CDATA[image-20220305154109421]]></description>
             <link>http://note.wjhlog.com/cloud_learn/kubesphare/kubesphere_install.html</link>
@@ -358,6 +405,12 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
             <description><![CDATA[image-20220312235716116]]></description>
             <link>http://note.wjhlog.com/cloud_learn/kubesphare/kubesphere_set_redis.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/kubesphare/kubesphere_set_redis.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[kubesphere应用商店安装组件]]></title>
+            <link>http://note.wjhlog.com/cloud_learn/kubesphare/kubesphere_set_store.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/cloud_learn/kubesphare/kubesphere_set_store.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
         <item>
