@@ -11,6 +11,7 @@
     * [linux磁盘分区](linux/Disk_partition.md)
     * [RSYNC简介](linux/rsync.md)
     * [RSYNC安装与使用](linux/rsync_install.md)
+    * [NFS使用](linux/NFS.md)
     * [磁盘空间未完全分配场景文件系统扩容处理](linux/Disk_partition_free.md)
 * Nginx笔记
     * [安装](nginx/install.md)
