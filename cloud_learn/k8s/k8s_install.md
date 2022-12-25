@@ -309,6 +309,7 @@ kubectl apply -f dash.yaml
 
 ```text
 
+kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{ .data.token | base64decode}}"
 ```
 
 ![image-20220213165508944](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220213165508944.png)
