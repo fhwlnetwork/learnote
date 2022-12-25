@@ -16,7 +16,7 @@
 
 ## 确定拉取的镜像
 
-```SH
+```sh
 # docker images
 ```
 
@@ -24,7 +24,7 @@
 
 ##  使用tomcat镜像创建容器实例(也叫运行镜像)
 
-```SH 
+```sh 
 docker run -it -p 8080:8080 tomcat
 ```
 
@@ -38,7 +38,7 @@ docker run -it -p 8080:8080 tomcat
 
 ## 面修改版安装
 
-```SH
+```sh
 # docker pull billygoo/tomcat8-jdk8
 # docker run -d -p 8080:8080 --name mytomcat8 billygoo/tomcat8-jdk8
 

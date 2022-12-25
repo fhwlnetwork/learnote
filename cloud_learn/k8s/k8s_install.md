@@ -2,7 +2,7 @@
 
 ## 安装docker环境
 
-```SH
+```sh
 /bin/bash
 #移除以前docker相关包
 sudo yum remove docker \
@@ -62,7 +62,7 @@ docker info
 
 ### 1、基础环境
 
-```SH
+```sh
 #各个机器设置自己的域名
 hostnamectl set-hostname xxxx
 hostnamectl set-hostname k8s-master
@@ -98,7 +98,7 @@ sudo sysctl --system
 
 
 
-```SH
+```sh
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
@@ -129,7 +129,7 @@ sudo systemctl enable --now kubelet
 
 ### 1、下载各个机器需要的镜像
 
-```SH
+```sh
 sudo tee ./images.sh <<-'EOF'
 #!/bin/bash
 images=(
@@ -151,7 +151,7 @@ chmod +x ./images.sh && ./images.sh
 
 ### 2、初始化主节点
 
-```SH
+```sh
 #所有机器添加master域名映射，以下需要修改为自己的
 echo "172.31.0.100 cluster-endpoint" >> /etc/hosts
 #主节点初始化
@@ -168,7 +168,7 @@ kubeadm init \
 
 ![image-20220213143850055](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220213143850055.png)
 
-```SH
+```sh
 
 ##初始化完成后的信息，用于添加节点
 Your Kubernetes control-plane has initialized successfully!
@@ -208,7 +208,7 @@ kubeadm join cluster-endpoint:6443 --token srtl5c.618lmpbu0gpxruhx \
 
 ### 3、 安装网络组件
 
-```SH
+```sh
 curl https://docs.projectcalico.org/manifests/calico.yaml -O
 
 kubectl apply -f calico.yaml
@@ -307,14 +307,13 @@ kubectl apply -f dash.yaml
 
 #### 4、令牌访问
 
-```SH
-#获取访问令牌
-kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
+```text
+
 ```
 
 ![image-20220213165508944](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220213165508944.png)
 
-```SH
+```sh
 eyJhbGciOiJSUzI1NiIsImtpZCI6IklLLUtVV2VvMGE2a1hBT3NMU1JXY3FxTm9MRzNDQUZTQXBkQkVGc2ZRNXcifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLWc5Z3A4Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIyOGRmNDQ2Ni03YTM1LTRiM2UtYWFkZC0xZWM3NmE2MDBkZWIiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.BQcX86qMhgRtI6rK8LK5uhb_IJw-oZpiLkeSEjHngPyMIKhcQ8RfhQ0DuZ0ApoJt_59Qrpc6v2GzUZ8P-pDe3BcA0JV8g3QarYnQ458-LZhzIlCsaVvXFZMLGSA0l08FySXnckIEzdEZzuvsa7Q9aoMhe4eb_DpDmZj-jwEo7gBEVLKjuqdvLhak7BAcrsymVKXOioxZMKVJdglEXNDjBcBfnkbRM4pNKnP6Zp6m_qF2ILMlfB48IJFFDSN2EjAKvxro9mAwDJ98Al48w62phL_V6M-O_0KhCEhN4a2lJtuYuWmdQSQ5zUsDSs0NtCJaH6rb0u6Vf0wmUp_NvuonVA
 ```
 

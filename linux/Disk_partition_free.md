@@ -22,7 +22,7 @@
 
 ####   在系统中检查是否识别到了新的硬盘
 
-```SH
+```sh
 [root@master ~]# fdisk -l 
 
 Disk /dev/sda: 75.2 GB, 75161927680 bytes, 146800640 sectors
@@ -138,7 +138,7 @@ mkfs.ext3 /dev/sda4
 
 #### 下一步，创建物理卷和分区：
 
-```SH
+```sh
 [root@master ~]# pvcreate /dev/sda4
 WARNING: ext3 signature detected on /dev/sda4 at offset 1080. Wipe it? [y/n]: y
   Wiping ext3 signature on /dev/sda4.
@@ -150,7 +150,7 @@ WARNING: ext3 signature detected on /dev/sda4 at offset 1080. Wipe it? [y/n]: y
 
 #### 我们查看物理卷情况，知道了可以增加的硬盘空间容量总量。
 
-```SH
+```sh
 [root@master ~]# vgdisplay
   --- Volume group ---
   VG Name               centos_master
@@ -176,7 +176,7 @@ WARNING: ext3 signature detected on /dev/sda4 at offset 1080. Wipe it? [y/n]: y
 
 #### 按照实际大小酌情增加，比如我现在需增加10.99 GiB
 
-```SH
+```sh
 [root@master ~]# lvresize -L +10G /dev/mapper/centos_master-root
   Size of logical volume centos_master/root changed from <58.80 GiB (15052 extents) to <68.80 GiB (17612 extents).
   Logical volume centos_master/root successfully resized.
@@ -185,7 +185,7 @@ WARNING: ext3 signature detected on /dev/sda4 at offset 1080. Wipe it? [y/n]: y
 
 ####  然后动态扩容分区的大小
 
-```SH
+```sh
 [root@master ~]# xfs_growfs /dev/mapper/centos_master-root 
 meta-data=/dev/mapper/centos_master-root isize=512    agcount=12, agsize=1297408 blks
          =                       sectsz=512   attr=2, projid32bit=1
@@ -202,7 +202,7 @@ data blocks changed from 15413248 to 18034688
 
 最后，查看最终的结果
 
-```SH
+```sh
 [root@master ~]#  df -h
 Filesystem                      Size  Used Avail Use% Mounted on
 devtmpfs                        2.0G     0  2.0G   0% /dev

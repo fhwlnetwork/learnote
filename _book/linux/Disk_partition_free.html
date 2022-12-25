@@ -1611,7 +1611,7 @@
 						<h1 id="&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x672A;&#x5B8C;&#x5168;&#x5206;&#x914D;&#x573A;&#x666F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6269;&#x5BB9;&#x5904;&#x7406;">&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x672A;&#x5B8C;&#x5168;&#x5206;&#x914D;&#x573A;&#x666F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x6269;&#x5BB9;&#x5904;&#x7406;</h1>
 <h2 id="&#x4E00;&#x3001;&#x573A;&#x666F;&#x5206;&#x6790;"><strong>&#x4E00;&#x3001;&#x573A;&#x666F;&#x5206;&#x6790;</strong></h2>
 <p>&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x597D;&#x540E;&#xFF0C;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x52A8;&#x6001;&#x6269;&#x5BB9;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;sda1-sda2&#x4E3A;&#x4E3B;&#x5206;&#x533A;,&#x4F7F;&#x7528;lsblk &#x67E5;&#x770B;&#x5F53;&#x524D;&#x60C5;&#x51B5;&#x3002;</p>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307212440201.png" data-lightbox="c8dbdb93-4f11-4193-be12-4ff01e451bf3" data-title="image-20220307212440201" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307212440201.png" alt="image-20220307212440201"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307212440201.png" data-lightbox="cce664f0-f8f6-452b-9888-27d2ae674aa4" data-title="image-20220307212440201" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307212440201.png" alt="image-20220307212440201"></a></p>
 <blockquote>
 <p><strong>&#x5F97;&#x51FA;&#x7ED3;&#x679C;</strong></p>
 <p><strong>&#x78C1;&#x76D8;&#x540D;&#x79F0;&#x4E3A;</strong> sda&#xFF0C;&#x603B;&#x5927;&#x5C0F;70G&#xFF0C;&#x7A7A;&#x95F4;&#x5DF2;&#x5206;&#x914D; 60G <strong>&#x5DE6;&#x53F3;&#xFF0C;&#x8FD8;&#x5269;</strong> 10G <strong>&#x591A;&#x7A7A;&#x95F4;&#x672A;&#x5206;&#x914D;</strong></p>
@@ -1624,30 +1624,30 @@
 </blockquote>
 <h3 id="1&#x3001;-sda1sda4-&#x672A;&#x5168;&#x90E8;&#x5206;&#x914D;&#x53EF;&#x7528;-fdisk-&#x6765;&#x5B8C;&#x6210;&#x5206;&#x533A;">1&#x3001; sda1~sda4 <strong>&#x672A;&#x5168;&#x90E8;&#x5206;&#x914D;&#x53EF;&#x7528;</strong> fdisk &#x6765;&#x5B8C;&#x6210;&#x5206;&#x533A;</h3>
 <h4 id="&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x8BC6;&#x522B;&#x5230;&#x4E86;&#x65B0;&#x7684;&#x786C;&#x76D8;">&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x8BC6;&#x522B;&#x5230;&#x4E86;&#x65B0;&#x7684;&#x786C;&#x76D8;</h4>
-<pre class="language-"><code class="lang-SH">[root@master ~]# fdisk -l 
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># fdisk -l </span>
 
-Disk /dev/sda: 75.2 GB, 75161927680 bytes, 146800640 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk /dev/sda: <span class="token number">75.2</span> GB, <span class="token number">75161927680</span> bytes, <span class="token number">146800640</span> sectors
+Units <span class="token operator">=</span> sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
 Disk label type: dos
 Disk identifier: 0x000d0ec1
 
    Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048      411647      204800   83  Linux
-/dev/sda2          411648    41943039    20765696   8e  Linux LVM
-/dev/sda3        41943040   125829119    41943040   8e  Linux LVM
+/dev/sda1   *        <span class="token number">2048</span>      <span class="token number">411647</span>      <span class="token number">204800</span>   <span class="token number">83</span>  Linux
+/dev/sda2          <span class="token number">411648</span>    <span class="token number">41943039</span>    <span class="token number">20765696</span>   8e  Linux LVM
+/dev/sda3        <span class="token number">41943040</span>   <span class="token number">125829119</span>    <span class="token number">41943040</span>   8e  Linux LVM
 
-Disk /dev/mapper/centos_master-root: 63.1 GB, 63132663808 bytes, 123305984 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk /dev/mapper/centos_master-root: <span class="token number">63.1</span> GB, <span class="token number">63132663808</span> bytes, <span class="token number">123305984</span> sectors
+Units <span class="token operator">=</span> sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
 
 
-Disk /dev/mapper/centos_master-swap: 4 MB, 4194304 bytes, 8192 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk /dev/mapper/centos_master-swap: <span class="token number">4</span> MB, <span class="token number">4194304</span> bytes, <span class="token number">8192</span> sectors
+Units <span class="token operator">=</span> sectors of <span class="token number">1</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">512</span> bytes
+Sector size <span class="token punctuation">(</span>logical/physical<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
+I/O size <span class="token punctuation">(</span>minimum/optimal<span class="token punctuation">)</span>: <span class="token number">512</span> bytes / <span class="token number">512</span> bytes
 </code></pre>
 <h4 id="&#x5BF9;&#x78C1;&#x76D8;&#x8FDB;&#x884C;&#x5206;&#x533A;&#x5904;&#x7406;fdisk---&#x8FDB;&#x884C;&#x5206;&#x533A;&#x5904;&#x7406;-&#x67E5;&#x770B;&#x5206;&#x533A;&#x4FE1;&#x606F;">&#x5BF9;&#x78C1;&#x76D8;&#x8FDB;&#x884C;&#x5206;&#x533A;&#x5904;&#x7406;(fdisk-- &#x8FDB;&#x884C;&#x5206;&#x533A;&#x5904;&#x7406; &#x67E5;&#x770B;&#x5206;&#x533A;&#x4FE1;&#x606F;)</h4>
 <pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># fdisk /dev/sda </span>
@@ -1711,78 +1711,78 @@ The kernel still uses the old table. The new table will be used at
 the next <span class="token function">reboot</span> or after you run partprobe<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> or kpartx<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>
 Syncing disks.
 </code></pre>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307215355230.png" data-lightbox="843404ce-1623-4df4-abb7-ad616515ad24" data-title="image-20220307215355230" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307215355230.png" alt="image-20220307215355230"></a></p>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307215418453.png" data-lightbox="d73446af-037b-4de8-95ca-98e6060e358c" data-title="image-20220307215418453" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307215418453.png" alt="image-20220307215418453"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307215355230.png" data-lightbox="57f0a5b8-c93c-47ab-9e82-aa44395b104c" data-title="image-20220307215355230" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307215355230.png" alt="image-20220307215355230"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307215418453.png" data-lightbox="4934928b-dc95-4ed9-963b-00ee2a06545d" data-title="image-20220307215418453" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307215418453.png" alt="image-20220307215418453"></a></p>
 <h4 id="&#x2462;&#x67E5;&#x770B;&#x5206;&#x533A;&#x662F;&#x5426;&#x5B8C;&#x6210;&#x5206;&#x914D;&#x3002;">&#x2462;&#x67E5;&#x770B;&#x5206;&#x533A;&#x662F;&#x5426;&#x5B8C;&#x6210;&#x5206;&#x914D;&#x3002;</h4>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307224425124.png" data-lightbox="36b9a730-a0c0-45dc-ab2a-56e7f6e15b5b" data-title="image-20220307224425124" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307224425124.png" alt="image-20220307224425124"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307224425124.png" data-lightbox="7d3c9798-38ae-496d-a076-ff528d5a0546" data-title="image-20220307224425124" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307224425124.png" alt="image-20220307224425124"></a></p>
 <h4 id="&#x683C;&#x5F0F;&#x5316;&#x78C1;&#x76D8;">&#x683C;&#x5F0F;&#x5316;&#x78C1;&#x76D8;</h4>
 <pre class="language-"><code>cat /proc/partitions 
 mkfs.ext3 /dev/sda4
 </code></pre><p>&#x200B;    </p>
-<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307224941972.png" data-lightbox="7e15d54e-e708-4c05-ad83-e347bf5b658d" data-title="image-20220307224941972" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307224941972.png" alt="image-20220307224941972"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307224941972.png" data-lightbox="c8de86b1-6096-4c2c-ab5b-0d9d8f079705" data-title="image-20220307224941972" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/image-20220307224941972.png" alt="image-20220307224941972"></a></p>
 <h4 id="&#x4E0B;&#x4E00;&#x6B65;&#xFF0C;&#x521B;&#x5EFA;&#x7269;&#x7406;&#x5377;&#x548C;&#x5206;&#x533A;&#xFF1A;">&#x4E0B;&#x4E00;&#x6B65;&#xFF0C;&#x521B;&#x5EFA;&#x7269;&#x7406;&#x5377;&#x548C;&#x5206;&#x533A;&#xFF1A;</h4>
-<pre class="language-"><code class="lang-SH">[root@master ~]# pvcreate /dev/sda4
-WARNING: ext3 signature detected on /dev/sda4 at offset 1080. Wipe it? [y/n]: y
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># pvcreate /dev/sda4</span>
+WARNING: ext3 signature detected on /dev/sda4 at offset <span class="token number">1080</span>. Wipe it? <span class="token punctuation">[</span>y/n<span class="token punctuation">]</span>: y
   Wiping ext3 signature on /dev/sda4.
-  Physical volume &quot;/dev/sda4&quot; successfully created.
-[root@master ~]# vgextend centos_master /dev/sda4
-  Volume group &quot;centos_master&quot; successfully extended
+  Physical volume <span class="token string">&quot;/dev/sda4&quot;</span> successfully created.
+<span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># vgextend centos_master /dev/sda4</span>
+  Volume group <span class="token string">&quot;centos_master&quot;</span> successfully extended
 </code></pre>
 <h4 id="&#x6211;&#x4EEC;&#x67E5;&#x770B;&#x7269;&#x7406;&#x5377;&#x60C5;&#x51B5;&#xFF0C;&#x77E5;&#x9053;&#x4E86;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x7684;&#x786C;&#x76D8;&#x7A7A;&#x95F4;&#x5BB9;&#x91CF;&#x603B;&#x91CF;&#x3002;">&#x6211;&#x4EEC;&#x67E5;&#x770B;&#x7269;&#x7406;&#x5377;&#x60C5;&#x51B5;&#xFF0C;&#x77E5;&#x9053;&#x4E86;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x7684;&#x786C;&#x76D8;&#x7A7A;&#x95F4;&#x5BB9;&#x91CF;&#x603B;&#x91CF;&#x3002;</h4>
-<pre class="language-"><code class="lang-SH">[root@master ~]# vgdisplay
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># vgdisplay</span>
   --- Volume group ---
   VG Name               centos_master
   System ID             
   Format                lvm2
-  Metadata Areas        3
-  Metadata Sequence No  7
+  Metadata Areas        <span class="token number">3</span>
+  Metadata Sequence No  <span class="token number">7</span>
   VG Access             read/write
   VG Status             resizable
-  MAX LV                0
-  Cur LV                2
-  Open LV               2
-  Max PV                0
-  Cur PV                3
-  Act PV                3
-  VG Size               69.79 GiB
-  PE Size               4.00 MiB
-  Total PE              17867
-  Alloc PE / Size       15053 / 58.80 GiB
-  Free  PE / Size       2814 / 10.99 GiB
+  MAX LV                <span class="token number">0</span>
+  Cur LV                <span class="token number">2</span>
+  Open LV               <span class="token number">2</span>
+  Max PV                <span class="token number">0</span>
+  Cur PV                <span class="token number">3</span>
+  Act PV                <span class="token number">3</span>
+  VG Size               <span class="token number">69.79</span> GiB
+  PE Size               <span class="token number">4.00</span> MiB
+  Total PE              <span class="token number">17867</span>
+  Alloc PE / Size       <span class="token number">15053</span> / <span class="token number">58.80</span> GiB
+  Free  PE / Size       <span class="token number">2814</span> / <span class="token number">10.99</span> GiB
   VG UUID               xqPaU2-S9On-Pfrv-Zg9Q-bBrf-nmxD-8GF4Lj
 </code></pre>
 <h4 id="&#x6309;&#x7167;&#x5B9E;&#x9645;&#x5927;&#x5C0F;&#x914C;&#x60C5;&#x589E;&#x52A0;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x73B0;&#x5728;&#x9700;&#x589E;&#x52A0;1099-gib">&#x6309;&#x7167;&#x5B9E;&#x9645;&#x5927;&#x5C0F;&#x914C;&#x60C5;&#x589E;&#x52A0;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x73B0;&#x5728;&#x9700;&#x589E;&#x52A0;10.99 GiB</h4>
-<pre class="language-"><code class="lang-SH">[root@master ~]# lvresize -L +10G /dev/mapper/centos_master-root
-  Size of logical volume centos_master/root changed from &lt;58.80 GiB (15052 extents) to &lt;68.80 GiB (17612 extents).
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># lvresize -L +10G /dev/mapper/centos_master-root</span>
+  Size of logical volume centos_master/root changed from <span class="token operator">&lt;</span><span class="token number">58.80</span> GiB <span class="token punctuation">(</span><span class="token number">15052</span> extents<span class="token punctuation">)</span> to <span class="token operator">&lt;</span><span class="token number">68.80</span> GiB <span class="token punctuation">(</span><span class="token number">17612</span> extents<span class="token punctuation">)</span>.
   Logical volume centos_master/root successfully resized.
 </code></pre>
 <h4 id="&#x7136;&#x540E;&#x52A8;&#x6001;&#x6269;&#x5BB9;&#x5206;&#x533A;&#x7684;&#x5927;&#x5C0F;">&#x7136;&#x540E;&#x52A8;&#x6001;&#x6269;&#x5BB9;&#x5206;&#x533A;&#x7684;&#x5927;&#x5C0F;</h4>
-<pre class="language-"><code class="lang-SH">[root@master ~]# xfs_growfs /dev/mapper/centos_master-root 
-meta-data=/dev/mapper/centos_master-root isize=512    agcount=12, agsize=1297408 blks
-         =                       sectsz=512   attr=2, projid32bit=1
-         =                       crc=1        finobt=0 spinodes=0
-data     =                       bsize=4096   blocks=15413248, imaxpct=25
-         =                       sunit=0      swidth=0 blks
-naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
-log      =internal               bsize=4096   blocks=2560, version=2
-         =                       sectsz=512   sunit=0 blks, lazy-count=1
-realtime =none                   extsz=4096   blocks=0, rtextents=0
-data blocks changed from 15413248 to 18034688
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment"># xfs_growfs /dev/mapper/centos_master-root </span>
+meta-data<span class="token operator">=</span>/dev/mapper/centos_master-root <span class="token assign-left variable">isize</span><span class="token operator">=</span><span class="token number">512</span>    <span class="token assign-left variable">agcount</span><span class="token operator">=</span><span class="token number">12</span>, <span class="token assign-left variable">agsize</span><span class="token operator">=</span><span class="token number">1297408</span> blks
+         <span class="token operator">=</span>                       <span class="token assign-left variable">sectsz</span><span class="token operator">=</span><span class="token number">512</span>   <span class="token assign-left variable">attr</span><span class="token operator">=</span><span class="token number">2</span>, <span class="token assign-left variable">projid32bit</span><span class="token operator">=</span><span class="token number">1</span>
+         <span class="token operator">=</span>                       <span class="token assign-left variable">crc</span><span class="token operator">=</span><span class="token number">1</span>        <span class="token assign-left variable">finobt</span><span class="token operator">=</span><span class="token number">0</span> <span class="token assign-left variable">spinodes</span><span class="token operator">=</span><span class="token number">0</span>
+data     <span class="token operator">=</span>                       <span class="token assign-left variable">bsize</span><span class="token operator">=</span><span class="token number">4096</span>   <span class="token assign-left variable">blocks</span><span class="token operator">=</span><span class="token number">15413248</span>, <span class="token assign-left variable">imaxpct</span><span class="token operator">=</span><span class="token number">25</span>
+         <span class="token operator">=</span>                       <span class="token assign-left variable">sunit</span><span class="token operator">=</span><span class="token number">0</span>      <span class="token assign-left variable">swidth</span><span class="token operator">=</span><span class="token number">0</span> blks
+naming   <span class="token operator">=</span>version <span class="token number">2</span>              <span class="token assign-left variable">bsize</span><span class="token operator">=</span><span class="token number">4096</span>   ascii-ci<span class="token operator">=</span><span class="token number">0</span> <span class="token assign-left variable">ftype</span><span class="token operator">=</span><span class="token number">1</span>
+log      <span class="token operator">=</span>internal               <span class="token assign-left variable">bsize</span><span class="token operator">=</span><span class="token number">4096</span>   <span class="token assign-left variable">blocks</span><span class="token operator">=</span><span class="token number">2560</span>, <span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token number">2</span>
+         <span class="token operator">=</span>                       <span class="token assign-left variable">sectsz</span><span class="token operator">=</span><span class="token number">512</span>   <span class="token assign-left variable">sunit</span><span class="token operator">=</span><span class="token number">0</span> blks, lazy-count<span class="token operator">=</span><span class="token number">1</span>
+realtime <span class="token operator">=</span>none                   <span class="token assign-left variable">extsz</span><span class="token operator">=</span><span class="token number">4096</span>   <span class="token assign-left variable">blocks</span><span class="token operator">=</span><span class="token number">0</span>, <span class="token assign-left variable">rtextents</span><span class="token operator">=</span><span class="token number">0</span>
+data blocks changed from <span class="token number">15413248</span> to <span class="token number">18034688</span>
 </code></pre>
 <p>&#x6700;&#x540E;&#xFF0C;&#x67E5;&#x770B;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;</p>
-<pre class="language-"><code class="lang-SH">[root@master ~]#  df -h
+<pre class="language-"><code class="lang-sh"><span class="token punctuation">[</span>root@master ~<span class="token punctuation">]</span><span class="token comment">#  df -h</span>
 Filesystem                      Size  Used Avail Use% Mounted on
-devtmpfs                        2.0G     0  2.0G   0% /dev
-tmpfs                           2.0G     0  2.0G   0% /dev/shm
-tmpfs                           2.0G   12M  2.0G   1% /run
-tmpfs                           2.0G     0  2.0G   0% /sys/fs/cgroup
-/dev/mapper/centos_master-root   69G  2.7G   67G   4% /
-/dev/sda1                       197M  116M   82M  59% /boot
-tmpfs                           394M     0  394M   0% /run/user/0
+devtmpfs                        <span class="token number">2</span>.0G     <span class="token number">0</span>  <span class="token number">2</span>.0G   <span class="token number">0</span>% /dev
+tmpfs                           <span class="token number">2</span>.0G     <span class="token number">0</span>  <span class="token number">2</span>.0G   <span class="token number">0</span>% /dev/shm
+tmpfs                           <span class="token number">2</span>.0G   12M  <span class="token number">2</span>.0G   <span class="token number">1</span>% /run
+tmpfs                           <span class="token number">2</span>.0G     <span class="token number">0</span>  <span class="token number">2</span>.0G   <span class="token number">0</span>% /sys/fs/cgroup
+/dev/mapper/centos_master-root   69G  <span class="token number">2</span>.7G   67G   <span class="token number">4</span>% /
+/dev/sda1                       197M  116M   82M  <span class="token number">59</span>% /boot
+tmpfs                           394M     <span class="token number">0</span>  394M   <span class="token number">0</span>% /run/user/0
 </code></pre>
 <h3 id="2&#x3001;sda1sda4-&#x5168;&#x90E8;&#x5206;&#x914D;&#x53EF;&#x7528;cfdisk-&#x6765;&#x5B8C;&#x6210;&#x5206;&#x533A;">2&#x3001;sda1~sda4 <strong>&#x5168;&#x90E8;&#x5206;&#x914D;&#x53EF;&#x7528;</strong>cfdisk &#x6765;&#x5B8C;&#x6210;&#x5206;&#x533A;</h3>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; wjhlog.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2022-12-20 19:39:38
+2022-12-25 23:08:48
 </span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 						
 					</section>
@@ -1821,7 +1821,7 @@ tmpfs                           394M     0  394M   0% /run/user/0
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"磁盘空间未完全分配场景文件系统扩容处理","level":"1.2.11","depth":2,"next":{"title":"Nginx笔记","level":"1.3","depth":1,"ref":"","articles":[{"title":"安装","level":"1.3.1","depth":2,"path":"nginx/install.md","ref":"nginx/install.md","articles":[]},{"title":"虚拟主机","level":"1.3.2","depth":2,"path":"nginx/virtual_host.md","ref":"nginx/virtual_host.md","articles":[]},{"title":"lnmp","level":"1.3.3","depth":2,"path":"nginx/lnmp.md","ref":"nginx/lnmp.md","articles":[]},{"title":"负载均衡","level":"1.3.4","depth":2,"path":"nginx/load_balanced.md","ref":"nginx/load_balanced.md","articles":[]},{"title":"keepalieved配置nginx高可用冗余","level":"1.3.5","depth":2,"path":"nginx/keepalived_nginx.md","ref":"nginx/keepalived_nginx.md","articles":[]},{"title":"rsync备份服务","level":"1.3.6","depth":2,"path":"nginx/rsync.md","ref":"nginx/rsync.md","articles":[]}]},"previous":{"title":"NFS使用","level":"1.2.10","depth":2,"path":"linux/NFS.md","ref":"linux/NFS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"linux/Disk_partition_free.md","mtime":"2022-12-20T11:39:38.262Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-25T12:05:06.533Z"},"basePath":"..","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"磁盘空间未完全分配场景文件系统扩容处理","level":"1.2.11","depth":2,"next":{"title":"Nginx笔记","level":"1.3","depth":1,"ref":"","articles":[{"title":"安装","level":"1.3.1","depth":2,"path":"nginx/install.md","ref":"nginx/install.md","articles":[]},{"title":"虚拟主机","level":"1.3.2","depth":2,"path":"nginx/virtual_host.md","ref":"nginx/virtual_host.md","articles":[]},{"title":"lnmp","level":"1.3.3","depth":2,"path":"nginx/lnmp.md","ref":"nginx/lnmp.md","articles":[]},{"title":"负载均衡","level":"1.3.4","depth":2,"path":"nginx/load_balanced.md","ref":"nginx/load_balanced.md","articles":[]},{"title":"keepalieved配置nginx高可用冗余","level":"1.3.5","depth":2,"path":"nginx/keepalived_nginx.md","ref":"nginx/keepalived_nginx.md","articles":[]},{"title":"rsync备份服务","level":"1.3.6","depth":2,"path":"nginx/rsync.md","ref":"nginx/rsync.md","articles":[]}]},"previous":{"title":"NFS使用","level":"1.2.10","depth":2,"path":"linux/NFS.md","ref":"linux/NFS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"linux/Disk_partition_free.md","mtime":"2022-12-25T15:08:48.653Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-12-25T15:19:08.565Z"},"basePath":"..","book":{"language":""}});
 		});
 	</script>
 </div>

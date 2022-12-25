@@ -2,19 +2,19 @@
 
 ## 查找镜像
 
-```SH
+```sh
 # docker search mysql
 ```
 
 ## 拉取镜像
 
-```SH
+```sh
 # docker pull mysql:5.7
 ```
 
 ##  创建容器
 
-```SH
+```sh
 docker run -d -p 3306:3306 --privileged=true -v /wjhuse/mysql/log:/var/log/mysql -v /wjhuse/mysql/data:/var/lib/mysql -v /wjhuse/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456  --name mysql mysql:5.7
 ```
 
@@ -28,7 +28,7 @@ docker run -d -p 3306:3306 --privileged=true -v /wjhuse/mysql/log:/var/log/mysql
 
 ## 创建配置文件
 
-```SH
+```sh
 cat >/wjhuse/mysql/conf/my.conf<<EOF
 [client]
 default_character_set=utf8

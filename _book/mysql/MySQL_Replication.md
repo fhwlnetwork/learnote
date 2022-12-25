@@ -74,7 +74,7 @@ vim /tmp/full.sql
 ```
 ![获取数据备份的位置](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/1621487885.png)
 
-```SH 
+```sh 
 # 配置mysql
 #  如果是多实例是指定sock 登陆或者使用端口号 mysql -S /data/3308/mysql.sock 
 #  多服务器大件事直接登陆3306端口的服务器即可

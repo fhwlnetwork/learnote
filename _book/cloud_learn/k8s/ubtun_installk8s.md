@@ -55,7 +55,7 @@ network:
 
 ## 关闭交换分区
 
-```SH
+```sh
 sudo setenforce 0
 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 #关闭swap
@@ -115,7 +115,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 # ## kubeadm 初始化
 
-```SH
+```sh
 >echo  "172.31.0.100 cncamp.com "  >> /etc/hosts
 kubeadm init \
 --apiserver-advertise-address=172.31.0.100 \
@@ -128,7 +128,7 @@ kubeadm init \
 
 ## 一键安装
 
-```SH
+```sh
 #!/bin/bash
 ##配置网卡ip
 

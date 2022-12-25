@@ -23,13 +23,13 @@
 
 ## 创建容器
 
-```SH
+```sh
 # docker run  -p 6379:6379 --name myr3 --privileged=true -v /app/redis/redis.conf:/etc/redis/redis.conf -v /app/redis/data:/data -d redis:6.0.8 redis-server /etc/redis/redis.conf
 ```
 
 ## 测速redis-cli链接
 
-```SH
+```sh
 redis]# docker exec -it 9d8321580455 /bin/bash
 root@9d8321580455:/data# redis-cli
 

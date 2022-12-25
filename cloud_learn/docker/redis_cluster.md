@@ -2,7 +2,7 @@
 
 ## 新建6个docker容器redis实例
 
-```SH
+```sh
 docker run -d --name redis-node-1 --net host --privileged=true -v /data/redis/share/redis-node-1:/data redis:6.0.8 --cluster-enabled yes --appendonly yes --port 6381
 docker run -d --name redis-node-2 --net host --privileged=true -v /data/redis/share/redis-node-2:/data redis:6.0.8 --cluster-enabled yes --appendonly yes --port 6382
 docker run -d --name redis-node-3 --net host --privileged=true -v /data/redis/share/redis-node-3:/data redis:6.0.8 --cluster-enabled yes --appendonly yes --port 6383
@@ -29,7 +29,7 @@ docker ps -a
 
 ### 进入容器
 
-```SH
+```sh
 docker exec -it redis-node-1 /bin/bash
 ```
 
@@ -37,7 +37,7 @@ docker exec -it redis-node-1 /bin/bash
 
 > //注意，进入docker容器后才能执行一下命令，且注意自己的真实IP地址
 
-```SH
+```sh
 redis-cli --cluster create 10.0.0.200:6381 10.0.0.200:6382 10.0.0.200:6383 10.0.0.200:6384 10.0.0.200:6385 10.0.0.200:6386 --cluster-replicas 1
 # 在弹出信息后输入yes进行确认
 ```
@@ -48,7 +48,7 @@ redis-cli --cluster create 10.0.0.200:6381 10.0.0.200:6382 10.0.0.200:6383 10.0.
 
 ### 链接进入6381作为切入点，查看集群状态
 
-```SH
+```sh
 root@wjh:/data# redis-cli -p 6381
 127.0.0.1:6381> key *
 127.0.0.1:6381> cluster info
@@ -154,7 +154,7 @@ root@wjh:/data# redis-cli --cluster check 10.0.0.200:6381
 
 > 命令：redis-cli --cluster add-node ip:新slave端口 ip:新master端口 --cluster-slave --cluster-master-id 新主机节点ID
 >
-> ```SH
+> ```sh
 > redis-cli --cluster add-node 10.0.0.200:6388 10.0.0.200:6387 --cluster-slave --cluster-master-id f0b4e73f8e334de67a2c91601d5f874a473e0578-------这个是6387的编号，按照自己实际情况
 > ```
 >
@@ -166,7 +166,7 @@ root@wjh:/data# redis-cli --cluster check 10.0.0.200:6381
 
 ### 查看集群情况
 
-```SH
+```sh
 redis-cli --cluster check 10.0.0.200:6381
 ```
 
@@ -189,7 +189,7 @@ redis-cli --cluster check 10.0.0.200:6382
 
 >命令：redis-cli --cluster del-node ip:从机端口 从机6388节点ID
 >
->```SH
+>```sh
 >redis-cli --cluster del-node 10.0.0.200:6388 a0f8238e18d27339bd79a2868a3fbd5efbc5cdc8
 >```
 
@@ -197,7 +197,7 @@ redis-cli --cluster check 10.0.0.200:6382
 
 ### 将6387的槽号清空，重新分配，本例将清出来的槽号都给6381
 
-```SH
+```sh
 redis-cli --cluster reshard 10.0.0.200:6381
 ```
 
@@ -221,7 +221,7 @@ root@wjh:/data# redis-cli --cluster check 10.0.0.200:6381
 
 >命令：redis-cli --cluster del-node ip:端口 6387节点ID
 
-```SH
+```sh
 redis-cli --cluster del-node 10.0.0.200:6387 f0b4e73f8e334de67a2c91601d5f874a473e0578
 ```
 
@@ -229,7 +229,7 @@ redis-cli --cluster del-node 10.0.0.200:6387 f0b4e73f8e334de67a2c91601d5f874a473
 
 ### 检查集群情况第三次
 
-```SH
+```sh
 root@wjh:/data#  redis-cli --cluster check 10.0.0.200:6381
 10.0.0.200:6381 (69f01736...) -> 0 keys | 8192 slots | 1 slaves.
 10.0.0.200:6383 (10f3bc0e...) -> 0 keys | 4096 slots | 1 slaves.

@@ -56,7 +56,7 @@ Dockerfile面向开发，Docker镜像成为交付标准，Docker容器则涉及�
 >
 > EXEC格式：RUN ["可执行文件"，"参数1"，"参数2"]
 >
-> ```SH
+> ```sh
 > RUN ["./test.php","dev","offline"] 
 > #等价于 RUN ./test.php dev offline
 > ```
@@ -94,7 +94,7 @@ RUN是在 docker build时运行
 类似ADD，拷贝文件和目录到镜像中。
 将从构建上下文目录中 <源路径> 的文件/目录复制到新的一层的镜像内的 <目标路径> 位置
 
-```SH
+```sh
 ## Shell形式
 COPY src dest
 # json形式
@@ -132,7 +132,7 @@ ENTRYPOINT可以和CMD一起用，一般是变参才会使用 CMD ，这里的 C
 
 
 >案例如下：假设已通过 Dockerfile 构建了 nginx:test 镜像：
->```SH
+>```sh
 >FROM nginx
 >ENTRTYPOINT["nginx","-c"] # 定参
 >CMD ["/etc/nginx/nginx.conf"] #变参
@@ -163,7 +163,7 @@ ENTRYPOINT可以和CMD一起用，一般是变参才会使用 CMD ，这里的 C
 
 > 注意：开头字母必须大写
 
-```SH
+```sh
 [root@wjh ~]# mkdir myfile
 [root@wjh ~]# cd myfile
 [root@wjh myfile]# touch Dockerfile
@@ -204,7 +204,7 @@ CMD /bin/bash
 
 ### 2、构建
 
-```SH
+```sh
 # docker build -t 新镜像名字:TAG .
 docker build -t centosjava8:1.5 .
 ```
@@ -215,14 +215,14 @@ docker build -t centosjava8:1.5 .
 
 ### 3、运行
 
-```SH
+```sh
 #docker run -it 新镜像名字:TAG 
 docker run -it centosjava8:1.5 /bin/bash
 ```
 
 ## 删除虚悬镜像
 
-```SH
+```sh
 docker image ls -f dangling=true
 ```
 

@@ -31,7 +31,7 @@ docker run [OPTIONS] IMAGE[COMMAD][ARG...]
 
 ### <a name="交互式">使用镜像centos:latest以交互模式启动一个容器,在容器内执行/bin/bash命令。</a>
 
-```SH
+```sh
 # docker run -it centos /bin/bash 
 ```
 
@@ -47,7 +47,7 @@ docker run [OPTIONS] IMAGE[COMMAD][ARG...]
 
 ##       列出当前所有正在运行的容器
 
->```SH
+>```sh
 ># docker ps [OPTIONS]
 >```
 >

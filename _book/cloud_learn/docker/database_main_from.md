@@ -57,7 +57,7 @@ Query OK, 0 rows affected (0.00 sec)
 
 ## 6、新建从服务器容器实例3308
 
-```SH
+```sh
 docker run -p 3308:3306 --name mysql-slave \
 -v /mydata/mysql-slave/log:/var/log/mysql \
 -v /mydata/mysql-slave/data:/var/lib/mysql \
@@ -109,7 +109,7 @@ docker restart mysql-slave
 
 ## 10、进入mysql-slave容器
 
-```SH
+```sh
  docker exec -it mysql-slave /bin/mysql -uroot -proot
 ```
 

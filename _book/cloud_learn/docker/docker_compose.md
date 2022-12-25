@@ -14,7 +14,7 @@ Compose 是 Docker 公司推出的一个工具软件，可以管理多个 Docker
 
 ## 安装
 
-```SH
+```sh
 # 官网安装方式https://docs.docker.com/compose/install/
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
@@ -28,7 +28,7 @@ docker-compose --version
 
 ## 卸载
 
-```SH
+```sh
 SU rm /usr/local/bin/docker-compose
 ```
 

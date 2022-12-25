@@ -178,7 +178,7 @@ PS: 如果想让selinux配置文件生效,重启系统
 
 ### 	centos6 设置方法
 
-```SHELL
+```shELL
 
 #	查看默认编码信息:
  [root@web01 /etc]# echo $LANG --- LANG用于设置字符编码信息

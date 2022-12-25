@@ -13,7 +13,7 @@ CAdvisor监控收集+InfluxDB存储数据+Granfana展示图表
 ## 安装
 ### 新建目录，创建文件
 
-```SH
+```sh
 [root@wjh ~]# mkdir /mydocker/cig -p
 [root@wjh ~]# cd /mydocker/cig/
 [root@wjh cig]# touch docker-compose.yml
@@ -76,7 +76,7 @@ services:
 
 #### 启动docker-compose文件
 
-```SH
+```sh
 docker-compose up
 ```
 

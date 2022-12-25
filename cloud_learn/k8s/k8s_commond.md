@@ -38,7 +38,7 @@ metadata:
 
 ### 创建/查询pod
 
-```SH
+```sh
 #格式 kubectk run pod名称 	--image=镜像名称
 kubectl run mynginx --image=nginx
 # 查看default名称空间的Pod
@@ -51,7 +51,7 @@ kubectl delete pod Pod名字
 
 ###  查看创建过程、运行日志
 
-```SH
+```sh
 
 # 描述
 kubectl describe pod 你自己的Pod名字
@@ -150,7 +150,7 @@ spec:
 
 #### 2) 扩缩容
 
-```SH
+```sh
 kubectl scale --replicas=5 deployment/my-dep
 #方式2：修改 replicas值，增加为扩容，减小为缩容
 kubectl edit deployment my-dep
@@ -160,7 +160,7 @@ kubectl edit deployment my-dep
 
 #### 3）滚动更新
 
-```SH
+```sh
 kubectl set image deployment/my-dep nginx=nginx:1.16.1 --record
 kubectl rollout status deployment/my-dep
 ```
@@ -173,7 +173,7 @@ kubectl rollout status deployment/my-dep
 
 #### 4）版本回退
 
-```SH
+```sh
 #历史记录
 kubectl rollout history deployment/my-dep
 #查看某个历史详情
@@ -198,7 +198,7 @@ kubectl rollout undo deployment/my-dep --to-revision=2
 
 > 将一组 [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) 公开为网络服务的抽象方法。
 
-```SH
+```sh
 #暴露Deploy
 kubectl expose deployment my-dep --port=8000 --target-port=80
 
@@ -212,7 +212,7 @@ kubectl get service
 
 ### 1、ClusterIP
 
-```SH
+```sh
 # 等同于没有--type的
 kubectl expose deployment my-dep --port=8000 --target-port=80 --type=ClusterIP
 ```
@@ -1098,7 +1098,7 @@ spec:
 
 ##### 3、流量限制
 
-```SH
+```sh
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -1137,7 +1137,7 @@ yum install -y nfs-utils
 
 #### 2、主节点创建目录
 
-```SH
+```sh
 #nfs主节点
 echo "/nfs/data/ *(insecure,rw,sync,no_root_squash)" > /etc/exports
 
@@ -1150,7 +1150,7 @@ exportfs -r
 
 #### 3、node节点
 
-```SH
+```sh
 showmount -e 10.0.0.100
 
 #执行以下命令挂载 nfs 服务器上的共享目录到本机路径 /root/nfsmount
@@ -1203,7 +1203,7 @@ spec:
 
 静态供应
 
-```SH
+```sh
 #nfs主节点
 mkdir -p /nfs/data/01
 mkdir -p /nfs/data/02
@@ -1313,7 +1313,7 @@ spec:
 
 ##### 1、把之前的配置文件创建为配置集
 
-```SH
+```sh
 # 创建配置，redis保存到k8s的etcd；
 kubectl create cm redis-conf --from-file=redis.conf
 ```
@@ -1363,7 +1363,7 @@ spec:
 
 ##### 3、检查默认配置
 
-```SH
+```sh
 kubectl exec -it redis -- redis-cli
 
 127.0.0.1:6379> CONFIG GET appendonly
@@ -1406,7 +1406,7 @@ kubectl exec -it redis -- redis-cli
 
 Secret 对象类型用来保存敏感信息，例如密码、OAuth 令牌和 SSH 密钥。 将这些信息放在 secret 中比放在 [Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) 的定义或者 [容器镜像](https://kubernetes.io/zh/docs/reference/glossary/?all=true#term-image) 中来说更加安全和灵活。
 
-```SH
+```sh
 kubectl create secret docker-registry leifengyang-docker \
 --docker-username=leifengyang \
 --docker-password=Lfy123456 \

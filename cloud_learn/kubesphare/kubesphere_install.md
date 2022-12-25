@@ -165,7 +165,7 @@ kubeadm join k8s-master:6443 --token 0ns2n4.crdjrcdlt7hyfu3s \
 
 > 配置管理信息
 >
-> ```SH
+> ```sh
 >  mkdir -p $HOME/.kube
 >  cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 > chown $(id -u):$(id -g) $HOME/.kube/config
@@ -561,7 +561,7 @@ spec:
 
 如果下载不到，请复制附录的内容
 
-```SH
+```sh
 wget https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/kubesphere-installer.yaml
 
 wget https://github.com/kubesphere/ks-installer/releases/download/v3.1.1/cluster-configuration.yaml

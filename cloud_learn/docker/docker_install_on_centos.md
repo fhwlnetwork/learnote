@@ -18,7 +18,7 @@
 
 ## 2、卸载旧版本
 
-```SH
+```sh
  sudo yum remove docker \
                   docker-client \
                   docker-client-latest \
@@ -33,7 +33,7 @@
 
 ## 3、yum安装gcc相关
 
-```SH
+```sh
 # yum install -y gcc  gcc-c++
 ```
 
@@ -43,13 +43,13 @@
 
 4、安装需要的软件包
 
-```SH
+```sh
 # yum install -y yum-utils
 ```
 
 ## 5、设置stable镜像仓库
 
-```SH 
+```sh 
 # yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
 

@@ -6,7 +6,7 @@
 
 卷的设计目的就是数据的持久化，完全独立于容器的生存周期，因此Docker不会在容器删除时删除其挂载的数据卷
 
- ```SH
+ ```sh
 docker run -it --privileged=true -v /宿主机绝对路径目录:/容器内目录      镜像名
  ```
 
@@ -40,7 +40,7 @@ root@f7ef2383e12d:/#
 
 ### 查看数据卷是否挂载成功
 
-```SH
+```sh
  [root@wjh ~]# docker inspect 容器id
 ```
 
@@ -64,7 +64,7 @@ root@f7ef2383e12d:/#
 
 > 命令格式：docker run -it --privileged=true -v /宿主机绝对路径目录:/容器内目录:ro   镜像名
 
-```SH
+```sh
 [root@wjh ~]# docker run -it --name myu5 --privileged=true -v /tmp/myHostData:/tmp/myDockerData:ro ubuntu /bin/bash
 
 ```
@@ -75,7 +75,7 @@ root@f7ef2383e12d:/#
 
 > 命令格式：     docker run -it --privileged=true --volumes-from 父类 --name u2 ubuntu
 
-```SH
+```sh
 docker run -it --privileged=true --volumes-from myu4 --name u2 ubuntu
 ```
 

@@ -46,7 +46,7 @@ ENTRYPOINT ["/bin/sh","-c","java -Dfile.encoding=utf8 -Djava.security.egd=file:/
 
 ### 制作镜像
 
-```SH
+```sh
 [root@k8s-master /opt/soft/docker/ruoyi-auth]# docker build -t ruoyi-auth:v1.0 -f Dockerfile .
 Sending build context to Docker daemon  88.26MB
 Step 1/7 : FROM openjdk:8-jdk
@@ -98,7 +98,7 @@ Successfully tagged ruoyi-auth:v1.0
 >
 > 推送镜像到阿里云
 
-```SH
+```sh
 #登录阿里云
 sudo docker login --username=1355997****@139.com registry.cn-hangzhou.aliyuncs.com
 
@@ -112,7 +112,7 @@ $ docker push registry.cn-hangzhou.aliyuncs.com/wjh_ruoyi/镜像:[镜像版本�
 
 #### 若依所有的镜像
 
-```SH
+```sh
 $ docker pull registry.cn-hangzhou.aliyuncs.com/wjh_ruoyi/ruoyi-visual-monitor:V1.0
 $ docker pull registry.cn-hangzhou.aliyuncs.com/wjh_ruoyi/ruoyi-job:V1.0
 $ docker pull registry.cn-hangzhou.aliyuncs.com/wjh_ruoyi/ruoyi-auth:V1.0

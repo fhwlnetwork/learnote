@@ -18,7 +18,7 @@ docker启动后，网络情况
 
 ### 查看网络
 
-```SH
+```sh
 docker netwokr ls
 ```
 
@@ -26,7 +26,7 @@ docker netwokr ls
 
 ### 查看网络源数据
 
-```SH
+```sh
 [root@wjh ~]# docker network inspect bridge
 ```
 
@@ -34,7 +34,7 @@ docker netwokr ls
 
 ### 创建、删除网络
 
-```SH
+```sh
 [root@wjh ~]# docker network create test_network
 [root@wjh ~]# docker network ls
 [root@wjh ~]# docker network rm test_network
@@ -68,7 +68,7 @@ ocker 服务默认会创建一个 docker0 网桥（其上有一个 docker0 内�
 
 查看 bridge 网络的详细信息，并通过 grep 获取名称项
 
-```SH
+```sh
 [root@wjh ~]# docker network inspect bridge | grep name
             "com.docker.network.bridge.name": "docker0",
 [root@wjh ~]# ifconfig | grep docker
@@ -91,7 +91,7 @@ docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
 
 ##### 案例
 
-```SH
+```sh
 docker run -d -p 8081:8080   --name tomcat81 billygoo/tomcat8-jdk8
 docker run -d -p 8082:8080   --name tomcat82 billygoo/tomcat8-jdk8
 ```
@@ -116,7 +116,7 @@ docker run -d -p 8083:8080 --network host --name tomcat83 billygoo/tomcat8-jdk8
 >解决:
 >    解决的办法就是使用docker的其他网络模式，例如--network=bridge，这样就可以解决问题，或者直接无视
 >
->```SH
+>```sh
 >docker run -d                          --network host --name tomcat84 billygoo/tomcat8-jdk8
 >```
 >
@@ -144,7 +144,7 @@ docker run -d -p 8084:8080 --network none --name tomcat84 billygoo/tomcat8-jdk8
 
 ##### 案例
 
-```SH
+```sh
 docker run -it                                                    --name alpine1  alpine /bin/sh
 docker run -it --network container:alpine1 --name alpine2  alpine /bin/sh
 ```
@@ -163,7 +163,7 @@ docker run -it --network container:alpine1 --name alpine2  alpine /bin/sh
 
 创建网络
 
-```SH
+```sh
 docker create wjh_network
 docker network ls
 ```
@@ -172,7 +172,7 @@ docker network ls
 
 新建容器加入上一步新建的自定义网络
 
-```SH
+```sh
 docker run -d -p 8081:8080 --network wjh_network  --name tomcat81 billygoo/tomcat8-jdk8
 docker run -d -p 8082:8080 --network wjh_network  --name tomcat82 billygoo/tomcat8-jdk8
 

@@ -166,7 +166,7 @@ mvn clean package -Dmaven.test.skip=true
 
 3、确定是否编译成功,添加shell
 
-```SH
+```sh
 ls hospital-manage/target
 ```
 
@@ -200,7 +200,7 @@ ls hospital-manage/target
 
 ​    2、构建镜像
 
-```SH
+```sh
 docker build -t hospital-manage:latest -f hospital-manage/Dockerfile  ./hospital-manage/
 ```
 
@@ -250,13 +250,13 @@ echo "$DOCKER_PWD_VAR" | docker login $REGISTRY -u "$DOCKER_USER_VAR" --password
 
 ###### d、修改镜像tag
 
-```SH
+```sh
 docker tag hospital-manage:latest $REGISTRY/$DOCKERHUB_NAMESPACE/hospital-manage:SNAPSHOT-$BUILD_NUMBER
 ```
 
 ###### e、推送镜像
 
-```SH
+```sh
 docker push  $REGISTRY/$DOCKERHUB_NAMESPACE/hospital-manage:SNAPSHOT-$BUILD_NUMBER>
 ```
 
