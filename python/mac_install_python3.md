@@ -14,7 +14,7 @@ uname -a
 
 官网下载链接：https://www.python.org/downloads/macos/
 
-![image-20230524231119004](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524231119004.png)
+![image-20230524231119004](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281542255.png)
 
 ## 安装程序
 
@@ -22,7 +22,7 @@ uname -a
 
 双击运行安装，点击弹出框中的继续
 
-![image-20230524231224452](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524231224452.png)
+![image-20230524231224452](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281542556.png)
 
 
 
@@ -30,11 +30,11 @@ uname -a
 
 点击存储选择按钮，在弹出款中选择python存储的位置
 
-![image-20230524231348308](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524231348308.png)![image-20230524231503713](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524231503713.png)
+![image-20230524231348308](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281542023.png)![image-20230524231503713](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281542242.png)
 
 确认无误后一路选择继续，在弹出款中输入账号密码，开始安装
 
-![image-20230524231647099](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524231647099.png)
+![image-20230524231647099](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281542751.png)
 
 ## 环境变量配置
 
@@ -42,7 +42,7 @@ uname -a
 
 运行终端 
 
-![image-20230524231822416](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524231822416.png)
+![image-20230524231822416](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281542832.png)
 
 执行which查看安装路径
 
@@ -52,7 +52,7 @@ which python3
 
 
 
-![image-20230524232002612](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524232002612.png)
+![image-20230524232002612](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281542241.png)
 
 ### 编辑ba sh_file文件
 
@@ -70,11 +70,11 @@ alias python="/usr/local/bin/python3"
 
 新建运行终端输入python
 
-![image-20230524232352817](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524232352817.png)
+![image-20230524232352817](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281543793.png)
 
 输入 print ('hello world')
 
-![image-20230524232435902](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524232435902.png)
+![image-20230524232435902](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281543629.png)
 
 到此python环境安装完成
 
