@@ -57,7 +57,7 @@
         * [Docker网络](cloud_learn/docker/docker_network.md)
         * [容器编排](cloud_learn/docker/docker_compose.md)
         * [Docker容器监控之CAdvisor+InfluxDB+Granfana](cloud_learn/docker/docker_cig.md)
-* k8_docker笔记
+* [go环境安装](cloud_learn/docker/go_install.md)
     * [go环境安装](cloud_learn/docker/go_install.md)
     * [安装K8S](cloud_learn/k8s/k8s_install.md)
     * [01 Kubernetes 基础入门](cloud_learn/k8s/k8s_base.md)
@@ -73,7 +73,7 @@
         * [kubesphere应用商店安装组件](cloud_learn/kubesphare/kubesphere_set_store.md)
         * [kubesphere手动上云](cloud_learn/kubesphare/kubesphere_ruoyi.md)
         * [devops部署](cloud_learn/devops/set_jenkins.md)
-    * devops-持续更新中
+    * [宝塔webhook](cloud_learn/devops/baotao_webhook.md)
 * ES笔记
     * [安装](es/install.md)
     * [交互](es/head插件交互.md)

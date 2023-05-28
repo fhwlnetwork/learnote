@@ -9,7 +9,7 @@
   * [linux系统优化](linux/majorzation.md)
   * [linux磁盘分区](linux/Disk_partition.md)
 * Nginx笔记
-  
+
     * [安装](nginx/install.md)
 * Tomact笔记
 * mysql笔记
@@ -33,7 +33,6 @@
   * [推送镜像到阿里云](cloud_learn/docker_push_aliyun.md)
   * [推送镜像到本地](cloud_learn/docker_push_local.md)
   * [Docker容器数据卷](cloud_learn/docker_valumes.md)
-
 * k8_docker笔记
     * [go环境安装](cloud_learn/go_install.md)
     * [Kubernetes网络](cloud_learn/k8s/k8s_network.md)
@@ -57,5 +56,7 @@
     * [kafka缓存收集日志](elk/kafka缓存收集日志.md)
     * [使用nginx+keepalived代理多台redis](elk/nginx_keepalived_redis.md)
 * 监控服务zabbix
-  
+
   * [安装](zabbix/install.md)
+* python笔记
+    * [mac安装pyhton3.0环境](python/mac_install_python3.md)
