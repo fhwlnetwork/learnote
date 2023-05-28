@@ -84,4 +84,5 @@
 <url> <loc>https://log.wjhlog.com/zabbix/wx.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/zabbix/email.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://log.wjhlog.com/python/mac_install_python3.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://log.wjhlog.com/python/jinzhizhuanhuan.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>

@@ -99,4 +99,5 @@
     * [邮件报警配置](zabbix/email.md)
 * python笔记
     * [mac安装pyhton3.0环境](python/mac_install_python3.md)
+    * [进制转换](python/jinzhizhuanhuan.md)
 

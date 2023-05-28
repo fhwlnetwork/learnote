@@ -4,7 +4,7 @@
         <description><![CDATA[吴建华的学习笔记]]></description>
         <link>http://note.wjhlog.com/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 May 2023 07:49:45 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 28 May 2023 14:48:10 GMT</lastBuildDate>
         <atom:link href="http://note.wjhlog.com/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[wjh]]></author>
         <managingEditor><![CDATA[849109312@qq.com]]></managingEditor>
@@ -582,6 +582,13 @@ Docker的主要目标是“Build，Ship and Run Any App,Anywhere”，也就是�
             <description><![CDATA[image-20230524230920507]]></description>
             <link>http://note.wjhlog.com/python/mac_install_python3.html</link>
             <guid isPermaLink="true">http://note.wjhlog.com/python/mac_install_python3.html</guid>
+            <dc:creator><![CDATA[wjh]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[进制转换]]></title>
+            <description><![CDATA[1557729534117python]]></description>
+            <link>http://note.wjhlog.com/python/jinzhizhuanhuan.html</link>
+            <guid isPermaLink="true">http://note.wjhlog.com/python/jinzhizhuanhuan.html</guid>
             <dc:creator><![CDATA[wjh]]></dc:creator>
         </item>
     </channel>
