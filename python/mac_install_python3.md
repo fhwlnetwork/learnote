@@ -8,7 +8,7 @@
 uname -a
 ```
 
-![image-20230524230920507](https://gitee.com/fhwlkj/blog-pic/raw/master/note/image-20230524230920507.png)
+![image-20230524230920507](https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img202305281548928.png)
 
 ## 官网下载选择需要的python版本
 
