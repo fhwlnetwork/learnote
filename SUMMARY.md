@@ -65,14 +65,14 @@
     * [03 Kubernetes 工作负载](cloud_learn/k8s/k8s_svc.md)
     * [04 Kubernetes网络](cloud_learn/k8s/k8s_network.md)
     * Kubernetes核心实战
-      * [Kubernetes核心实战](cloud_learn/kubesphare/k8s_commond.md)
-      * [kubesphere安装](cloud_learn/kubesphare/kubesphere_install.md)
-      * [kubesphere安装mysql](cloud_learn/kubesphare/kubesphere_set_mysql.md)
-      * [kubesphere安装es](cloud_learn/kubesphare/kubesphere_set_es.md)
-      * [kubesphere安装redis](cloud_learn/kubesphare/kubesphere_set_redis.md)
-      * [kubesphere应用商店安装组件](cloud_learn/kubesphare/kubesphere_set_store.md)
-      * [kubesphere手动上云](cloud_learn/kubesphare/kubesphere_ruoyi.md)
-      * [devops部署](cloud_learn/devops/set_jenkins.md)
+        * [Kubernetes核心实战](cloud_learn/kubesphare/k8s_commond.md)
+        * [kubesphere安装](cloud_learn/kubesphare/kubesphere_install.md)
+        * [kubesphere安装mysql](cloud_learn/kubesphare/kubesphere_set_mysql.md)
+        * [kubesphere安装es](cloud_learn/kubesphare/kubesphere_set_es.md)
+        * [kubesphere安装redis](cloud_learn/kubesphare/kubesphere_set_redis.md)
+        * [kubesphere应用商店安装组件](cloud_learn/kubesphare/kubesphere_set_store.md)
+        * [kubesphere手动上云](cloud_learn/kubesphare/kubesphere_ruoyi.md)
+        * [devops部署](cloud_learn/devops/set_jenkins.md)
     * devops-持续更新中
 * ES笔记
     * [安装](es/install.md)
@@ -97,4 +97,6 @@
     * [zabbix自定义监控](zabbix/custom__monitor.md)
     * [微信报警配置](zabbix/wx.md)
     * [邮件报警配置](zabbix/email.md)
+* python笔记
+    * [mac安装pyhton3.0环境](python/mac_install_python3.md)
 
