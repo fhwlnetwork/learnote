@@ -1,0 +1,1941 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>主从配置_哨兵配置 · 吴建华的学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hades">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-versions-select/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-fexa/fexa.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="集群.html" />
+    
+    
+    <link rel="prev" href="安装.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <script src="../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    <link href="http://note.wjhlog.com/rss" title="吴建华的学习笔记" rel="alternate" type="application/rss+xml" />
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+	<div class="header-inner">
+		<!-- LOGO -->
+		<div class="logo"></div>
+		<span class="title"></span>
+
+		<!-- Search -->
+		
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+
+		<!-- Nav -->
+		<ul class="header-nav">
+			
+		</ul>
+	</div>
+
+	<div class="book-summary">
+		<div class="book-summary-title">文档目录</div>
+		
+		
+		<nav role="navigation">
+			
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.wjhlog.com" target="_blank" class="custom-link">博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    linux笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../linux/lvs.html">
+            
+                <a href="../linux/lvs.html">
+            
+                    
+                    LVS负载均衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../linux/commond.html">
+            
+                <a href="../linux/commond.html">
+            
+                    
+                    linux基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../linux/time_synchronism.html">
+            
+                <a href="../linux/time_synchronism.html">
+            
+                    
+                    linux时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../linux/commond.html">
+            
+                <a href="../linux/commond.html">
+            
+                    
+                    系统管理命令说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../linux/fictory.html">
+            
+                <a href="../linux/fictory.html">
+            
+                    
+                    系统目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../linux/majorzation.html">
+            
+                <a href="../linux/majorzation.html">
+            
+                    
+                    linux系统优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../linux/Disk_partition.html">
+            
+                <a href="../linux/Disk_partition.html">
+            
+                    
+                    linux磁盘分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../linux/rsync.html">
+            
+                <a href="../linux/rsync.html">
+            
+                    
+                    RSYNC简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../linux/rsync_install.html">
+            
+                <a href="../linux/rsync_install.html">
+            
+                    
+                    RSYNC安装与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../linux/NFS.html">
+            
+                <a href="../linux/NFS.html">
+            
+                    
+                    NFS使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../linux/Disk_partition_free.html">
+            
+                <a href="../linux/Disk_partition_free.html">
+            
+                    
+                    磁盘空间未完全分配场景文件系统扩容处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Nginx笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../nginx/install.html">
+            
+                <a href="../nginx/install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../nginx/virtual_host.html">
+            
+                <a href="../nginx/virtual_host.html">
+            
+                    
+                    虚拟主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../nginx/lnmp.html">
+            
+                <a href="../nginx/lnmp.html">
+            
+                    
+                    lnmp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../nginx/load_balanced.html">
+            
+                <a href="../nginx/load_balanced.html">
+            
+                    
+                    负载均衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../nginx/keepalived_nginx.html">
+            
+                <a href="../nginx/keepalived_nginx.html">
+            
+                    
+                    keepalieved配置nginx高可用冗余
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../nginx/rsync.html">
+            
+                <a href="../nginx/rsync.html">
+            
+                    
+                    rsync备份服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Tomact笔记
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    mysql笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../mysql/install.html">
+            
+                <a href="../mysql/install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../mysql/sql.html">
+            
+                <a href="../mysql/sql.html">
+            
+                    
+                    数据库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../mysql/dql.html">
+            
+                <a href="../mysql/dql.html">
+            
+                    
+                    数据查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../mysql/index_key.html">
+            
+                <a href="../mysql/index_key.html">
+            
+                    
+                    数据库索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../mysql/Multiple_Examples_install.html">
+            
+                <a href="../mysql/Multiple_Examples_install.html">
+            
+                    
+                    一台主机搭建多实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../mysql/MySQL_Replication.html">
+            
+                <a href="../mysql/MySQL_Replication.html">
+            
+                    
+                    主从配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    redis笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="安装.html">
+            
+                <a href="安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="主从配置_哨兵.html">
+            
+                <a href="主从配置_哨兵.html">
+            
+                    
+                    主从配置_哨兵配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="集群.html">
+            
+                <a href="集群.html">
+            
+                    
+                    redis集群配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="集群扩容收缩.html">
+            
+                <a href="集群扩容收缩.html">
+            
+                    
+                    redis集群扩容收缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="工具管理.html">
+            
+                <a href="工具管理.html">
+            
+                    
+                    工具管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    docker笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" >
+            
+                <span>
+            
+                    
+                    docker基础篇
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../cloud_learn/docker/docker_introduce.html">
+            
+                <a href="../cloud_learn/docker/docker_introduce.html">
+            
+                    
+                    docker简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../cloud_learn/docker/docker_install_on_ubuntu.html">
+            
+                <a href="../cloud_learn/docker/docker_install_on_ubuntu.html">
+            
+                    
+                    乌班图安装docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.3" data-path="../cloud_learn/docker/docker_install_on_centos.html">
+            
+                <a href="../cloud_learn/docker/docker_install_on_centos.html">
+            
+                    
+                    centos安装docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.4" data-path="../cloud_learn/docker/aliyun_images_speed_up.html">
+            
+                <a href="../cloud_learn/docker/aliyun_images_speed_up.html">
+            
+                    
+                    阿里云镜像加速
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.5" data-path="../cloud_learn/docker/docker_commond_images.html">
+            
+                <a href="../cloud_learn/docker/docker_commond_images.html">
+            
+                    
+                    镜像命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.6" data-path="../cloud_learn/docker/docker_commond_containers.html">
+            
+                <a href="../cloud_learn/docker/docker_commond_containers.html">
+            
+                    
+                    容器命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.7" data-path="../cloud_learn/docker/docker_images.html">
+            
+                <a href="../cloud_learn/docker/docker_images.html">
+            
+                    
+                    docker镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.8" data-path="../cloud_learn/docker/docker_push_aliyun.html">
+            
+                <a href="../cloud_learn/docker/docker_push_aliyun.html">
+            
+                    
+                    推送镜像到阿里云
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.9" data-path="../cloud_learn/docker/docker_push_local.html">
+            
+                <a href="../cloud_learn/docker/docker_push_local.html">
+            
+                    
+                    推送镜像到本地
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.10" data-path="../cloud_learn/docker/docker_valumes.html">
+            
+                <a href="../cloud_learn/docker/docker_valumes.html">
+            
+                    
+                    Docker容器数据卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.11" data-path="../cloud_learn/docker/docker_install_tomact.html">
+            
+                <a href="../cloud_learn/docker/docker_install_tomact.html">
+            
+                    
+                    安装tomact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.12" data-path="../cloud_learn/docker/docker_install_mysql.html">
+            
+                <a href="../cloud_learn/docker/docker_install_mysql.html">
+            
+                    
+                    安装mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.13" data-path="../cloud_learn/docker/docker_install_redis.html">
+            
+                <a href="../cloud_learn/docker/docker_install_redis.html">
+            
+                    
+                    安装redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" >
+            
+                <span>
+            
+                    
+                    docker高级篇
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../cloud_learn/docker/database_main_from.html">
+            
+                <a href="../cloud_learn/docker/database_main_from.html">
+            
+                    
+                    数据库主从
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../cloud_learn/docker/redis_cluster_question.html">
+            
+                <a href="../cloud_learn/docker/redis_cluster_question.html">
+            
+                    
+                    redis集群面试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="../cloud_learn/docker/redis_cluster.html">
+            
+                <a href="../cloud_learn/docker/redis_cluster.html">
+            
+                    
+                    安装redis集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.4" data-path="../cloud_learn/docker/dockerfile.html">
+            
+                <a href="../cloud_learn/docker/dockerfile.html">
+            
+                    
+                    DockerFile解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.5" data-path="../cloud_learn/docker/docker_network.html">
+            
+                <a href="../cloud_learn/docker/docker_network.html">
+            
+                    
+                    Docker网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.6" data-path="../cloud_learn/docker/docker_compose.html">
+            
+                <a href="../cloud_learn/docker/docker_compose.html">
+            
+                    
+                    容器编排
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.7" data-path="../cloud_learn/docker/docker_cig.html">
+            
+                <a href="../cloud_learn/docker/docker_cig.html">
+            
+                    
+                    Docker容器监控之CAdvisor+InfluxDB+Granfana
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    k8_docker笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../cloud_learn/docker/go_install.html">
+            
+                <a href="../cloud_learn/docker/go_install.html">
+            
+                    
+                    go环境安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../cloud_learn/k8s/k8s_install.html">
+            
+                <a href="../cloud_learn/k8s/k8s_install.html">
+            
+                    
+                    安装K8S
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../cloud_learn/k8s/k8s_base.html">
+            
+                <a href="../cloud_learn/k8s/k8s_base.html">
+            
+                    
+                    01 Kubernetes 基础入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../cloud_learn/k8s/k8s_gainian.html">
+            
+                <a href="../cloud_learn/k8s/k8s_gainian.html">
+            
+                    
+                    02 Kubernetes 概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../cloud_learn/k8s/k8s_svc.html">
+            
+                <a href="../cloud_learn/k8s/k8s_svc.html">
+            
+                    
+                    03 Kubernetes 工作负载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../cloud_learn/k8s/k8s_network.html">
+            
+                <a href="../cloud_learn/k8s/k8s_network.html">
+            
+                    
+                    04 Kubernetes网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" >
+            
+                <span>
+            
+                    
+                    Kubernetes核心实战
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.7.1" data-path="../cloud_learn/kubesphare/k8s_commond.html">
+            
+                <a href="../cloud_learn/kubesphare/k8s_commond.html">
+            
+                    
+                    Kubernetes核心实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.2" data-path="../cloud_learn/kubesphare/kubesphere_install.html">
+            
+                <a href="../cloud_learn/kubesphare/kubesphere_install.html">
+            
+                    
+                    kubesphere安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.3" data-path="../cloud_learn/kubesphare/kubesphere_set_mysql.html">
+            
+                <a href="../cloud_learn/kubesphare/kubesphere_set_mysql.html">
+            
+                    
+                    kubesphere安装mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.4" data-path="../cloud_learn/kubesphare/kubesphere_set_es.html">
+            
+                <a href="../cloud_learn/kubesphare/kubesphere_set_es.html">
+            
+                    
+                    kubesphere安装es
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.5" data-path="../cloud_learn/kubesphare/kubesphere_set_redis.html">
+            
+                <a href="../cloud_learn/kubesphare/kubesphere_set_redis.html">
+            
+                    
+                    kubesphere安装redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.6" data-path="../cloud_learn/kubesphare/kubesphere_set_store.html">
+            
+                <a href="../cloud_learn/kubesphare/kubesphere_set_store.html">
+            
+                    
+                    kubesphere应用商店安装组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.7" data-path="../cloud_learn/kubesphare/kubesphere_ruoyi.html">
+            
+                <a href="../cloud_learn/kubesphare/kubesphere_ruoyi.html">
+            
+                    
+                    kubesphere手动上云
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.8" data-path="../cloud_learn/devops/set_jenkins.html">
+            
+                <a href="../cloud_learn/devops/set_jenkins.html">
+            
+                    
+                    devops部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" >
+            
+                <span>
+            
+                    
+                    devops-持续更新中
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    ES笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../es/install.html">
+            
+                <a href="../es/install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../es/head插件交互.html">
+            
+                <a href="../es/head插件交互.html">
+            
+                    
+                    交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../es/dml.html">
+            
+                <a href="../es/dml.html">
+            
+                    
+                    操作语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../es/集群.html">
+            
+                <a href="../es/集群.html">
+            
+                    
+                    集群配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    ELK笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../elk/安装.html">
+            
+                <a href="../elk/安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../elk/nginx_log_json.html">
+            
+                <a href="../elk/nginx_log_json.html">
+            
+                    
+                    nginxjson日志采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../elk/nginx_success_error_log.html">
+            
+                <a href="../elk/nginx_success_error_log.html">
+            
+                    
+                    nginix正常日志和错误日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../elk/tomcat_log_cat.html">
+            
+                <a href="../elk/tomcat_log_cat.html">
+            
+                    
+                    tomcat日志收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../elk/java_log.html">
+            
+                <a href="../elk/java_log.html">
+            
+                    
+                    java多行日志收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../elk/docker_log.html">
+            
+                <a href="../elk/docker_log.html">
+            
+                    
+                    收集docker日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../elk/filebeat_modules_get_ngingx_simple_log.html">
+            
+                <a href="../elk/filebeat_modules_get_ngingx_simple_log.html">
+            
+                    
+                    fibet收集ngingx日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../elk/kibana_draw_dashboard.html">
+            
+                <a href="../elk/kibana_draw_dashboard.html">
+            
+                    
+                    kibana画图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../elk/redis_cat_log.html">
+            
+                <a href="../elk/redis_cat_log.html">
+            
+                    
+                    redis作为缓存收集日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../elk/kafka缓存收集日志.html">
+            
+                <a href="../elk/kafka缓存收集日志.html">
+            
+                    
+                    kafka缓存收集日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="../elk/nginx_keepalived_redis.html">
+            
+                <a href="../elk/nginx_keepalived_redis.html">
+            
+                    
+                    使用nginx+keepalived代理多台redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" >
+            
+                <span>
+            
+                    
+                    监控服务zabbix
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../zabbix/install.html">
+            
+                <a href="../zabbix/install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../zabbix/create_monitor.html">
+            
+                <a href="../zabbix/create_monitor.html">
+            
+                    
+                    创建监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../zabbix/custom__monitor.html">
+            
+                <a href="../zabbix/custom__monitor.html">
+            
+                    
+                    zabbix自定义监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../zabbix/wx.html">
+            
+                <a href="../zabbix/wx.html">
+            
+                    
+                    微信报警配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../zabbix/email.html">
+            
+                <a href="../zabbix/email.html">
+            
+                    
+                    邮件报警配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" >
+            
+                <span>
+            
+                    
+                    python笔记
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../python/mac_install_python3.html">
+            
+                <a href="../python/mac_install_python3.html">
+            
+                    
+                    mac安装pyhton3.0环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+		</nav>
+		
+		
+	</div>
+
+	<!-- Content nav -->
+	<div class="book-anchor">
+		<div class="book-anchor-title">在这篇文章中:</div>
+		<div class="book-anchor-body">
+
+		</div>
+	</div>
+
+	<div class="book-body">
+		
+		<div class="body-inner">
+			
+			
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >主从配置_哨兵配置</a>
+    </h1>
+</div>
+
+
+
+
+			<div class="page-wrapper" tabindex="-1" role="main">
+				<div class="page-inner">
+					
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+					<section class="normal markdown-section">
+						
+						<h2 id="&#x6D41;-&#x7A0B;">&#x6D41; &#x7A0B;</h2>
+<pre class="language-"><code class="lang-text">
+1 &#xFF0E; &#x4ECE; &#x5E93; &#x53D1; &#x8D77; &#x540C; &#x6B65; &#x8BF7; &#x6C42; 
+2 &#xFF0E; &#x4E3B; &#x5E93; &#x6536; &#x5230; &#x8BF7; &#x6C42; &#x540E; &#x6267; &#x884C; bgsave &#x4FDD; &#x5B58; &#x5F53; &#x524D; &#x5185; &#x5B58; &#x91CC; &#x7684; &#x6570; &#x636E; &#x5230; &#x78C1; &#x76D8; 
+3 &#xFF0E; &#x4E3B; &#x5E93; &#x5C06; &#x6301; &#x4E45; &#x5316; &#x7684; &#x6570; &#x636E; &#x53D1; &#x9001; &#x7ED9; &#x4ECE; &#x5E93; &#x7684; &#x6570; &#x636E; &#x76EE; &#x5F55; 
+4 &#xFF0E; &#x4ECE; &#x5E93; &#x6536; &#x5230; &#x4E3B; &#x5E93; &#x7684; &#x6301; &#x4E45; &#x5316; &#x6570; &#x636E; &#x4E4B; &#x540E; &#xFF0C; &#x5148; &#x6E05; &#x7A7A; &#x81EA; &#x5DF1; &#x5F53; &#x524D; &#x5185; &#x5B58; &#x4E2D; &#x7684; &#x6240; &#x6709; &#x6570; &#x636E; 
+5 &#xFF0E; &#x4ECE; &#x5E93; &#x5C06; &#x4E3B; &#x5E93; &#x53D1; &#x9001; &#x8FC7; &#x6765; &#x7684; &#x6301; &#x4E45; &#x5316; &#x6587; &#x4EF6; &#x52A0; &#x8F7D; &#x5230; &#x81EA; &#x5DF1; &#x7684; &#x5185; &#x5B58; &#x91CC;
+</code></pre>
+<h2 id="&#x5C40;-&#x9650;-&#x6027;-&#xFF0E;">&#x5C40; &#x9650; &#x6027; &#xFF0E;</h2>
+<pre class="language-"><code class="lang-text">1 &#xFF0E; &#x6267; &#x884C; &#x4E3B; &#x4ECE; &#x590D; &#x5236; &#x4E4B; &#x524D; &#xFF0C; &#x73B0; &#x5C06; &#x6570; &#x636E; &#x5907; &#x4EFD; &#x4E00; &#x4EFD; 
+2 &#xFF0E; &#x5EFA; &#x8BAE; &#x5C06; &#x4E3B; &#x4ECE; &#x590D; &#x5236; &#x5199; &#x5165; &#x5230; &#x914D; &#x7F6E; &#x53C8; &#x4EF6; &#x4E2D; 
+3 &#xFF0E; &#x5728; &#x4E1A; &#x52A1; &#x4F4E; &#x5CF0; &#x671F; &#x505A; &#x4E3B; &#x4ECE; &#x590D; &#x5236; &#xFF0C; 
+4 &#xFF0E; &#x62F7; &#x8D1D; &#x6570; &#x636E; &#x65F6; &#x5019; &#x4F1A; &#x5360; &#x7528; &#x8482; &#x5BBD; 
+5 &#xFF0E; &#x4E0D; &#x80FD; &#x81EA; &#x52A8; &#x5B8C; &#x6210; &#x4E3B; &#x4ECE; &#x5207; &#x6362; &#xFF0C; &#x9700; &#x8981; &#x4EBA; &#x5DE5; &#x4ECB; &#x5165;
+</code></pre>
+<h2 id="&#x73AF;&#x5883;&#x51C6;&#x5907;">&#x73AF;&#x5883;&#x51C6;&#x5907;</h2>
+<p>&#x5B89;&#x88C5;&#x53C2;&#x8003;&#xFF1A;<a href="&#x5B89;&#x88C5;.html">redis&#x5B89;&#x88C5;</a></p>
+<pre class="language-"><code class="lang-shell"><span class="token comment">##&#x6253;&#x5305;redis &#x6587;&#x4EF6;</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># tar zcvf db01_redis.tar.gz /opt/redis_cluster/</span>
+<span class="token comment">#&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x5230;&#x7B2C;&#x4E8C;&#x53F0;redis&#x670D;&#x52A1;&#x5668;&#x4E2D;</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment">#scp db01_redis.tar.gz db02:/opt</span>
+<span class="token comment">#&#x6267;&#x884C;&#x5B89;&#x88C5;&#x6587;&#x4EF6;</span>
+<span class="token punctuation">[</span>root@db02 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /opt/redis_cluster/</span>
+<span class="token punctuation">[</span>root@db02 /opt<span class="token punctuation">]</span><span class="token comment"># tar zxvf db01_redis.tar.gz -C /opt/redis_cluster/</span>
+
+<span class="token punctuation">[</span>root@db02 /opt/redis_cluster/redis<span class="token punctuation">]</span><span class="token comment">#make install</span>
+<span class="token builtin class-name">cd</span> src <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+make<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Entering directory <span class="token variable"><span class="token variable">`</span>/opt/redis_cluster/redis-3.2.12/src<span class="token string">&apos;
+Hint: It&apos;</span>s a good idea to run <span class="token string">&apos;make test&apos;</span> <span class="token punctuation">;</span><span class="token punctuation">)</span>
+    INSTALL <span class="token function">install</span>
+    INSTALL <span class="token function">install</span>
+    INSTALL <span class="token function">install</span>
+    INSTALL <span class="token function">install</span>
+    INSTALL <span class="token function">install</span>
+make<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Leaving directory <span class="token variable">`</span></span>/opt/redis_cluster/redis-3.2.12/src<span class="token string">&apos;
+#&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x76EE;&#x5F55;
+[root@db02 /opt/redis_cluster/redis]#mkdir -p /data/redis_cluster/redis_6379/
+[root@db02 /opt/redis_cluster/redis]# sed -i &apos;</span>s<span class="token comment">#51#52#&apos; /opt/redis_cluster/redis_6379/conf/redis_6379.conf</span>
+</code></pre>
+<p>&#x4E3B;&#x4ECE;&#x914D;&#x7F6E;</p>
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db02 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#redis-cli -h db02</span>
+db02:637<span class="token operator"><span class="token file-descriptor important">9</span>&gt;</span> SLAVEOF db01 <span class="token number">6379</span>
+OK
+db02:637<span class="token operator"><span class="token file-descriptor important">9</span>&gt;</span> keys *
+<span class="token number">1</span><span class="token punctuation">)</span> <span class="token string">&quot;nam2&quot;</span>
+<span class="token number">2</span><span class="token punctuation">)</span> <span class="token string">&quot;name&quot;</span>
+<span class="token number">3</span><span class="token punctuation">)</span> <span class="token string">&quot;name1&quot;</span>
+db02:637<span class="token operator"><span class="token file-descriptor important">9</span>&gt;</span>
+</code></pre>
+<p>&#x54E8;&#x5175;&#x914D;&#x7F6E;</p>
+<pre class="language-"><code class="lang-Text">&#x81EA;&#x52A8;&#x6545;&#x969C;&#x8FC1;&#x79FB; (Automaticfailover)&#xFF1A;  
+&#x5F53;&#x4E00;&#x4E2A;&#x571F;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x65F6;&#xFF0C;Sentinel&#x4F1A;&#x5F00;&#x59CB;&#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x6545;&#x969C;&#x8FC1;&#x79FB;&#x64CD;&#x4F5C; &#xFF0C; 
+&#x5B83;&#x4F1A;&#x5C06;&#x5931;&#x6548;&#x4E3B;&#x52A1;&#x5668;&#x7684;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x4ECE;&#x52A1;&#x5668;&#x5347;&#x7EA7;&#x4E3A;&#x65B0;&#x7684;&#x4E3B;&#x52A1;&#x5668; &#xFF0C; 
+&#x8BA9;&#x5931;&#x6548;&#x4E3B;&#x670D;&#x52A1;&#x7684;&#x5176;&#x4ED6;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x6539;&#x4E3A;&#x590D;&#x5236;&#x65B0;&#x7684;&#x4E3B;&#x670D;&#x52A1;&#x5668; &#xFF1B;
+&#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#x8BD5;&#x56FE;&#x8FDE;&#x63A5;&#x5931;&#x6548;&#x7684;&#x4E3B;&#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;&#x96C6;&#x7FA4;&#x4E5F;&#x4F1A;&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x8FD4;&#x56DE;&#x65B0;&#x4E3B;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5730;&#x5740; &#xFF0C; 
+&#x4F7F;&#x5F97;&#x96C6;&#x7FA4;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B0;&#x4E3B;&#x670D;&#x52A1;&#x5668;&#x4EE3;&#x66FF;&#x5B9E;&#x6548;&#x670D;&#x52A1;&#x5668;
+</code></pre>
+<p><a href="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/imgimage-20210421175359754.png" data-lightbox="f3b43fac-6a12-4132-be54-1de3a72a75fb" data-title="image-20210421175359754" target="_blank"><img src="https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/imgimage-20210421175359754.png" alt="image-20210421175359754"></a></p>
+<p>db01&#x64CD;&#x4F5C;</p>
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /opt/redis_cluster/redis_26379</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /opt/redis_cluster/redis_26379/{conf,pid,log}</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /data/redis_cluster/redis_26379</span>
+<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment">#</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> /opt/redis_cluster/redis_26379/conf/redis_26379.conf <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+### &#x4EE5;&#x5B88;&#x62A4;&#x6A21;&#x5F0F;&#x542F;&#x52A8;
+daemonize yes
+bind 10.0.0.51
+port 26379
+logfile /opt/redis_cluster/redis_26379/log/redis_26379.log
+dir /data/redis_cluster/redis_26379
+sentinel monitor mymaster 10.0.0.51 6379 2
+sentinel down-after-milliseconds mymaster 3000
+sentinel parallel-syncs mymaster 1
+sentinel failover-timeout mymaster 18000
+EOF</span>
+</code></pre>
+<pre class="language-"><code class="lang-text">&#x914D;&#x7F6E;&#x89E3;&#x91CA;&#x8BF4;&#x660E;&#xFF1A;
+#mymaster &#x4E3B;&#x8282;&#x70B9;&#x522B;&#x540D; &#x4E3B;&#x8282;&#x70B9;ip&#x548C;&#x7AEF;&#x53E3;&#xFF0C;&#x5224;&#x65AD;&#x4E3B;&#x8282;&#x70B9;&#x5931;&#x8D25;&#xFF0C;&#x4E24;&#x4E2A;sentinel&#x8282;&#x70B9;&#x540C;&#x610F;
+sentinel monitor mymaster 10.0.0.51 6379 2
+#&#x9009;&#x9879;&#x6307;&#x5B9A;&#x4E86;sentinel &#x8BA4;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x5224;&#x65AD;&#x7EBF;&#x6240;&#x9700;&#x7684;&#x6BEB;&#x79D2;&#x6570;
+sentinel down-after-milliseconds myaster 3000
+#&#x5411;&#x65B0;&#x8282;&#x70B9;&#x53D1;&#x8D77;&#x590D;&#x5236;&#x64CD;&#x4F5C;&#x7684;&#x8282;&#x70B9;&#x4E2A;&#x6570;&#xFF0C;1&#x8BBA;&#x8BE2;&#x53D1;&#x8D77;&#x590D;&#x5236;
+sentinel paraller-syncs mymaster 1
+#&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x8D85;&#x65F6;&#x65F6;&#x95F4;d
+sentinel failover-timeout mymaster 18000
+</code></pre>
+<p>:db02&#xFF0C;db03&#x64CD;&#x4F5C;</p>
+<pre class="language-"><code class="lang-shell"><span class="token comment">#&#x5728;bd01&#x7684;&#x673A;&#x5668;&#x4E0A;&#x6267;&#x884C;,&#x8BB0;&#x5F97;&#x4FEE;&#x6539;ip</span>
+<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment"># rsync -ayz /opt/redis_cluster/redis_26379 db02:/opt/redis_cluster</span>
+<span class="token punctuation">[</span>root@db01 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment"># rsync -ayz /opt/redis_cluster/redis_26379 db03:/opt/redis_cluster</span>
+
+<span class="token comment">#&#x5728;db02 db03&#x4E0A;&#x64CD;&#x4F5C;</span>
+<span class="token comment">#&#x914D;&#x7F6E;&#x4E3B;&#x4ECE;&#x5173;&#x7CFB;</span>
+<span class="token punctuation">[</span>root@db02 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment"># </span>
+<span class="token function">sed</span> -i <span class="token string">&apos;s#51#52#g&apos;</span> /opt/redis_cluster/redis_26379/conf/redis_26379.conf
+<span class="token punctuation">[</span>root@db03 /opt/redis_cluster<span class="token punctuation">]</span><span class="token comment"># </span>
+<span class="token function">sed</span> -i <span class="token string">&apos;s#51#53#g&apos;</span> /opt/redis_cluster/redis_26379/conf/redis_26379.conf
+<span class="token punctuation">[</span>root@db02 /opt<span class="token punctuation">]</span><span class="token comment"># redis-server /opt/redis_cluster/redis_6379/conf/redis_6379.conf </span>
+<span class="token punctuation">[</span>root@db02 /opt<span class="token punctuation">]</span><span class="token comment"># redis-cli slaveof 10.0.0.51 6379</span>
+</code></pre>
+<p>&#x5728;&#x4E09;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x6267;&#x884C;</p>
+<pre class="language-"><code class="lang-shell">:<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># mkdir -p /data/redis_cluster/redis_26379</span>
+<span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># redis-sentinel /opt/redis_cluster/redis_26379/conf/redis_26379.conf</span>
+</code></pre>
+<pre class="language-"><code class="lang-text">&#x5F53; &#x6240; &#x6709; &#x8282; &#x70B9; &#x542F; &#x52A8; &#x540E; &#xFF0C; &#x914D; &#x7F6E; &#x6587; &#x50FB; &#x7684; &#x5185; &#x5BB9; &#x53D1; &#x751F; &#x4E86; &#x53D8; &#x5316; &#xFF0C; &#xFF0C; &#x4F53; &#x73B0; &#x5728; &#x4E09; &#x4E2A; &#x65B9; &#x9762; &#xFF0E; 
+1)Sentine1 &#x8282; &#x70B9; &#x81EA; &#x52A8; &#x53D1; &#x73B0; &#x4E86; &#x4EE5; &#x8282; &#x70B9; &#xFF0C; &#x5176; &#x5168; ntin &#x8A02; &#x8282; &#x70B9; &#x201C; 
+2 &#xFF09; &#x53BB; &#x6389; &#x4E86; &#x754E; &#x8BA4; &#x914D; &#x7F6E; &#xFF0C; &#x4F8B; &#x5982; parallel-syres failover-timeout*&quot; 
+&#x5F15; &#x6DFB; &#x52A0; &#x4E86; &#x914D; &#x7F6E; &#x7EAA; &#x5143; &#x76F8; &#x5173; &#x53C2;
+</code></pre>
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span>root@db01 /opt<span class="token punctuation">]</span><span class="token comment"># tail -6 /opt/redis_cluster/redis_26379/conf/redis_26379.conf </span>
+sentinel leader-epoch mymaster <span class="token number">0</span>
+sentinel known-slave mymaster <span class="token number">10.0</span>.0.53 <span class="token number">6379</span>
+sentinel known-slave mymaster <span class="token number">10.0</span>.0.52 <span class="token number">6379</span>
+sentinel known-sentinel mymaster <span class="token number">10.0</span>.0.52 <span class="token number">26379</span> c10ca8742bc1d585d428920cd75c7a7449ab11c4
+sentinel known-sentinel mymaster <span class="token number">10.0</span>.0.53 <span class="token number">26379</span> 443e313d655ea6a0db011bf143a1ebe1f97ab045
+sentinel current-epoch <span class="token number">0</span>
+</code></pre>
+<pre class="language-"><code class="lang-text">
+&#x505C; &#x6389; &#x5176; &#x4E2D; 1 &#x4E2A; &#x8282; &#x70B9; &#xFF0C; &#x7136; &#x540E; &#x89C2; &#x5BDF; &#x5176; &#x4ED6; &#x8282; &#x70B9; &#x7684; &#x65E5; &#x5FD7; &#x53D8; &#x5316; 
+&#x6545; &#x969C; &#x8F6C; &#x79FB; &#x540E; &#x914D; &#x7F6E; &#x6587; &#x4EF6; &#x53D8; &#x5316;
+redis serntinel &#x5B58;&#x5728;&#x591A;&#x62CD;&#x4E2A;&#x4ECE;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x5C06;&#x6307;&#x5B9A;&#x7684;&#x4ECE;&#x8282;&#x70B9;&#x5347;&#x4E3A;&#x4E3B;&#x8282;&#x70B9;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x4ED6;&#x4ECE;&#x8282;&#x70B9;&#x7684;slaverpriority&#x914D;&#x7F6E;&#x4E3A;0&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x6CE8;&#x610F;failover&#x540E;&#xFF0C;&#x5C06;slave-priority&#x8C03;&#x56DE;&#x539F;&#x503C;
+1&#x3001;&#x67E5;&#x8BE2;&#x547D;&#x4EE4;&#xFF1A;config get slave-priority
+2&#x3001;&#x8BBE;&#x7F6E;&#x547D;&#x4EE4;&#xFF1A;config set slave-priority 0
+3&#x3001;&#x4E3B;&#x52A8;&#x5207;&#x6362;&#xFF1A;sentinel failove mymaster
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; wjhlog.com 2021 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2023-05-28 13:36:54
+</span></footer> <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+						
+					</section>
+					
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+				</div>
+			</div>
+			
+		</div>
+
+		
+		
+		<a href="安装.html" class="navigation navigation-prev " aria-label="Previous page: 安装">
+			<i class="fa fa-angle-left"></i>
+		</a>
+		
+		
+		<a href="集群.html" class="navigation navigation-next " aria-label="Next page: redis集群配置">
+			<i class="fa fa-angle-right"></i>
+		</a>
+		
+		
+		
+	</div>
+	<script>
+		var gitbook = gitbook || [];
+		gitbook.push(function() {
+			gitbook.page.hasChanged({"page":{"title":"主从配置_哨兵配置","level":"1.6.2","depth":2,"next":{"title":"redis集群配置","level":"1.6.3","depth":2,"path":"redis/集群.md","ref":"redis/集群.md","articles":[]},"previous":{"title":"安装","level":"1.6.1","depth":2,"path":"redis/安装.md","ref":"redis/安装.md","articles":[]},"dir":"ltr"},"config":{"plugins":["sitemap-general","theme-fexa","expandable-chapters","changyan","lightbox","-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","donate@^1.0.2","local-video@^1.0.1","favicon@^0.0.2","3-ba@^0.9.0","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","puml@^1.0.1","musicxml@^1.0.2","klipse@^1.2.0","versions-select@^0.1.1","rss@^3.0.2","-sharing","sharing-plus@^0.0.2","graph@^0.1.0","chart@^0.2.0","copy-code-button"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © wjhlog.com 2021","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"include-csv":{},"emphasize":{},"ace":{},"github":{"url":"https://github.com/fhwlnetwork/learnote"},"puml":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{},"versions-select":{"type":"branches"},"graph":{},"donate":{"alipay":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230322.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://cdn.jsdelivr.net/gh/fhwlnetwork/blos_imgs/img/20210429230217.png","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://log.wjhlog.com"},"changyan":{"appid":"cyvq3Dzep","conf":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["gitbook"],"title":"吴建华的学习笔记","description":"吴建华的学习笔记","author":"wjh","feed_url":"http://note.wjhlog.com/rss","site_url":"http://note.wjhlog.com/","managingEditor":"849109312@qq.com","webMaster":"849109312@qq.com"},"musicxml":{},"sectionx":{"tag":"b"},"mermaid-gb3":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"prism-themes":{},"alerts":{},"github-buttons":{"repo":"fhwlnetwork/learnote","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"0f17470251ab81d9fb3864587a0a5655"},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"klipse":{"myConfigKey":"it's the default value"},"versions":{"options":[{"outou.name":"wjh","value":"http://note.wjhlog.com","text":"v1.0.0"}]},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"hades","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"吴建华的学习笔记","language":"zh-hans","output.name":"site","links":{"sidebar":{"博客":"http://www.wjhlog.com"}},"gitbook":"3.2.3","description":"记录一个开发转运维的心塞路"},"file":{"path":"redis/主从配置_哨兵.md","mtime":"2023-05-28T05:36:54.202Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-05-28T06:33:44.464Z"},"basePath":"..","book":{"language":""}});
+		});
+	</script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-changyan/changyan.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/osmd.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/musicxml.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-musicxml/promise.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-versions-select/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-fexa/fexa.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
